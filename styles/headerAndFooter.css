@@ -80,7 +80,7 @@ footer {
 }
 
 .flogo {
-   display: inline-block;;
+   display: inline-block;
 
    width: 70px;
    height: 70px;
@@ -99,6 +99,9 @@ footer {
 .contact-image {
    width: 25px;
    height: 25px;
+
+   position: relative;;
+   top: 5px;
 }
 
 .contacts {
@@ -117,5 +120,6 @@ footer {
 
 .contact-links {
    color: #FFF;
+
    text-decoration: none;
 }
