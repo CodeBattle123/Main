@@ -1,6 +1,6 @@
 @font-face {
    font-family: MainText;
-   src: url(aspace_demo.otf);
+   src: url(../aspace_demo.otf);
 }
 
 * {
@@ -23,7 +23,7 @@ header {
    /*#0073A5*/
 }
 
-.logo {
+.hlogo {
    display: inline-block;
    float: left;
    margin-right: 15px;
@@ -70,8 +70,52 @@ h1 {
 /*------------------------------------------------------------------------------------ */
 
 footer {
-   position: absolute;;
-   bottom: 1px;
+   width: 100%;
+   height: 110px;
+
+   position: absolute;
+   bottom: 0px;
+
    background-color: #0073A5;
-   height: 100px;
+}
+
+.flogo {
+   display: inline-block;;
+
+   width: 70px;
+   height: 70px;
+
+   margin: 20px 15px 0px 25px;
+}
+
+.cpheader {
+   font-family: MainText;
+   position: absolute;
+   top: 50px;
+   font-size: 20px;
+   display: inline-block;
+}
+
+.contact-image {
+   width: 25px;
+   height: 25px;
+}
+
+.contacts {
+   margin-right: 100px;
+   margin-top: 10px;
+   float: right;
+}
+
+.contacts ul {
+   list-style: none;
+}
+
+.contacts h2 {
+   display: inline-block;
+}
+
+.contact-links {
+   color: #FFF;
+   text-decoration: none;
 }
