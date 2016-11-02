@@ -1,0 +1,77 @@
+@font-face {
+   font-family: MainText;
+   src: url(aspace_demo.otf);
+}
+
+* {
+   padding:0;
+   margin: 0;
+   font-family: MainText;
+}
+
+body {
+   width: 100%;
+}
+
+header {
+   position: fixed;
+   margin: none;
+   width: 100%;
+   height: 60px;
+   padding: 15px;
+   background:#0073A5;
+   /*#0073A5*/
+}
+
+.logo {
+   display: inline-block;
+   float: left;
+   margin-right: 15px;
+}
+
+h1 {
+   line-height: 60px;
+   font-size: 35px;
+   display: inline-block;
+   color: #FFF;
+}
+
+.nav {
+   margin-right: 30px;
+   float: right;
+   list-style: none;
+}
+
+.nav li {
+   display: inline-block;
+}
+
+.tab {
+   border-radius: 5px;
+   background-color: rgb(148, 148, 148);
+   color: white;
+   line-height: 40px;
+   margin-top: 10px;
+   margin-right: 10px;
+   text-align: center;
+   display: inline-block;
+   position: relative;
+   min-width: 6vw;
+   height: 6vh;
+   text-decoration: none;
+   padding: 0 10px;
+}
+
+.logo {
+   height: 60px;
+   width: 60px;
+}
+
+/*------------------------------------------------------------------------------------ */
+
+footer {
+   position: absolute;;
+   bottom: 1px;
+   background-color: #0073A5;
+   height: 100px;
+}
