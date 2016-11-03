@@ -13,6 +13,7 @@
 <div id="ex-quest-outer">
 
     <h1 id="ex-quest-h1">Test Your Ruby Skills</h1>
+    <h3 id="ruby-level">Level 1/10</h3>
 
     <div id="ex-quest-div">
 
@@ -23,9 +24,9 @@
             <br>
             i=
             <input type="text" id="ex-quest-input-1" class="inputs-demo"> <br>
-            while i < <input type="text" id="ex-quest-input-2"  class="inputs-demo">> <br>
+            while i < <input type="text" id="ex-quest-input-2" class="inputs-demo">> <br>
             print "i: ", i ,"\n" <br>
-            i <input type="text" id="ex-quest-input-3"  class="inputs-demo"> <br>
+            i <input type="text" id="ex-quest-input-3" class="inputs-demo"> <br>
             end <br>
             <br>
 
@@ -41,12 +42,12 @@
 </div>
 
 <script>
-    function checkResultDemo(){
+    function checkResultDemo() {
 
         let inpt = $("#ex-quest-input-1").text();
 
-        if(inpt!="aaa"){
-            alert("hahah");
+        if (inpt != "aaa") {
+            alert("ни стаа");
         }
     }
 </script>

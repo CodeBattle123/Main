@@ -54,7 +54,7 @@
 
     $(document).ready( function () {
         $('#lang-ruby').click( function () {
-            window.location = 'example-quest.php';
+            window.location = 'accept-quest.php';
         });
     });
 
