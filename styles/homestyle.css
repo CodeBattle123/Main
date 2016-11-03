@@ -1,0 +1,68 @@
+body {
+    background-color: white;
+    margin: 0 auto;
+}
+
+#mustache {
+    position: relative;
+    margin: 0 auto;
+    top:-200px;
+    width: 100px;
+    display: block;
+}
+
+#outer-home-div{
+    margin: auto;
+    width: 1000px;
+    height: 500px;
+    background-color: rgba(96, 167, 169, 0.34);
+}
+
+#home-banner{
+    width: 100%;
+    height: 400px;
+    margin: auto;
+    background-color: #00405d;
+    background-image: url("../images/banner.jpg");
+    background-position: center;
+    background-size: contain;
+    background-repeat: repeat-x;
+}
+
+#p-home-div{
+    width: 450px;
+    height: 200px;
+    display: inline-block;
+    background-color: #00405d;
+    float: left;
+    margin: 20px;
+
+}
+
+#btn-home-join-div{
+    width: 450px;
+    height: 200px;
+    display: inline-block;
+    background-color: #00405d;
+    float: right;
+    margin: 20px;
+}
+
+#btn-home-join{
+    height: 100px;
+    width: 350px;
+    margin: 50px;
+    border: 3px solid ghostwhite;
+    background: white;
+    padding: 20px 40px;
+    border-radius: 40px;
+    color: black;
+    font-size: 24px;
+    text-decoration: none;
+    vertical-align: middle;
+}
+#btn-home-join:hover {
+    border-top-color: darkgrey;
+    background: dimgrey;
+    color: #ccc;
+}
