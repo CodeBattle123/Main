@@ -1,0 +1,34 @@
+h3 {
+    text-align: center;
+    padding: 30px;
+    font-size: x-large;
+}
+
+.choose-lang-outer-div {
+    margin: auto;
+    width: 80%;
+    background-color: #00405d;
+    height: 100%;
+    padding-bottom: 60px;
+}
+
+.lang-options {
+    display: inline-block;
+    height: 150px;
+    width: 250px;
+    text-align: center;
+    margin: 24px;
+    border-radius: 10px;
+    background-color: #cccccc;
+}
+
+.lang-options-p {
+    font-size: xx-large;
+    margin-top: 50px
+}
+
+.lang-options:hover{
+    border: 2px solid white;
+    background-color: dimgrey;
+    color: white;
+}

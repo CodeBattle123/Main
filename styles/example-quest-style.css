@@ -1,0 +1,19 @@
+#ex-quest-outer{
+    margin: auto;
+    height: 500px;
+}
+
+#ex-quest-div{
+    width: 800px;
+    height: 450px;
+    background:  rgba(96, 167, 169, 0.34);
+    margin: auto;
+}
+
+#ex-quest-h1 {
+   text-align: center;
+}
+
+#ex-quest-h4{
+    font-size: medium;
+}
