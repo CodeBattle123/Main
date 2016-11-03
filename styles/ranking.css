@@ -1,0 +1,108 @@
+.desc {
+   z-index: -1;
+
+   width: 100%;
+   text-align: center;
+   margin: 20px auto;
+}
+
+.ranking-container {
+   z-index: -1;
+   width: 80%;
+   margin: 20px auto auto auto;
+   min-height: 130vh;
+   max-height: 150vh;
+   position: relative;
+   background: #FFF;
+}
+
+.user {
+   font-size: 1.5vw;
+   padding: 15px;
+   height: 35px;
+   color: rgb(213, 213, 213);
+   border-top: 1px solid black;
+   border-left: 1px solid black;
+   border-right: 1px solid black;
+   border-bottom: 4px solid black;
+}
+
+@media all and (max-width:1000px) {
+   .user, .desc_user {
+      font-weight: bolder;
+      font-size: 10px;
+   }
+
+   .left, .right {
+      width: 40%;
+   }
+}
+
+.desc_left {
+   display: inline-block;
+   float: left;
+}
+
+.desc_right {
+   display: inline-block;
+   float: right;
+}
+
+.left {
+   display: inline-block;
+   float: left;
+}
+
+.right {
+   display: inline-block;
+   float: right;
+}
+
+.avatar, .name, .clan, .rank, .exp {
+   display: inline-block;
+   margin: 5px;
+   color: black;
+}
+
+.avatar {
+   position: relative;
+   height: 30px;
+   width: 30px;
+   top: -10px;
+}
+
+.avatar, .name {
+   float: left;
+}
+
+.clan, .rank {
+   float: right;
+}
+
+/*------------------------------------------------*/
+
+.desc_user {
+   height: 35px;
+   color: rgb(213, 213, 213);
+   border: 1px solid green;
+}
+
+.desc_left, .desc_right {
+   height: 100%;
+   border: 1px solid red;
+}
+
+.desc-name, .desc_clan, .desc_rank, .desc_exp {
+   display: inline-block;
+   margin: 10px 15px 0px 15px;
+   color: black;
+}
+
+.desc_avatar {
+   position: relative;
+   top: -10px;
+}
+
+.desc_avatar, .desc_name {
+   float: left;
+}
