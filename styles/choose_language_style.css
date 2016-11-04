@@ -18,13 +18,14 @@ h3 {
     width: 250px;
     text-align: center;
     margin: 24px;
+    border: 2px;
     border-radius: 10px;
     background-color: #cccccc;
 }
 
 .lang-options-p {
     font-size: xx-large;
-    margin-top: 50px
+    margin-top: 50px;
 }
 
 .lang-options:hover{
@@ -32,3 +33,4 @@ h3 {
     background-color: dimgrey;
     color: white;
 }
+

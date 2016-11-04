@@ -36,6 +36,7 @@
 <!--Toni - if clicked demo script will run-->
     <div class="lang-options" id="lang-ruby">
         <p class="lang-options-p">Ruby</p>
+        <p id="ruby-quest-progress">Completed 0/10</p>
     </div>
 
     <div class="lang-options" id="lang-python">

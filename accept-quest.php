@@ -13,7 +13,7 @@
 <div id="ex-quest-outer">
 
     <h1 id="ex-quest-h1">Test Your Ruby Skills</h1>
-    <h3 id="ruby-level">Level 1/10</h3>
+    <h3 id="ruby-level-h3">Level <span id="ruby-level">1</span>/10</h3>
 
     <div id="ex-quest-div">
 
