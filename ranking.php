@@ -4,8 +4,8 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Ranking</title>
-      <link rel="stylesheet" href="styles/headerAndFooter.css">
-      <link rel="stylesheet" href="styles/ranking.css">
+      <link rel="stylesheet" href="styles/headerAndFooter.css" />
+      <link rel="stylesheet" href="styles/ranking.css" />
    </head>
    <body>
       <?php include_once('header.html'); ?>
@@ -13,7 +13,7 @@
       <main>
 
          <div class="desc">
-            <h2>Top ranking!</h2>
+            <h2>TOP RANKING</h2>
          </div>
 
          <div class="ranking-container">
