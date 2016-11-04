@@ -7,11 +7,9 @@
 }
 
 .ranking-container {
-   z-index: -1;
    width: 80%;
    margin: 20px auto auto auto;
-   min-height: 130vh;
-   max-height: 150vh;
+   height: 300px;
    position: relative;
    background: #FFF;
 }
@@ -84,12 +82,10 @@
 .desc_user {
    height: 35px;
    color: rgb(213, 213, 213);
-   border: 1px solid green;
 }
 
 .desc_left, .desc_right {
    height: 100%;
-   border: 1px solid red;
 }
 
 .desc-name, .desc_clan, .desc_rank, .desc_exp {

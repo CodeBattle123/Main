@@ -7,7 +7,6 @@
    z-index: -1;
    padding:0;
    margin: 0;
-   font-family: MainText;
 }
 
 body {
@@ -37,12 +36,14 @@ header {
    font-size: 35px;
    position: relative;
    top: -16px;
+   font-family: MainText;
    display: inline-block;
    color: #FFF;
 }
 
 .nav {
    margin-right: 30px;
+   display: block;
    float: right;
    list-style: none;
 }
@@ -133,4 +134,38 @@ footer {
 
 .tab:hover {
 
+}
+
+@media screen and (max-width:800px) {
+   .nav ul {
+      display: none;
+   }
+   .nav {
+      width: 9vw;
+      height: 9vw;
+      background:#ffffff url("../images/threelines.png"); no-repeat: center;
+      background-size: contain;
+   }
+
+   .nav:hover ul, .nav:active ul{
+      width: 100px;
+      display: block;
+
+      background-color: #3da7cf;
+
+      position: relative;
+      right: 6.5vw;
+      top: 50px;
+   }
+
+   .nav:hover li {
+      float: right;
+   }
+
+   .nav:hover .tab {
+      margin: 0px;
+      width: 100px;
+      border-radius: 0px;
+      text-align: right;
+   }
 }
