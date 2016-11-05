@@ -86,6 +86,8 @@ footer {
    position: relative;
    bottom: 0px;
 
+   font-family: Text;
+
    background-color: #0073A5;
 }
 
@@ -110,14 +112,17 @@ footer {
    width: 25px;
    height: 25px;
 
-   position: relative;;
+   display: inline-block;
+   position: relative;
    top: 5px;
 }
 
 .contacts {
+   display: inline-block;
+   position: relative;;
+   float: right;
    margin-right: 100px;
    margin-top: 10px;
-   float: right;
 }
 
 .contacts ul {
@@ -125,10 +130,11 @@ footer {
 }
 
 .contacts h2 {
-   display: inline-block;
+   display: block;
 }
 
 .contact-links {
+   display: inline-block;
    color: #FFF;
    text-decoration: none;
 }
@@ -168,9 +174,62 @@ footer {
       float: right;
    }
 }
-@media screen and (max-width:500px) {
+@media screen and (max-width:600px) {
    .nav {
       margin-top: 20px;
+   }
+
+   footer {
+      height: 200px;
+   }
+
+   .top{
+      display: inline-flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-items: center;
+   }
+
+   .flogo {
+      position: relative;
+      top: 10px;
+      display: block;
+      margin: 0px auto;
+      margin-bottom: 0px;
+   }
+
+   .cpheader {
+      position: relative;
+      top: 15px;
+      display: block;
+      text-align: center;
+      margin: 0 auto;
+   }
+
+   .contacts {
+      width: 100%;
+      position: absolute;
+      bottom: 10px;
+      margin-top: 10px;
+   }
+
+   .contacts h2 {
+      text-align: center;
+   }
+
+   .contacts ul {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      position: relative;
+   }
+
+   .contacts li {
+      margin: 0 10px;
+      display: inline-block;
    }
 
 }

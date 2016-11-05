@@ -82,6 +82,14 @@
       position: relative;
       right: -30px;
    }
+
+   .left, .right {
+      width: 100px;
+   }
+
+   .user {
+      height: 50px;
+   }
 }
 
 .desc_left {
