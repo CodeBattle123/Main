@@ -82,6 +82,227 @@
                </div>
             </div>
 
+            <div class="user">
+               <img src="images/footer_github.png"   class="avatar"/>
+               <div class="left">
+                  <h4 class="name">Lord Bolton</h4>
+                  <h4 class="exp">Exp: 999999</h4>
+               </div>
+
+               <div class="right">
+                  <h4 class="clan">Scrubs</h4>
+                  <p class="rank">Rank:&nbsp;<b>420</b></p>
+               </div>
+            </div>
+
+            <div class="user">
+               <img src="images/footer_github.png"   class="avatar"/>
+               <div class="left">
+                  <h4 class="name">Lord Bolton</h4>
+                  <h4 class="exp">Exp: 999999</h4>
+               </div>
+
+               <div class="right">
+                  <h4 class="clan">Scrubs</h4>
+                  <p class="rank">Rank:&nbsp;<b>420</b></p>
+               </div>
+            </div>
+
+            <div class="user">
+               <img src="images/footer_github.png"   class="avatar"/>
+               <div class="left">
+                  <h4 class="name">Lord Bolton</h4>
+                  <h4 class="exp">Exp: 999999</h4>
+               </div>
+
+               <div class="right">
+                  <h4 class="clan">Scrubs</h4>
+                  <p class="rank">Rank:&nbsp;<b>420</b></p>
+               </div>
+            </div>
+
+            <div class="user">
+               <img src="images/footer_github.png"   class="avatar"/>
+               <div class="left">
+                  <h4 class="name">Lord Bolton</h4>
+                  <h4 class="exp">Exp: 999999</h4>
+               </div>
+
+               <div class="right">
+                  <h4 class="clan">Scrubs</h4>
+                  <p class="rank">Rank:&nbsp;<b>420</b></p>
+               </div>
+            </div>
+
+            <div class="user">
+               <img src="images/footer_github.png"   class="avatar"/>
+               <div class="left">
+                  <h4 class="name">Lord Bolton</h4>
+                  <h4 class="exp">Exp: 999999</h4>
+               </div>
+
+               <div class="right">
+                  <h4 class="clan">Scrubs</h4>
+                  <p class="rank">Rank:&nbsp;<b>420</b></p>
+               </div>
+            </div>
+
+            <div class="user">
+               <img src="images/footer_github.png"   class="avatar"/>
+               <div class="left">
+                  <h4 class="name">Lord Bolton</h4>
+                  <h4 class="exp">Exp: 999999</h4>
+               </div>
+
+               <div class="right">
+                  <h4 class="clan">Scrubs</h4>
+                  <p class="rank">Rank:&nbsp;<b>420</b></p>
+               </div>
+            </div>
+
+            <div class="user">
+               <img src="images/footer_github.png"   class="avatar"/>
+               <div class="left">
+                  <h4 class="name">Lord Bolton</h4>
+                  <h4 class="exp">Exp: 999999</h4>
+               </div>
+
+               <div class="right">
+                  <h4 class="clan">Scrubs</h4>
+                  <p class="rank">Rank:&nbsp;<b>420</b></p>
+               </div>
+            </div>
+
+            <div class="user">
+               <img src="images/footer_github.png"   class="avatar"/>
+               <div class="left">
+                  <h4 class="name">Lord Bolton</h4>
+                  <h4 class="exp">Exp: 999999</h4>
+               </div>
+
+               <div class="right">
+                  <h4 class="clan">Scrubs</h4>
+                  <p class="rank">Rank:&nbsp;<b>420</b></p>
+               </div>
+            </div>
+
+            <div class="user">
+               <img src="images/footer_github.png"   class="avatar"/>
+               <div class="left">
+                  <h4 class="name">Lord Bolton</h4>
+                  <h4 class="exp">Exp: 999999</h4>
+               </div>
+
+               <div class="right">
+                  <h4 class="clan">Scrubs</h4>
+                  <p class="rank">Rank:&nbsp;<b>420</b></p>
+               </div>
+            </div>
+
+            <div class="user">
+               <img src="images/footer_github.png"   class="avatar"/>
+               <div class="left">
+                  <h4 class="name">Lord Bolton</h4>
+                  <h4 class="exp">Exp: 999999</h4>
+               </div>
+
+               <div class="right">
+                  <h4 class="clan">Scrubs</h4>
+                  <p class="rank">Rank:&nbsp;<b>420</b></p>
+               </div>
+            </div>
+
+            <div class="user">
+               <img src="images/footer_github.png"   class="avatar"/>
+               <div class="left">
+                  <h4 class="name">Lord Bolton</h4>
+                  <h4 class="exp">Exp: 999999</h4>
+               </div>
+
+               <div class="right">
+                  <h4 class="clan">Scrubs</h4>
+                  <p class="rank">Rank:&nbsp;<b>420</b></p>
+               </div>
+            </div>
+
+            <div class="user">
+               <img src="images/footer_github.png"   class="avatar"/>
+               <div class="left">
+                  <h4 class="name">Lord Bolton</h4>
+                  <h4 class="exp">Exp: 999999</h4>
+               </div>
+
+               <div class="right">
+                  <h4 class="clan">Scrubs</h4>
+                  <p class="rank">Rank:&nbsp;<b>420</b></p>
+               </div>
+            </div>
+
+            <div class="user">
+               <img src="images/footer_github.png"   class="avatar"/>
+               <div class="left">
+                  <h4 class="name">Lord Bolton</h4>
+                  <h4 class="exp">Exp: 999999</h4>
+               </div>
+
+               <div class="right">
+                  <h4 class="clan">Scrubs</h4>
+                  <p class="rank">Rank:&nbsp;<b>420</b></p>
+               </div>
+            </div>
+
+            <div class="user">
+               <img src="images/footer_github.png"   class="avatar"/>
+               <div class="left">
+                  <h4 class="name">Lord Bolton</h4>
+                  <h4 class="exp">Exp: 999999</h4>
+               </div>
+
+               <div class="right">
+                  <h4 class="clan">Scrubs</h4>
+                  <p class="rank">Rank:&nbsp;<b>420</b></p>
+               </div>
+            </div>
+
+            <div class="user">
+               <img src="images/footer_github.png"   class="avatar"/>
+               <div class="left">
+                  <h4 class="name">Lord Bolton</h4>
+                  <h4 class="exp">Exp: 999999</h4>
+               </div>
+
+               <div class="right">
+                  <h4 class="clan">Scrubs</h4>
+                  <p class="rank">Rank:&nbsp;<b>420</b></p>
+               </div>
+            </div>
+
+            <div class="user">
+               <img src="images/footer_github.png"   class="avatar"/>
+               <div class="left">
+                  <h4 class="name">Lord Bolton</h4>
+                  <h4 class="exp">Exp: 999999</h4>
+               </div>
+
+               <div class="right">
+                  <h4 class="clan">Scrubs</h4>
+                  <p class="rank">Rank:&nbsp;<b>420</b></p>
+               </div>
+            </div>
+
+            <div class="user">
+               <img src="images/footer_github.png"   class="avatar"/>
+               <div class="left">
+                  <h4 class="name">Lord Bolton</h4>
+                  <h4 class="exp">Exp: 999999</h4>
+               </div>
+
+               <div class="right">
+                  <h4 class="clan">Scrubs</h4>
+                  <p class="rank">Rank:&nbsp;<b>420</b></p>
+               </div>
+            </div>
+
 
          </div>
 

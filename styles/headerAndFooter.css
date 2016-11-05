@@ -1,6 +1,11 @@
 @font-face {
    font-family: MainText;
-   src: url(../aspace_demo.otf);
+   src: url(../fonts/aspace_demo.otf);
+}
+
+@font-face {
+   font-family: Text;
+   src: url(../fonts/Starjedi.ttf);
 }
 
 * {
@@ -144,8 +149,8 @@ footer {
       display: none;
    }
    .nav {
-      width: 9vw;
-      height: 9vw;
+      width: 7vw;
+      height: 7vw;
       background:#ffffff url("../images/threelines.png"); no-repeat: center;
       background-size: contain;
    }
@@ -162,6 +167,13 @@ footer {
    .nav:hover li {
       float: right;
    }
+}
+@media screen and (max-width:500px) {
+   .nav {
+      margin-top: 20px;
+   }
+
+}
 
    .nav:hover .tab {
       margin: 0px;
@@ -169,4 +181,3 @@ footer {
       border-radius: 0px;
       text-align: right;
    }
-}
