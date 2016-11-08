@@ -36,13 +36,14 @@ p {
 
 .btn:hover {
     background: #3cb0fd;
-    background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
-    background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
-    background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
-    background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
     background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
     text-decoration: none;
 }
+
+.pagination {
+   display: block;
+}
+
 #paginator-btn li {
     margin: 5px;
     float: left;
@@ -59,4 +60,6 @@ p {
     display: block;
 }
 
-
+.text_container {
+   display: block;
+}

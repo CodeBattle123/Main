@@ -1,0 +1,26 @@
+.sidebar{
+   font-family: MainText;
+   width: 200px;
+   height: 100%;
+   float: right;
+   margin-left: 30px;
+   text-align: left;
+   padding-bottom: 20px;
+}
+
+.sidebar_container {
+   border: 1px solid black;
+   width: 100%;
+   list-style: none;
+}
+
+.link {
+   display: block;
+   border: 1px solid rgb(0, 10, 102);
+   background-color: #110099;
+   height: 40px;
+   width: 100%;
+   line-height: 30px;
+   color: white;
+   text-decoration: none;
+}
