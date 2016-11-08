@@ -26,7 +26,7 @@
 <div class="text_container">
    <section id="project" style="display: none;">
        <h1 align="center" style="font-family: MainText">About the project</h1><hr>
-       <div style="width: 1050px; padding: 15px;">
+       <div class="about_text">
            Lorem ipsum dolor sit amet, omittam repudiare at sed. Te eum sumo soleat feugait, eum te audire scribentur, scripta numquam oportere ea nec. Sit quas omnium invenire no, lorem doming graecis nec id, animal salutatus deterruisset cum id. Est cu utinam docendi inimicus. Sed no veniam diceret intellegam.
            Eu quas eleifend laboramus mea, ei option quaeque dissentias pro. Porro integre ne ius, habeo verear vel ex, qui eligendi torquatos no. Sint inciderint sit cu, ea has meis legendos. Eu usu etiam voluptaria, et usu idque libris. Ei mei movet mucius.
            Ei postea labitur mel, dictas petentium disputationi ad sea. Sit cibo dicant deseruisse cu, id summo viderer aliquando vis. Vel no malorum euismod, voluptatibus concludaturque te vix. Modo vidit intellegam his an.
@@ -52,7 +52,7 @@
 
    <section id="aboutus" style="display: none;">
        <h1 align="center" style="font-family: MainText">About us</h1><hr>
-       <div style="width: 1050px; padding: 15px;">
+       <div class="about_text">
           <p>
                Lorem ipsum dolor sit amet, omittam repudiare at sed. Te eum sumo soleat feugait, eum te audire scribentur, scripta numquam oportere ea nec. Sit quas omnium invenire no, lorem doming graecis nec id, animal salutatus deterruisset cum id. Est cu utinam docendi inimicus. Sed no veniam diceret intellegam.
                Eu quas eleifend laboramus mea, ei option quaeque dissentias pro. Porro integre ne ius, habeo verear vel ex, qui eligendi torquatos no. Sint inciderint sit cu, ea has meis legendos. Eu usu etiam voluptaria, et usu idque libris. Ei mei movet mucius.
@@ -80,7 +80,7 @@
 
    <section id="howto" style="display: none;">
        <h1 align="center" style="font-family: MainText">How it works</h1><hr>
-       <div style="width: 1050px; padding: 15px;">
+       <div class="about_text">
            Lorem ipsum dolor sit amet, omittam repudiare at sed. Te eum sumo soleat feugait, eum te audire scribentur, scripta numquam oportere ea nec. Sit quas omnium invenire no, lorem doming graecis nec id, animal salutatus deterruisset cum id. Est cu utinam docendi inimicus. Sed no veniam diceret intellegam.
            Eu quas eleifend laboramus mea, ei option quaeque dissentias pro. Porro integre ne ius, habeo verear vel ex, qui eligendi torquatos no. Sint inciderint sit cu, ea has meis legendos. Eu usu etiam voluptaria, et usu idque libris. Ei mei movet mucius.
            Ei postea labitur mel, dictas petentium disputationi ad sea. Sit cibo dicant deseruisse cu, id summo viderer aliquando vis. Vel no malorum euismod, voluptatibus concludaturque te vix. Modo vidit intellegam his an.
