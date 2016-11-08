@@ -8,7 +8,7 @@
     <title>choose language</title>
 </head>
 <body>
-<?php include_once('header.html'); ?>
+<?php include_once('header.php'); ?>
 
 <h3>Choose a Language to Conquer</h3>
 

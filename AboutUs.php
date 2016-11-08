@@ -11,7 +11,7 @@
     <script type="text/javascript" src="scripts/switch.js"></script>
 </head>
 <body>
-<?php include 'header.html'?>
+<?php include 'header.php'?>
 <?php include 'sidebar.html'?>
 
 <div class="pagination-links">
