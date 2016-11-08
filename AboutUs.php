@@ -13,11 +13,9 @@
     <script type="text/javascript" src="scripts/sideBarHeight.js"></script>
 </head>
 <body>
-<?php include 'header.html' ?>
+<?php include 'header.php' ?>
 <?php include 'sidebar.html' ?>
-<script>
-      document.body.onresize = "setSize()";
-</script>
+
 <div class="aboutWrapper">
    <div class="pagination-links">
        <ul class="paginator" id="paginator-btn" style="align-self: center">

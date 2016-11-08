@@ -13,7 +13,7 @@
       <?php include_once('sidebar.html'); ?>
 
       <main>
-         
+
          <div class="desc">
             <h2>TOP RANKING</h2>
          </div>
