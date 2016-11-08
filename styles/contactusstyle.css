@@ -1,0 +1,63 @@
+body {
+    font-size: 13px;
+    font-style: Verdana, Tahoma, sans-serif;
+}
+
+h2 {
+    color: #474E69;
+}
+
+/* ===========================
+   ====== Contact Form ======= 
+   =========================== */
+
+input, textarea {
+    padding: 10px;
+    border: 1px solid gray;
+    width: 200px;
+    color: #999999;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;
+}
+
+textarea {
+    width: 400px;
+    height: 150px;
+    max-width: 400px;
+    line-height: 18px;
+}
+
+input:hover, textarea:hover,
+input:focus, textarea:focus {
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px;
+}
+
+.form label {
+    color: gray;
+}
+
+/* ===========================
+   ====== Submit Button ====== 
+   =========================== */
+
+.submit input {
+    width: 100px;
+    height: 40px;
+    background-color: #0073A5;
+    color: #FFF;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+}
+.map {
+    height: 500px;
+    width: 45%;
+    display: inline-block;
+    float: right;
+}
+.wrapper {
+    display: flex;
+}
