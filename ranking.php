@@ -6,12 +6,14 @@
       <title>Ranking</title>
       <link rel="stylesheet" href="styles/headerAndFooter.css" />
       <link rel="stylesheet" href="styles/ranking.css" />
+      <link rel="stylesheet" href="styles/sidebar.css" media="screen" title="no title">
    </head>
    <body>
       <?php include_once('header.html'); ?>
+      <?php include_once('sidebar.html'); ?>
 
       <main>
-
+         
          <div class="desc">
             <h2>TOP RANKING</h2>
          </div>
@@ -302,8 +304,6 @@
                   <p class="rank">Rank:&nbsp;<b>420</b></p>
                </div>
             </div>
-
-
          </div>
 
       </main>
