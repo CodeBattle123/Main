@@ -16,6 +16,7 @@
 body {
    padding-top: 100px;
    width: 100%;
+   background: #0073A5; 
 }
 
 header {
@@ -85,7 +86,6 @@ header {
    height: 110px;
 
    position: relative;
-   
 
    font-family: Text;
 

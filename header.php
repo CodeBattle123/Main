@@ -1,6 +1,5 @@
 <?php
-
-    include_once('db/connect.php');
+    //include_once('db/connect.php');
 ?>
 
 
