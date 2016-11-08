@@ -1,46 +1,27 @@
-body {
-    background-color: transparent;
-    margin: 0 auto;
+.aboutWrapper {
+   width: 70%;
+   height: 700px;
+   overflow-y: scroll;
+   display: block;
+   text-align: center;
+   margin: 15px 15px 0px 15px;
 }
-.row {
-    margin: 20px;
-    background-color: white;
-    border:2px solid dimgray;
 
-}
-.wrapper {
-    text-align: center;
-    margin: 15px;
-}
-hr {
-    border: 0;
-    height: 1px;
-    background-image: linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
-}
-p {
-    font-family: "Arial";
-    padding-bottom: 30px;
-}
 .btn {
-    -webkit-border-radius: 6;
-    -moz-border-radius: 6;
-    border-radius: 3px;
-    font-family: MainText;
-    color: #ffffff;
-    font-size: 20px;
-    background:  #0073A5;
-    padding: 10px 20px 10px 20px;
-    text-decoration: none;
+   display: inline-block;
+   border-radius: 3px;
+   font-family: MainText;
+   color: #ffffff;
+   font-size: 20px;
+   background:  #0073A5;
+   padding: 10px 20px 10px 20px;
+   text-decoration: none;
 }
 
 .btn:hover {
     background: #3cb0fd;
     background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
     text-decoration: none;
-}
-
-.paginator {
-   display: block;
 }
 
 #paginator-btn li {

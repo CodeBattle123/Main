@@ -3,7 +3,8 @@
    width: 20%;
    display: block;
    background-color:#0073A5;
-   height: 100vh;
+   min-height: 695px;
+   height: 100%;
    float: left;
    text-align: left;
 

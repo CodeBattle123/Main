@@ -10,20 +10,23 @@
     <script type="text/javascript" src="scripts/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="scripts/pagejump.js"></script>
     <script type="text/javascript" src="scripts/switch.js"></script>
+    <script type="text/javascript" src="scripts/sideBarHeight.js"></script>
 </head>
 <body>
 <?php include 'header.html' ?>
 <?php include 'sidebar.html' ?>
+<script>
+      document.body.onresize = "setSize()";
+</script>
+<div class="aboutWrapper">
+   <div class="pagination-links">
+       <ul class="paginator" id="paginator-btn" style="align-self: center">
+           <a href="javascript:void(0)" id="project-button"><li class="btn">About the project</li></a>
+           <a href="javascript:void(0)" id="aboutus-button"><li class="btn">About us</li></a>
+           <a href="javascript:void(0)" id="howto-button"><li class="btn">How it works</li></a>
+       </ul>
+   </div>
 
-<div class="pagination-links">
-    <ul class="paginator" id="paginator-btn" style="align-self: center">
-        <a href="javascript:void(0)" id="project-button"><li class="btn">About the project</li></a>
-        <a href="javascript:void(0)" id="aboutus-button"><li class="btn">About us</li></a>
-        <a href="javascript:void(0)" id="howto-button"><li class="btn">How it works</li></a>
-    </ul>
-</div>
-
-   <div class="text_container">
       <section id="project" style="display: none;">
           <h1 align="center" style="font-family: MainText">About the project</h1><hr>
           <div class="about_text">
@@ -103,8 +106,8 @@
               Ea verear pericula instructior cum. In vel impedit salutatus abhorreant, alienum reprehendunt usu ei. Eu usu adhuc reque eirmod. No sed probo vocent veritus, deleniti splendide sadipscing ex nam. Cu iudico appellantur sit, mei et meis tincidunt consequuntur.
           </div>
       </section>
-   </div>
+</div>
 
-<?php include 'footer.html'?>
+<?php include 'footer.html' ?>
 </body>
 </html>
