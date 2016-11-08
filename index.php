@@ -24,10 +24,12 @@
 
     <div id="btn-home-join-div">
         <input type="button" value="Join The Battle" id="btn-home-join">
-    </div>
-</div>
-<!--Toni - when changing size of #mustache or pic, css #mustache, property 'left' needs to be adjusted-->
-<img src="images/mustache.png" alt="mustache" id="mustache">
+     </div>
+     <div class="mustache-container">
+        <img src="images/mustache.png" alt="mustache" id="mustache">
+     </div>
+     <!--Toni - when changing size of #mustache or pic, css #mustache, property 'left' needs to be adjusted-->
+ </div>
 
 <?php include_once('footer.html'); ?>
 </body>

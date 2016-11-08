@@ -9,9 +9,7 @@ $(window).load(function () {
         speed: 400,
         width: -440,
         height: 50,
-        zIndexValues: [1, 50, 50, 1],
+        zIndexValues: [1,1,1,1],
         loop: false
     });
 });
-
-
