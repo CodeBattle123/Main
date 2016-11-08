@@ -2,6 +2,7 @@
 <html>
    <head>
       <meta charset="utf-8">
+<<<<<<< HEAD
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Clan Page</title>
       <link rel="stylesheet" href="styles/headerAndFooter.css">
@@ -16,5 +17,12 @@
       </main>
 
       <?php include_once ('footer.html') ?>
+=======
+      <title>Clan Page</title>
+      <link rel="stylesheet" href="styles/headerAndFooter.css" media="screen" title="no title">
+   </head>
+   <body>
+
+>>>>>>> AsenFork
    </body>
 </html>
