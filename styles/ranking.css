@@ -13,7 +13,6 @@
    display: flex;
    flex-direction: column;
 
-   width: 80%;
    height: 800px;
 
    overflow-y: auto;
