@@ -6,37 +6,33 @@
     <link rel="stylesheet" type="text/css" href="styles/headerAndFooter.css">
     <link rel="stylesheet" type="text/css" href="styles/aboutusstyle.css">
     <link rel="stylesheet" type="text/css" href="styles/contactusstyle.css">
+    <link rel="stylesheet" type="text/css" href="styles/sidebar.css">
     <link rel="icon" type="image/png" href="images/icon.png"/>
-    <script type="text/javascript" src="scripts/jquery-3.1.1.min.js"></script>
-    <script type="text/javascript" src="scripts/pagejump.js"</script>
-    <script type="text/javascript" src="scripts/switch.js"></script>
 </head>
 <body>
-<?php include 'header.html'?>
+<?php include 'header.php'?>
 <?php include 'sidebar.html'?>
-
-<h1 style="padding: 10px; font-family: MainText;">Contact us</h1>
-<hr>
 <div class="wrapper">
-<div style="display: inline-block; margin: 20px; padding: 20px;">
+
+    <div style="display: inline-block; margin: 20px; padding: 20px;">
     <form class="form">
         <p class="name">
-            <input type="text" name="name" id="name" placeholder="John Doe" />
+            <input type="text" name="name" id="name" placeholder="Your full name" />
             <label for="name">Name</label>
         </p>
 
         <p class="email">
-            <input type="text" name="email" id="email" placeholder="mail@example.com" />
+            <input type="text" name="email" id="email" placeholder="Your email" />
             <label for="email">Email</label>
         </p>
 
         <p class="web">
-            <input type="text" name="web" id="web" placeholder="www.example.com" />
-            <label for="web">Website</label>
+            <input type="text" name="subject" id="subject" placeholder="Subject" />
+            <label for="web">Subject</label>
         </p>
 
         <p class="text">
-            <textarea name="text" placeholder="Write something to us" /></textarea>
+            <textarea name="text" placeholder="Your message" /></textarea>
         </p>
 
         <p class="submit">

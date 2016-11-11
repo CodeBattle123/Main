@@ -1,4 +1,5 @@
 .aboutWrapper {
+   display: block;
     background-color: white;
     height: 700px;
     overflow-y: scroll;
@@ -22,7 +23,8 @@
 
 }
 .wrapper {
-    margin: 15px;
+    background-color: white;
+    height: 700px
 }
 hr {
     border: 0;

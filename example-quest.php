@@ -4,12 +4,13 @@
     <link rel="stylesheet" href="styles/headerAndFooter.css">
     <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js'></script>
     <link rel="stylesheet" href="styles/example-quest-style.css">
+    <link rel="stylesheet" href="styles/sidebar.css">
     <meta charset="UTF-8">
     <title>quests</title>
 </head>
 <body>
 <?php include 'header.php' ?>
-
+<?php include 'sidebar.html' ?>
 <div id="ex-quest-outer">
 
     <h1 id="ex-quest-h1">Test Your Ruby Skills</h1>

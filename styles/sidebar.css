@@ -16,7 +16,7 @@
 .link {
    display: block;
    text-transform: uppercase;
-   border-bottom: 1px solid #00A;
+   border-bottom: 1px solid #3cb0fd;
    background-color:#0073A5;
    height: 40px;
    width: 100%;
@@ -30,7 +30,7 @@
 }
 
 .link:hover {
-   background-color:#322eff;
+   background-color: #3cb0fd;
 }
 
 @media screen and (max-width: 600px){
