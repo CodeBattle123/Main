@@ -1,14 +1,10 @@
-body {
-    font-size: 13px;
-    font-style: Verdana, Tahoma, sans-serif;
-}
-
 h2 {
     color: #474E69;
+    font-family: MainText;
 }
 
 /* ===========================
-   ====== Contact Form ======= 
+   ====== Contact Form =======
    =========================== */
 
 input, textarea {
@@ -26,6 +22,7 @@ textarea {
     height: 150px;
     max-width: 400px;
     line-height: 18px;
+    resize: none;
 }
 
 input:hover, textarea:hover,
@@ -40,7 +37,7 @@ input:focus, textarea:focus {
 }
 
 /* ===========================
-   ====== Submit Button ====== 
+   ====== Submit Button ======
    =========================== */
 
 .submit input {
@@ -53,11 +50,15 @@ input:focus, textarea:focus {
     -webkit-border-radius: 3px;
 }
 .map {
-    height: 500px;
-    width: 45%;
+    height: 460px;
+    width: 50%;
     display: inline-block;
     float: right;
+    border: 1px solid gray;
+    margin-top: 25px;
 }
 .wrapper {
     display: flex;
+    background-color: white;
+    height: 700px;
 }
