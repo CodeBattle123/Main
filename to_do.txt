@@ -1,0 +1,2 @@
+register.php -> validate password /pavel/
+register.php -> regex for email /pavel/
