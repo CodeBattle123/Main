@@ -10,10 +10,9 @@ function moveTo() {
 
     console.log(screen);
 
-    if (screen.width <= 600) {
+    if (screen.width <= 600 && active != true) {
         active = true;
         let entry = document.createElement('li');
-        entry.appendChild(document.createTextNode('Stuff'));
         list.appendChild(entry);
     }
     else {

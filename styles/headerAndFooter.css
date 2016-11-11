@@ -159,9 +159,39 @@ header {
       font-size: 7vw;
    }
 
-   .nav ul {
+
+   .nav ul{
       display: none;
+      position: relative;
+      top: -20px;
+      right: 250px;
+      overflow: hidden;
+      width: 300px;
    }
+
+   .nav:active ul,
+   .nav ul:hover,
+   .nav ul.focus{
+      display: block;
+   }
+
+   .nav ul li, .tab{
+      background-color: rgba(0, 115, 165, 0.5);
+      display: block;
+      width: 100%;
+      margin: 0;
+      border-radius: 0;
+      border-bottom: 1px solid black;
+   }
+   
+   .tab {
+      text-align: left;
+   }
+
+   .tab:hover {
+      background-color: rgba(0, 171, 238, 0.75);
+   }
+
    .nav {
       width: 7vw;
       height: 7vw;
@@ -169,18 +199,6 @@ header {
       background-size: contain;
    }
 
-   .nav:hover ul, .nav:active ul{
-      width: 100px;
-      display: block;
-
-      position: relative;
-      right: 6.5vw;
-      top: 50px;
-   }
-
-   .nav:hover li {
-      float: right;
-   }
 }
 
 @media screen and (max-width:600px) {
