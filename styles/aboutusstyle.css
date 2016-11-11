@@ -1,10 +1,23 @@
 .aboutWrapper {
-   width: 70%;
-   height: 700px;
-   overflow-y: scroll;
-   display: block;
-   text-align: center;
-   margin: 15px 15px 0px 15px;
+    background-color: white;
+    height: 700px;
+    overflow-y: scroll;
+    display: block;
+    text-align: center;
+    margin: 0 0 0 15px;
+    padding: 30px;
+}
+
+.aboutWrapper::-webkit-scrollbar {
+    width: 12px;
+}
+
+.aboutWrapper::-webkit-scrollbar-thumb {
+    background-color: #cccccc;
+}
+
+.aboutWrapper::-webkit-scrollbar-track {
+    background-color: #555;
 }
 
 .btn {
@@ -13,7 +26,7 @@
    font-family: MainText;
    color: #ffffff;
    font-size: 20px;
-   background:  #0073A5;
+   background: #0073A5;
    padding: 10px 20px 10px 20px;
    text-decoration: none;
 }
@@ -42,4 +55,10 @@
 
 .text_container {
    display: block;
+}
+
+@media screen and (max-width: 600px){
+    .aboutWrapper {
+        margin: 0;
+    }
 }

@@ -3,8 +3,6 @@
    width: 20%;
    display: block;
    background-color:#0073A5;
-   min-height: 695px;
-   height: 100%;
    float: left;
    text-align: left;
    padding-bottom: 20px;
@@ -33,4 +31,10 @@
 
 .link:hover {
    background-color:#322eff;
+}
+
+@media screen and (max-width: 600px){
+   .sidebar {
+      display: none;
+   }
 }
