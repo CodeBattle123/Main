@@ -10,7 +10,6 @@
     <script type="text/javascript" src="scripts/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="scripts/pagejump.js"></script>
     <script type="text/javascript" src="scripts/switch.js"></script>
-    <script type="text/javascript" src="scripts/sideBarHeight.js"></script>
 </head>
 <body>
 <?php include 'header.php' ?>

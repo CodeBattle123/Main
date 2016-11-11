@@ -34,3 +34,8 @@ hr {
     font-family: MainText;
     text-align: center;
 }
+
+.wrapper {
+    background-color: white;
+    height: 700px
+}

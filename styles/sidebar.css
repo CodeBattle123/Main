@@ -3,8 +3,7 @@
    width: 20%;
    display: block;
    background-color:#0073A5;
-   min-height: 695px;
-   height: 100%;
+
    float: left;
    text-align: left;
    padding-bottom: 20px;
@@ -18,7 +17,7 @@
 .link {
    display: block;
    text-transform: uppercase;
-   border-bottom: 1px solid #00A;
+   border-bottom: 1px solid #3cb0fd;
    background-color:#0073A5;
    height: 40px;
    width: 100%;
@@ -32,5 +31,5 @@
 }
 
 .link:hover {
-   background-color:#322eff;
+   background-color: #3cb0fd;
 }

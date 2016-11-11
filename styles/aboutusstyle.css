@@ -1,15 +1,13 @@
 .aboutWrapper {
-   width: 70%;
    height: 700px;
    overflow-y: scroll;
    display: block;
    text-align: center;
-   margin: 15px 15px 0px 15px;
-}
-
+    background-color: white;
 }
 .wrapper {
-    margin: 15px;
+    background-color: white;
+    height: 700px
 }
 hr {
     border: 0;

@@ -1,8 +1,3 @@
-body {
-    font-size: 13px;
-    font-style: Verdana, Tahoma, sans-serif;
-}
-
 h2 {
     color: #474E69;
 }
@@ -53,11 +48,12 @@ input:focus, textarea:focus {
     -webkit-border-radius: 3px;
 }
 .map {
-    height: 485px;
+    height: 460px;
     width: 50%;
     display: inline-block;
     float: right;
     border: 1px solid gray;
+    margin-top: 25px;
 }
 .wrapper {
     display: flex;

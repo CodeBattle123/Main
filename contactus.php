@@ -6,16 +6,15 @@
     <link rel="stylesheet" type="text/css" href="styles/headerAndFooter.css">
     <link rel="stylesheet" type="text/css" href="styles/aboutusstyle.css">
     <link rel="stylesheet" type="text/css" href="styles/contactusstyle.css">
+    <link rel="stylesheet" type="text/css" href="styles/sidebar.css">
     <link rel="icon" type="image/png" href="images/icon.png"/>
 </head>
 <body>
-<?php include 'header.html'?>
+<?php include 'header.php'?>
 <?php include 'sidebar.html'?>
-
-<h1 style="padding: 10px; font-family: MainText;">Contact us</h1>
-<hr>
 <div class="wrapper">
-<div style="display: inline-block; margin: 20px; padding: 20px;">
+
+    <div style="display: inline-block; margin: 20px; padding: 20px;">
     <form class="form">
         <p class="name">
             <input type="text" name="name" id="name" placeholder="Your full name" />
