@@ -1,5 +1,6 @@
 h2 {
     color: #474E69;
+    font-family: MainText;
 }
 
 /* ===========================
@@ -21,6 +22,7 @@ textarea {
     height: 150px;
     max-width: 400px;
     line-height: 18px;
+    resize: none;
 }
 
 input:hover, textarea:hover,
@@ -57,4 +59,6 @@ input:focus, textarea:focus {
 }
 .wrapper {
     display: flex;
+    background-color: white;
+    height: 700px;
 }

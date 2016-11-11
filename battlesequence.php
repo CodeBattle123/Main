@@ -4,10 +4,8 @@
     <meta charset="utf-16">
     <title>About us</title>
     <link rel="stylesheet" type="text/css" href="styles/headerAndFooter.css">
-    <link rel="stylesheet" type="text/css" href="styles/aboutusstyle.css">
-    <link rel="stylesheet" type="text/css" href="styles/battlesequence.css">
     <link rel="stylesheet" type="text/css" href="styles/main.css">
-
+    <link rel="stylesheet" type="text/css" href="styles/battlesequence.css">
     <link rel="stylesheet" type="text/css" href="styles/sidebar.css">
     <link rel="icon" type="image/png" href="images/icon.png"/>
 </head>
@@ -16,7 +14,9 @@
 <?php include 'sidebar.html'?>
 
 <div class="wrapper">
-    asdasdasdasd
+    <div class="battle-screen">
+        asdsa
+    </div>
 </div>
 <?php include 'footer.html'?>
 </body>
