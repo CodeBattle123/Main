@@ -9,7 +9,7 @@
    <h1 class="header-title">CodeBattles</h1>
 
    <div class="nav">
-      <ul>
+      <ul id="list">
          <li><a href="#" class="tab">Register</a></li>
          <li><a href="#" class="tab">Login</a></li>
       </ul>
