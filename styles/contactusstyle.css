@@ -8,7 +8,7 @@ h2 {
 }
 
 /* ===========================
-   ====== Contact Form ======= 
+   ====== Contact Form =======
    =========================== */
 
 input, textarea {
@@ -40,7 +40,7 @@ input:focus, textarea:focus {
 }
 
 /* ===========================
-   ====== Submit Button ====== 
+   ====== Submit Button ======
    =========================== */
 
 .submit input {
@@ -53,10 +53,11 @@ input:focus, textarea:focus {
     -webkit-border-radius: 3px;
 }
 .map {
-    height: 500px;
-    width: 45%;
+    height: 485px;
+    width: 50%;
     display: inline-block;
     float: right;
+    border: 1px solid gray;
 }
 .wrapper {
     display: flex;
