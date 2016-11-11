@@ -1,0 +1,36 @@
+.sidebar{
+   font-family: MainText;
+   width: 20%;
+   display: block;
+   background-color:#0073A5;
+   min-height: 695px;
+   height: 100%;
+   float: left;
+   text-align: left;
+   padding-bottom: 20px;
+}
+
+.sidebar_container {
+   width: 100%;
+   list-style: none;
+}
+
+.link {
+   display: block;
+   text-transform: uppercase;
+   border-bottom: 1px solid #00A;
+   background-color:#0073A5;
+   height: 40px;
+   width: 100%;
+   line-height: 40px;
+   color: white;
+   text-decoration: none;
+}
+
+.link li {
+   margin-left: 20px;
+}
+
+.link:hover {
+   background-color:#322eff;
+}
