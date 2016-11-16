@@ -2,6 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86b0d762-ab71-414c-932a-7c35158a7b70" name="Default" comment="">
+<<<<<<< HEAD
+=======
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fonts/VCR.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/styles/homestyle2.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/php.xml" afterPath="$PROJECT_DIR$/.idea/php.xml" />
+>>>>>>> NikiBranch
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/styles/homestyle2.css" afterPath="$PROJECT_DIR$/styles/homestyle2.css" />
@@ -237,12 +243,20 @@
       <workItem from="1478939512830" duration="4211000" />
       <workItem from="1479298024115" duration="16000" />
       <workItem from="1479299514093" duration="629000" />
+<<<<<<< HEAD
       <workItem from="1479300566736" duration="6523000" />
+=======
+      <workItem from="1479300566736" duration="5716000" />
+>>>>>>> NikiBranch
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="11379000" />
+=======
+    <option name="totallyTimeSpent" value="10572000" />
+>>>>>>> NikiBranch
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1378" height="744" extended-state="0" />
