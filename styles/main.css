@@ -29,9 +29,10 @@
 }
 
 .wrapper {
-     background-color: white;
-     height: 700px;
+    background-color: white;
+    height: 700px;
     display: flex;
+    flex-direction: row;
 }
 
 hr {

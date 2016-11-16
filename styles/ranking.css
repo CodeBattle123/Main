@@ -1,99 +1,102 @@
 .desc {
-   z-index: -1;
-
-   width: 100%;
-
-   margin: 20px auto;
-
-   text-align: center;
-   font-family: MainText;
+    display: block;
+    width: 100%;
+    margin: 20px auto;
+    text-align: center;
+    font-family: Text;
 }
 
 .ranking-container {
-   display: flex;
-   flex-direction: column;
+    width: 80%;
 
-   height: 800px;
+    display: flex;
+    flex-direction: column;
 
-   overflow-y: auto;
-   overflow-x: hidden;
+    height: 800px;
 
-   margin: 20px auto 50px auto;
+    overflow-y: auto;
+    overflow-x: hidden;
 
-   position: relative;
+    margin: 20px auto 0 auto;
 
-   background: #FFF;
-   border-bottom: 1px solid black;
+    position: relative;
 
-   font-family: Text;
+    background: #FFF;
+    border-bottom: 1px solid black;
+
+    font-family: Text;
 }
 
 .ranking-container:last-child {
-   border: none;
+    border: none;
 }
 
 .ranking-container::-webkit-scrollbar {
-   width: 12px;
+    width: 12px;
 }
 
 .ranking-container::-webkit-scrollbar-track {
-   background-color: #EEE;
+    background-color: #EEE;
 }
 
 .ranking-container::-webkit-scrollbar-thumb {
-   background-color: #999;
+    background-color: #999;
 }
 
 .ranking-container::-webkit-scrollbar-thumb:hover {
-   background-color: #AAA;
+    background-color: #AAA;
 }
 
 .user {
-   font-size: 1.5vw;
-   padding: 15px;
-   height: 35px;
-   border-top: 1px solid black;
-   border-left: 1px solid black;
-   border-bottom: 4px solid black;
+    font-size: 1.5vw;
+    padding: 15px;
+    height: 35px;
+    border-top: 1px solid black;
+    border-bottom: 4px solid black;
 }
 
 @media all and (max-width:1000px) {
    .user, .desc_user {
-      font-weight: bolder;
-      font-size: 10px;
+        font-weight: bolder;
+        font-size: 10px;
    }
 
    .desc_user {
-      margin-bottom: 20px;
+        margin-bottom: 20px;
    }
 
    .left, .right {
-      width: 30%;
+        width: 30%;
    }
 }
 
-@media all and (max-width:500px) {
-   .desc_left, .desc_right {
-      width: 100px;
-   }
+@media all and (max-width:600px) {
+    .ranking-container {
+        width: 92%;
+        margin: 20px;
+    }
+
+    .desc_left, .desc_right {
+        width: 100px;
+    }
 
    .desc_right {
-      position: relative;
-      right: -30px;
+        position: relative;
+        right: -30px;
    }
 
    .left, .right {
-      width: 100px;
+       width: 100px;
    }
 
    .user {
-      height: 50px;
+        height: 50px;
    }
 }
 
 .desc_left {
-   display: inline-block;
-   float: left;
+        display: inline-block;
+        float: left;
 }
 
 .desc_right {
