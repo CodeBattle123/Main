@@ -4,6 +4,7 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Ranking</title>
+      <link rel="stylesheet" href="styles/main.css">
       <link rel="stylesheet" href="styles/headerAndFooter.css" />
       <link rel="stylesheet" href="styles/ranking.css" />
       <link rel="stylesheet" href="styles/sidebar.css" media="screen" title="no title">
@@ -13,12 +14,9 @@
       <?php include_once('sidebar.html'); ?>
 
       <main>
-
-         <div class="desc">
-            <h2>TOP RANKING</h2>
-         </div>
-
          <div class="ranking-container">
+            <h2 class="desc">TOP RANKING</h2>
+
             <div class="desc_user">
                <div class="desc_left">
                   <h4 class="desc-name">Name:</h4>
@@ -306,7 +304,7 @@
             </div>
          </div>
 
-      </main>
+     </main>
 
       <?php include_once('footer.html'); ?>
    </body>

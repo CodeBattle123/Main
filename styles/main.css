@@ -29,9 +29,9 @@
 }
 
 .wrapper {
-     background-color: white;
-     height: 700px;
-    display: flex;
+    background-color: white;
+    height: 700px;
+    display: block;
 }
 
 hr {
