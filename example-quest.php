@@ -5,43 +5,30 @@
     <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js'></script>
     <link rel="stylesheet" href="styles/example-quest-style.css">
     <link rel="stylesheet" href="styles/sidebar.css">
+    <link rel="stylesheet" href="styles/main.css">
     <meta charset="UTF-8">
     <title>quests</title>
 </head>
 <body>
 <?php include 'header.php' ?>
 <?php include 'sidebar.html' ?>
-<div id="ex-quest-outer">
+<div class="wrapper">
+    <h1 class="langName">Test Your Ruby Skills</h1>
+    <h3 class="level">Level 1/10</h3>
 
-    <h1 id="ex-quest-h1">Test Your Ruby Skills</h1>
-    <h3 id="ruby-level">Level 1/10</h3>
-
-    <div id="ex-quest-div">
-
-        <div style="margin-left: 10%;padding-top: 5%">
-
-            <h4 id="ex-quest-h4">Fill Blanks to Print Numbers 1 to 10 </h4>
-
+    <div class="questContainer">
+            <h4 class="objective">Fill Blanks to Print Numbers 1 to 10 </h4>
             <div id="counter"></div>
-            <p id="ex-quest-p">
-                &ltirb&gt <br>
-                <br>
-                i=1 <br>
-                <input type="text" id="ex-quest-input-1" class="inputs-demo" style="width: 60px"> i<11 <br>
-                <input type="text" id="ex-quest-input-2" class="inputs-demo" style="width: 60px"> "i: ", i ,"\n" <br>
-                i <input type="text" id="ex-quest-input-3" class="inputs-demo" style="width: 60px"> 1 <br>
-                end <br>
-                <br>
-
-
-                &lt/irb&gt
-            </p>
-
+            <pre class="quest">
+                <span>i=1</span><!-- <span>&lt;irb&gt;</span> -->
+                <input type="text" id="ex-quest-input-1" class="input" style="width: 60px" ><span>i<11</span></input>
+                <input type="text" id="ex-quest-input-2" class="input" style="width: 60px" cols="3"><span>"i: ", i ,"\n"</span></input>
+                <span>i</span><input type="text" id="ex-quest-input-3" class="input" style="width: 60px" ><span>1</span></input>
+                <span>end</span><!-- <span>&lt;/irb&gt;</span> -->
+            </pre>
 
             <input type="button" id="btn-submit-quest-example" value="check"> <br>
-
-            Result: <span id="example-quest-result"></span>
-        </div>
+            Result: <span id="result"></span>
     </div>
 </div>
 
@@ -98,4 +85,3 @@
 <?php include_once('footer.html'); ?>
 </body>
 </html>
-
