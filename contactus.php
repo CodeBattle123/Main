@@ -14,22 +14,20 @@
 <?php include 'sidebar.html'?>
 
 <div class="wrapper">
-
-    <div style="display: inline-block; margin: 20px; padding: 20px;">
     <form class="form">
         <p class="name">
+            <label for="name">Name</label><br>
             <input type="text" name="name" id="name" placeholder="Your full name" />
-            <label for="name">Name</label>
         </p>
 
         <p class="email">
+            <label for="email">Email</label><br>
             <input type="text" name="email" id="email" placeholder="Your email" />
-            <label for="email">Email</label>
         </p>
 
         <p class="web">
+            <label for="web">Subject</label><br>
             <input type="text" name="subject" id="subject" placeholder="Subject" />
-            <label for="web">Subject</label>
         </p>
 
         <p class="text">
@@ -41,8 +39,7 @@
         </p>
     </form>
 
-</div>
-<iframe  frameborder="0" class="map" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJtxmnpMyFqkAR11jn2Lz8U98&key=AIzaSyAveHIKy7pEHie0CkXQRzdsRQXE4tvenSg" allowfullscreen></iframe>
+    <iframe  frameborder="0" class="map" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJtxmnpMyFqkAR11jn2Lz8U98&key=AIzaSyAveHIKy7pEHie0CkXQRzdsRQXE4tvenSg" allowfullscreen></iframe>
 </div>
 <?php include 'footer.html'?>
 </body>

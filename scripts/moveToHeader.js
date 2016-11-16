@@ -1,21 +1,22 @@
 /**
  * Created by AsenJ.Mihaylov on 11/11/2016.
  */
-let screen = $(window).width();
-let list = document.getElementById('list');
-let active = false;
 
-function moveTo() {
-    "use strict";
 
-    console.log(screen);
+let isActivated = false;
 
-    if (screen.width <= 600 && active != true) {
-        active = true;
-        let entry = document.createElement('li');
-        list.appendChild(entry);
+function moveToHeader() {
+
+    if ($('body').width() <= 600 ) {
+        if (isActivated == false) {
+            isActivated = true;
+
+            var listChildren = $('#sidebarList').children();
+
+            console.log(listChildren[0]);
+        }
     }
-    else {
-        active = false;
+    else{
+        isActivated = false;
     }
 }

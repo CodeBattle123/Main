@@ -3,16 +3,17 @@
 <head>
     <meta charset="utf-16">
     <title>About us</title>
-    <link rel="stylesheet" type="text/css" href="styles/headerAndFooter.css">
     <link rel="stylesheet" type="text/css" href="styles/aboutusstyle.css">
     <link rel="stylesheet" type="text/css" href="styles/sidebar.css">
+    <link rel="stylesheet" type="text/css" href="styles/headerAndFooter.css">
+
     <link rel="icon" type="image/png" href="images/icon.png"/>
     <script type="text/javascript" src="scripts/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="scripts/pagejump.js"></script>
     <script type="text/javascript" src="scripts/switch.js"></script>
     <script type="text/javascript" src="scripts/moveToHeader.js"></script>
 </head>
-<body onresize="moveTo()">
+<body onresize="moveToHeader()">
 <?php include 'header.php' ?>
 <?php include 'sidebar.html' ?>
 

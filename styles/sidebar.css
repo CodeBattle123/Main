@@ -13,11 +13,18 @@
    list-style: none;
 }
 
+.sidebar_container li {
+   padding-left: 20px;
+   border-bottom: 1px solid #3cb0fd;
+}
+
+.sidebar_container li:hover{
+   background-color: #3cb0fd;
+}
+
 .link {
    display: block;
    text-transform: uppercase;
-   border-bottom: 1px solid #3cb0fd;
-   background-color:#0073A5;
    height: 40px;
    width: 100%;
    line-height: 40px;
@@ -26,11 +33,7 @@
 }
 
 .link li {
-   margin-left: 20px;
-}
-
-.link:hover {
-   background-color: #3cb0fd;
+   width: 100%;
 }
 
 @media screen and (max-width: 600px){

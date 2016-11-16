@@ -16,7 +16,7 @@
 body {
    padding-top: 100px;
    width: 100%;
-   background: #0073A5; 
+   background: #0073A5;
 }
 
 body::-webkit-scrollbar {
@@ -131,10 +131,9 @@ header {
 
 .contacts {
    display: inline-block;
-   position: relative;;
+   position: relative;
    float: right;
    margin-right: 100px;
-   margin-top: 10px;
 }
 
 .contacts ul {
@@ -183,7 +182,7 @@ header {
       border-radius: 0;
       border-bottom: 1px solid black;
    }
-   
+
    .tab {
       text-align: left;
    }
