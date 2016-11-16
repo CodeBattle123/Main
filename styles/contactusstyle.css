@@ -7,6 +7,15 @@ h2 {
    ====== Contact Form =======
    =========================== */
 
+.wrapper {
+    padding: 20px;
+}
+
+.form {
+    display: block;
+    margin: 20px;
+}
+
 input, textarea {
     padding: 10px;
     border: 1px solid gray;
@@ -18,11 +27,33 @@ input, textarea {
 }
 
 textarea {
-    width: 400px;
     height: 150px;
-    max-width: 400px;
+    width: 30vw;
     line-height: 18px;
     resize: none;
+}
+
+@media screen and (max-width:800px){
+    textarea, input {
+        width: 95%;
+    }
+
+    .form {
+        padding: 0;
+    }
+
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        padding: 0;
+    }
+
+    .map {
+        margin: 0 auto;
+        width: 95%;
+        display: block;
+    }
 }
 
 input:hover, textarea:hover,
@@ -51,14 +82,12 @@ input:focus, textarea:focus {
 }
 .map {
     height: 460px;
-    width: 50%;
-    display: inline-block;
-    float: right;
+    width: 95%;
+    display: block;
     border: 1px solid gray;
-    margin-top: 25px;
+    margin: 0 auto 15px auto;
 }
 .wrapper {
     display: flex;
     background-color: white;
-    height: 700px;
 }

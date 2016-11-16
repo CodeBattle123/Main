@@ -1,12 +1,12 @@
 .aboutWrapper {
    display: block;
-    background-color: white;
-    height: 700px;
-    overflow-y: scroll;
-    display: block;
-    text-align: center;
-    margin: 0 0 0 15px;
-    padding: 30px;
+   background-color: white;
+   height: 700px;
+   overflow-y: scroll;
+   display: block;
+   text-align: center;
+   margin: 0 0 0 15px;
+   padding: 30px;
 }
 
 .aboutWrapper::-webkit-scrollbar {
