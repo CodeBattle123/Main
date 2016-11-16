@@ -51,6 +51,7 @@ textarea {
 
     .map {
         margin: 0 auto;
+        height: 350px;
         width: 95%;
         display: block;
     }
@@ -81,7 +82,7 @@ input:focus, textarea:focus {
     -webkit-border-radius: 3px;
 }
 .map {
-    height: 460px;
+    height: 30vw;
     width: 95%;
     display: block;
     border: 1px solid gray;
