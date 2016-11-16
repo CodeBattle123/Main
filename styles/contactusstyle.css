@@ -91,3 +91,6 @@ input:focus, textarea:focus {
     display: flex;
     background-color: white;
 }
+p {
+    padding-bottom: 30px;
+}
