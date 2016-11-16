@@ -21,7 +21,7 @@
     </div>
     <div class="content">
         <h1>Welcome!</h1><hr>
-            <input type="button" value="Join The Battle" id="btn-home-join">
+        <a href="#" id="btn-home-join">Join The Battle</a>
     </div>
 </div>
 
