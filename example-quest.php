@@ -3,36 +3,48 @@
 <head>
     <link rel="stylesheet" href="styles/headerAndFooter.css">
     <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js'></script>
-    <link rel="stylesheet" href="styles/example-quest-style.css">
     <link rel="stylesheet" href="styles/sidebar.css">
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/example-quest-style.css">
     <meta charset="UTF-8">
-    <title>quests</title>
+    <title>Quests</title>
+
 </head>
 <body>
 <?php include 'header.php' ?>
 <?php include 'sidebar.html' ?>
+
 <div class="wrapper">
-    <h1 class="langName">Test Your Ruby Skills</h1>
-    <h3 class="level">Level 1/10</h3>
-
     <div class="questContainer">
-            <h4 class="objective">Fill Blanks to Print Numbers 1 to 10 </h4>
-            <div id="counter"></div>
-            <pre class="quest">
-                <span>i=1</span><!-- <span>&lt;irb&gt;</span> -->
-                <input type="text" id="ex-quest-input-1" class="input" style="width: 60px" ><span>i<11</span></input>
-                <input type="text" id="ex-quest-input-2" class="input" style="width: 60px" cols="3"><span>"i: ", i ,"\n"</span></input>
-                <span>i</span><input type="text" id="ex-quest-input-3" class="input" style="width: 60px" ><span>1</span></input>
-                <span>end</span><!-- <span>&lt;/irb&gt;</span> -->
-            </pre>
+        <h1 class="langName">Test Your <span>Ruby</span> Skills</h1>
+        <h3 class="level">Level 1/10</h3>
+        <hr>
+        <h4 class="objective">Fill Blanks to Print Numbers 1 to 10 </h4>
+        <div id="counter"></div>
 
-            <input type="button" id="btn-submit-quest-example" value="check"> <br>
-            Result: <span id="result"></span>
+        <pre class="quest">
+            <span>i=1</span><!-- <span>&lt;irb&gt;</span> -->
+            <input type="text" id="ex-quest-input-1" class="input" maxlength="5"><span> i&lt;11 </span></input>
+                <input type="text" id="ex-quest-input-2" class="input" maxlength="5"><span>"i: ", i ,"\n"</span></input>
+                <span>i</span><input type="text" id="ex-quest-input-3" class="input" maxlength="2"><span>1</span></input>
+            <span>end</span><!-- <span>&lt;/irb&gt;</span> -->
+        </pre>
+
+        <input type="button" id="btn-submit-quest-example" value="check"> <br>
+        Result: <span id="result"></span>
     </div>
 </div>
 
-<script>
+<script type="text/javascript">
+    let inputs = document.getElementsByClassName('input');
+
+    for(item of inputs) {
+        item.style.width = (item.maxLength * 11) + 'px';
+    }
+
+</script>
+
+<!-- <script>
     function countdown() {
         var seconds = 60;
         function tick() {
@@ -80,7 +92,7 @@
     $('#btn-submit-quest-example').click(function () {
         document.getElementById('example-quest-result').textContent = CalcResult();
     });
-</script>
+</script> -->
 
 <?php include_once('footer.html'); ?>
 </body>

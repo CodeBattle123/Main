@@ -1,0 +1,65 @@
+hr {
+    border: 1px solid black;
+    background: black;
+}
+
+.questContainer {
+    width: 100%;
+}
+
+
+.langName, .level, .objective, #counter, .quest{
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-family: Text;
+    width: 100%;
+    padding: 0;
+    margin: 15px auto;
+    text-align: center;
+}
+
+.langName {
+    text-decoration: underline;
+}
+
+#counter {
+    font-weight: bolder;
+    font-size: 30px;
+}
+
+.objective {
+    text-align: left;
+    width: 70%;
+    margin-left: 20px;
+    letter-spacing: normal;
+    word-spacing: 5px;
+}
+
+.quest {
+    border-bottom: 1px solid gray;
+
+    text-align: left;
+
+    letter-spacing: 4px;
+    text-align: left;
+    line-height: 25px;
+}
+
+.langName span {
+    color: rgb(89, 0, 64);
+    font-size: 35px;
+}
+
+.input {
+    font-weight: bold;
+    font-family: Text;
+    letter-spacing: 3px;
+    padding-left: 3px;
+    background-color: none;
+    border: none;
+    border-bottom: 2px solid rgb(78, 78, 78);
+}
+
+.input:focus {
+    outline: none;
+}
