@@ -1,0 +1,98 @@
+hr {
+    border: 1px solid black;
+    background: black;
+}
+
+.questContainer {
+    width: 100%;
+}
+
+.codeContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.langName, .level, .objective, #counter, .quest{
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-family: Text;
+    width: 100%;
+    padding: 0;
+    margin: 15px auto;
+    text-align: center;
+}
+
+.langName {
+    text-decoration: underline;
+}
+
+.objective {
+    width: auto;
+    margin-left: 25px;
+    text-align: left;
+    letter-spacing: normal;
+    word-spacing: 5px;
+}
+
+.quest {
+    width: 49%;
+    display: inline-block;
+
+    border-bottom: 1px solid gray;
+
+    letter-spacing: 4px;
+    text-align: left;
+    line-height: 25px;
+    padding: 0;
+    margin: 0;
+}
+
+.langName span {
+    color: rgb(89, 0, 64);
+    font-size: 35px;
+}
+
+.input {
+    font-weight: bold;
+    font-family: Text;
+    letter-spacing: 3px;
+    padding-left: 5px;
+    background-color: none;
+    border: none;
+    border-bottom: 2px solid rgb(78, 78, 78);
+}
+
+.input:focus {
+    outline: none;
+}
+
+#counter {
+    font-weight: bolder;
+    font-size: 30px;
+
+    margin: 0;
+
+    width: 49%;
+    height: 151px;
+
+    position: relative;
+
+    display: inline-block;
+
+    border-bottom: 1px solid black;
+}
+
+.checkButton {
+    border: 0;
+    width: 75px;
+    height: 30px;
+    display: inline-block;
+}
+
+#result {
+    display: inline-block;
+
+    font-family: Text;
+    font-size: 25px;
+    font-weight: bold;
+}

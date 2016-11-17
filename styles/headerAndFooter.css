@@ -63,7 +63,7 @@ header {
    font-size: 5vw;
    position: relative;
    top: 10px;
-   font-family: MainText;
+   font-family: Sidebar;
    display: inline-block;
    color: #FFF;
 }
@@ -109,6 +109,8 @@ header {
    position: relative;
 
    font-family: Text;
+   font-weight: bold;
+   letter-spacing: 2px;
 
    background-color: #0073A5;
 }
@@ -122,7 +124,7 @@ header {
    margin: 20px 15px 0px 25px;
 }
 .cpheader {
-   font-family: MainText;
+   font-family: Text;
    position: absolute;
    top: 50px;
    font-size: 20px;
@@ -143,6 +145,7 @@ header {
    position: relative;
    float: right;
    margin-right: 100px;
+   margin-top: 10px;
 }
 
 .contacts ul {
