@@ -50,7 +50,8 @@
         function tick() {
             var counter = document.getElementById("counter");
             seconds--;
-            counter.innerHTML = "0:" + (seconds < 10 ? "0" : "") + String(seconds);
+            counter.innerHTML = "0:" + (seconds < 10 ? "0" : "") + String(seconds)
+                +"<br><input type='button' class='checkButton' id='btn-submit-quest-example' value='check'> <br> <span id='result'>Result: </span>";
             if (seconds > 0) {
                 let t = setTimeout(tick, 1000);
                 $('#btn-submit-quest-example').click(function () {
