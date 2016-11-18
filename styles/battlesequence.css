@@ -1,0 +1,7 @@
+.battle-screen {
+    width: 80%;
+    height: 500px;
+    border-radius: 10px;
+    border: 2px solid gray;
+    margin: 20px;
+}

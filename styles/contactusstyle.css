@@ -1,0 +1,97 @@
+h2 {
+    color: #474E69;
+    font-family: MainText;
+}
+
+/* ===========================
+   ====== Contact Form =======
+   =========================== */
+
+.wrapper {
+    padding: 20px;
+}
+
+.form {
+    display: block;
+    margin: 20px;
+}
+
+input, textarea {
+    padding: 10px;
+    border: 1px solid gray;
+    width: 200px;
+    color: #999999;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;
+}
+
+textarea {
+    height: 150px;
+    width: 30vw;
+    line-height: 18px;
+    resize: none;
+}
+
+@media screen and (max-width:800px){
+    textarea, input {
+        width: 95%;
+    }
+
+    .form {
+        padding: 0;
+    }
+
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        padding: 0;
+    }
+
+    .map {
+        margin: 0 auto;
+        height: 350px;
+        width: 95%;
+        display: block;
+    }
+}
+
+input:hover, textarea:hover,
+input:focus, textarea:focus {
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px;
+}
+
+.form label {
+    color: gray;
+}
+
+/* ===========================
+   ====== Submit Button ======
+   =========================== */
+
+.submit input {
+    width: 100px;
+    height: 40px;
+    background-color: #0073A5;
+    color: #FFF;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+}
+.map {
+    height: 30vw;
+    width: 95%;
+    display: block;
+    border: 1px solid gray;
+    margin: 0 auto 15px auto;
+}
+.wrapper {
+    display: flex;
+    background-color: white;
+}
+p {
+    padding-bottom: 30px;
+}
