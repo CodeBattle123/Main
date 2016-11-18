@@ -1,169 +1,22 @@
-.desc {
-    display: block;
+table{
     width: 100%;
-    margin: 20px auto;
-    text-align: center;
-    font-family: Text;
+    border-collapse: collapse;
+}
+td {
+    border-bottom: 1px solid #ddd;
+    /*padding: 10px;*/
+}
+tr:nth-child(even) {
+    background-color: #f2f2f2;
 }
 
-.ranking-container {
-    width: 80%;
-
-    display: flex;
-    flex-direction: column;
-
-    height: 800px;
-
-    overflow-y: auto;
-    overflow-x: hidden;
-
-    margin: 20px auto 0 auto;
-
-    position: relative;
-
-    background: #FFF;
-    border-bottom: 1px solid black;
-
-    font-family: Text;
+tr, td {
+    max-height: 30px;
+    line-height: 30px;
 }
 
-.ranking-container:last-child {
-    border: none;
-}
-
-.ranking-container::-webkit-scrollbar {
-    width: 12px;
-}
-
-.ranking-container::-webkit-scrollbar-track {
-    background-color: #EEE;
-}
-
-.ranking-container::-webkit-scrollbar-thumb {
-    background-color: #999;
-}
-
-.ranking-container::-webkit-scrollbar-thumb:hover {
-    background-color: #AAA;
-}
-
-.user {
-    font-size: 1.5vw;
-    padding: 15px;
-    height: 35px;
-    border-top: 1px solid black;
-    border-bottom: 4px solid black;
-}
-
-@media all and (max-width:1000px) {
-   .user, .desc_user {
-        font-weight: bolder;
-        font-size: 10px;
-   }
-
-   .desc_user {
-        margin-bottom: 20px;
-   }
-
-   .left, .right {
-        width: 30%;
-   }
-}
-
-@media all and (max-width:600px) {
-    .ranking-container {
-        width: 92%;
-        margin: 20px;
-    }
-
-    .desc_left, .desc_right {
-        width: 100px;
-    }
-
-   .desc_right {
-        position: relative;
-        right: -30px;
-   }
-
-   .left, .right {
-       width: 100px;
-   }
-
-   .user {
-        height: 50px;
-   }
-}
-
-.desc_left {
-        display: inline-block;
-        float: left;
-}
-
-.desc_right {
-   display: inline-block;
-   float: right;
-}
-
-.left {
-   display: inline-block;
-   float: left;
-}
-
-.right {
-   display: inline-block;
-   float: right;
-}
-
-.avatar, .name, .clan, .rank, .exp {
-   display: inline-block;
-   margin: 5px;
-   color: black;
-}
-
-.avatar {
-   position: relative;
-   height: 30px;
-   width: 30px;
-   top: -10px;
-}
-
-.avatar, .name {
-   float: left;
-}
-
-.clan, .rank {
-   float: right;
-}
-
-/*------------------------------------------------*/
-
-.desc_user {
-   height: 35px;
-   color: rgb(213, 213, 213);
-   border-top: 2px solid black;
-}
-
-.desc_left {
-   margin-left: 50px;
-}
-
-.desc_left, .desc_right {
-   height: 100%;
-}
-
-.desc-name, .desc_clan, .desc_rank, .desc_exp {
-   display: inline-block;
-   margin: 10px 15px 0px 15px;
-   color: black;
-}
-
-.desc_avatar {
-   position: relative;
-   top: -10px;
-}
-
-.desc_avatar, .desc_name {
-   float: left;
+td img {
+  vertical-align: middle;
 }
 
 
