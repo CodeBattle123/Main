@@ -1,277 +1,227 @@
 @font-face {
-   font-family: MainText;
-   src: url(../fonts/aspace_demo.otf);
+    font-family: MainText;
+    src: url(../fonts/aspace_demo.otf);
 }
-
 @font-face {
-   font-family: Text;
-   src: url(../fonts/LLPIXEL3.ttf);
+    font-family: Text;
+    src: url(../fonts/LLPIXEL3.ttf);
 }
-
 @font-face {
-   font-family: Sidebar;
-   src: url(../fonts/Kemco.ttf);
+    font-family: Sidebar;
+    src: url(../fonts/Kemco.ttf);
 }
-
 @font-face {
-   font-family: Content;
-   src: url(../fonts/VCR.ttf);
+    font-family: Content;
+    src: url(../fonts/VCR.ttf);
 }
 * {
-   padding:0;
-   margin: 0;
+    padding: 0;
+    margin: 0;
 }
-
 body {
-   padding-top: 100px;
-   width: 100%;
-   background: #0073A5;
+    padding-top: 100px;
+    width: 100%;
+    background: #0073A5;
 }
-
 body::-webkit-scrollbar {
-   width: 20px;
+    width: 20px;
 }
-
 body::-webkit-scrollbar-thumb {
-   background-color: #cccccc;
+    background-color: #cccccc;
 }
-
 body::-webkit-scrollbar-track {
-   background-color: #555;
+    background-color: #555;
 }
-
 header {
-   position: fixed;
-   z-index: 5;
-   top: 0px;
-   width: 100%;
-   height: 60px;
-   padding: 20px;
-   background:#0073A5;
-   font-family: MainText;
-   /*#0073A5*/
+    position: fixed;
+    z-index: 5;
+    top: 0px;
+    width: 100%;
+    height: 60px;
+    padding: 20px;
+    background: #0073A5;
+    font-family: MainText;
+    /*#0073A5*/
 }
-
 .logo {
-   display: inline-block;
-   float: left;
-   margin-right: 15px;
+    display: inline-block;
+    float: left;
+    margin-right: 15px;
 }
-
 .header-title {
-   line-height: 60px;
-   font-size: 5vw;
-   position: relative;
-   top: 10px;
-   font-family: Sidebar;
-   display: inline-block;
-   color: #FFF;
+    line-height: 60px;
+    font-size: 5vw;
+    position: relative;
+    top: 10px;
+    font-family: Sidebar;
+    display: inline-block;
+    color: #FFF;
 }
-
 .nav {
-   margin-right: 30px;
-   display: block;
-   float: right;
-   list-style: none;
+    margin-right: 30px;
+    display: block;
+    float: right;
+    list-style: none;
 }
-
 .nav li {
-   display: inline-block;
+    display: inline-block;
 }
-
 .tab {
-   border-radius: 5px;
-   background-color: rgb(148, 148, 148);
-   color: white;
-   line-height: 40px;
-   margin-top: 10px;
-   margin-right: 10px;
-   text-align: center;
-   display: inline-block;
-   position: relative;
-   min-width: 6vw;
-   height: 6vh;
-   text-decoration: none;
-   padding: 0 10px;
+    border-radius: 5px;
+    background-color: rgb(148, 148, 148);
+    color: white;
+    line-height: 40px;
+    margin-top: 10px;
+    margin-right: 10px;
+    text-align: center;
+    display: inline-block;
+    position: relative;
+    min-width: 6vw;
+    height: 6vh;
+    text-decoration: none;
+    padding: 0 10px;
 }
-
 .logo {
-   height: 60px;
-   width: 60px;
+    height: 60px;
+    width: 60px;
 }
-
 /*------------------------------------------------------------------------------------ */
 
 .mainFooter {
-   width: 100%;
-   height: 110px;
-
-   position: relative;
-
-
-   font-family: Text;
-   font-weight: bold;
-   letter-spacing: 2px;
-
-   background-color: #0073A5;
-
-   clear: both;
+    width: 100%;
+    height: 110px;
+    position: relative;
+    font-family: Text;
+    font-weight: bold;
+    letter-spacing: 2px;
+    background-color: #0073A5;
+    clear: both;
 }
-
 .flogo {
-   display: inline-block;
-
-   width: 70px;
-   height: 70px;
-
-   margin: 20px 15px 0px 25px;
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    margin: 20px 15px 0px 25px;
 }
 .cpheader {
-   font-family: Text;
-   position: absolute;
-   top: 50px;
-   font-size: 20px;
-   display: inline-block;
+    font-family: Text;
+    position: absolute;
+    top: 50px;
+    font-size: 20px;
+    display: inline-block;
 }
-
 .contact-image {
-   width: 25px;
-   height: 25px;
-
-   display: inline-block;
-   position: relative;
-   top: 5px;
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    position: relative;
+    top: 5px;
 }
-
 .contacts {
-   display: inline-block;
-   position: relative;
-   float: right;
-   margin-right: 100px;
-   margin-top: 10px;
+    display: inline-block;
+    position: relative;
+    float: right;
+    margin-right: 100px;
+    margin-top: 10px;
 }
-
 .contacts ul {
-   list-style: none;
+    list-style: none;
 }
-
 .contacts h2 {
-   display: block;
+    display: block;
 }
-
 .contact-links {
-   display: inline-block;
-   color: #FFF;
-   text-decoration: none;
+    display: inline-block;
+    color: #FFF;
+    text-decoration: none;
 }
-
-
-
 /*------------  ANIMATIONS --------------*/
 
-@media screen and (max-width:800px) {
-   .header-title {
-      font-size: 7vw;
-   }
-
-
-   .nav ul{
-      display: none;
-      position: relative;
-      top: -20px;
-      right: 250px;
-      overflow: hidden;
-      width: 300px;
-   }
-
-   .nav:active ul,
-   .nav ul:hover,
-   .nav ul.focus{
-      display: block;
-   }
-
-   .nav ul li, .tab{
-      background-color: rgba(0, 115, 165, 0.5);
-      display: block;
-      width: 100%;
-      margin: 0;
-      border-radius: 0;
-      border-bottom: 1px solid black;
-   }
-
-   .tab {
-      text-align: left;
-   }
-
-   .tab:hover {
-      background-color: rgba(0, 171, 238, 0.75);
-   }
-
-   .nav {
-      width: 7vw;
-      height: 7vw;
-      background:#ffffff url("../images/threelines.png") no-repeat center;
-      background-size: contain;
-   }
-
+@media screen and (max-width: 800px) {
+    .header-title {
+        font-size: 7vw;
+    }
+    .nav ul {
+        display: none;
+        position: relative;
+        top: -20px;
+        right: 250px;
+        overflow: hidden;
+        width: 300px;
+    }
+    .nav:active ul,
+    .nav ul:hover,
+    .nav ul.focus {
+        display: block;
+    }
+    .nav ul li,
+    .tab {
+        background-color: rgba(0, 115, 165, 0.5);
+        display: block;
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+        border-bottom: 1px solid black;
+    }
+    .tab {
+        text-align: left;
+    }
+    .tab:hover {
+        background-color: rgba(0, 171, 238, 0.75);
+    }
+    .nav {
+        width: 7vw;
+        height: 7vw;
+        background: #ffffff url("../images/threelines.png") no-repeat center;
+        background-size: contain;
+    }
 }
-
-@media screen and (max-width:600px) {
-   .nav {
-      margin-top: 20px;
-   }
-
-   .mainFooter {
-      height: 200px;
-   }
-
-   .top{
-      display: inline-flex;
-      flex-direction: column;
-      flex-wrap: wrap;
-      align-items: center;
-   }
-
-   .flogo {
-      position: relative;
-      top: 10px;
-      display: block;
-      margin: 0 auto;
-   }
-
-   .cpheader {
-      position: relative;
-      top: 15px;
-      display: block;
-      text-align: center;
-      margin: 0 auto;
-   }
-
-   .contacts {
-      width: 100%;
-      position: absolute;
-      bottom: 10px;
-      margin-top: 10px;
-   }
-
-   .contacts h2 {
-      text-align: center;
-   }
-
-   .contacts ul {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      position: relative;
-   }
-
-   .contacts li {
-      margin: 0 10px;
-      display: inline-block;
-   }
+@media screen and (max-width: 600px) {
+    .nav {
+        margin-top: 20px;
+    }
+    .mainFooter {
+        height: 200px;
+    }
+    .top {
+        display: inline-flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    .flogo {
+        position: relative;
+        top: 10px;
+        display: block;
+        margin: 0 auto;
+    }
+    .cpheader {
+        position: relative;
+        top: 15px;
+        display: block;
+        text-align: center;
+        margin: 0 auto;
+    }
+    .contacts {
+        width: 100%;
+        position: absolute;
+        bottom: 10px;
+        margin-top: 10px;
+    }
+    .contacts h2 {
+        text-align: center;
+    }
+    .contacts ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        position: relative;
+    }
+    .contacts li {
+        margin: 0 10px;
+        display: inline-block;
+    }
 }
-
-.nav:hover .tab {
