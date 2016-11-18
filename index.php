@@ -14,7 +14,6 @@
 </head>
 <body>
 <?php include_once('header.php'); ?>
-<?php include_once('sidebar.html'); ?>
 
 <div class="wrapper">
     <div id="home-banner">

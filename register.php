@@ -61,14 +61,17 @@
     }
 ?>
 
-<div class="reg" style="margin: 0 auto">
-    <form class="" action="register.php" method="post">
-        Username: <input type="text" name="username" value=""><br>
-        Password: <input type="password" name="password" value=""><br>
-        Re-type: <input type="password" name="password2" value=""><br>
-        Email: <input type="email" name="email" value=""><br>
-        <input type="submit" name="submit" value="Register">
-    </form>
+
+<div class="wrapper">
+    <div class="reg" style="margin: 0 auto">
+        <form class="" action="register.php" method="post">
+            Username: <input type="text" name="username" value=""><br>
+            Password: <input type="password" name="password" value=""><br>
+            Re-type: <input type="password" name="password2" value=""><br>
+            Email: <input type="email" name="email" value=""><br>
+            <input type="submit" name="submit" value="Register">
+        </form>
+    </div>
 </div>
 
 <?php include_once('footer.html'); ?>

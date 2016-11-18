@@ -11,7 +11,6 @@
 </head>
 <body>
 <?php include 'header.php'?>
-<?php include 'sidebar.html'?>
 
 <div class="wrapper">
     <div style="display: inline-block; margin: 20px; padding: 20px;">
