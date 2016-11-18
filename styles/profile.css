@@ -1,7 +1,3 @@
-table{
-    border: solid black;
-}
-
 .wrapper{
     display: flex;
     flex-direction: column;
@@ -11,13 +7,54 @@ table{
     padding: 10px;
 
 }
-.profile{
+.profile-pic{
     margin-top: 10px;
-}
-.profileinfo{
-
-}
-.textarea{
-    padding: 10px;
+    margin-bottom: 10px;
 }
 
+.text{
+    border: solid black;
+    border-width: 2px;
+    padding: 20px;
+    margin: 40px;
+    width: 30%;
+    align-self: center;
+}
+
+.desc, .username{
+    display: block;
+    width: 100%;
+    margin: 20px auto;
+    text-align: center;
+    font-family: Text;
+}
+
+.table-history{
+    height: 400px;
+    overflow-y: scroll;
+}
+
+.match-history-table, .profileinfo{
+    border: groove;
+    border-left: transparent;
+    border-right: transparent;
+    border-bottom: transparent;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    border-left: transparent;
+    border-right: transparent;
+}
+
+td, th {
+
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
