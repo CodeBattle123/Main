@@ -3,13 +3,9 @@
    width: 20%;
    display: block;
    background-color:#0073A5;
-   min-height: 695px;
-   height: 100%;
+   min-height: 100%;
    float: left;
    text-align: left;
-
-   margin-right: 15px;
-   padding-bottom: 20px;
 }
 
 .sidebar_container {

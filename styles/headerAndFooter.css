@@ -16,6 +16,14 @@
 body {
    padding-top: 100px;
    width: 100%;
+   background-color:#0073A5;
+}
+
+.main {
+    width: 80%;
+    float: left;
+    background-color: white;
+    /*padding: 0px 0px 0px 10px; i will fix it -pavel */
 }
 
 header {
@@ -85,9 +93,10 @@ header {
    height: 110px;
 
    position: relative;
-   
+
 
    font-family: Text;
+   clear: both;
 
    background-color: #0073A5;
 }
@@ -138,6 +147,7 @@ header {
    color: #FFF;
    text-decoration: none;
 }
+
 
 
 /*------------  ANIMATIONS --------------*/
@@ -235,4 +245,32 @@ header {
    width: 100px;
    border-radius: 0px;
    text-align: right;
+}
+
+
+
+/*PAVEL; Dont touch this code,  */
+/* (\___/) */
+/* (='.'=) */
+/* (')_(')*/
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+td {
+    border-bottom: 1px solid #ddd;
+    /*padding: 10px;*/
+}
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr, td {
+    max-height: 30px;
+    line-height: 30px;
+}
+
+td img {
+  vertical-align: middle;
 }

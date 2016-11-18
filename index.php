@@ -3,6 +3,7 @@
 <head>
     <link rel="stylesheet" href="styles/headerAndFooter.css">
     <link rel="stylesheet" href="styles/homestyle.css">
+    <link rel="stylesheet" href="styles/sidebar.css">
     <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js'></script>
     <script type="text/javascript" src='scripts/home-script.js'></script>
     <script type="text/javascript" src='scripts/circulate.js'></script>

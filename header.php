@@ -1,9 +1,6 @@
 <?php
-
     include_once('db/connect.php');
 ?>
-
-
 
 <header>
    <a href="index.php"><img src="images/Logo.svg" alt="hlogo" class="logo"/></a>
@@ -16,3 +13,8 @@
       </ul>
    </div>
 </header>
+<?php
+
+    include_once('sidebar.html');
+?>
+<div class="main">
