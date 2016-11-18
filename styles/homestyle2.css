@@ -1,0 +1,38 @@
+#home-banner{
+    position: relative;
+    width: 100%;
+    height: 200px;
+    background-image: url("../images/banner.jpg");
+    display: inline-block;
+    float: right;
+}
+
+.content {
+    padding-top: 200px;
+    margin: 20px;
+    position: absolute;
+    float: left;
+}
+h1 {
+    font-family: MainText;
+    padding-bottom: 50px;
+}
+
+#btn-home-join{
+    padding-top: 20px;
+    font-family: MainText;
+    height: 100px;
+    width: 350px;
+    margin: 50px;
+    border: 3px solid ghostwhite;
+    background: #0073A5;
+    padding: 20px 40px;
+    border-radius: 20px;
+    color: white;
+    font-size: 30px;
+    text-decoration: none;
+    vertical-align: middle;
+}
+#btn-home-join:hover {
+    background: #3CB0FD;
+}

@@ -1,11 +1,12 @@
 .sidebar{
-   font-family: MainText;
+   font-family: Sidebar;
    width: 20%;
    display: block;
    background-color:#0073A5;
    min-height: 100%;
    float: left;
    text-align: left;
+   padding-bottom: 20px;
 }
 
 .sidebar_container {
@@ -13,11 +14,18 @@
    list-style: none;
 }
 
+.sidebar_container li {
+   padding-left: 20px;
+   border-bottom: 1px solid #3cb0fd;
+}
+
+.sidebar_container li:hover{
+   background-color: #3cb0fd;
+}
+
 .link {
    display: block;
    text-transform: uppercase;
-   border-bottom: 1px solid #00A;
-   background-color:#0073A5;
    height: 40px;
    width: 100%;
    line-height: 40px;
@@ -26,9 +34,11 @@
 }
 
 .link li {
-   margin-left: 20px;
+   width: 100%;
 }
 
-.link:hover {
-   background-color:#322eff;
+@media screen and (max-width: 600px){
+   .sidebar {
+      display: none;
+   }
 }

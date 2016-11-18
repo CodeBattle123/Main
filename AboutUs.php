@@ -3,16 +3,18 @@
 <head>
     <meta charset="utf-16">
     <title>About us</title>
-    <link rel="stylesheet" type="text/css" href="styles/headerAndFooter.css">
     <link rel="stylesheet" type="text/css" href="styles/aboutusstyle.css">
-    <link rel="stylesheet" href="styles/sidebar.css">
+    <link rel="stylesheet" type="text/css" href="styles/sidebar.css">
+    <link rel="stylesheet" type="text/css" href="styles/headerAndFooter.css">
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+
     <link rel="icon" type="image/png" href="images/icon.png"/>
     <script type="text/javascript" src="scripts/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="scripts/pagejump.js"></script>
     <script type="text/javascript" src="scripts/switch.js"></script>
-    <script type="text/javascript" src="scripts/sideBarHeight.js"></script>
+    <script type="text/javascript" src="scripts/moveToHeader.js"></script>
 </head>
-<body>
+<body onresize="moveToHeader()">
 <?php include 'header.php' ?>
 
    <div class="pagination-links">
@@ -26,7 +28,45 @@
       <section id="project" style="display: none;">
           <h1 align="center" style="font-family: MainText">About the project</h1><hr>
           <div class="about_text">
+              <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi consectetur corporis dicta magni nihil omnis possimus quibusdam quisquam sed. Atque consectetur exercitationem nemo nulla officiis quae, quis quisquam similique sin. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aspernatur aut consequatur, deleniti eligendi enim et expedita illo in itaque laboriosam molestias necessitatibus nihil provident rem sequi velit vitae voluptas.
               Lorem ipsum dolor sit amet, omittam repudiare at sed. Te eum sumo soleat feugait, eum te audire scribentur, scripta numquam oportere ea nec. Sit quas omnium invenire no, lorem doming graecis nec id, animal salutatus deterruisset cum id. Est cu utinam docendi inimicus. Sed no veniam diceret intellegam.
+              Eu quas eleifend laboramus mea, ei option quaeque dissentias pro. Porro integre ne ius, habeo verear vel ex, qui eligendi torquatos no. Sint inciderint sit cu, ea has meis legendos. Eu usu etiam voluptaria, et usu idque libris. Ei mei movet mucius.
+              Ei postea labitur mel, dictas petentium disputationi ad sea. Sit cibo dicant deseruisse cu, id summo viderer aliquando vis. Vel no malorum euismod, voluptatibus concludaturque te vix. Modo vidit intellegam his an.
+              Ea ius suas bonorum, id nec illum affert integre. Sit melius assueverit ea. No fugit atqui salutandi sea. Has te affert graecis percipit, sale alienum mea te. Ei vim diam tibique, duo in altera aeterno scripserit. At clita tritani pro, ne homero timeam nominavi vel.
+              Ea verear pericula instructior cum. In vel impedit salutatus abhorreant, alienum reprehendunt usu ei. Eu usu adhuc reque eirmod. No sed probo vocent veritus, deleniti splendide sadipscing ex nam. Cu iudico appellantur sit, mei et meis tincidunt consequuntur.
+              Lorem ipsum dolor sit amet, omittam repudiare at sed. Te eum sumo soleat feugait, eum te audire scribentur, scripta numquam oportere ea nec. Sit quas omnium invenire no, lorem doming graecis nec id, animal salutatus deterruisset cum id. Est cu utinam docendi inimicus. Sed no veniam diceret intellegam.
+              Eu quas eleifend laboramus mea, ei option quaeque dissentias pro. Porro integre ne ius, habeo verear vel ex, qui eligendi torquatos no. Sint inciderint sit cu, ea has meis legendos. Eu usu etiam voluptaria, et usu idque libris. Ei mei movet mucius.
+              Ei postea labitur mel, dictas petentium disputationi ad sea. Sit cibo dicant deseruisse cu, id summo viderer aliquando vis. Vel no malorum euismod, voluptatibus concludaturque te vix. Modo vidit intellegam his an.
+              Ea ius suas bonorum, id nec illum affert integre. Sit melius assueverit ea. No fugit atqui salutandi sea. Has te affert graecis percipit, sale alienum mea te. Ei vim diam tibique, duo in altera aeterno scripserit. At clita tritani pro, ne homero timeam nominavi vel.
+              Ea verear pericula instLorem ipsum dolor sit amet, omittam repudiare at sed. Te eum sumo soleat feugait, eum te audire scribentur, scripta numquam oportere ea nec. Sit quas omnium invenire no, lorem doming graecis nec id, animal salutatus deterruisset cum id. Est cu utinam docendi inimicus. Sed no veniam diceret intellegam.
+              Eu quas eleifend laboramus mea, ei option quaeque dissentias pro. Porro integre ne ius, habeo verear vel ex, qui eligendi torquatos no. Sint inciderint sit cu, ea has meis legendos. Eu usu etiam voluptaria, et usu idque libris. Ei mei movet mucius.
+              Ei postea labitur mel, dictas petentium disputationi ad sea. Sit cibo dicant deseruisse cu, id summo viderer aliquando vis. Vel no malorum euismod, voluptatibus concludaturque te vix. Modo vidit intellegam his an.
+              Ea ius suas bonorum, id nec illum affert integre. Sit melius assueverit ea. No fugit atqui salutandi sea. Has te affert graecis percipit, sale alienum mea te. Ei vim diam tibique, duo in altera aeterno scripserit. At clita tritani pro, ne homero timeam nominavi vel.
+              Ea verear pericula instructior cum. In vel impedit salutatus abhorreant, alienum reprehendunt usu ei. Eu usu adhuc reque eirmod. No sed probo vocent veritus, deleniti splendide sadipscing ex nam. Cu iudico appellantur sit, mei et meis tincidunt consequuntur.
+              Lorem ipsum dolor sit amet, omittam repudiare at sed. Te eum sumo soleat feugait, eum te audire scribentur, scripta numquam oportere ea nec. Sit quas omnium invenire no, lorem doming graecis nec id, animal salutatus deterruisset cum id. Est cu utinam docendi inimicus. Sed no veniam diceret intellegam.
+              Eu quas eleifend laboramus mea, ei option quaeque dissentias pro. Porro integre ne ius, habeo verear vel ex, qui eligendi torquatos no. Sint inciderint sit cu, ea has meis legendos. Eu usu etiam voluptaria, et usu idque libris. Ei mei movet mucius.
+              Ei postea labitur mel, dictas petentium disputationi ad sea. Sit cibo dicant deseruisse cu, id summo viderer aliquando vis. Vel no malorum euismod, voluptatibus concludaturque te vix. Modo vidit intellegam his an.
+              Ea ius suas bonorum, id nec illum affert integre. Sit melius assueverit ea. No fugit atqui salutandi sea. Has te affert graecis percipit, sale alienum mea te. Ei vim diam tibique, duo in altera aeterno scripserit. At clita tritani pro, ne homero timeam nominavi vel.
+              Ea verear pericula instLorem ipsum dolor sit amet, omittam repudiare at sed. Te eum sumo soleat feugait, eum te audire scribentur, scripta numquam oportere ea nec. Sit quas omnium invenire no, lorem doming graecis nec id, animal salutatus deterruisset cum id. Est cu utinam docendi inimicus. Sed no veniam diceret intellegam.
+              Eu quas eleifend laboramus mea, ei option quaeque dissentias pro. Porro integre ne ius, habeo verear vel ex, qui eligendi torquatos no. Sint inciderint sit cu, ea has meis legendos. Eu usu etiam voluptaria, et usu idque libris. Ei mei movet mucius.
+              Ei postea labitur mel, dictas petentium disputationi ad sea. Sit cibo dicant deseruisse cu, id summo viderer aliquando vis. Vel no malorum euismod, voluptatibus concludaturque te vix. Modo vidit intellegam his an.
+              Ea ius suas bonorum, id nec illum affert integre. Sit melius assueverit ea. No fugit atqui salutandi sea. Has te affert graecis percipit, sale alienum mea te. Ei vim diam tibique, duo in altera aeterno scripserit. At clita tritani pro, ne homero timeam nominavi vel.
+              Ea verear pericula instructior cum. In vel impedit salutatus abhorreant, alienum reprehendunt usu ei. Eu usu adhuc reque eirmod. No sed probo vocent veritus, deleniti splendide sadipscing ex nam. Cu iudico appellantur sit, mei et meis tincidunt consequuntur.
+              Lorem ipsum dolor sit amet, omittam repudiare at sed. Te eum sumo soleat feugait, eum te audire scribentur, scripta numquam oportere ea nec. Sit quas omnium invenire no, lorem doming graecis nec id, animal salutatus deterruisset cum id. Est cu utinam docendi inimicus. Sed no veniam diceret intellegam.
+              Eu quas eleifend laboramus mea, ei option quaeque dissentias pro. Porro integre ne ius, habeo verear vel ex, qui eligendi torquatos no. Sint inciderint sit cu, ea has meis legendos. Eu usu etiam voluptaria, et usu idque libris. Ei mei movet mucius.
+              Ei postea labitur mel, dictas petentium disputationi ad sea. Sit cibo dicant deseruisse cu, id summo viderer aliquando vis. Vel no malorum euismod, voluptatibus concludaturque te vix. Modo vidit intellegam his an.
+              Ea ius suas bonorum, id nec illum affert integre. Sit melius assueverit ea. No fugit atqui salutandi sea. Has te affert graecis percipit, sale alienum mea te. Ei vim diam tibique, duo in altera aeterno scripserit. At clita tritani pro, ne homero timeam nominavi vel.
+              Ea verear pericula instLorem ipsum dolor sit amet, omittam repudiare at sed. Te eum sumo soleat feugait, eum te audire scribentur, scripta numquam oportere ea nec. Sit quas omnium invenire no, lorem doming graecis nec id, animal salutatus deterruisset cum id. Est cu utinam docendi inimicus. Sed no veniam diceret intellegam.
+              Eu quas eleifend laboramus mea, ei option quaeque dissentias pro. Porro integre ne ius, habeo verear vel ex, qui eligendi torquatos no. Sint inciderint sit cu, ea has meis legendos. Eu usu etiam voluptaria, et usu idque libris. Ei mei movet mucius.
+              Ei postea labitur mel, dictas petentium disputationi ad sea. Sit cibo dicant deseruisse cu, id summo viderer aliquando vis. Vel no malorum euismod, voluptatibus concludaturque te vix. Modo vidit intellegam his an.
+              Ea ius suas bonorum, id nec illum affert integre. Sit melius assueverit ea. No fugit atqui salutandi sea. Has te affert graecis percipit, sale alienum mea te. Ei vim diam tibique, duo in altera aeterno scripserit. At clita tritani pro, ne homero timeam nominavi vel.
+              Ea verear pericula instructior cum. In vel impedit salutatus abhorreant, alienum reprehendunt usu ei. Eu usu adhuc reque eirmod. No sed probo vocent veritus, deleniti splendide sadipscing ex nam. Cu iudico appellantur sit, mei et meis tincidunt consequuntur.
+              Lorem ipsum dolor sit amet, omittam repudiare at sed. Te eum sumo soleat feugait, eum te audire scribentur, scripta numquam oportere ea nec. Sit quas omnium invenire no, lorem doming graecis nec id, animal salutatus deterruisset cum id. Est cu utinam docendi inimicus. Sed no veniam diceret intellegam.
+              Eu quas eleifend laboramus mea, ei option quaeque dissentias pro. Porro integre ne ius, habeo verear vel ex, qui eligendi torquatos no. Sint inciderint sit cu, ea has meis legendos. Eu usu etiam voluptaria, et usu idque libris. Ei mei movet mucius.
+              Ei postea labitur mel, dictas petentium disputationi ad sea. Sit cibo dicant deseruisse cu, id summo viderer aliquando vis. Vel no malorum euismod, voluptatibus concludaturque te vix. Modo vidit intellegam his an.
+              Ea ius suas bonorum, id nec illum affert integre. Sit melius assueverit ea. No fugit atqui salutandi sea. Has te affert graecis percipit, sale alienum mea te. Ei vim diam tibique, duo in altera aeterno scripserit. At clita tritani pro, ne homero timeam nominavi vel.
+              Ea verear pericula instLorem ipsum dolor sit amet, omittam repudiare at sed. Te eum sumo soleat feugait, eum te audire scribentur, scripta numquam oportere ea nec. Sit quas omnium invenire no, lorem doming graecis nec id, animal salutatus deterruisset cum id. Est cu utinam docendi inimicus. Sed no veniam diceret intellegam.
               Eu quas eleifend laboramus mea, ei option quaeque dissentias pro. Porro integre ne ius, habeo verear vel ex, qui eligendi torquatos no. Sint inciderint sit cu, ea has meis legendos. Eu usu etiam voluptaria, et usu idque libris. Ei mei movet mucius.
               Ei postea labitur mel, dictas petentium disputationi ad sea. Sit cibo dicant deseruisse cu, id summo viderer aliquando vis. Vel no malorum euismod, voluptatibus concludaturque te vix. Modo vidit intellegam his an.
               Ea ius suas bonorum, id nec illum affert integre. Sit melius assueverit ea. No fugit atqui salutandi sea. Has te affert graecis percipit, sale alienum mea te. Ei vim diam tibique, duo in altera aeterno scripserit. At clita tritani pro, ne homero timeam nominavi vel.
@@ -46,6 +86,7 @@
               Ei postea labitur mel, dictas petentium disputationi ad sea. Sit cibo dicant deseruisse cu, id summo viderer aliquando vis. Vel no malorum euismod, voluptatibus concludaturque te vix. Modo vidit intellegam his an.
               Ea ius suas bonorum, id nec illum affert integre. Sit melius assueverit ea. No fugit atqui salutandi sea. Has te affert graecis percipit, sale alienum mea te. Ei vim diam tibique, duo in altera aeterno scripserit. At clita tritani pro, ne homero timeam nominavi vel.
               Ea verear pericula instructior cum. In vel impedit salutatus abhorreant, alienum reprehendunt usu ei. Eu usu adhuc reque eirmod. No sed probo vocent veritus, deleniti splendide sadipscing ex nam. Cu iudico appellantur sit, mei et meis tincidunt consequuntur.
+              </p>
           </div>
       </section>
 
@@ -80,6 +121,7 @@
       <section id="howto" style="display: none;">
           <h1 align="center" style="font-family: MainText">How it works</h1><hr>
           <div class="about_text">
+              <p>
               Lorem ipsum dolor sit amet, omittam repudiare at sed. Te eum sumo soleat feugait, eum te audire scribentur, scripta numquam oportere ea nec. Sit quas omnium invenire no, lorem doming graecis nec id, animal salutatus deterruisset cum id. Est cu utinam docendi inimicus. Sed no veniam diceret intellegam.
               Eu quas eleifend laboramus mea, ei option quaeque dissentias pro. Porro integre ne ius, habeo verear vel ex, qui eligendi torquatos no. Sint inciderint sit cu, ea has meis legendos. Eu usu etiam voluptaria, et usu idque libris. Ei mei movet mucius.
               Ei postea labitur mel, dictas petentium disputationi ad sea. Sit cibo dicant deseruisse cu, id summo viderer aliquando vis. Vel no malorum euismod, voluptatibus concludaturque te vix. Modo vidit intellegam his an.
@@ -290,6 +332,7 @@
               Ei postea labitur mel, dictas petentium disputationi ad sea. Sit cibo dicant deseruisse cu, id summo viderer aliquando vis. Vel no malorum euismod, voluptatibus concludaturque te vix. Modo vidit intellegam his an.
               Ea ius suas bonorum, id nec illum affert integre. Sit melius assueverit ea. No fugit atqui salutandi sea. Has te affert graecis percipit, sale alienum mea te. Ei vim diam tibique, duo in altera aeterno scripserit. At clita tritani pro, ne homero timeam nominavi vel.
               Ea verear pericula instructior cum. In vel impedit salutatus abhorreant, alienum reprehendunt usu ei. Eu usu adhuc reque eirmod. No sed probo vocent veritus, deleniti splendide sadipscing ex nam. Cu iudico appellantur sit, mei et meis tincidunt consequuntur.
+              </p>
           </div>
       </section>
 

@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="styles/headerAndFooter.css">
-    <link rel="stylesheet" href="styles/homestyle.css">
+    <link rel="stylesheet" href="styles/homestyle2.css">
     <link rel="stylesheet" href="styles/sidebar.css">
+    <link rel="stylesheet" href="styles/main.css">
     <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js'></script>
     <script type="text/javascript" src='scripts/home-script.js'></script>
     <script type="text/javascript" src='scripts/circulate.js'></script>
@@ -13,24 +14,17 @@
 </head>
 <body>
 <?php include_once('header.php'); ?>
+<?php include_once('sidebar.html'); ?>
 
+<div class="wrapper">
     <div id="home-banner">
-        <!--toni - BANNER HERE -->
     </div>
-
-<div id="outer-home-div">
-    <div id="p-home-div">
-        <p id="p-home">Text text text texttexttexttexttexttexttexttext.</p>
+    <div class="content">
+        <h1>Welcome!</h1><hr>
+        <a href="#" id="btn-home-join">Join The Battle</a>
     </div>
+</div>
 
-    <div id="btn-home-join-div">
-        <input type="button" value="Join The Battle" id="btn-home-join">
-     </div>
-     <div class="mustache-container">
-        <img src="images/mustache.png" alt="mustache" id="mustache">
-     </div>
-     <!--Toni - when changing size of #mustache or pic, css #mustache, property 'left' needs to be adjusted-->
- </div>
 
 <?php include_once('footer.html'); ?>
 </body>

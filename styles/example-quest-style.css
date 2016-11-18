@@ -1,58 +1,65 @@
-#ruby-level-h3 {
+hr {
+    border: 1px solid black;
+    background: black;
+}
+
+.questContainer {
+    width: 100%;
+}
+
+
+.langName, .level, .objective, #counter, .quest{
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-family: Text;
+    width: 100%;
+    padding: 0;
+    margin: 15px auto;
     text-align: center;
-    padding: 20px;
 }
 
-#ex-quest-outer {
-    margin: auto;
-    height: 500px;
+.langName {
+    text-decoration: underline;
 }
 
-#ex-quest-div {
-    width: 800px;
-    height: 450px;
-    background: rgba(96, 167, 169, 0.34);
-    margin: auto;
+#counter {
+    font-weight: bolder;
+    font-size: 30px;
 }
 
-#ex-quest-h1 {
-    text-align: center;
+.objective {
+    text-align: left;
+    width: 70%;
+    margin-left: 20px;
+    letter-spacing: normal;
+    word-spacing: 5px;
 }
 
-#ex-quest-h4 {
-    font-size: medium;
+.quest {
+    border-bottom: 1px solid gray;
+
+    text-align: left;
+
+    letter-spacing: 4px;
+    text-align: left;
+    line-height: 25px;
 }
 
-#accept-quest-ruby-p {
-    text-align: center;
-    font-size: x-large;
-    padding-top: 40px;
-    padding-bottom: 40px;
+.langName span {
+    color: rgb(89, 0, 64);
+    font-size: 35px;
 }
 
-#button-accept-quest-ruby {
-    text-align: center;
-    font-size: xx-large;
-    height: 100px;
-    width: 300px;
-    margin-left: 200px;
-    margin-right: 80px;
-    padding-right: 50px;
-    padding-left: 50px;
-    background-color: rgba(39, 78, 64, 0.56);
-    border-radius: 30px;
-    border: 3px solid #6f6f6f;
-
+.input {
+    font-weight: bold;
+    font-family: Text;
+    letter-spacing: 3px;
+    padding-left: 3px;
+    background-color: none;
+    border: none;
+    border-bottom: 2px solid rgb(78, 78, 78);
 }
 
-#button-accept-quest-ruby p {
-    padding-top: 30px;
+.input:focus {
+    outline: none;
 }
-
-#button-accept-quest-ruby:hover {
-    background-color: rgba(0, 57, 80, 0.68);
-    border: 3px solid rgba(0, 80, 117, 0.07);
-    color: white;
-}
-
-

@@ -1,0 +1,23 @@
+table{
+    border: solid black;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+.username{
+    padding: 10px;
+
+}
+.profile{
+    margin-top: 10px;
+}
+.profileinfo{
+
+}
+.textarea{
+    padding: 10px;
+}
+

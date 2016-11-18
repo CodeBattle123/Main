@@ -2,34 +2,24 @@ body {
     margin: 0 auto;
 }
 
-.mustache-container {
-   width: 100%;
-}
-
-#mustache {
-    position: relative;
-    margin: 0 auto;
-    width: 100px;
-    display: block;
-}
-
 #outer-home-div{
     margin: auto;
-    width: 100%;
+    width: 50%;
     height: 500px;
     background-color: rgba(96, 167, 169, 0.34);
 }
 
 #home-banner{
-    width: 100%;
-    height: 400px;
-    margin: auto;
-    background-color: #00405d;
-    background-image: url("../images/banner.jpg");
-    background-position: center;
-    background-size: contain;
-    background-repeat: repeat-x;
-}
+     position: relative;
+     width: 8%;
+     height: 400px;
+     margin: auto;
+     background-color: #00405d;
+     background-image: url("../images/banner.jpg");
+     background-position: center;
+     background-size: contain;
+     background-repeat: repeat-x;
+ }
 
 #p-home-div{
     width: 450px;

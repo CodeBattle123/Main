@@ -1,4 +1,133 @@
 main {
-   height: 800px;
-   background: #ccc;
+   width: auto;
+   height: auto;
+   overflow-y: auto;
+   background-color: white;
+   padding: 30px;
+}
+
+.clanAvatarHolder {
+   background-image: url("../images/icon.png");
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: contain;
+   width: 25vw;
+   height: 25vw;
+   margin: 0 auto;
+}
+
+.clanInfo {
+   text-align: center;
+   display: block;
+   width: auto;
+   position: relative;
+   float: right;
+}
+
+.clanName {
+   font-family: Text;
+   font-size: 1.5vw;
+   line-height: 50px;
+}
+
+.clanDesc {
+   font-family: Text;
+   font-size: 1.3vw;
+   margin-bottom: 30px;
+}
+
+.members {
+   list-style: none;
+   margin-bottom:  30px;
+   height: auto;
+   max-height: 300px;
+   overflow-y: scroll;
+   text-align: left;
+   border-top: 1px solid black;
+   border-left: 1px solid black;
+   border-bottom: 1px solid black;
+}
+
+.member {
+   font-family: Text;
+   line-height: 50px;
+   border-top: 1px solid black;
+   padding: 0 20px;
+}
+
+.member a {
+   text-decoration: none;
+   float:right;
+}
+
+.members::-webkit-scrollbar {
+   width: 12px;
+}
+
+.members::-webkit-scrollbar-track {
+   background-color: #EEE;
+}
+
+.members::-webkit-scrollbar-thumb {
+   background-color: #999;
+}
+
+.members::-webkit-scrollbar-thumb:hover {
+   background-color: #AAA;
+}
+
+.clanChat ul {
+   list-style: none;
+   max-height: 400px;
+   overflow-y: scroll;
+}
+
+.clanChat ul::-webkit-scrollbar {
+   width: 12px;
+}
+
+.clanChat ul::-webkit-scrollbar-track {
+   background-color: #EEE;
+}
+
+.clanChat ul::-webkit-scrollbar-thumb {
+   background-color: #999;
+}
+
+.clanChat ul::-webkit-scrollbar-thumb:hover {
+   background-color: #AAA;
+}
+
+.chatLog {
+   border: 1px solid black;
+   height: 50px;
+   line-height: 50px;
+}
+
+.user {
+   text-align: left;
+   padding: 0 20px;
+   margin-right: 30px;
+   font-weight: bolder;
+   float: left;
+   width: 130px;
+   border-right: 1px solid black;
+}
+
+.message {
+   float: left;
+}
+
+.messageInput {
+   margin: 20px;
+}
+
+input[type=text] {
+   width: 85%;
+   height: 30px;
+   padding: 10px;
+}
+
+input[type=submit] {
+   padding: 18px 30px 18px 30px;
 }
