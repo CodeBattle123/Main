@@ -1,6 +1,6 @@
 @font-face {
    font-family: MainText;
-   src: url(../fonts/aspace_demo.otf);
+   src: url(../fonts/Kemco.ttf);
 }
 
 @font-face {
@@ -48,7 +48,7 @@ header {
    height: 60px;
    padding: 20px;
    background:#0073A5;
-   font-family: MainText;
+   font-family: Sidebar;
    /*#0073A5*/
 }
 
@@ -63,7 +63,7 @@ header {
    font-size: 5vw;
    position: relative;
    top: 10px;
-   font-family: MainText;
+   font-family: Sidebar;
    display: inline-block;
    color: #FFF;
 }
@@ -81,7 +81,7 @@ header {
 
 .tab {
    border-radius: 5px;
-   background-color: rgb(148, 148, 148);
+   background-color: #110C35;
    color: white;
    line-height: 40px;
    margin-top: 10px;

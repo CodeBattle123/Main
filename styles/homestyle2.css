@@ -1,38 +1,61 @@
-#home-banner{
-    position: relative;
+.home-banner{
     width: 100%;
     height: 200px;
     background-image: url("../images/banner.jpg");
     display: inline-block;
-    float: right;
+    position: absolute;
 }
 
 .content {
-    padding-top: 200px;
-    margin: 20px;
-    position: absolute;
-    float: left;
+    width: 100%;
+    padding-top: 230px;
+    display: inline-block;
+
 }
 h1 {
     font-family: MainText;
-    padding-bottom: 50px;
 }
 
 #btn-home-join{
-    padding-top: 20px;
     font-family: MainText;
-    height: 100px;
-    width: 350px;
-    margin: 50px;
-    border: 3px solid ghostwhite;
+    border: 2px solid ghostwhite;
     background: #0073A5;
-    padding: 20px 40px;
-    border-radius: 20px;
+    padding: 15px 25px;
+    border-radius: 10px;
     color: white;
     font-size: 30px;
     text-decoration: none;
-    vertical-align: middle;
 }
 #btn-home-join:hover {
     background: #3CB0FD;
+}
+
+.right {
+    width: 450px;
+    display: block;
+    float: right;
+    flex-direction: column;
+}
+.left {
+    width: 450px;
+    display: flex;
+    float: left;
+    flex-direction: column;
+
+}
+
+p {
+    text-align: left;
+}
+h1 {
+    text-align: center;
+}
+
+.scr {
+    border: 3px solid lightslategray;
+    border-radius:6px;
+    width: 90%;
+    display: block;
+    height: 300px;
+    margin-top: 35px;
 }
