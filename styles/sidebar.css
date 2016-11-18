@@ -3,6 +3,7 @@
    width: 20%;
    display: block;
    background-color:#0073A5;
+   min-height: 100%;
    float: left;
    text-align: left;
    padding-bottom: 20px;

@@ -108,11 +108,14 @@ header {
 
    position: relative;
 
+
    font-family: Text;
    font-weight: bold;
    letter-spacing: 2px;
 
    background-color: #0073A5;
+
+   clear: both;
 }
 
 .flogo {
@@ -161,6 +164,7 @@ header {
    color: #FFF;
    text-decoration: none;
 }
+
 
 
 /*------------  ANIMATIONS --------------*/
@@ -269,3 +273,5 @@ header {
       display: inline-block;
    }
 }
+
+.nav:hover .tab {

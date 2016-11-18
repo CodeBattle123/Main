@@ -12,29 +12,25 @@
 </head>
 <body>
 <?php include 'header.php' ?>
-<?php include 'sidebar.html' ?>
 
 <div class="wrapper">
     <div class="questContainer">
         <h1 class="langName">Test Your <span>Ruby</span> Skills</h1>
         <h3 class="level">Level 1/10</h3>
         <hr>
-        <h4 class="objective">Fill Blanks to Print Numbers 1 to 10</h4>
+        <h4 class="objective">Fill Blanks to Print Numbers 1 to 10 </h4>
+        <div id="counter"></div>
 
-        <div class="codeContainer">
-            <pre class="quest">
-                <span>i=1</span><!-- <span>&lt;irb&gt;</span> -->
-                <input type="text" id="ex-quest-input-1" class="input" maxlength="5"><span> i&lt;11 </span></input>
-                    <input type="text" id="ex-quest-input-2" class="input" maxlength="5"><span>"i: ", i ,"\n"</span></input>
-                    <span>i</span><input type="text" id="ex-quest-input-3" class="input" maxlength="2"><span>1</span></input>
-                <span>end</span><!-- <span>&lt;/irb&gt;</span> -->
-            </pre>
+        <pre class="quest">
+            <span>i=1</span><!-- <span>&lt;irb&gt;</span> -->
+            <input type="text" id="ex-quest-input-1" class="input" maxlength="5"><span> i&lt;11 </span></input>
+                <input type="text" id="ex-quest-input-2" class="input" maxlength="5"><span>"i: ", i ,"\n"</span></input>
+                <span>i</span><input type="text" id="ex-quest-input-3" class="input" maxlength="2"><span>1</span></input>
+            <span>end</span><!-- <span>&lt;/irb&gt;</span> -->
+        </pre>
 
-            <div id="counter">
-                <br><input type="button" class="checkButton" id="btn-submit-quest-example" value="check">
-                <span id="result">Result: </span>
-            </div>
-        </div>
+        <input type="button" id="btn-submit-quest-example" value="check"> <br>
+        Result: <span id="result"></span>
     </div>
 </div>
 
@@ -44,9 +40,10 @@
     for(item of inputs) {
         item.style.width = (item.maxLength * 11) + 'px';
     }
+
 </script>
 
-<script>
+<!-- <script>
     function countdown() {
         var seconds = 60;
         function tick() {
@@ -95,7 +92,7 @@
     $('#btn-submit-quest-example').click(function () {
         document.getElementById('example-quest-result').textContent = CalcResult();
     });
-</script>
+</script> -->
 
 <?php include_once('footer.html'); ?>
 </body>

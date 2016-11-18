@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="styles/headerAndFooter.css">
-    <link rel="stylesheet" href="styles/homestyle.css">
+    <link rel="stylesheet" href="styles/sidebar.css">
     <link rel="stylesheet" href="styles/login_register.css">
     <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js'></script>
     <script type="text/javascript" src='scripts/home-script.js'></script>
@@ -29,7 +29,7 @@
             $validate = false;
         }
         if (!$already_used < 1) {
-    	    echo '<div class="validate">' . $username . ' is already taken.</div>';
+    	    echo '<div class="validate">Username \'' . $username . '\' is already taken.</div>';
             $validate = false;
         }
 
@@ -55,20 +55,23 @@
             $sql = "INSERT INTO users (nickname, email, password) VALUES ('$username','$email','$password')";
             $query = mysqli_query($connect, $sql);
             if ($query) {
-                echo '<div class="validate">You create your account.</div>';
+                echo '<div class="validate" style="color: green;">You have successfully created your account!</div>';
             }
         }
     }
 ?>
 
-<div class="reg" style="margin: 0 auto">
-    <form class="" action="register.php" method="post">
-        Username: <input type="text" name="username" value=""><br>
-        Password: <input type="password" name="password" value=""><br>
-        Re-type: <input type="password" name="password2" value=""><br>
-        Email: <input type="email" name="email" value=""><br>
-        <input type="submit" name="submit" value="Register">
-    </form>
+
+<div class="wrapper">
+    <div class="reg" style="margin: 0 auto">
+        <form class="" action="register.php" method="post">
+            Username: <input type="text" name="username" value=""><br>
+            Password: <input type="password" name="password" value=""><br>
+            Re-type: <input type="password" name="password2" value=""><br>
+            Email: <input type="email" name="email" value=""><br>
+            <input type="submit" name="submit" value="Register">
+        </form>
+    </div>
 </div>
 
 <?php include_once('footer.html'); ?>
