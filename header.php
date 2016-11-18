@@ -1,5 +1,5 @@
 <?php
-    //include_once('db/connect.php');
+    include_once('db/connect.php');
 ?>
 
 <header>
@@ -13,3 +13,7 @@
       </ul>
    </div>
 </header>
+<?php
+
+    include_once('sidebar.html');
+?>
