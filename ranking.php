@@ -11,14 +11,9 @@
    </head>
    <body>
       <?php include_once('header.php'); ?>
-<div class="wrapper">
 
-
-         <!--<div class="desc">
-            <h2>TOP RANKING</h2>
-        </div>-->
-
-         <table style="width: 100%;">
+      <div class="wrapper">
+         <table style="">
             <tr>
                 <td></td>
                 <td><h4>Rank:</h4></td>
@@ -33,7 +28,7 @@
                   <h4>Clan:</h4>
               </td>
               <tr>
-      <!---Asen - people go down from here --->
+
 <?php
     $sql = "SELECT * FROM users";
     $query = mysqli_query($connect, $sql);

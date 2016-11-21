@@ -2,17 +2,14 @@
 	font-family: MainText;
 	src: url(../fonts/aspace_demo.otf);
 }
-
 @font-face {
 	font-family: Text;
 	src: url(../fonts/LLPIXEL3.ttf);
 }
-
 @font-face {
 	font-family: Sidebar;
 	src: url(../fonts/Kemco.ttf);
 }
-
 @font-face {
 	font-family: Content;
 	src: url(../fonts/VCR.ttf);
@@ -28,25 +25,20 @@
 	padding:0;
 	margin: 0;
 }
-
 body {
 	padding-top: 100px;
 	width: 100%;
 	background: #0073A5;
 }
-
 body::-webkit-scrollbar {
 	width: 20px;
 }
-
 body::-webkit-scrollbar-thumb {
 	background-color: #cccccc;
 }
-
 body::-webkit-scrollbar-track {
 	background-color: #555;
 }
-
 header {
 	position: fixed;
 	z-index: 5;
@@ -58,13 +50,11 @@ header {
 	font-family: Sidebar;
 	/*#0073A5*/
 }
-
 .logo {
 	display: inline-block;
 	float: left;
 	margin-right: 15px;
 }
-
 .header-title {
 	line-height: 60px;
 	font-size: 5vw;
@@ -74,18 +64,15 @@ header {
 	display: inline-block;
 	color: #FFF;
 }
-
 .nav {
 	margin-right: 30px;
 	display: block;
 	float: right;
 	list-style: none;
 }
-
 .nav li {
 	display: inline-block;
 }
-
 .tab {
 	border-radius: 5px;
 	background-color: rgb(148, 148, 148);
@@ -101,12 +88,10 @@ header {
 	text-decoration: none;
 	padding: 0 10px;
 }
-
 .logo {
 	height: 60px;
 	width: 60px;
 }
-
 /*------------------------------------------------------------------------------------ */
 
 .mainFooter {
@@ -124,7 +109,6 @@ header {
 
 	clear: both;
 }
-
 .flogo {
 	display: inline-block;
 
@@ -140,7 +124,6 @@ header {
 	font-size: 20px;
 	display: inline-block;
 }
-
 .contact-image {
 	width: 25px;
 	height: 25px;
@@ -149,7 +132,6 @@ header {
 	position: relative;
 	top: 5px;
 }
-
 .contacts {
 	display: inline-block;
 	position: relative;
@@ -157,23 +139,17 @@ header {
 	margin-right: 100px;
 	margin-top: 10px;
 }
-
 .contacts ul {
 	list-style: none;
 }
-
 .contacts h2 {
 	display: block;
 }
-
 .contact-links {
 	display: inline-block;
 	color: #FFF;
 	text-decoration: none;
 }
-
-
-
 /*------------  ANIMATIONS --------------*/
 
 @media screen and (max-width:800px) {
@@ -280,5 +256,3 @@ header {
 		display: inline-block;
 	}
 }
-
-.nav:hover .tab {

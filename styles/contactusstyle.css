@@ -2,7 +2,6 @@ h2 {
     color: #474E69;
     font-family: MainText;
 }
-
 /* ===========================
    ====== Contact Form =======
    =========================== */
@@ -10,13 +9,12 @@ h2 {
 .wrapper {
     padding: 20px;
 }
-
 .form {
     display: block;
     margin: 20px;
 }
-
-input, textarea {
+input,
+textarea {
     padding: 10px;
     border: 1px solid gray;
     width: 200px;
@@ -25,30 +23,26 @@ input, textarea {
     -moz-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;
     -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;
 }
-
 textarea {
     height: 150px;
     width: 30vw;
     line-height: 18px;
     resize: none;
 }
-
-@media screen and (max-width:800px){
-    textarea, input {
+@media screen and (max-width: 800px) {
+    textarea,
+    input {
         width: 95%;
     }
-
     .form {
         padding: 0;
     }
-
     .wrapper {
         display: flex;
         flex-direction: column;
         height: auto;
         padding: 0;
     }
-
     .map {
         margin: 0 auto;
         height: 350px;
@@ -56,18 +50,17 @@ textarea {
         display: block;
     }
 }
-
-input:hover, textarea:hover,
-input:focus, textarea:focus {
+input:hover,
+textarea:hover,
+input:focus,
+textarea:focus {
     box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px;
     -moz-box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px;
     -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px;
 }
-
 .form label {
     color: gray;
 }
-
 /* ===========================
    ====== Submit Button ======
    =========================== */
