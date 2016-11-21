@@ -1,18 +1,21 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/headerAndFooter.css">
-    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js'></script>
-    <link rel="stylesheet" href="styles/choose_language_style.css">
-    <meta charset="UTF-8">
+	<link rel="stylesheet" href="styles/sidebar.css">
+	<link rel="stylesheet" href="styles/main.css">
+	<link rel="stylesheet" href="styles/choose_language_style.css">
+	<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js'></script>
     <title>choose language</title>
 </head>
 <body>
 <?php include_once('header.php'); ?>
 
-<h3>Choose a Language to Conquer</h3>
 
-<div class="choose-lang-outer-div">
+<div class="wrapper">
+	<h3>Your languages</h3>
 
     <div class="lang-options" id="lang-csharp">
         <p class="lang-options-p">C#</p>

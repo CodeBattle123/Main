@@ -2,7 +2,9 @@ table{
     width: 100%;
     border-collapse: collapse;
 }
+
 td {
+	font-family: Quest;
     border-bottom: 1px solid #ddd;
     /*padding: 10px;*/
 }

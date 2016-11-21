@@ -4,21 +4,16 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Ranking</title>
-      <link rel="stylesheet" href="styles/main.css">
-      <link rel="stylesheet" href="styles/headerAndFooter.css" />
-      <link rel="stylesheet" href="styles/ranking.css" />
-      <link rel="stylesheet" href="styles/sidebar.css" media="screen" title="no title">
+      <link rel="stylesheet" href="styles/main.css" >
+      <link rel="stylesheet" href="styles/headerAndFooter.css" >
+      <link rel="stylesheet" href="styles/sidebar.css" >
+	  <link rel="stylesheet" href="styles/ranking.css" >
    </head>
    <body>
       <?php include_once('header.php'); ?>
-<div class="wrapper">
 
-
-         <!--<div class="desc">
-            <h2>TOP RANKING</h2>
-        </div>-->
-
-         <table style="width: 100%;">
+      <div class="wrapper">
+         <table>
             <tr>
                 <td></td>
                 <td><h4>Rank:</h4></td>
@@ -33,7 +28,7 @@
                   <h4>Clan:</h4>
               </td>
               <tr>
-      <!---Asen - people go down from here --->
+
 <?php
     $sql = "SELECT * FROM users";
     $query = mysqli_query($connect, $sql);
