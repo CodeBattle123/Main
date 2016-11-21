@@ -21,16 +21,18 @@
         <h4 class="objective">Fill Blanks to Print Numbers 1 to 10</h4>
 
         <div class="codeContainer">
+			<div class="container">
             <pre class="quest">
-                <span>i=1</span><!-- <span>&lt;irb&gt;</span> -->
-                <input type="text" id="ex-quest-input-1" class="input" maxlength="5"><span> i&lt;11 </span></input>
-                    <input type="text" id="ex-quest-input-2" class="input" maxlength="5"><span>"i: ", i ,"\n"</span></input>
-                    <span>i</span><input type="text" id="ex-quest-input-3" class="input" maxlength="2"><span>1</span></input>
-                <span>end</span><!-- <span>&lt;/irb&gt;</span> -->
+<span>i=1</span>
+<input type="text" id="ex-quest-input-1" class="input" maxlength="5"><span> i&lt;11 </span></input>
+	<input type="text" id="ex-quest-input-2" class="input" maxlength="5"><span>"i: ", i ,"\n"</span></input>
+	<span>i</span><input type="text" id="ex-quest-input-3" class="input" maxlength="2"><span>1</span></input>
+<span>end</span>
             </pre>
+			</div>
 
             <div id="counter">
-                <br><input type="button" class="checkButton" id="btn-submit-quest-example" value="check">
+                <br><input type="button" class="checkButton" id="submitQuest" value="check">
                 <span id="result">Result: </span>
             </div>
         </div>
@@ -40,26 +42,28 @@
 <script type="text/javascript">
     let inputs = document.getElementsByClassName('input');
 
-    for(item of inputs) {
-        item.style.width = (item.maxLength * 11) + 'px';
-    }
-</script>
+	var finished = false;
 
-<script>
+    for(item of inputs) {
+        item.style.width = (item.maxLength * 15) + 'px';
+    }
+
     function countdown() {
         var seconds = 60;
         function tick() {
             var counter = document.getElementById("counter");
             seconds--;
+
             counter.innerHTML = "0:" + (seconds < 10 ? "0" : "") + String(seconds)
-                +"<br><input type='button' class='checkButton' id='btn-submit-quest-example' value='check'> <br> <span id='result'>Result: </span>";
+                +"<br><input type='button' class='checkButton' id='submitQuest' value='check'> <br> <span id='result'>Result: </span>";
+
             if (seconds > 0) {
                 let t = setTimeout(tick, 1000);
-                $('#btn-submit-quest-example').click(function () {
+                $('#submitQuest').click(function () {
                     clearTimeout(t);
                 });
                 $(document).keypress(function (k) {
-                    if (k.which == 13) {
+                    if (k.which == 13 || k.which == 32) {
                         clearTimeout(t);
                     }
                 });
@@ -69,7 +73,9 @@
         }
         tick();
     }
+
     function CalcResult() {
+
         let i1 = $("#ex-quest-input-1").val();
         let i2 = $("#ex-quest-input-2").val();
         let i3 = $("#ex-quest-input-3").val();
@@ -77,24 +83,63 @@
         if (i1 != "while") {
             result = false;
         }
-        if (i2 != "print" && i2 != "puts") {
+        if (i2 != "print") {
             result = false;
         }
         if (i3 != "+=") {
             result = false;
         }
-        return result;
+
+        if (result == true) {
+            finished = true;
+            return "<span style='color:green;'> CORRECT</span>";
+        }
+        else {
+            finished = true;
+            return "<span style='color:red;'> WRONG</span>";
+        }
     }
+
     window.onload = countdown();
+
     $(document).keypress(function (k) {
-        if (k.which == 13) {
-            document.getElementById('example-quest-result').textContent = CalcResult();
+        if (k.which == 13 || k.which == 32) {
+
+			document.getElementById('submitQuest').style.boxShadow = "none";
+			document.getElementById('submitQuest').style.top = "10px";
+
+			setTimeout(function () {
+				if (finished == true) {
+					document.getElementById('submitQuest').style.boxShadow = "0px 10px 0px rgb(110, 110, 110)";
+					document.getElementById('submitQuest').style.top = "0px";
+					return;
+				}
+
+				document.getElementById('submitQuest').style.boxShadow = "0px 10px 0px rgb(110, 110, 110)";
+				document.getElementById('submitQuest').style.top = "0px";
+				document.getElementById('result').innerHTML = document.getElementById('result').innerHTML + CalcResult();
+			}, 100);
         }
     });
-    $('#btn-submit-quest-example').click(function () {
-        document.getElementById('example-quest-result').textContent = CalcResult();
+
+    $('#submitQuest').click( function () {
+		document.getElementById('submitQuest').style.boxShadow = "none";
+		document.getElementById('submitQuest').style.top = "10px";
+
+		setTimeout(function () {
+			if (finished == true) {
+				document.getElementById('submitQuest').style.boxShadow = "0px 10px 0px rgb(110, 110, 110)";
+				document.getElementById('submitQuest').style.top = "0px";
+				return;
+			}
+
+			document.getElementById('submitQuest').style.boxShadow = "0px 10px 0px rgb(110, 110, 110)";
+			document.getElementById('submitQuest').style.top = "0px";
+			document.getElementById('result').innerHTML = document.getElementById('result').innerHTML + CalcResult();
+		}, 100);
     });
-</script> -->
+
+</script>
 
 <?php include_once('footer.html'); ?>
 </body>

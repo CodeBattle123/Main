@@ -3,7 +3,7 @@
    width: 20%;
    display: block;
    background-color:#0073A5;
-   min-height: 100%;
+   min-height: 600px;
    float: left;
    text-align: left;
    padding-bottom: 20px;
@@ -26,7 +26,6 @@
 .link {
    display: block;
    text-transform: uppercase;
-   height: 40px;
    width: 100%;
    line-height: 40px;
    color: white;
@@ -39,6 +38,16 @@
 
 @media screen and (max-width: 600px){
    .sidebar {
-      display: none;
+    	display: none;
    }
+}
+
+@media screen and (max-width:800px) {
+	.sidebar {
+		width: 150px;
+	}
+
+    .link {
+ 	   line-height: 30px;
+    }
 }

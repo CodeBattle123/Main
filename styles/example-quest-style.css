@@ -12,22 +12,26 @@ hr {
     flex-direction: row;
 }
 
+.container {
+	display: block;
+	width: 50%;
+	margin: 0 auto;
+	padding-left: 40px;
+}
+
 .langName, .level, .objective, #counter, .quest{
     letter-spacing: 3px;
-    font-weight: bold;
-    font-family: Text;
+    font-weight: bolder;
+    font-family: Sidebar;
     width: 100%;
     padding: 0;
     margin: 15px auto;
     text-align: center;
 }
 
-.langName {
-    text-decoration: underline;
-}
-
 .objective {
-    width: auto;
+	width: 90%;
+	font-weight: bolder;
     margin-left: 25px;
     text-align: left;
     letter-spacing: normal;
@@ -35,10 +39,10 @@ hr {
 }
 
 .quest {
-    width: 49%;
+    width: 100%;
     display: inline-block;
-
-    border-bottom: 1px solid gray;
+	font-family: Text;
+	font-size: 20px;
 
     letter-spacing: 4px;
     text-align: left;
@@ -48,15 +52,15 @@ hr {
 }
 
 .langName span {
-    color: rgb(89, 0, 64);
+	display: block;
     font-size: 35px;
 }
 
 .input {
     font-weight: bold;
     font-family: Text;
+	font-size: 20px;
     letter-spacing: 3px;
-    padding-left: 5px;
     background-color: none;
     border: none;
     border-bottom: 2px solid rgb(78, 78, 78);
@@ -69,30 +73,84 @@ hr {
 #counter {
     font-weight: bolder;
     font-size: 30px;
+	line-height: 25px;
 
     margin: 0;
+	padding-top: -20px;
 
-    width: 49%;
-    height: 151px;
+    width: 50%;
+    height: 156px;
 
     position: relative;
 
     display: inline-block;
-
-    border-bottom: 1px solid black;
 }
 
 .checkButton {
-    border: 0;
-    width: 75px;
-    height: 30px;
+	outline:none;
+
+	font-family: Sidebar;
+	font-size: 20px;
+	font-weight: bold;
+	background-color: rgb(110, 110, 110);
+
+	border-radius: 5px;
+    border: 3px solid rgb(199, 199, 199);
+	box-shadow: 0px 10px 0px rgb(110, 110, 110);
+
+	position: relative;
+	top: 0px;
+
+    width: 200px;
+    height: 50px;
+
+	margin: 18px 0px;
     display: inline-block;
+}
+
+.checkButton:active {
+	top: 10px;
+	padding-bottom: 0px;
+	box-shadow: none;
 }
 
 #result {
     display: inline-block;
 
-    font-family: Text;
+    font-family: Sidebar;
     font-size: 25px;
     font-weight: bold;
+}
+
+@media screen and (max-width:1000px) {
+	.codeContainer, #counter {
+		width: 100%;
+		padding: 0;
+		flex-direction: column;
+	}
+
+	.container{
+		display: flex;
+		flex-direction: column;
+		padding: 0;
+		width: 100%;
+		border-bottom: 0px solid black;
+	}
+
+	.langName {
+		line-height: 30px;
+		font-size: 25px;
+		text-decoration: none;
+	}
+
+	.quest {
+		display: inline-block;
+		width: auto;
+		margin: 0 auto;
+	}
+	.
+
+	#counter {
+		width: 100%;
+	}
 }

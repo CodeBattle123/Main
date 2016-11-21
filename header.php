@@ -14,6 +14,5 @@
    </div>
 </header>
 <?php
-
     include_once('sidebar.html');
 ?>
