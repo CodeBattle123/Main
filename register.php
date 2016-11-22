@@ -59,35 +59,15 @@
 ?>
 
 <div class="wrapper">
-    <form action="register.php" method="post">
-        <table>
-            <tr>
-                <td>
-                    <input type="text" name="username" placeholder="Username">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <input type="password" name="password" placeholder="Password">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <input type="password" name="password2" placeholder="Re-type">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <input type="email" name="email" placeholder="Email">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <input type="submit" name="submit" value="Register">
-                <td>
-            </tr>
-        </table>
+    <div class="form">
+    <form class="register" action="register.php" method="post">
+        <input type="text" name="username" placeholder="Username">
+        <input type="password" name="password" placeholder="Password">
+        <input type="password" name="password2" placeholder="Re-type">
+        <input type="email" name="email" placeholder="Email">
+        <input type="submit" name="submit" value="Register">
     </form>
+    </div>
 </div>
 
 <?php include_once('footer.html'); ?>

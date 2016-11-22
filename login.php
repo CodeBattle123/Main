@@ -12,25 +12,13 @@
     <body>
         <?php include_once('header.php'); ?>
         <div class="wrapper">
-            <form class="" action="login.php" method="post">
-                <table>
-                    <tr>
-                        <td>
-                            <input type="text" name="username" placeholder="Username">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="password" name="pass" placeholder="Password">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="submit" name="submit" value="Login">
-                        </td>
-                    </tr>
-                </table>
+            <div class="form">
+            <form class="login" action="login.php" method="post">
+                <input type="text" name="username" placeholder="Username">
+                <input type="password" name="pass" placeholder="Password">
+                <input type="submit" name="submit" value="Login">
             </form>
+            </div>
         </div>
         <?php include_once('footer.html'); ?>
     </body>
