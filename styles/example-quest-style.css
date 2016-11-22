@@ -61,7 +61,6 @@ hr {
     font-family: Text;
 	font-size: 20px;
     letter-spacing: 3px;
-    background-color: none;
     border: none;
     border-bottom: 2px solid rgb(78, 78, 78);
 }
@@ -148,7 +147,6 @@ hr {
 		width: auto;
 		margin: 0 auto;
 	}
-	.
 
 	#counter {
 		width: 100%;
