@@ -10,7 +10,6 @@
 <body>
 
 <?php include_once('header.php'); ?>
-<?php include_once('sidebar.html'); ?>
 
 <div class="wrapper">
 <div class="username" >
@@ -48,7 +47,3 @@
 </body>
 
 </html>
-
-
-
-

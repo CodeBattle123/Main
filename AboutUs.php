@@ -4,6 +4,8 @@
     <meta charset="utf-16">
     <title>About us</title>
     <link rel="stylesheet" type="text/css" href="styles/headerAndFooter.css">
+    <link rel="stylesheet" type="text/css" href="styles/aboutusstyle.css">
+    <link rel="stylesheet" type="text/css" href="styles/sidebar.css">
     <link rel="stylesheet" type="text/css" href="styles/main.css">
     <link rel="icon" type="image/png" href="images/icon.png"/>
     <script type="text/javascript" src="scripts/jquery-3.1.1.min.js"></script>

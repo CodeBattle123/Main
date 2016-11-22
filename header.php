@@ -1,5 +1,5 @@
 <?php
-    //include_once('db/connect.php');
+    include_once('db/connect.php');
 ?>
 
 <header>
@@ -8,8 +8,11 @@
 
    <div class="nav">
       <ul id="list">
-         <li><a href="#" class="tab">Register</a></li>
-         <li><a href="#" class="tab">Login</a></li>
+         <li><a href="login.php" class="tab">Login</a></li>
+         <li><a href="register.php" class="tab">Register</a></li>
       </ul>
    </div>
 </header>
+<?php
+    include_once('sidebar.html');
+?>
