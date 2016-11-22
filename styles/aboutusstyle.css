@@ -3,7 +3,6 @@
    background-color: white;
    height: 700px;
    overflow-y: scroll;
-   display: block;
    margin: 0 0 0 15px;
    padding: 30px;
 }
@@ -73,12 +72,12 @@ p {
     .aboutWrapper {
         margin: 0;
     }
-    .paginator {
-        flex-direction: column;
-    }
+
 }
-#paginator-btn {
+.paginator {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
+    margin-bottom: 15px;
 }

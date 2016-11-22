@@ -7,14 +7,11 @@
     <link rel="stylesheet" type="text/css" href="styles/aboutusstyle.css">
     <link rel="stylesheet" type="text/css" href="styles/sidebar.css">
     <link rel="stylesheet" type="text/css" href="styles/main.css">
-
     <link rel="icon" type="image/png" href="images/icon.png"/>
     <script type="text/javascript" src="scripts/jquery-3.1.1.min.js"></script>
-    <script type="text/javascript" src="scripts/pagejump.js"></script>
     <script type="text/javascript" src="scripts/switch.js"></script>
-    <script type="text/javascript" src="scripts/moveToHeader.js"></script>
 </head>
-<body onresize="moveToHeader()">
+<body>
 <?php include 'header.php' ?>
 <?php include 'sidebar.html' ?>
 
