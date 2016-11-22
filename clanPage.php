@@ -10,7 +10,6 @@
    </head>
    <body>
       <?php include_once ('header.php'); ?>
-      <?php include_once ('sidebar.html'); ?>
 
       <main>
          <div class="clanAvatarHolder"></div>

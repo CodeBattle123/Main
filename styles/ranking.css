@@ -2,29 +2,9 @@ table{
     width: 100%;
     border-collapse: collapse;
 }
+
 td {
-    border-bottom: 1px solid #ddd;
-    /*padding: 10px;*/
-}
-tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-tr, td {
-    max-height: 30px;
-    line-height: 30px;
-}
-
-td img {
-  vertical-align: middle;
-}
-
-
-table{
-    width: 100%;
-    border-collapse: collapse;
-}
-td {
+	font-family: Quest;
     border-bottom: 1px solid #ddd;
     /*padding: 10px;*/
 }

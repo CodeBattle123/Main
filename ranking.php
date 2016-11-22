@@ -4,16 +4,16 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Ranking</title>
-      <link rel="stylesheet" href="styles/main.css">
-      <link rel="stylesheet" href="styles/headerAndFooter.css" />
-      <link rel="stylesheet" href="styles/ranking.css" />
-      <link rel="stylesheet" href="styles/sidebar.css" media="screen" title="no title">
+      <link rel="stylesheet" href="styles/main.css" >
+      <link rel="stylesheet" href="styles/headerAndFooter.css" >
+      <link rel="stylesheet" href="styles/sidebar.css" >
+	  <link rel="stylesheet" href="styles/ranking.css" >
    </head>
    <body>
       <?php include_once('header.php'); ?>
 
       <div class="wrapper">
-         <table style="">
+         <table>
             <tr>
                 <td></td>
                 <td><h4>Rank:</h4></td>
