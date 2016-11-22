@@ -21,8 +21,12 @@
 }
 
 * {
-	font-family: Sidebar;
-	transition: width 0.2s, height 0.2s, opacity 0.5s, font-size 0.3s, transition ;
+	transition: width 0.2s,
+	height 0.2s,
+	opacity 0.5s,
+	font-size 0.3s;
+
+
 	padding:0;
 	margin: 0;
 }

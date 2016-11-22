@@ -1,3 +1,79 @@
 .wrapper {
+	font-size: 2vw;
 	font-family: Quest;
+}
+
+.wrapper h3 {
+	margin: 15px 0 15px 0;
+	display: block;
+	width: 100%;
+	text-align: center;
+}
+
+.wrapper h5 {
+	display: block;
+	width: 100%;
+	text-align: center;
+	border-bottom: 1px solid black;
+}
+
+.languages {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	width: 100%;
+}
+
+
+.lang-options {
+	color: rgb(92, 92, 92);
+	display: block;
+	line-height: 60px;
+	padding-left: 10px;
+	width: 99%;
+	height: 100%;
+	transition: color 0.5s, background-color 0.5s;
+}
+
+.lang-options:nth-child(even) {
+	background-color: rgba(195, 195, 195, 0.7);
+}
+
+.lang-options:hover {
+	color: black;
+	background-color: rgba(150, 150, 150, 1);
+}
+
+.lang-options:visited {
+	color: rgb(92, 92, 92);
+}
+
+.lang-options-p {
+	width: 20%;
+	float: left;
+	margin: 0;
+	padding: 0;
+}
+
+.meter_container {
+	height: calc(100% - 30px);
+	width: calc(100% - 25px);
+	padding: 15px 5px 5px 5px;
+}
+.meter {
+	float: right;
+	margin: 0;
+	width: 80%;
+	height: 100%;
+	position: relative;
+	background-color: #777777;
+}
+
+.meter span {
+	width: 69%;
+	display: block;
+	height: 100%;
+	background-color: #0E0;
+	position: relative;
+	overflow: hidden;
 }
