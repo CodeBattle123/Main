@@ -13,8 +13,8 @@
 <?php include 'header.php' ?>
 
 <div class="wrapper">
-    <div class="battle-screen">
-        asdsa
+    <div class="content">
+
     </div>
 </div>
 <?php include 'footer.html'?>

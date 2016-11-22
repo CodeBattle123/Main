@@ -21,17 +21,17 @@
     text-decoration: none;
 }
 
-.title {
+.title
+{
     padding-top: 20px;
     font-family: MainText;
     text-align: center;
 }
 
 .wrapper {
-	min-height: 700px;
-    background-color: white;
+     background-color: white;
     display: flex;
-    flex-direction: column;;
+    flex-direction: column;
 }
 
 hr {
