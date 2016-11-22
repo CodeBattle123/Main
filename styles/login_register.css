@@ -43,6 +43,7 @@ form{
     align-content: center;
     border-radius: 10px;
     padding: auto;
+
 }
 
 input[type="submit"]:hover {
@@ -56,6 +57,7 @@ input[type="submit"]:hover {
     flex-direction: column;
     background-color: white;
     min-height: 400px;
+    height: 400px;
 }
 
 

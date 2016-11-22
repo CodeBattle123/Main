@@ -36,7 +36,7 @@ p {
 .btn {
     display: inline-block;
     border-radius: 3px;
-    font-family: MainText;
+    font-family: Sidebar;
     color: #ffffff;
     font-size: 20px;
     background: #0073A5;
@@ -61,7 +61,7 @@ p {
     height: 30px;
     text-decoration: none;
     border-radius: 2px;
-
+    font-family: Sidebar;
 }
 
 .text_container {

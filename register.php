@@ -4,7 +4,6 @@
     <link rel="stylesheet" href="styles/headerAndFooter.css">
     <link rel="stylesheet" href="styles/sidebar.css">
     <link rel="stylesheet" href="styles/login_register.css">
-    <link rel="stylesheet" href="styles/main.css">
     <meta charset="UTF-8">
     <title>Register</title>
 </head>

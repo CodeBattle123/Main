@@ -4,7 +4,6 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Login</title>
-        <link rel="stylesheet" href="styles/main.css">
         <link rel="stylesheet" href="styles/headerAndFooter.css"/>
         <link rel="stylesheet" href="styles/login_register.css">
         <link rel="stylesheet" href="styles/sidebar.css" media="screen" title="no title">

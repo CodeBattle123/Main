@@ -20,9 +20,8 @@
 	src: url(../fonts/quest.ttf);
 }
 
-* {
-	transition: width 0.2s,
-	height 0.2s,
+*:not(section) {
+	transition:
 	opacity 0.5s,
 	font-size 0.3s;
 

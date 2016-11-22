@@ -13,7 +13,6 @@
 </head>
 <body>
 <?php include 'header.php' ?>
-<?php include 'sidebar.html' ?>
 
 <div class="aboutWrapper">
        <ul class="paginator" id="paginator-btn">
