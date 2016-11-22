@@ -23,7 +23,7 @@
         </div>
 
         <div class="left">
-
+            
             <h1>About the project</h1><hr>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi consectetur corporis dicta magni nihil omnis possimus quibusdam quisquam sed. Atque consectetur exercitationem nemo nulla officiis quae, quis quisquam similique sin. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aspernatur aut consequatur, deleniti eligendi enim et expedita illo in itaque laboriosam molestias necessitatibus nihil provident rem sequi velit vitae voluptas.
