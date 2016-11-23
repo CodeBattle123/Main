@@ -15,17 +15,17 @@
 <div class="wrapper">
     <form class="form">
         <p class="name">
-            <label for="name">Name</label><br>
+            <label class="inputLabel" for="name">Name</label><br>
             <input type="text" name="name" id="name" placeholder="Your full name" />
         </p>
 
         <p class="email">
-            <label for="email">Email</label><br>
+            <label class="inputLabel" for="email">Email</label><br>
             <input type="text" name="email" id="email" placeholder="Your email" />
         </p>
 
         <p class="web">
-            <label for="web">Subject</label><br>
+            <label class="inputLabel" for="web">Subject</label><br>
             <input type="text" name="subject" id="subject" placeholder="Subject" />
         </p>
 
