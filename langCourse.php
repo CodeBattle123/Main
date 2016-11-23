@@ -19,7 +19,7 @@
 				<h2 class="level">Begginer</h2>
 				<div class="circleContainer">
 					<a href="#" class="circle"></a>
-					<a href="#" class="circle"></a>
+					<a href="example-quest.php" class="circle"></a>
 				</div>
 			</div>
 			<div class="devision">

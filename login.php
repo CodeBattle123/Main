@@ -1,3 +1,17 @@
+<?php
+	if (isset($_SESSION)) {
+		header("Location: index.php");
+	}
+
+	if (isset($_POST['submit'])) {
+		session_start();
+		$_SESSION['username'] = $_POST['username'];
+		$_SESSION['password'] = $_POST['pass'];
+		header("Location: profile.php");
+	}
+
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -19,6 +33,6 @@
             </form>
             </div>
         </div>
-        <?php include_once('footer.html'); ?>
+        <?php  include_once('footer.html'); ?>
     </body>
 </html>
