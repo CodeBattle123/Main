@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MySQL - softuni_project@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+    <schema id="1" name="softuni_project">
+      <visible>1</visible>
+    </schema>
+    <schema id="2" name="blog"/>
+    <schema id="3" name="information_schema"/>
+    <schema id="4" name="mysql"/>
+    <schema id="5" name="performance_schema"/>
+    <schema id="6" name="phpmyadmin"/>
+    <schema id="7" name="test"/>
+    <table id="8" parent="1" name="battle_log"/>
+    <table id="9" parent="1" name="languages"/>
+    <table id="10" parent="1" name="languages-to-user"/>
+    <table id="11" parent="1" name="team-chat"/>
+    <table id="12" parent="1" name="team-to-user"/>
+    <table id="13" parent="1" name="teams"/>
+    <table id="14" parent="1" name="users"/>
+    <column id="15" parent="8" name="user1_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="16" parent="8" name="user2_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="17" parent="8" name="winner">
+      <mandatory>1</mandatory>
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="18" parent="8" name="wonned_xp">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="19" parent="8" name="date">
+      <mandatory>1</mandatory>
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="20" parent="9" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="21" parent="9" name="name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <key id="22" parent="9" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="23" parent="10" name="user-id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="24" parent="10" name="language-id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="25" parent="11" name="team_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="26" parent="11" name="user_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="27" parent="11" name="message">
+      <mandatory>1</mandatory>
+      <data-type>varchar(1000)|0</data-type>
+    </column>
+    <column id="28" parent="11" name="date">
+      <mandatory>1</mandatory>
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="29" parent="12" name="user-id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="30" parent="12" name="team-id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="31" parent="13" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="32" parent="13" name="name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <key id="33" parent="13" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="34" parent="14" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="35" parent="14" name="nickname">
+      <mandatory>1</mandatory>
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="36" parent="14" name="first_name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="37" parent="14" name="last_name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="38" parent="14" name="email">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="39" parent="14" name="password">
+      <mandatory>1</mandatory>
+      <data-type>varchar(200)|0</data-type>
+    </column>
+    <column id="40" parent="14" name="xp">
+      <mandatory>1</mandatory>
+      <data-type>int(150)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <key id="41" parent="14" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+  </database-model>
+</dataSource>
