@@ -1,3 +1,67 @@
-.content {
+.profile-photo {
+    width: 135px;
+    height: 135px;
+    background-image: url("../images/footer_github.png");
+    background-size: 135px 135px;
+    margin: 15px;
+}
 
+.player {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 20px;
+    align-items: center;
+    font-family: Sidebar;
+    font-size: 15px;
+}
+
+.scr {
+    display: block;
+    align-self: center;
+    width: 98%;
+    height: 500px;
+    border: 3px solid black;
+    margin-bottom: 20px;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+
+p {
+    font-size: 45px;
+    font-family: Sidebar;
+    line-height: 200px;
+}
+
+.username {
+    padding-top: 140px;
+    font-size: 20px;
+    word-wrap: break-word;
+}
+
+.score {
+    display: flex;
+    justify-content: space-around;
+    width: 150px;
+    margin-top: 25px;
+    font-size: 27px;
+    font-family: Sidebar;
+}
+
+.player:nth-last-child(1) {
+    flex-direction: row-reverse;
+}
+
+@media screen and (max-width: 900px) {
+    .player {
+        flex-direction: column;
+    }
+    .player:nth-last-child(1) {
+        flex-direction: column;
+    }
 }

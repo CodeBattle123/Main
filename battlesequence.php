@@ -14,8 +14,29 @@
 
 <div class="wrapper">
     <div class="content">
-
+        <div class="player">
+            <div class="profile-photo">
+                <div class="username">username</div>
+            </div>
+            <div class="score">
+                <div>.</div>
+                <div>.</div>
+                <div>.</div>
+            </div>
+        </div>
+            <p>VS</p>
+        <div class="player">
+            <div class="profile-photo">
+                <div class="username">username</div>
+            </div>
+            <div class="score">
+                <div>.</div>
+                <div>.</div>
+                <div>.</div>
+            </div>
+        </div>
     </div>
+    <div class="scr"></div>
 </div>
 <?php include 'footer.html'?>
 </body>
