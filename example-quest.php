@@ -19,8 +19,7 @@
         <h3 class="level">Level 1/10</h3>
         <hr>
         <h4 class="objective">Fill Blanks to Print Numbers 1 to 10</h4>
-
-        <div class="codeContainer">
+       <div class="codeContainer">
 			<div class="container">
             <pre class="quest">
 <span>i=1</span>
@@ -35,6 +34,7 @@
                 <br><input type="button" class="checkButton" id="submitQuest" value="check">
                 <span id="result">Result: </span>
             </div>
+
         </div>
     </div>
 </div>
@@ -63,7 +63,7 @@
                     clearTimeout(t);
                 });
                 $(document).keypress(function (k) {
-                    if (k.which == 13 || k.which == 32) {
+                    if (k.which == 13) {
                         clearTimeout(t);
                     }
                 });
@@ -73,6 +73,8 @@
         }
         tick();
     }
+    var correct = "<span style='color:green;'> <img style='width: 50%' src='images/nakov-correct.png' alt='Correct'></span>";
+    var wrong = "<span style='color:red;'> <img style='width: 50%' src='images/nakov-wrong.png' alt='Wrong'></span>";
 
     function CalcResult() {
 
@@ -80,32 +82,33 @@
         let i2 = $("#ex-quest-input-2").val();
         let i3 = $("#ex-quest-input-3").val();
         let result = true;
-        if (i1 != "while") {
+
+        if (i1.toLowerCase() != "while") {
             result = false;
         }
-        if (i2 != "print") {
+        if (i2.toLowerCase() != "print") {
             result = false;
         }
-        if (i3 != "+=") {
+        if (i3.toLowerCase() != "+=") {
             result = false;
         }
 
         if (result == true) {
             finished = true;
-            return "<span style='color:green;'> CORRECT</span>";
+            return correct;
         }
         else {
             finished = true;
-            return "<span style='color:red;'> WRONG</span>";
+            return wrong;
         }
     }
 
     window.onload = countdown();
 
     $(document).keypress(function (k) {
-        if (k.which == 13 || k.which == 32) {
+        if (k.which == 13) {
 
-			document.getElementById('submitQuest').style.boxShadow = "none";
+            document.getElementById('submitQuest').style.boxShadow = "none";
 			document.getElementById('submitQuest').style.top = "10px";
 
 			setTimeout(function () {
