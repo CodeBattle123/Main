@@ -1,4 +1,5 @@
 <?php
+	include_once("db/login_status.php");
 
 	function get_browser_name($user_agent)
 	{
@@ -19,37 +20,27 @@
 		echo "Please get a different browser.";
 		exit;
 	}
-
-    include_once('db/connect.php');
 ?>
 
 <header>
    <a href="index.php"><img src="images/Logo.svg" alt="hlogo" class="logo"/></a>
    <h1 class="header-title">CodeBattles</h1>
-
-<?php
-
-if (!isset($user)) {
-	echo '<div class="nav">
+   <div class="nav">
 	   <ul id="list">
-		  <li><a href="login.php" class="tab">Login</a></li>
-		  <li><a href="register.php" class="tab">Register</a></li>
+		   <?php
+				if (!$logged) {
+					echo '<li><a href="login.php" class="tab">Login</a></li>
+						  <li><a href="register.php" class="tab">Register</a></li>';
+				} else {
+					echo '<li><a href="profile.php" class="tab">' . $_SESSION['username'] . '</a></li>
+		  				<li><a href="logout.php" class="tab">Log Out</a></li>';
+					}
+				?>
 	   </ul>
 	</div>
- </header>';
-}
+ </header>
 
-else {
-	echo '<div class="nav">
-	   <ul id="list">
-		  <li><a href="profile.php" class="tab">My Profile</a></li>
-		  <li><a href="logout.php" class="tab">Log Out</a></li>
-	   </ul>
-	</div>
- </header>';
-}
 
-?>
 <?php
     include_once('sidebar.html');
 ?>
