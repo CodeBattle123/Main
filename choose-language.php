@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -12,6 +12,13 @@
 </head>
 <body>
 <?php include_once('header.php'); ?>
+<?php
+$idd = $_SESSION['userid'];
+$query = "SELECT * FROM language_progress WHERE user_id='$idd' LIMIT 1";
+
+$results = mysqli_query($connect, $query);
+$row = mysqli_fetch_row($results);
+?>
 
 
 <div class="wrapper">
@@ -24,7 +31,7 @@
 
 			<div class="meter_container">
 				<div class="meter">
-					<span></span>
+					<span class="meterFill"></span>
 				</div>
 			</div>
 	    </a>
@@ -34,7 +41,7 @@
 
 			<div class="meter_container">
 				<div class="meter">
-					<span></span>
+					<span class="meterFill"></span>
 				</div>
 			</div>
 		</a>
@@ -44,7 +51,7 @@
 
 			<div class="meter_container">
 				<div class="meter">
-					<span></span>
+					<span class="meterFill"></span>
 				</div>
 			</div>
 	    </a>
@@ -54,7 +61,7 @@
 
 			<div class="meter_container">
 				<div class="meter">
-					<span></span>
+					<span class="meterFill"></span>
 				</div>
 			</div>
 	    </a>
@@ -64,7 +71,7 @@
 
 			<div class="meter_container">
 				<div class="meter">
-					<span></span>
+					<span class="meterFill"></span>
 				</div>
 			</div>
 		</a>
@@ -75,7 +82,7 @@
 
 			<div class="meter_container">
 				<div class="meter">
-					<span></span>
+					<span class="meterFill"></span>
 				</div>
 			</div>
 	    </a>
@@ -85,7 +92,7 @@
 
 			<div class="meter_container">
 				<div class="meter">
-					<span></span>
+					<span class="meterFill"></span>
 				</div>
 			</div>
 	    </a>
@@ -95,15 +102,24 @@
 
 			<div class="meter_container">
 				<div class="meter">
-					<span></span>
+					<span class="meterFill"></span>
 				</div>
 			</div>
 	    </a>
 
 		<script type="text/javascript">
-			var meters = document.getElementsByClassName('meter_container');
+			var elements = document.getElementsByClassName('meterFill');
 
-			
+			elements[0].style.width = String(parseInt("<?php echo $row[1]; ?>") * 10) + "%";
+			elements[1].style.width = String(parseInt("<?php echo $row[2]; ?>") * 10) + "%";
+			elements[2].style.width = String(parseInt("<?php echo $row[3]; ?>") * 10) + "%";
+			elements[3].style.width = String(parseInt("<?php echo $row[4]; ?>") * 10) + "%";
+			elements[4].style.width = String(parseInt("<?php echo $row[5]; ?>") * 10) + "%";
+			elements[5].style.width = String(parseInt("<?php echo $row[6]; ?>") * 10) + "%";
+			elements[6].style.width = String(parseInt("<?php echo $row[7]; ?>") * 10) + "%";
+			elements[7].style.width = String(parseInt("<?php echo $row[8]; ?>") * 10) + "%";
+
+
 		</script>
 
 	</div>
