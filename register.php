@@ -3,6 +3,7 @@
 <head>
     <link rel="stylesheet" href="styles/headerAndFooter.css">
     <link rel="stylesheet" href="styles/sidebar.css">
+	<link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/login_register.css">
     <meta charset="UTF-8">
     <title>Register</title>

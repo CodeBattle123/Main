@@ -29,18 +29,18 @@
 			</div>
 	    </a>
 
-	    <a href="langCourse.php" class="lang-options" id="lang-java">
-	        <div class="lang-options-p">Java</div>
+		<a href="langCourse.php" class="lang-options" id="lang-c++">
+			<div class="lang-options-p">C++</div>
 
 			<div class="meter_container">
 				<div class="meter">
 					<span></span>
 				</div>
 			</div>
-	    </a>
+		</a>
 
-	    <a href="langCourse.php" class="lang-options" id="lang-php">
-	        <div class="lang-options-p">PHP</div>
+	    <a href="langCourse.php" class="lang-options" id="lang-java">
+	        <div class="lang-options-p">Java</div>
 
 			<div class="meter_container">
 				<div class="meter">
@@ -59,15 +59,16 @@
 			</div>
 	    </a>
 
-	    <a href="langCourse.php" class="lang-options" id="lang-c++">
-	        <div class="lang-options-p">C++</div>
+		<a href="langCourse.php" class="lang-options" id="lang-php">
+			<div class="lang-options-p">PHP</div>
 
 			<div class="meter_container">
 				<div class="meter">
 					<span></span>
 				</div>
 			</div>
-	    </a>
+		</a>
+
 	<!--Toni - if clicked demo script will run-->
 	    <a href="langCourse.php" class="lang-options" id="lang-ruby">
 	        <div class="lang-options-p">Ruby</div>
@@ -99,21 +100,14 @@
 			</div>
 	    </a>
 
+		<script type="text/javascript">
+			var meters = document.getElementsByClassName('meter_container');
+
+			
+		</script>
+
 	</div>
-
 </div>
-
-
-<!--Toni - demo script to link to ruby-->
-<script>
-
-    $(document).ready( function () {
-        $('#lang-ruby').click( function () {
-            window.location = 'accept-quest.php';
-        });
-    });
-
-</script>
 
 <?php include_once('footer.html'); ?>
 </body>

@@ -1,37 +1,42 @@
 @font-face {
 	font-family: MainText;
+
 	src: url(../fonts/aspace_demo.otf);
 }
 @font-face {
 	font-family: Text;
+
 	src: url(../fonts/LLPIXEL3.ttf);
 }
 @font-face {
 	font-family: Sidebar;
+
 	src: url(../fonts/Kemco.ttf);
 }
 @font-face {
 	font-family: Content;
+
 	src: url(../fonts/VCR.ttf);
 }
 
 @font-face {
 	font-family: Quest;
+
 	src: url(../fonts/quest.ttf);
 }
 
 *:not(section) {
+	margin: 0;
+	padding:0;
+
 	transition:
 	opacity 0.5s,
 	font-size 0.3s;
-
-
-	padding:0;
-	margin: 0;
 }
 body {
+	width: 100%;
 	padding-top: 100px;
-	width: 100%;
+
 	background: #0073A5;
 }
 body::-webkit-scrollbar {
@@ -47,101 +52,119 @@ header {
 	position: fixed;
 	z-index: 5;
 	top: 0px;
+
 	width: 100%;
 	height: 60px;
 	padding: 20px;
+
 	background:#0073A5;
+
 	font-family: Sidebar;
 	/*#0073A5*/
 }
 .logo {
 	display: inline-block;
 	float: left;
+
 	margin-right: 15px;
 }
 .header-title {
-	line-height: 60px;
-	font-size: 5vw;
 	position: relative;
 	top: 10px;
-	font-family: Sidebar;
+
 	display: inline-block;
+
 	color: #FFF;
+
+	font-family: Sidebar;
+	font-size: 5vw;
+	line-height: 60px;
 }
 .nav {
-	margin-right: 30px;
 	display: block;
 	float: right;
+
+	margin-right: 30px;
+
 	list-style: none;
 }
 .nav li {
 	display: inline-block;
 }
 .tab {
-	border-radius: 5px;
-	background-color: rgb(148, 148, 148);
-	color: white;
-	line-height: 40px;
-	margin-top: 10px;
-	margin-right: 10px;
-	text-align: center;
-	display: inline-block;
 	position: relative;
+
+	display: inline-block;
+
 	min-width: 6vw;
 	height: 40px;
-	text-decoration: none;
+	margin-top: 10px;
+	margin-right: 10px;
 	padding: 0 10px;
+
+	text-align: center;
+	text-decoration: none;
+
+	color: white;
+	border-radius: 5px;
+	background-color: rgb(148, 148, 148);
+
+	line-height: 40px;
 }
 .logo {
+	width: 60px;
 	height: 60px;
-	width: 60px;
 }
 /*------------------------------------------------------------------------------------ */
 
 .mainFooter {
+	position: relative;
+
+	clear: both;
+
 	width: 100%;
 	height: 110px;
 
-	position: relative;
-
-
-	font-family: Text;
-	font-weight: bold;
 	letter-spacing: 2px;
 
 	background-color: #0073A5;
 
-	clear: both;
+	font-family: Text;
+	font-weight: bold;
 }
 .flogo {
 	display: inline-block;
 
 	width: 70px;
 	height: 70px;
-
 	margin: 20px 15px 0px 25px;
 }
 .cpheader {
-	font-family: Text;
 	position: absolute;
 	top: 50px;
-	font-size: 20px;
-	display: inline-block;
-}
-.contact-image {
-	width: 25px;
-	height: 25px;
 
 	display: inline-block;
+
+	font-family: Text;
+	font-size: 20px;
+}
+.contact-image {
 	position: relative;
 	top: 5px;
+
+	display: inline-block;
+
+	width: 25px;
+	height: 25px;
 }
 .contacts {
-	display: inline-block;
 	position: relative;
+
+	display: inline-block;
 	float: right;
-	margin-right: 100px;
+
 	margin-top: 10px;
+	margin-right: 100px;
 }
 .contacts ul {
 	list-style: none;
@@ -151,8 +174,10 @@ header {
 }
 .contact-links {
 	display: inline-block;
-	color: #FFF;
+
 	text-decoration: none;
+
+	color: #FFF;
 }
 /*------------  ANIMATIONS --------------*/
 
@@ -161,13 +186,14 @@ header {
 		font-size: 7vw;
 	}
 
-
 	.nav ul{
-		display: none;
 		position: relative;
 		top: -20px;
 		right: 250px;
+
+		display: none;
 		overflow: hidden;
+
 		width: 300px;
 	}
 
@@ -178,12 +204,14 @@ header {
 	}
 
 	.nav ul li, .tab{
-		background-color: rgba(0, 115, 165, 0.5);
 		display: block;
+
 		width: 100%;
 		margin: 0;
-		border-radius: 0;
+
 		border-bottom: 1px solid black;
+		border-radius: 0;
+		background-color: rgba(0, 115, 165, 0.5);
 	}
 
 	.tab {
@@ -197,6 +225,7 @@ header {
 	.nav {
 		width: 7vw;
 		height: 7vw;
+
 		background:#ffffff url("../images/threelines.png") no-repeat center;
 		background-size: contain;
 	}
@@ -215,6 +244,7 @@ header {
 	.top{
 		display: inline-flex;
 		flex-direction: column;
+
 		flex-wrap: wrap;
 		align-items: center;
 	}
@@ -222,22 +252,28 @@ header {
 	.flogo {
 		position: relative;
 		top: 10px;
+
 		display: block;
+
 		margin: 0 auto;
 	}
 
 	.cpheader {
 		position: relative;
 		top: 15px;
+
 		display: block;
-		text-align: center;
+
 		margin: 0 auto;
+
+		text-align: center;
 	}
 
 	.contacts {
-		width: 100%;
 		position: absolute;
 		bottom: 10px;
+
+		width: 100%;
 		margin-top: 10px;
 	}
 
@@ -246,17 +282,21 @@ header {
 	}
 
 	.contacts ul {
+		position: relative;
+
 		display: flex;
 		flex-direction: row;
+
+		width: 100%;
+
 		flex-wrap: wrap;
 		align-items: center;
 		justify-content: center;
-		width: 100%;
-		position: relative;
 	}
 
 	.contacts li {
-		margin: 0 10px;
 		display: inline-block;
+
+		margin: 0 10px;
 	}
 }
