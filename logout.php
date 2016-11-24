@@ -1,5 +1,9 @@
 <?php
+    session_start();
+    $_SESSION['userid'] = "";
+    $_SESSION['username'] = "";
+    $_SESSION['password'] = "";
  	session_unset();
-	$user = "";
-	header("Location: index.php");
+    session_destroy();
+	header("location: index.php");
 ?>

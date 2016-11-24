@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="styles/sidebar.css">
 	<link rel="stylesheet" href="styles/main.css">
     <meta charset="UTF-8">
-    <title>home</title>
+    <title>Profile</title>
 </head>
 </head>
 <body>
@@ -15,7 +15,7 @@
 
 <div class="wrapper">
 	<div class="username" >
-	    <h2 align="center">Username</h2>
+	    <h2 align="center"><?=$_SESSION['username']?></h2>
 	</div>
 
 	<div class="profile-pic" align="center">
