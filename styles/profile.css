@@ -1,12 +1,4 @@
-.wrapper{
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-}
-.username{
-    padding: 10px;
 
-}
 .profile-pic{
     margin-top: 10px;
     margin-bottom: 10px;

@@ -3,13 +3,17 @@
 }
 input[type="text"], input[type="password"], input[type="email"] {
     display: block;
+
+    width: 200px;
     margin: 20px auto 0 auto;
+
     border: 0;
     border-bottom: 1px solid black;
+    outline: none;
     background-color: inherit;
+
     font-family: MainText;
     font-size: 15px;
-    width: 200px;
 }
 
 input[type="text"]{
@@ -18,18 +22,22 @@ input[type="text"]{
 
 input[type="submit"] {
     display: block;
-    margin: 0 auto;
-    width: 200px;
-    padding: 10px 0px;
-    background-color: white;
-    border: solid 2px black;
-    border-radius: 5px;
-    cursor: pointer;
-    font-family: Sidebar;
-    font-size: 15px;
     float: left;
+
+    width: 200px;
+    margin: 0 auto;
     margin-top: 25px;
     margin-bottom: 40px;
+    padding: 10px 0px;
+
+    cursor: pointer;
+
+    border: solid 2px black;
+    border-radius: 5px;
+    background-color: white;
+
+    font-family: Sidebar;
+    font-size: 15px;
 }
 form{
     margin: 40px;
@@ -37,27 +45,20 @@ form{
 
 .form{
     display: block;
-    margin: auto auto;
-    align-self: center;
-    border: 2px solid gray;
-    align-content: center;
-    border-radius: 10px;
+
+    margin: 30px auto 0 auto;
     padding: auto;
+
+    border: 2px solid gray;
+    border-radius: 10px;
+
+    align-self: center;
+    align-content: center;
 
 }
 
 input[type="submit"]:hover {
-    background-color: #0073A5;
-    border-color: #0073A5;
     color: white;
+    border-color: #0073A5;
+    background-color: #0073A5;
 }
-
-.wrapper{
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    min-height: 400px;
-    height: 400px;
-}
-
-
