@@ -43,11 +43,11 @@
         <div class="wrapper">
             <?php
                 if (isset($_POST['submit']) && (($_POST['username'] == "") || ($_POST['pass'] == ""))) {
-                    echo "You must set values to username and password.";
+                    echo "<li class=\"message\">You must set values to username and password.</li>";
                 }
 
                 if (isset($_POST['submit']) && ($pass != $db_pass)) {
-        			echo "Wrong username/password combination.";
+        			echo "<li class=\"message\">Wrong username/password combination.</li>";
                 }
             ?>
             <div class="form">
