@@ -18,8 +18,9 @@
         <h1 class="langName">Test Your <span>Ruby</span> Skills</h1>
         <h3 class="level">Level 1/10</h3>
         <hr>
-        <h4 class="objective">Fill Blanks to Print Numbers 1 to 10</h4>
        <div class="codeContainer">
+			<div class="veil"></div>
+			<h4 class="objective">Fill Blanks to Print Numbers 1 to 10</h4>
 			<div class="container">
             <pre class="quest">
 <span>i=1</span>
@@ -103,7 +104,12 @@
         }
     }
 
-    window.onload = countdown();
+
+
+	$(".veil").click(function () {
+		$(".veil").hide(0);
+		countdown();
+	});
 
     $(document).keypress(function (k) {
         if (k.which == 13) {
