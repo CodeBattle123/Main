@@ -88,7 +88,7 @@
 	background-color: #777777;
 }
 
-.meter span {
+.meterFill {
 	position: relative;
 
 	display: block;
