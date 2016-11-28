@@ -1,3 +1,9 @@
+<?php
+	include_once 'db/login_status.php';
+	header('location: index.php');
+	exit();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
