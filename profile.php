@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="styles/profile.css">
     <link rel="stylesheet" href="styles/sidebar.css">
 	<link rel="stylesheet" href="styles/main.css">
+
     <meta charset="UTF-8">
     <title>Profile</title>
 </head>
@@ -29,15 +30,31 @@
 	        <th>Score</th>
 	        <th>Ranking</th>
 	    </tr>
-	    <tr>
-	        <th>asdfg</th>
-	        <th>hjkl</th>
-	        <th>10000000</th>
-	        <th>#1</th>
-	    </tr>
+		<?php
+		$user = $_SESSION ['username'];
+		$sql = "SELECT * FROM users WHERE nickname = '$user'";
+		$query = mysqli_query($connect, $sql);
+		$row = $query->fetch_assoc();
+		echo '<tr>
+            <td>
+                <h4>' . $row['first_name'] . '</h4>
+            </td>
+                <td>
+                <h4>' . $row['last_name'] . '</h4>
+                </td>
+            <td>
+               <h4>' . $row['xp'] . '</h4>
+            </td>
+                        <td>
+               <h4>' . '#' . $row['id'] . '</h4>
+            </td>
+               </tr>
+               ';
+		?>
+
 	</table>
 
-	<div class="text" style="font-family: MainText">
+	<div class="text">
 	   <p>This is information about me</p>
 	</div>
 
@@ -50,131 +67,46 @@
 		    <tr>
 		        <th></th>
 		        <th>Username:</th>
-		        <th>Won/Lost:</th>
+		        <th>Result:</th>
 		        <th></th>
 		        <th>Against:</th>
 		        <th>Gained XP:</th>
-		    </tr>
+				<th>Date:</th>
+			</tr>
 		    <tr>
+				<?php
+				$userid = $_SESSION ['userid'];
+				$sql = "SELECT * FROM battle_log WHERE user1_id = '$userid' || user2_id = '$userid' ORDER BY date DESC";
+				$query = mysqli_query($connect, $sql);
+				while($row = $query->fetch_assoc()) {
+					if ($row['user1_id'] == $userid) {
+						$opponentid = $row['user2_id'];
+					}
+					else {
+						$opponentid = $row['user1_id'];
+					}
+
+					if ($row['winner'] == $userid) {
+						$result = 'Victory';
+					} else {
+						$result = 'Defeat';
+					}
+					$opponent = mysqli_query($connect, "SELECT * FROM users WHERE id = '$opponentid'")->fetch_assoc()['nickname'];
+
+					echo '<tr>
 		        <td><img src="images/footer_github.png" height="20"></td>
-		        <td>User3</td>
-		        <td>Lost</td>
-		        <td><img src="images/footer_github.png" height="20" </td>
-		        <td>User4</td>
-		        <td>0</td>
-		    </tr>
-		    <tr>
-		        <td><img src="images/footer_github.png" height="20"></td>
-		        <td>User3</td>
-		        <td>Lost</td>
-		        <td><img src="images/footer_github.png" height="20" </td>
-		        <td>User4</td>
-		        <td>0</td>
-		    </tr>
-		    <tr>
-		        <td><img src="images/footer_github.png" height="20"></td>
-		        <td>User3</td>
-		        <td>Lost</td>
-		        <td><img src="images/footer_github.png" height="20" </td>
-		        <td>User4</td>
-		        <td>0</td>
-		    </tr>
-		    <tr>
-		        <td><img src="images/footer_github.png" height="20"></td>
-		        <td>User3</td>
-		        <td>Lost</td>
-		        <td><img src="images/footer_github.png" height="20" </td>
-		        <td>User4</td>
-		        <td>0</td>
-		    </tr>
-		    <tr>
-		        <td><img src="images/footer_github.png" height="20"></td>
-		        <td>User3</td>
-		        <td>Lost</td>
-		        <td><img src="images/footer_github.png" height="20" </td>
-		        <td>User4</td>
-		        <td>0</td>
-		    </tr>
-		    <tr>
-		        <td><img src="images/footer_github.png" height="20"></td>
-		        <td>User3</td>
-		        <td>Lost</td>
-		        <td><img src="images/footer_github.png" height="20" </td>
-		        <td>User4</td>
-		        <td>0</td>
-		    </tr>
-		    <tr>
-		        <td><img src="images/footer_github.png" height="20"></td>
-		        <td>User3</td>
-		        <td>Lost</td>
-		        <td><img src="images/footer_github.png" height="20" </td>
-		        <td>User4</td>
-		        <td>0</td>
-		    </tr>
-		    <tr>
-		        <td><img src="images/footer_github.png" height="20"></td>
-		        <td>User3</td>
-		        <td>Lost</td>
-		        <td><img src="images/footer_github.png" height="20" </td>
-		        <td>User4</td>
-		        <td>0</td>
-		    </tr>
-		    <tr>
-		        <td><img src="images/footer_github.png" height="20"></td>
-		        <td>User3</td>
-		        <td>Lost</td>
-		        <td><img src="images/footer_github.png" height="20" </td>
-		        <td>User4</td>
-		        <td>0</td>
-		    </tr>
-		    <tr>
-		        <td><img src="images/footer_github.png" height="20"></td>
-		        <td>User3</td>
-		        <td>Lost</td>
-		        <td><img src="images/footer_github.png" height="20" </td>
-		        <td>User4</td>
-		        <td>0</td>
-		    </tr>
-		    <tr>
-		        <td><img src="images/footer_github.png" height="20"></td>
-		        <td>User3</td>
-		        <td>Lost</td>
-		        <td><img src="images/footer_github.png" height="20" </td>
-		        <td>User4</td>
-		        <td>0</td>
-		    </tr>
-		    <tr>
-		        <td><img src="images/footer_github.png" height="20"></td>
-		        <td>User3</td>
-		        <td>Lost</td>
-		        <td><img src="images/footer_github.png" height="20" </td>
-		        <td>User4</td>
-		        <td>0</td>
-		    </tr>
-		    <tr>
-		        <td><img src="images/footer_github.png" height="20"></td>
-		        <td>User3</td>
-		        <td>Lost</td>
-		        <td><img src="images/footer_github.png" height="20" </td>
-		        <td>User4</td>
-		        <td>0</td>
-		    </tr>
-		    <tr>
-		        <td><img src="images/footer_github.png" height="20"></td>
-		        <td>User3</td>
-		        <td>Lost</td>
-		        <td><img src="images/footer_github.png" height="20" </td>
-		        <td>User4</td>
-		        <td>0</td>
-		    </tr>
-		    <tr>
-		        <td><img src="images/footer_github.png" height="20"></td>
-		        <td>User3</td>
-		        <td>Lost</td>
-		        <td><img src="images/footer_github.png" height="20" </td>
-		        <td>User4</td>
-		        <td>0</td>
-		    </tr>
+           		 <td>' . $user . '</td>
+                <td>' . $result . '</td>
+                <td><img src="images/footer_github.png" height="20" </td>
+                <td>' . $opponent . '</td>
+                <td>' . $row['won_xp'] . '</td>
+                <td>' . $row['date'] . '</td>
+               </tr>
+               ';
+				}
+				?>
+			</tr>
+
 		</table>
 	</div>
 </div>

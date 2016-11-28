@@ -37,6 +37,7 @@
         </div>
     </div>
     <div class="scr"></div>
+
 </div>
 <?php include 'footer.html'?>
 </body>
