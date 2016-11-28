@@ -30,7 +30,7 @@
               <tr>
 
 <?php
-    $sql = "SELECT * FROM users";
+    $sql = "SELECT * FROM users ORDER BY xp DESC";
     $query = mysqli_query($connect, $sql);
     while($row = $query->fetch_assoc()){
         echo '<tr>
