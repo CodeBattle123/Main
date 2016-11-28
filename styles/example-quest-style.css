@@ -1,15 +1,4 @@
-.veil {
-	display: block;
 
-	min-width: 100%;
-	min-height: 100%;
-
-	background-color: #DDD;
-	background-image: url("../images/lock.png");
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: 7.5%;;;
-}
 
 hr {
     border: 1px solid black;
