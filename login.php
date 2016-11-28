@@ -34,18 +34,20 @@
         <title>Login</title>
         <link rel="stylesheet" href="styles/headerAndFooter.css"/>
         <link rel="stylesheet" href="styles/login_register.css">
+		<link rel="stylesheet" href="styles/main.css">
         <link rel="stylesheet" href="styles/sidebar.css" media="screen" title="no title">
+		<script type="text/javascript" src="scripts/moveToHeader.js"></script>
     </head>
-    <body>
+    <body id="bod" onresize="move()">
         <?php include_once('header.php'); ?>
         <div class="wrapper">
             <?php
                 if (isset($_POST['submit']) && (($_POST['username'] == "") || ($_POST['pass'] == ""))) {
-                    echo "You must set values to username and password.";
+                    echo "<li class=\"message\">You must set values to username and password.</li>";
                 }
 
                 if (isset($_POST['submit']) && ($pass != $db_pass)) {
-        			echo "Wrong username/password combination.";
+        			echo "<li class=\"message\">Wrong username/password combination.</li>";
                 }
             ?>
             <div class="form">

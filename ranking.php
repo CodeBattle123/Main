@@ -45,8 +45,10 @@
                 <h4 class="exp">' . $row['xp'] . '</h4>
                 </td>
             <td>
-               <h4>Scrubs</h4></td>
-               </tr>';
+               <h4 class="exp">' . $row['clan'] . '</h4>
+            </td>
+               </tr>
+               ';
     }
 ?>
 </table>

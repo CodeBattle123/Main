@@ -1,21 +1,27 @@
 .sidebar{
-   font-family: Sidebar;
-   width: 20%;
    display: block;
-   background-color:#0073A5;
-   min-height: 600px;
    float: left;
-   text-align: left;
+
+   width: 20%;
+   min-height: 600px;
    padding-bottom: 20px;
+
+   text-align: left;
+
+   background-color:#0073A5;
+
+   font-family: Sidebar;
 }
 
 .sidebar_container {
    width: 100%;
+
    list-style: none;
 }
 
 .sidebar_container li {
    padding-left: 20px;
+
    border-bottom: 1px solid #3cb0fd;
 }
 
@@ -25,24 +31,26 @@
 
 .link {
    display: block;
-   text-transform: uppercase;
+
    width: 100%;
-   line-height: 40px;
-   color: white;
+
    text-decoration: none;
+   text-transform: uppercase;
+
+   color: white;
+
+   line-height: 40px;
 }
 
 .link li {
    width: 100%;
 }
 
-@media screen and (max-width: 600px){
-   .sidebar {
-    	display: none;
-   }
-}
-
 @media screen and (max-width:800px) {
+	.sidebar {
+		display: none;
+	}
+
 	.sidebar {
 		width: 150px;
 	}

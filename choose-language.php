@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -12,6 +12,13 @@
 </head>
 <body>
 <?php include_once('header.php'); ?>
+<?php
+$idd = $_SESSION['userid'];
+$query = "SELECT * FROM language_progress WHERE user_id='$idd' LIMIT 1";
+
+$results = mysqli_query($connect, $query);
+$row = mysqli_fetch_row($results);
+?>
 
 
 <div class="wrapper">
@@ -24,27 +31,27 @@
 
 			<div class="meter_container">
 				<div class="meter">
-					<span></span>
+					<span class="meterFill"></span>
 				</div>
 			</div>
 	    </a>
+
+		<a href="langCourse.php" class="lang-options" id="lang-c++">
+			<div class="lang-options-p">C++</div>
+
+			<div class="meter_container">
+				<div class="meter">
+					<span class="meterFill"></span>
+				</div>
+			</div>
+		</a>
 
 	    <a href="langCourse.php" class="lang-options" id="lang-java">
 	        <div class="lang-options-p">Java</div>
 
 			<div class="meter_container">
 				<div class="meter">
-					<span></span>
-				</div>
-			</div>
-	    </a>
-
-	    <a href="langCourse.php" class="lang-options" id="lang-php">
-	        <div class="lang-options-p">PHP</div>
-
-			<div class="meter_container">
-				<div class="meter">
-					<span></span>
+					<span class="meterFill"></span>
 				</div>
 			</div>
 	    </a>
@@ -54,27 +61,28 @@
 
 			<div class="meter_container">
 				<div class="meter">
-					<span></span>
+					<span class="meterFill"></span>
 				</div>
 			</div>
 	    </a>
 
-	    <a href="langCourse.php" class="lang-options" id="lang-c++">
-	        <div class="lang-options-p">C++</div>
+		<a href="langCourse.php" class="lang-options" id="lang-php">
+			<div class="lang-options-p">PHP</div>
 
 			<div class="meter_container">
 				<div class="meter">
-					<span></span>
+					<span class="meterFill"></span>
 				</div>
 			</div>
-	    </a>
+		</a>
+
 	<!--Toni - if clicked demo script will run-->
 	    <a href="langCourse.php" class="lang-options" id="lang-ruby">
 	        <div class="lang-options-p">Ruby</div>
 
 			<div class="meter_container">
 				<div class="meter">
-					<span></span>
+					<span class="meterFill"></span>
 				</div>
 			</div>
 	    </a>
@@ -84,7 +92,7 @@
 
 			<div class="meter_container">
 				<div class="meter">
-					<span></span>
+					<span class="meterFill"></span>
 				</div>
 			</div>
 	    </a>
@@ -94,26 +102,28 @@
 
 			<div class="meter_container">
 				<div class="meter">
-					<span></span>
+					<span class="meterFill"></span>
 				</div>
 			</div>
 	    </a>
 
+		<script type="text/javascript">
+			var elements = document.getElementsByClassName('meterFill');
+
+			elements[0].style.width = String(parseInt("<?php echo $row[1]; ?>") * 10) + "%";
+			elements[1].style.width = String(parseInt("<?php echo $row[2]; ?>") * 10) + "%";
+			elements[2].style.width = String(parseInt("<?php echo $row[3]; ?>") * 10) + "%";
+			elements[3].style.width = String(parseInt("<?php echo $row[4]; ?>") * 10) + "%";
+			elements[4].style.width = String(parseInt("<?php echo $row[5]; ?>") * 10) + "%";
+			elements[5].style.width = String(parseInt("<?php echo $row[6]; ?>") * 10) + "%";
+			elements[6].style.width = String(parseInt("<?php echo $row[7]; ?>") * 10) + "%";
+			elements[7].style.width = String(parseInt("<?php echo $row[8]; ?>") * 10) + "%";
+
+
+		</script>
+
 	</div>
-
 </div>
-
-
-<!--Toni - demo script to link to ruby-->
-<script>
-
-    $(document).ready( function () {
-        $('#lang-ruby').click( function () {
-            window.location = 'accept-quest.php';
-        });
-    });
-
-</script>
 
 <?php include_once('footer.html'); ?>
 </body>

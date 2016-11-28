@@ -18,7 +18,7 @@
     width: 100%;
     margin: 20px auto;
     text-align: center;
-    font-family: Text;
+    font-family: Quest;
 }
 
 .table-history{
@@ -42,11 +42,19 @@ table {
 }
 
 td, th {
-
     text-align: left;
     padding: 8px;
 }
 
 tr:nth-child(even) {
     background-color: #dddddd;
+}
+
+
+.text {
+    font-family: Arial;
+}
+
+th {
+    font-family: Quest;
 }
