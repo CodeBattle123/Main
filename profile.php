@@ -29,6 +29,7 @@
 	        <th>Last Name</th>
 	        <th>Score</th>
 	        <th>Ranking</th>
+
 	    </tr>
 		<?php
 		$user = $_SESSION ['username'];
@@ -46,10 +47,9 @@
                <h4>' . $row['xp'] . '</h4>
             </td>
                         <td>
-               <h4>' . '#' . $row['id'] . '</h4>
+               <h4>' . '#' . $row['rank'] . '</h4>
             </td>
-               </tr>
-               ';
+               </tr>';
 		?>
 
 	</table>
@@ -93,7 +93,7 @@
 					}
 					$opponent = mysqli_query($connect, "SELECT * FROM users WHERE id = '$opponentid'")->fetch_assoc()['nickname'];
 
-					echo '<tr>
+					echo '<tr  class="match">
 		        <td><img src="images/footer_github.png" height="20"></td>
            		 <td>' . $user . '</td>
                 <td>' . $result . '</td>
@@ -104,9 +104,15 @@
                </tr>
                ';
 				}
+
 				?>
 			</tr>
-
+			<script>
+				var matches = document.getElementsByClassName("match");
+				for	(row of matches) {
+					document.getElementsByClassName("match").style.backgroundColor = "blue";
+				}
+			</script>
 		</table>
 	</div>
 </div>
