@@ -1,15 +1,4 @@
-.veil {
-	display: block;
 
-	min-width: 100%;
-	min-height: 100%;
-
-	background-color: #DDD;
-	background-image: url("../images/lock.png");
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: 7.5%;;;
-}
 
 hr {
     border: 1px solid black;
@@ -23,6 +12,15 @@ hr {
 .codeContainer {
     display: flex;
     flex-direction: row;
+
+		animation-name: Show;
+		animation-duration: 1.5s;
+		animation-timing-function: linear;
+		animation-delay: none;
+		animation-iteration-count: 1;
+		animation-direction: normal;
+
+		background-color: #fff;
 }
 
 .container {
@@ -95,12 +93,14 @@ hr {
 #counter {
     position: relative;
 
-    display: inline-block;
+	display: inline-block;
 
     width: 50%;
     height: 156px;
     margin: 0;
 	padding-top: -20px;
+
+	transition: all 0.5s;
 
     font-size: 30px;
     font-weight: bolder;
@@ -109,13 +109,12 @@ hr {
 
 .checkButton {
 	position: relative;
-	top: 0px;
 
     display: inline-block;
 
     width: 200px;
     height: 50px;
-	margin: 18px 0px;
+	margin: 18px auto;
 
     border: 3px solid rgb(199, 199, 199);
 	border-radius: 5px;
@@ -179,4 +178,10 @@ hr {
 	#counter {
 		width: 100%;
 	}
+}
+
+@keyframes Show {
+	0% {background: linear-gradient(#000, #000, #000, #000)}
+	25% {background: linear-gradient(#000, #000, #000, #000)}
+	100% {background:  linear-gradient(#fff, #fff, #fff, #fff)}
 }

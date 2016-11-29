@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+	<!DOCTYPE html>
 <html lang="en">
 <head>
     <link rel="stylesheet" href="styles/headerAndFooter.css">
@@ -18,9 +18,8 @@
         <h1 class="langName">Test Your <span>Ruby</span> Skills</h1>
         <h3 class="level">Level 1/10</h3>
         <hr>
+        <h4 class="objective">Fill Blanks to Print Numbers 1 to 10</h4>
        <div class="codeContainer">
-			<div class="veil"></div>
-			<h4 class="objective">Fill Blanks to Print Numbers 1 to 10</h4>
 			<div class="container">
             <pre class="quest">
 <span>i=1</span>
@@ -32,7 +31,7 @@
 			</div>
 
             <div id="counter">
-                <br><input type="button" class="checkButton" id="submitQuest" value="check">
+                <br><input type="button" class="checkButton" id="submitQuest" value="check"><br>
                 <span id="result">Result: </span>
             </div>
 
@@ -43,7 +42,7 @@
 <script type="text/javascript">
     let inputs = document.getElementsByClassName('input');
 
-	var finished = false;
+	var finished = true;
 
     for(item of inputs) {
         item.style.width = (item.maxLength * 15) + 'px';
@@ -56,7 +55,7 @@
             seconds--;
 
             counter.innerHTML = "0:" + (seconds < 10 ? "0" : "") + String(seconds)
-                +"<br><input type='button' class='checkButton' id='submitQuest' value='check'> <br> <span id='result'>Result: </span>";
+                +"<br><input type='button' class='checkButton' id='submitQuest' value='check'><br><span id='result'>Result: </span>";
 
             if (seconds > 0) {
                 let t = setTimeout(tick, 1000);
@@ -74,8 +73,8 @@
         }
         tick();
     }
-    var correct = "<span style='color:green;'> <img style='width: 50%' src='images/nakov-correct.png' alt='Correct'></span>";
-    var wrong = "<span style='color:red;'> <img style='width: 50%' src='images/nakov-wrong.png' alt='Wrong'></span>";
+    var correct = "<span style='display:block; color:green;'> <img style='width: 50%' src='images/nakov-correct.png' alt='Correct'></span>";
+    var wrong = "<span style='display:block; color:red;'> <img style='width: 50%' src='images/nakov-wrong.png' alt='Wrong'></span>";
 
     function CalcResult() {
 
@@ -104,12 +103,11 @@
         }
     }
 
-
-
-	$(".veil").click(function () {
-		$(".veil").hide(0);
-		countdown();
-	});
+//Start show and start timer
+	setTimeout(function () {
+		window.onload = countdown();
+		finished = false;
+	}, 1500);
 
     $(document).keypress(function (k) {
         if (k.which == 13) {
