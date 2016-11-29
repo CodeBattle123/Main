@@ -1,3 +1,11 @@
+<?php
+	include_once 'db/login_status.php';
+	if ($logged) {
+		header("location: index.php");
+		exit();
+	}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +19,7 @@
 <body>
 <?php include_once('header.php'); ?>
 <div class="wrapper">
+	<ul class="messageHolder">
 	<?php
 	    if (isset($_POST['submit'])) {
 	        $validate = true;
@@ -18,8 +27,21 @@
 	    	$sql = "SELECT id FROM users WHERE nickname='$username' LIMIT 1";
 	        $query = mysqli_query($connect, $sql);
 	        $already_used = mysqli_num_rows($query);
+
+			$first_name = $_POST['firstname'];
+			if (strlen($first_name) == 0) {
+				echo "<li class=\"message\">You must enter your first name.</li>";
+				$validate = false;
+			}
+
+			$last_name = $_POST['lastname'];
+			if (strlen($last_name) == 0) {
+				echo "<li class=\"message\">You must enter your last name</li>";
+				$validate = false;
+			}
+
 	        if (strlen($username) < 3 || strlen($username) > 16) {
-	    	    echo '<li class="messae">Username must be between 3 & 16 characters.</li>';
+	    	    echo '<li class="message">Username must be between 3 & 16 characters.</li>';
 	            $validate = false;
 	        }
 	    	if (strlen($username) == 0 || is_numeric($username[0])) {
@@ -30,6 +52,7 @@
 	    	    echo '<li class="message">Username \'' . $username . '\' is already taken.</li>';
 	            $validate = false;
 	        }
+
 
 	        $password = $_POST['password'];
 	        if (strlen($password) < 6 || strlen($password) > 100) {
@@ -50,7 +73,7 @@
 	        }
 
 	        if ($validate) {
-	            $sql = "INSERT INTO users (nickname, email, password) VALUES ('$username','$email','$password')";
+	            $sql = "INSERT INTO users (nickname, email, password, first_name, last_name) VALUES ('$username','$email','$password')";
 	            $query = mysqli_query($connect, $sql);
 	            if ($query) {
 	                echo '<li class="message" style="color: green;">You have successfully created your account!</li>';
@@ -58,8 +81,12 @@
 	        }
 	    }
 	?>
+	</ul>
+
     <div class="form">
     <form class="register" action="register.php" method="post">
+		<input type="text" name="firstname" placeholder="First Name">
+		<input type="text" name="lastname" placeholder="Last Name">
         <input type="text" name="username" placeholder="Username">
         <input type="password" name="password" placeholder="Password">
         <input type="password" name="password2" placeholder="Re-type">

@@ -42,5 +42,5 @@
 
 
 <?php
-    include_once('sidebar.html');
+    include_once('sidebar.php');
 ?>

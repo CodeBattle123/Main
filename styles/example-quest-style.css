@@ -1,3 +1,5 @@
+
+
 hr {
     border: 1px solid black;
     background: black;
@@ -10,59 +12,78 @@ hr {
 .codeContainer {
     display: flex;
     flex-direction: row;
+
+		animation-name: Show;
+		animation-duration: 1.5s;
+		animation-timing-function: linear;
+		animation-delay: none;
+		animation-iteration-count: 1;
+		animation-direction: normal;
+
+		background-color: #fff;
 }
 
 .container {
 	display: block;
+
 	width: 50%;
 	margin: 0 auto;
 	padding-left: 40px;
 }
 
 .langName, .level, .objective, #counter, .quest{
-    letter-spacing: 3px;
-    font-weight: bolder;
-    font-family: Sidebar;
     width: 100%;
-    padding: 0;
     margin: 15px auto;
-    text-align: center;
+    padding: 0;
+
+    text-align: center;
+    letter-spacing: 3px;
+
+    font-family: Sidebar;
+    font-weight: bolder;
 }
 
 .objective {
 	width: 90%;
-	font-weight: bolder;
     margin-left: 25px;
+
     text-align: left;
     letter-spacing: normal;
     word-spacing: 5px;
+
+	font-weight: bolder;
 }
 
 .quest {
-    width: 100%;
     display: inline-block;
+
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    text-align: left;
+    letter-spacing: 4px;
+
 	font-family: Text;
 	font-size: 20px;
-
-    letter-spacing: 4px;
-    text-align: left;
     line-height: 25px;
-    padding: 0;
-    margin: 0;
 }
 
 .langName span {
 	display: block;
+
     font-size: 35px;
 }
 
 .input {
-    font-weight: bold;
-    font-family: Text;
-	font-size: 20px;
     letter-spacing: 3px;
+
     border: none;
     border-bottom: 2px solid rgb(78, 78, 78);
+
+    font-family: Text;
+	font-size: 20px;
+    font-weight: bold;
 }
 
 .input:focus {
@@ -70,51 +91,53 @@ hr {
 }
 
 #counter {
-    font-weight: bolder;
-    font-size: 30px;
-	line-height: 25px;
+    position: relative;
 
-    margin: 0;
-	padding-top: -20px;
+	display: inline-block;
 
     width: 50%;
     height: 156px;
+    margin: 0;
+	padding-top: -20px;
 
-    position: relative;
+	transition: all 0.5s;
 
-    display: inline-block;
+    font-size: 30px;
+    font-weight: bolder;
+	line-height: 25px;
 }
 
 .checkButton {
+	position: relative;
+
+    display: inline-block;
+
+    width: 200px;
+    height: 50px;
+	margin: 18px auto;
+
+    border: 3px solid rgb(199, 199, 199);
+	border-radius: 5px;
 	outline:none;
+	background-color: rgb(110, 110, 110);
+	box-shadow: 0px 10px 0px rgb(110, 110, 110);
 
 	font-family: Sidebar;
 	font-size: 20px;
 	font-weight: bold;
-	background-color: rgb(110, 110, 110);
-
-	border-radius: 5px;
-    border: 3px solid rgb(199, 199, 199);
-	box-shadow: 0px 10px 0px rgb(110, 110, 110);
-
-	position: relative;
-	top: 0px;
-
-    width: 200px;
-    height: 50px;
-
-	margin: 18px 0px;
-    display: inline-block;
 }
 
 .checkButton:active {
 	top: 10px;
+
 	padding-bottom: 0px;
+
 	box-shadow: none;
 }
 
 #result {
     display: inline-block;
+
     font-family: Sidebar;
     font-size: 25px;
     font-weight: bold;
@@ -122,27 +145,32 @@ hr {
 
 @media screen and (max-width:1000px) {
 	.codeContainer, #counter {
+		flex-direction: column;
+
 		width: 100%;
 		padding: 0;
-		flex-direction: column;
 	}
 
 	.container{
 		display: flex;
 		flex-direction: column;
-		padding: 0;
+
 		width: 100%;
+		padding: 0;
+
 		border-bottom: 0px solid black;
 	}
 
 	.langName {
-		line-height: 30px;
-		font-size: 25px;
 		text-decoration: none;
+
+		font-size: 25px;
+		line-height: 30px;
 	}
 
 	.quest {
 		display: inline-block;
+
 		width: auto;
 		margin: 0 auto;
 	}
@@ -150,4 +178,10 @@ hr {
 	#counter {
 		width: 100%;
 	}
+}
+
+@keyframes Show {
+	0% {background: linear-gradient(#000, #000, #000, #000)}
+	25% {background: linear-gradient(#000, #000, #000, #000)}
+	100% {background:  linear-gradient(#fff, #fff, #fff, #fff)}
 }

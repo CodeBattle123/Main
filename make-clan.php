@@ -8,10 +8,20 @@
     <meta charset="UTF-8">
     <title>home</title>
 </head>
-</head>
+
 <body>
 
 <?php include_once('header.php'); ?>
+
+<?php
+$clan_name = mysqli_real_escape_string($connect, $_POST['clanname']);
+$clan_description  = mysqli_real_escape_string($connect, $_POST['description']);
+
+$sql = "INSERT INTO teams (teamname, description) VALUES ('$clan_name', '$clan_description')";
+if(mysqli_query($connect, $sql)){
+    echo "Records added successfully.";
+}
+?>
 
 <div class="wrapper">
 
@@ -25,21 +35,20 @@
 
             <h2>Make clan</h2>
 
-            <form>
+            <form action="make-clan.php" method="post" enctype="multipart/form-data">
                 <p>Clan name:</p>
                 <input type="text" name="clanname" placeholder="Name"/>
+
+
+                <p class="description">Clan description:</p>
+                <textarea name="description" rows="4" cols="50"></textarea>
+                <br>
+
+                <p>Clan Profile Pic:</p>
+                <input type="file" name="picture-upload" value="Upload picture"/><br>
+                <input type="submit" name="submit"/>
+
             </form>
-
-
-            <p class="description">Clan description:</p>
-            <textarea rows="4" cols="50" name="comment" form="usrform">Enter text here...
-            </textarea>
-            <br>
-
-            <p>Clan Profile Pic:</p>
-            <input type="submit" value="Upload picture"/><br>
-            <input type="submit"/>
-
 
         </div>
 
@@ -63,7 +72,6 @@
 </div>
 
 <?php include_once('footer.html'); ?>
+
 </body>
 </html>
-
-

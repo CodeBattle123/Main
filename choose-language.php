@@ -8,11 +8,12 @@
 	<link rel="stylesheet" href="styles/main.css">
 	<link rel="stylesheet" href="styles/choose_language_style.css">
 	<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js'></script>
-    <title>choose language</title>
+    <title>Choose language</title>
 </head>
 <body>
-<?php include_once('header.php'); ?>
 <?php
+include_once('header.php');
+
 $idd = $_SESSION['userid'];
 $query = "SELECT * FROM language_progress WHERE user_id='$idd' LIMIT 1";
 
