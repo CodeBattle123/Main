@@ -51,10 +51,8 @@
                </tr>';
 		?>
 
-	</table>
-
-	<div class="text">
-		<p>This is information about me</p>
+	<div class="text" style="font-family: MainText">
+	   <p>This is information about me</p>
 	</div>
 
 	<div class="match-history">
