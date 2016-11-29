@@ -42,9 +42,9 @@
 <script type="text/javascript">
     let inputs = document.getElementsByClassName('input');
 
-	var finished = true;
+	let finished = true;
 
-    for(item of inputs) {
+    for(let item of inputs) {
         item.style.width = (item.maxLength * 15) + 'px';
     }
 
@@ -61,10 +61,31 @@
                 let t = setTimeout(tick, 1000);
                 $('#submitQuest').click(function () {
                     clearTimeout(t);
+                    document.getElementById('submitQuest').style.boxShadow = "none";
+                    document.getElementById('submitQuest').style.top = "10px";
+                    if (finished == true) {
+                        document.getElementById('submitQuest').style.boxShadow = "0px 10px 0px rgb(110, 110, 110)";
+                        document.getElementById('submitQuest').style.top = "0px";
+                        return;
+                    }
+
+                    document.getElementById('submitQuest').style.boxShadow = "0px 10px 0px rgb(110, 110, 110)";
+                    document.getElementById('submitQuest').style.top = "0px";
+                    document.getElementById('result').innerHTML = document.getElementById('result').innerHTML + CalcResult();
                 });
                 $(document).keypress(function (k) {
                     if (k.which == 13) {
                         clearTimeout(t);
+                        document.getElementById('submitQuest').style.boxShadow = "none";
+                        document.getElementById('submitQuest').style.top = "10px";
+                        if (finished == true) {
+                            document.getElementById('submitQuest').style.boxShadow = "0px 10px 0px rgb(110, 110, 110)";
+                            document.getElementById('submitQuest').style.top = "0px";
+                            return;
+                        }
+                        document.getElementById('submitQuest').style.boxShadow = "0px 10px 0px rgb(110, 110, 110)";
+                        document.getElementById('submitQuest').style.top = "0px";
+                        document.getElementById('result').innerHTML = document.getElementById('result').innerHTML + CalcResult();
                     }
                 });
             } else {
@@ -73,8 +94,8 @@
         }
         tick();
     }
-    var correct = "<span style='display:block; color:green;'> <img style='width: 50%' src='images/nakov-correct.png' alt='Correct'></span>";
-    var wrong = "<span style='display:block; color:red;'> <img style='width: 50%' src='images/nakov-wrong.png' alt='Wrong'></span>";
+    let correct = "<span style='display:block; color:green;'> <img style='width: 50%' src='images/nakov-correct.png' alt='Correct'></span>";
+    let wrong = "<span style='display:block; color:red;'> <img style='width: 50%' src='images/nakov-wrong.png' alt='Wrong'></span>";
 
     function CalcResult() {
 
@@ -109,42 +130,6 @@
 		finished = false;
 	}, 1500);
 
-    $(document).keypress(function (k) {
-        if (k.which == 13) {
-
-            document.getElementById('submitQuest').style.boxShadow = "none";
-			document.getElementById('submitQuest').style.top = "10px";
-
-			setTimeout(function () {
-				if (finished == true) {
-					document.getElementById('submitQuest').style.boxShadow = "0px 10px 0px rgb(110, 110, 110)";
-					document.getElementById('submitQuest').style.top = "0px";
-					return;
-				}
-
-				document.getElementById('submitQuest').style.boxShadow = "0px 10px 0px rgb(110, 110, 110)";
-				document.getElementById('submitQuest').style.top = "0px";
-				document.getElementById('result').innerHTML = document.getElementById('result').innerHTML + CalcResult();
-			}, 100);
-        }
-    });
-
-    $('#submitQuest').click( function () {
-		document.getElementById('submitQuest').style.boxShadow = "none";
-		document.getElementById('submitQuest').style.top = "10px";
-
-		setTimeout(function () {
-			if (finished == true) {
-				document.getElementById('submitQuest').style.boxShadow = "0px 10px 0px rgb(110, 110, 110)";
-				document.getElementById('submitQuest').style.top = "0px";
-				return;
-			}
-
-			document.getElementById('submitQuest').style.boxShadow = "0px 10px 0px rgb(110, 110, 110)";
-			document.getElementById('submitQuest').style.top = "0px";
-			document.getElementById('result').innerHTML = document.getElementById('result').innerHTML + CalcResult();
-		}, 100);
-    });
 
 </script>
 
