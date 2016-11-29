@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
-    <link rel="stylesheet" href="styles/headerAndFooter.css">
-    <link rel="stylesheet" href="styles/profile.css">
-    <link rel="stylesheet" href="styles/sidebar.css">
+	<link rel="stylesheet" href="styles/headerAndFooter.css">
+	<link rel="stylesheet" href="styles/profile.css">
+	<link rel="stylesheet" href="styles/sidebar.css">
 	<link rel="stylesheet" href="styles/main.css">
 
-    <meta charset="UTF-8">
-    <title>Profile</title>
+	<meta charset="UTF-8">
+	<title>Profile</title>
 </head>
 </head>
 <body>
@@ -16,21 +16,20 @@
 
 <div class="wrapper">
 	<div class="username" >
-	    <h2 align="center"><?=$_SESSION['username']?></h2>
+		<h2 align="center"><?=$_SESSION['username']?></h2>
 	</div>
 
 	<div class="profile-pic" align="center">
-	    <img src="images/footer_github.png" alt="Profile picture" class="profile">
+		<img src="images/footer_github.png" alt="Profile picture" class="profile">
 	</div>
 
 	<table class="profileinfo" cellpadding="40" cellspacing="20" style="margin: 40px auto;">
-	    <tr>
-	        <th>First Name</th>
-	        <th>Last Name</th>
-	        <th>Score</th>
-	        <th>Ranking</th>
-
-	    </tr>
+		<tr>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Score</th>
+			<th>Ranking</th>
+		</tr>
 		<?php
 		$user = $_SESSION ['username'];
 		$sql = "SELECT * FROM users WHERE nickname = '$user'";
@@ -55,25 +54,25 @@
 	</table>
 
 	<div class="text">
-	   <p>This is information about me</p>
+		<p>This is information about me</p>
 	</div>
 
-    <div class="match-history">
-        <h2 class="desc">Match History</h2>
-    </div>
+	<div class="match-history">
+		<h2 class="desc">Match History</h2>
+	</div>
 
 	<div class="table-history">
 		<table class="match-history-table">
-		    <tr>
-		        <th></th>
-		        <th>Username:</th>
-		        <th>Result:</th>
-		        <th></th>
-		        <th>Against:</th>
-		        <th>Gained XP:</th>
+			<tr>
+				<th></th>
+				<th>Username:</th>
+				<th>Result:</th>
+				<th></th>
+				<th>Against:</th>
+				<th>Gained XP:</th>
 				<th>Date:</th>
 			</tr>
-		    <tr>
+			<tr>
 				<?php
 				$userid = $_SESSION ['userid'];
 				$sql = "SELECT * FROM battle_log WHERE user1_id = '$userid' || user2_id = '$userid' ORDER BY date DESC";

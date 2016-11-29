@@ -19,9 +19,11 @@
                 <div class="username">username</div>
             </div>
             <div class="score">
-                <div>.</div>
-                <div>.</div>
-                <div>.</div>
+                <div class="point"></div>
+                <div class="point"></div>
+                <div class="point"></div>
+				<div class="point"></div>
+				<div class="point"></div>
             </div>
         </div>
             <p>VS</p>
@@ -30,9 +32,11 @@
                 <div class="username">username</div>
             </div>
             <div class="score">
-                <div>.</div>
-                <div>.</div>
-                <div>.</div>
+				<div class="point"></div>
+				<div class="point"></div>
+                <div class="point"></div>
+                <div class="point"></div>
+                <div class="point"></div>
             </div>
         </div>
     </div>

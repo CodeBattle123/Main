@@ -1,55 +1,82 @@
 .profile-photo {
     width: 135px;
     height: 135px;
+    margin: 15px;
+
     background-image: url("../images/footer_github.png");
     background-size: 135px 135px;
-    margin: 15px;
 }
 
 .player {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+
     margin: 20px;
-    align-items: center;
+
     font-family: Sidebar;
     font-size: 15px;
+
+    justify-content: center;
+    align-items: center;
 }
 
 .scr {
     display: block;
-    align-self: center;
+
     width: 98%;
     height: 500px;
-    border: 3px solid black;
     margin-bottom: 20px;
+
+    border: 3px solid black;
+
+    align-self: center;
 }
 
 .content {
     display: flex;
     flex-direction: row;
+
     justify-content: space-around;
 }
 
 
 p {
+    font-family: Sidebar;
     font-size: 45px;
-    font-family: Sidebar;
     line-height: 200px;
 }
 
 .username {
     padding-top: 140px;
-    font-size: 20px;
+
     word-wrap: break-word;
+
+    font-size: 20px;
 }
 
 .score {
     display: flex;
-    justify-content: space-around;
+
     width: 150px;
     margin-top: 25px;
+
+    font-family: Sidebar;
     font-size: 27px;
+
+    justify-content: space-around;
+}
+
+.point {
+	display: block;
+
+	width: 20px;
+	height: 20px;
+
+	border-radius: 10px;
+	background-image: url("../images/tick.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
 }
 
 .player:nth-last-child(1) {
