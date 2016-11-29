@@ -69,7 +69,7 @@
 				<th>Result:</th>
 				<th></th>
 				<th>Against:</th>
-				<th>Gained XP:</th>
+				<th>Gained/Lost XP:</th>
 				<th>Date:</th>
 			</tr>
 			<tr>
@@ -92,24 +92,38 @@
 					}
 					$opponent = mysqli_query($connect, "SELECT * FROM users WHERE id = '$opponentid'")->fetch_assoc()['nickname'];
 
-					echo '<tr  class="match">
+					if ($result == 'Victory') {
+						echo '<tr class="win" >
 		        <td><img src="images/footer_github.png" height="20"></td>
            		 <td>' . $user . '</td>
                 <td>' . $result . '</td>
                 <td><img src="images/footer_github.png" height="20" </td>
                 <td>' . $opponent . '</td>
-                <td>' . $row['won_xp'] . '</td>
+                <td>' . '+' . $row['won_xp'] . '</td>
                 <td>' . $row['date'] . '</td>
                </tr>
                ';
+					} else {
+						echo '<tr class="loss" >
+		        <td><img src="images/footer_github.png" height="20"></td>
+           		 <td>' . $user . '</td>
+                <td>' . $result . '</td>
+                <td><img src="images/footer_github.png" height="20" </td>
+                <td>' . $opponent . '</td>
+                <td>' . '-' . $row['won_xp'] . '</td>
+                <td>' . $row['date'] . '</td>
+               </tr>
+               ';
+					}
 				}
 
 				?>
 			</tr>
 			<script>
-				var matches = document.getElementsByClassName("match");
+				var matches = document.getElementsByClassName("loss");
 				for	(row of matches) {
-					document.getElementsByClassName("match").style.backgroundColor = "blue";
+					row.style.backgroundColor = "#DA4E4E";
+
 				}
 			</script>
 		</table>
