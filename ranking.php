@@ -8,6 +8,8 @@
       <link rel="stylesheet" href="styles/headerAndFooter.css" >
       <link rel="stylesheet" href="styles/sidebar.css" >
 	  <link rel="stylesheet" href="styles/ranking.css" >
+
+
    </head>
    <body>
       <?php include_once('header.php'); ?>
@@ -32,9 +34,8 @@
 <?php
     $sql = "SELECT * FROM users ORDER BY xp DESC";
     $query = mysqli_query($connect, $sql);
-    $rank = 0;
+    $rank = 1;
     while($row = $query->fetch_assoc()){
-        $rank++;
         echo '<tr>
             <td><img src="images/footer_github.png" style="height: 30px; margin-left: 5px;"/></td>
             <td>#<b>' . $rank . '</b></td>
@@ -49,8 +50,10 @@
             </td>
                </tr>
                ';
+        $rank++;
     }
 ?>
+
 </table>
 
       </div>
