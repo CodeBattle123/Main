@@ -33,7 +33,7 @@ let ChatApp = React.createClass({
                     {messages}
                 </ul>
                 <input id="message" type="text"/>
-                <button id="btn" name='submit' placeholder="Enter your message here." onKeyDown={} onClick={() => self.submitMessage()}>Submit</button>
+                <button id="btn" name='submit' placeholder="Enter your message here." onClick={() => self.submitMessage()}>Submit</button>
             </div>
         );
     }
