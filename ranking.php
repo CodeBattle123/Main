@@ -15,40 +15,34 @@
       <?php include_once('header.php'); ?>
 
       <div class="wrapper">
-         <table>
+		 <table>
             <tr>
                 <td></td>
                 <td><h4>Rank:</h4></td>
-               <td>
-                  <h4>Name:</h4>
-              </td>
-              <td>
-                  <h4>Exp:</h4>
-              </td>
-
-               <td>
-                  <h4>Clan:</h4>
-              </td>
-              <tr>
+               	<td><h4>Name:</h4></td>
+              	<td><h4>Exp:</h4></td>
+				<td><h4>Clan:</h4></td>
+			</tr>
 
 <?php
     $sql = "SELECT * FROM users ORDER BY xp DESC";
     $query = mysqli_query($connect, $sql);
     $rank = 1;
     while($row = $query->fetch_assoc()){
-        echo '<tr>
-            <td><img src="images/footer_github.png" style="height: 30px; margin-left: 5px;"/></td>
-            <td>#<b>' . $rank . '</b></td>
-            <td>
-                <h4 class="name">' . $row['nickname'] . '</h4>
-            </td>
-                <td>
-                <h4 class="exp">' . $row['xp'] . '</h4>
-                </td>
-            <td>
-               <h4 class="exp">' . $row['clan'] . '</h4>
-            </td>
-               </tr>
+        echo 	'<tr>
+		            <td><img src="images/footer_github.png" style="height: 30px; margin-left: 5px;"/></td>
+		            <td>#<b>' . $rank . '</b></td>
+		            <td>
+		                <a href="profile.php?$user=' . $row['nickname'] . '" class="name">' . $row['nickname'] . '</a>
+		            </td>
+		                <td>
+		                <h4 class="exp">' . $row['xp'] . '</h4>
+		                </td>
+		            <td>
+		               <h4 class="exp">' . $row['clan'] . '</h4>
+		            </td>
+
+               	</tr>
                ';
         $rank++;
     }
