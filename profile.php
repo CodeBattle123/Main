@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
@@ -13,6 +14,12 @@
 <body>
 
 <?php include_once('header.php'); ?>
+<?php
+if (!isset($_GET['user'])) {
+	header("location: profile.php?user=$log_username");
+	exit();
+}
+?>
 
 <?php
 	if (isset($_GET['user'])) {
