@@ -33,8 +33,7 @@
 		            <td><img src="images/footer_github.png" style="height: 30px; margin-left: 5px;"/></td>
 		            <td>#<b>' . $rank . '</b></td>
 		            <td>
-						' ./* Clicking the name should send you to the players profile. */'
-		                <a href="#" class="name">' . $row['nickname'] . '</a>
+		                <a href="profile.php?$user=' . $row['nickname'] . '" class="name">' . $row['nickname'] . '</a>
 		            </td>
 		                <td>
 		                <h4 class="exp">' . $row['xp'] . '</h4>
