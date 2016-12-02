@@ -80,18 +80,18 @@ while($row = $query->fetch_assoc()) {
 
 					if ($result == 'Victory') {
 						echo '<tr class="win" >
-		        <td><img src="images/footer_github.png" height="20"><a href="/profile.php?user='.$current_user.'">' . $current_user . '</a></td>
+		        <td><img src="images/footer_github.png" height="20"><a href="profile.php?user='.$current_user.'">' . $current_user . '</a></td>
                 <td>' . $result . '</td>
-				<td><img src="images/footer_github.png" height="20"><a href="/profile.php?user='.$opponent.'">' . $opponent . '</a></td>
+				<td><img src="images/footer_github.png" height="20"><a href="profile.php?user='.$opponent.'">' . $opponent . '</a></td>
                 <td>' . '+' . $row['wonned_xp'] . '</td>
                 <td>' . $row['date'] . '</td>
                </tr>
                ';
 					} else {
 						echo '<tr class="loss" >
-		        <td><img src="images/footer_github.png" height="20"><a href="/profile.php?user='.$current_user.'">' . $current_user . '</a></td>
+		        <td><img src="images/footer_github.png" height="20"><a href="profile.php?user='.$current_user.'">' . $current_user . '</a></td>
                 <td>' . $result . '</td>
-                <td><img src="images/footer_github.png" height="20"><a href="/profile.php?user='.$opponent.'">' . $opponent . '</a></td>
+                <td><img src="images/footer_github.png" height="20"><a href="profile.php?user='.$opponent.'">' . $opponent . '</a></td>
                 <td>' . '-' . $row['wonned_xp'] . '</td>
                 <td>' . $row['date'] . '</td>
                </tr>
