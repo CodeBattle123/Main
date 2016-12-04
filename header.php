@@ -23,8 +23,11 @@
 ?>
 
 <header>
+   <div class="headAndLogo">
    <a href="index.php"><img src="images/Logo.svg" alt="hlogo" class="logo"/></a>
-   <h1 class="header-title">CodeBattles</h1>
+   <a href="index.php"><h1 class="header-title">CodeBattles</h1></a>
+	</div>
+
    <div class="nav">
 	   <ul id="list">
 		   <?php

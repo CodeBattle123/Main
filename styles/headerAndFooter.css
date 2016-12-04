@@ -62,11 +62,33 @@ header {
 	font-family: Sidebar;
 	/*#0073A5*/
 }
+
+.headAndLogo {
+		display: inline-block;
+}
+
+.headAndLogo:hover .logo{
+	width: 70px;
+	height: 70px;
+
+	transform: rotate(360deg);
+}
+
+.headAndLogo:hover .header-title {
+	text-shadow: 0px 7px rgb(0, 3, 71);
+}
+
 .logo {
-	display: inline-block;
 	float: left;
 
+	width: 60px;
+	height: 60px;
 	margin-right: 15px;
+
+	transition: transform 0.5s,
+				width 0.5s,
+				height 0.5s,
+				margin 0.5s;
 }
 .header-title {
 	position: relative;
@@ -74,12 +96,17 @@ header {
 
 	display: inline-block;
 
+	transition: color 0.5s,
+				text-shadow 0.5s;
+
 	color: #FFF;
+	text-shadow: 0px 0px rgb(75, 217, 255);
 
 	font-family: Sidebar;
 	font-size: 5vw;
 	line-height: 60px;
 }
+
 .nav {
 	display: block;
 	float: right;
@@ -87,6 +114,8 @@ header {
 	margin-right: 30px;
 
 	list-style: none;
+
+	transition: margin 0.5s;
 }
 .nav li {
 	display: inline-block;
@@ -102,6 +131,7 @@ header {
 	margin-right: 10px;
 	padding: 0 10px;
 
+	transition: background-color 0.5s;
 	text-align: center;
 	text-decoration: none;
 
@@ -112,6 +142,10 @@ header {
 	line-height: 40px;
 }
 
+.tab:hover {
+	background-color: rgb(180,180,180);
+}
+
 #list .hidden {
 	display: none;
 }
@@ -120,10 +154,6 @@ header {
 	display: none;
 }
 
-.logo {
-	width: 60px;
-	height: 60px;
-}
 /*------------------------------------------------------------------------------------ */
 
 .mainFooter {
@@ -209,7 +239,11 @@ header {
 	.nav:active ul,
 	.nav ul:hover,
 	.nav ul.focus{
+		right: 220px;
+
 		display: block;
+
+		margin-top: 0px;
 	}
 
 	.nav ul li, .tab{
@@ -220,7 +254,7 @@ header {
 
 		border-bottom: 1px solid black;
 		border-radius: 0;
-		background-color: rgba(0, 115, 165, 0.5);
+		background-color: rgba(0, 115, 165, 0.75);
 	}
 
 	.tab {
@@ -228,7 +262,7 @@ header {
 	}
 
 	.tab:hover {
-		background-color: rgba(0, 171, 238, 0.75);
+		background-color: rgba(0, 171, 238, 1);
 	}
 
 	#list .hidden {
@@ -252,6 +286,16 @@ header {
 @media screen and (max-width:600px) {
 	.nav {
 		margin-top: 20px;
+	}
+
+	.nav:active ul,
+	.nav ul:hover,
+	.nav ul.focus{
+		right: 220px;
+
+		display: block;
+
+		margin-top: -20px;
 	}
 
 	.mainFooter {

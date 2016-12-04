@@ -38,9 +38,8 @@
 
             <div class="clanChat">
                <ul id="chat">
-				  	<h2>Chat</h2>
 				  	<?php
-						$sql = "SELECT * FROM `team-chat` ORDER BY `date` ASC";
+						$sql = "SELECT * FROM `team-chat` ORDER BY `date` desc";
 						$query = mysqli_query($connect, $sql);
 						while ($row = $query->fetch_assoc()) {
 

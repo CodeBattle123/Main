@@ -37,27 +37,33 @@ main {
 }
 
 .clanDesc {
-   margin-bottom: 30px;
+	overflow-y: auto;
+
+	max-height: 300px;
+	margin-bottom: 30px;
+	padding: 20px 30px;
+
+	word-wrap: break-word;
+
+	border-top: 3px solid black;
+	border-right: 2px solid black;	border-left: 2px solid black;
 
    font-family: Text;
-   font-size: 1.3vw;
+   font-size: 1.3vw;;
 }
 
 .members {
-   overflow-y: scroll;
+	overflow-y: auto;
 
-   height: auto;
-   max-height: 300px;
-   margin-bottom:  30px;
+	height: auto;
+	max-height: 300px;
+	margin-bottom:  30px;
 
-   list-style: none;
+	list-style: none;
 
-   text-align: left;
-
-   border-top: 1px solid black;
-   border-bottom: 1px solid black;
-   border-left: 1px solid black;
-}
+	text-align: left;	border-right: 1px solid black;
+	border-bottom: 1px solid black;
+	border-left: 1px solid black;}
 
 .member {
    padding: 0 20px;
@@ -91,9 +97,11 @@ main {
 }
 
 .clanChat ul {
-    overflow-y: scroll;
+	display: flex;
+    overflow-y: auto;
+	flex-direction: column-reverse;
 
-    max-height: 400px;
+    height: 400px;
 
     list-style: none;
 
