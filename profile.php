@@ -31,10 +31,20 @@
 			<th>Ranking</th>
 		</tr>
 		<?php
-		$user = $_SESSION ['username'];
-		$sql = "SELECT * FROM users WHERE nickname = '$user'";
+		$userid = $_SESSION ['userid'];
+
+		$sql = "SELECT * FROM users WHERE id='$userid'";
 		$query = mysqli_query($connect, $sql);
 		$row = $query->fetch_assoc();
+
+		//gets the rank of the current user
+		$rank = mysqli_query($connect, " SELECT nickname,
+		 (SELECT COUNT(*)+1
+ 		FROM user_ranking
+		 WHERE xp > t.xp) as rank
+ 		FROM user_ranking t
+		WHERE id = '$userid'")->fetch_assoc()['rank'];
+
 		echo '<tr>
             <td>
                 <h4>' . $row['first_name'] . '</h4>
@@ -46,7 +56,7 @@
                <h4>' . $row['xp'] . '</h4>
             </td>
                         <td>
-               <h4>' . '#' . $row['rank'] . '</h4>
+               <h4>' . '#' . $rank . '</h4>
             </td>
                </tr>';
 		?>
@@ -74,6 +84,7 @@
 			</tr>
 			<tr>
 				<?php
+				$user = $_SESSION ['username'];
 				$userid = $_SESSION ['userid'];
 				$sql = "SELECT * FROM battle_log WHERE user1_id = '$userid' || user2_id = '$userid' ORDER BY date DESC";
 				$query = mysqli_query($connect, $sql);

@@ -17,7 +17,7 @@
 $clan_name = mysqli_real_escape_string($connect, $_POST['clanname']);
 $clan_description  = mysqli_real_escape_string($connect, $_POST['description']);
 
-$sql = "INSERT INTO teams (teamname, description) VALUES ('$clan_name', '$clan_description')";
+$sql = "INSERT INTO teams (name, description) VALUES ('$clan_name', '$clan_description')";
 if(mysqli_query($connect, $sql)){
     echo "Records added successfully.";
 }

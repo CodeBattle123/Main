@@ -13,7 +13,6 @@
    </head>
    <body>
       <?php include_once('header.php'); ?>
-
       <div class="wrapper">
          <table>
             <tr>
@@ -30,11 +29,12 @@
                   <h4>Clan:</h4>
               </td>
               <tr>
-
 <?php
-    $sql = "SELECT * FROM users ORDER BY xp DESC";
+    $sql = "SELECT DISTINCT * FROM user_ranking";
     $query = mysqli_query($connect, $sql);
     $rank = 1;
+    //$tempxp = 70;
+
     while($row = $query->fetch_assoc()){
         echo '<tr>
             <td><img src="images/footer_github.png" style="height: 30px; margin-left: 5px;"/></td>
@@ -46,13 +46,18 @@
                 <h4 class="exp">' . $row['xp'] . '</h4>
                 </td>
             <td>
-               <h4 class="exp">' . $row['clan'] . '</h4>
+               <h4 class="clan">' . $row['clan'] . '</h4>
             </td>
                </tr>
                ';
-        $rank++;
+
+        //if ($tempxp != $row['xp']) {
+            $rank++;
+        //}
+       // $tempxp = $row['xp'];
     }
 ?>
+
 
 </table>
 
