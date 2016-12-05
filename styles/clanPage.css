@@ -37,37 +37,33 @@ main {
 }
 
 .clanDesc {
-   overflow-y: auto;
+	overflow-y: auto;
 
-   max-height: 300px;
-   margin-bottom: 30px;
-   padding: 20px 30px;
+	max-height: 300px;
+	margin-bottom: 30px;
+	padding: 20px 30px;
 
-   word-wrap: break-word;
+	word-wrap: break-word;
 
-   border-top: 3px solid black;
-   border-right: 2px solid black;
-   border-left: 2px solid black;
+	border-top: 3px solid black;
+	border-right: 2px solid black;	border-left: 2px solid black;
 
    font-family: Text;
-   font-size: 1.3vw;
-;
+   font-size: 1.3vw;;
 }
 
 .members {
-   overflow-y: auto;
+	overflow-y: auto;
 
-   height: auto;
-   max-height: 300px;
-   margin-bottom:  30px;
+	height: auto;
+	max-height: 300px;
+	margin-bottom:  30px;
 
-   list-style: none;
+	list-style: none;
 
-   text-align: left;
-   border-right: 1px solid black;
-   border-bottom: 1px solid black;
-   border-left: 1px solid black;
-}
+	text-align: left;	border-right: 1px solid black;
+	border-bottom: 1px solid black;
+	border-left: 1px solid black;}
 
 .member {
    padding: 0 20px;
@@ -101,15 +97,15 @@ main {
 }
 
 .clanChat ul {
-   display: flex;
-   overflow-y: auto;
-   flex-direction: column-reverse;
+	display: flex;
+    overflow-y: auto;
+	flex-direction: column-reverse;
 
-   height: 400px;
+    height: 400px;
 
-   list-style: none;
+    list-style: none;
 
-   font-family: Sidebar;
+	font-family: Sidebar;
 }
 
 .clanChat ul::-webkit-scrollbar {
@@ -165,8 +161,8 @@ input[type=text] {
 }
 
 input[type=submit] {
-   width: 100px;
-   height: 55px;
+	width: 100px;
+	height: 55px;
 
-   font-family: Quest;
+	font-family: Quest;
 }

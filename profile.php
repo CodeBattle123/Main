@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
@@ -9,14 +10,26 @@
 	<meta charset="UTF-8">
 	<title>Profile</title>
 </head>
-</head>
+
 <body>
 
 <?php include_once('header.php'); ?>
+<?php
+if (!isset($_GET['user'])) {
+	header("location: profile.php?user=$log_username");
+	exit();
+}
+?>
+
+<?php
+	if (isset($_GET['user'])) {
+		$current_user = mysqli_real_escape_string($connect, $_GET['user']);
+	}
+?>
 
 <div class="wrapper">
-	<div class="username" >
-		<h2 align="center"><?=$_SESSION['username']?></h2>
+	<div class="username">
+		<h2 align="center"><?=$current_user?></h2>
 	</div>
 
 	<div class="profile-pic" align="center">
@@ -36,6 +49,7 @@
 		$sql = "SELECT * FROM users WHERE id='$userid'";
 		$query = mysqli_query($connect, $sql);
 		$row = $query->fetch_assoc();
+		echo '<h3 class="xp">' . $row['xp'] . ' XP</h3>';
 
 		//gets the rank of the current user
 		$rank = mysqli_query($connect, " SELECT nickname,
@@ -61,31 +75,34 @@
                </tr>';
 		?>
 
-	</table>
-
-	<div class="text">
-		<p>This is information about me</p>
-	</div>
+		<?php
+		if ($row['description'] != "") {
+			echo '<div class="profileDesc">
+					<p>' . $row['description'] . '</p>
+				</div>';
+		}
+		?>
 
 	<div class="match-history">
-		<h2 class="desc">Match History</h2>
+		<h2 class="matchHistory">Match History</h2>
 	</div>
 
 	<div class="table-history">
 		<table class="match-history-table">
 			<tr>
-				<th></th>
-				<th>Username:</th>
-				<th>Result:</th>
-				<th></th>
-				<th>Against:</th>
-				<th>Gained/Lost XP:</th>
-				<th>Date:</th>
+				<th>Username</th>
+				<th>Result</th>
+				<th>Against</th>
+				<th>Gained/Lost XP</th>
+				<th>Date</th>
 			</tr>
 			<tr>
 				<?php
-				$user = $_SESSION ['username'];
-				$userid = $_SESSION ['userid'];
+$sql = "SELECT id FROM users WHERE nickname = '$current_user' LIMIT 1";
+$query = mysqli_query($connect, $sql);
+while($row = $query->fetch_assoc()) {
+	$userid = $row['id'];
+}
 				$sql = "SELECT * FROM battle_log WHERE user1_id = '$userid' || user2_id = '$userid' ORDER BY date DESC";
 				$query = mysqli_query($connect, $sql);
 				while($row = $query->fetch_assoc()) {
@@ -101,26 +118,23 @@
 					} else {
 						$result = 'Defeat';
 					}
+
 					$opponent = mysqli_query($connect, "SELECT * FROM users WHERE id = '$opponentid'")->fetch_assoc()['nickname'];
 
 					if ($result == 'Victory') {
 						echo '<tr class="win" >
-		        <td><img src="images/footer_github.png" height="20"></td>
-           		 <td>' . $user . '</td>
+		        <td><img src="images/footer_github.png" height="20"><a href="profile.php?user='.$current_user.'">' . $current_user . '</a></td>
                 <td>' . $result . '</td>
-                <td><img src="images/footer_github.png" height="20" </td>
-                <td>' . $opponent . '</td>
+				<td><img src="images/footer_github.png" height="20"><a href="profile.php?user='.$opponent.'">' . $opponent . '</a></td>
                 <td>' . '+' . $row['won_xp'] . '</td>
                 <td>' . $row['date'] . '</td>
                </tr>
                ';
 					} else {
 						echo '<tr class="loss" >
-		        <td><img src="images/footer_github.png" height="20"></td>
-           		 <td>' . $user . '</td>
+		        <td><img src="images/footer_github.png" height="20"><a href="profile.php?user='.$current_user.'">' . $current_user . '</a></td>
                 <td>' . $result . '</td>
-                <td><img src="images/footer_github.png" height="20" </td>
-                <td>' . $opponent . '</td>
+                <td><img src="images/footer_github.png" height="20"><a href="profile.php?user='.$opponent.'">' . $opponent . '</a></td>
                 <td>' . '-' . $row['won_xp'] . '</td>
                 <td>' . $row['date'] . '</td>
                </tr>
@@ -129,12 +143,10 @@
 				}
 
 				?>
-			</tr>
 			<script>
 				var matches = document.getElementsByClassName("loss");
 				for	(row of matches) {
 					row.style.backgroundColor = "#DA4E4E";
-
 				}
 			</script>
 		</table>

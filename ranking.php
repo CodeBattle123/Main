@@ -14,23 +14,17 @@
    <body>
       <?php include_once('header.php'); ?>
       <div class="wrapper">
-         <table>
+		 <table>
             <tr>
                 <td></td>
                 <td><h4>Rank:</h4></td>
-               <td>
-                  <h4>Name:</h4>
-              </td>
-              <td>
-                  <h4>Exp:</h4>
-              </td>
-
-               <td>
-                  <h4>Clan:</h4>
-              </td>
+               	<td><h4>Name:</h4></td>
+              	<td><h4>Exp:</h4></td>
+				<td><h4>Clan:</h4></td>
+			</tr>
               <tr>
 <?php
-    $sql = "SELECT DISTINCT * FROM user_ranking";
+    $sql = "SELECT * FROM user_ranking";
     $query = mysqli_query($connect, $sql);
     $rank = 1;
     //$tempxp = 70;

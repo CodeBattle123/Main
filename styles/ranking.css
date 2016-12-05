@@ -1,19 +1,27 @@
 table{
+	position: relative;
+
     width: 100%;
+
     border-collapse: collapse;
 }
 
-td {
-	font-family: Quest;
+td{
     border-bottom: 1px solid #ddd;
+
+	font-family: Quest;
     /*padding: 10px;*/
 }
 tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 
-tr, td {
+tr, td{
     max-height: 30px;
+
+	transition: background-color 0.4s,
+	height 0.4s;
+
     line-height: 30px;
 }
 
@@ -21,6 +29,16 @@ td img {
   vertical-align: middle;
 }
 
-.you {
-    background-color: blue;
+tr:hover {
+	background-color: rgb(173, 173, 173);
+}
+
+.name {
+	text-decoration: none;
+
+	color: black;
+}
+
+.name:visited {
+	color: black;
 }
