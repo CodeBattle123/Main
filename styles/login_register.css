@@ -41,17 +41,24 @@ form{
 }
 
 .form{
+	position: relative;
+
     display: block;
 
     margin: 30px auto 0 auto;
     padding: auto;
+
+	animation-name: SlideIn;
+	animation-duration: 0.5s;
+	animation-timing-function: ease-in;
+	animation-delay: 0s;
+	animation-iteration-count: 1;
 
     border: 2px solid gray;
     border-radius: 10px;
 
     align-self: center;
     align-content: center;
-
 }
 
 input[type="submit"]:hover {
@@ -75,4 +82,9 @@ input[type="submit"]:hover {
 
 	font-family: Quest;
 	font-size: 13px;
+}
+
+@keyframes SlideIn {
+	0% {top: -25px;opacity: 0; }
+	100% {top: 0px;opacity: 1; }
 }
