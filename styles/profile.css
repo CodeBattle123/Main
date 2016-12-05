@@ -1,7 +1,3 @@
-*:hover {
-	cursor: default;
-}
-
 .profile-pic{
 	min-height: 300px;
     margin-top: 10px;
@@ -75,7 +71,6 @@
 }
 
 .table-history{
-	overflow-x: auto;
     overflow-y: auto;
 
 	width: 100%;
