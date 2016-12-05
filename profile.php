@@ -73,6 +73,7 @@ if (!isset($_GET['user'])) {
                <h4>' . '#' . $rank . '</h4>
             </td>
                </tr>';
+		echo '<h3 class="xp"><span>' . $row['xp'] . '</span> XP</h3>';
 		?>
 
 		<?php
@@ -82,6 +83,13 @@ if (!isset($_GET['user'])) {
 				</div>';
 		}
 		?>
+		<?php
+			if ($row['description'] != "") {
+				echo '<div class="profileDesc">
+					<p>' . $row['description'] . '</p>
+				</div>';
+			}
+ 		?>
 
 	<div class="match-history">
 		<h2 class="matchHistory">Match History</h2>

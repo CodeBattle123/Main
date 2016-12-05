@@ -13,6 +13,10 @@
 	border-radius:300px;
 }
 
+.profile::selection {
+	background: none;
+}
+
 .profile:hover {
 	margin-bottom: -3px;
 
@@ -136,7 +140,7 @@ td {
 	transition: background-color 0.5s;
     text-align: center;
 
-    border: 2px solid black;
+    border-bottom: 2px solid black;
 
     font-family: Quest;
 }
