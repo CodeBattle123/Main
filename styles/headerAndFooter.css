@@ -18,7 +18,6 @@
 
 	src: url(../fonts/VCR.ttf);
 }
-
 @font-face {
 	font-family: Quest;
 
@@ -122,6 +121,7 @@ header {
 }
 .tab {
 	position: relative;
+	top: 0;
 
 	display: inline-block;
 
@@ -131,7 +131,9 @@ header {
 	margin-right: 10px;
 	padding: 0 10px;
 
-	transition: background-color 0.5s;
+	transition: background-color 0.5s,
+			 	top 0.5s,
+				box-shadow 0.5s;
 	text-align: center;
 	text-decoration: none;
 
@@ -143,7 +145,10 @@ header {
 }
 
 .tab:hover {
+	top: -10px;
+
 	background-color: rgb(180,180,180);
+	box-shadow: 0px 10px 0px rgb(148, 148, 148);
 }
 
 #list .hidden {
