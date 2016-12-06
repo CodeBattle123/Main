@@ -42,7 +42,8 @@ if (isset($_POST['submit_clan'])) {
     if ($validate == true) {
         $clan_name = mysqli_real_escape_string($connect, $_POST['clanname']);
         $clan_description = mysqli_real_escape_string($connect, $_POST['description']);
-        $sql = "INSERT INTO teams (teamname, description) VALUES ('$clan_name', '$clan_description')";
+        $team_leader = $log_id;
+        $sql = "INSERT INTO teams (teamname, description, leader) VALUES ('$clan_name', '$clan_description', '$log_id')";
         if (mysqli_query($connect, $sql)) {
             echo "Records added successfully.";
         }
