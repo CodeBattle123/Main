@@ -23,8 +23,11 @@
 ?>
 
 <header>
+   <div class="headAndLogo">
    <a href="index.php"><img src="images/Logo.svg" alt="hlogo" class="logo"/></a>
-   <h1 class="header-title">CodeBattles</h1>
+   <a href="index.php"><h1 class="header-title">CodeBattles</h1></a>
+	</div>
+
    <div class="nav">
 	   <ul id="list">
 		   <?php
@@ -45,7 +48,7 @@
 		  				<li><a href="logout.php" class="tab">Log Out</a></li>
 						<li class="hidden"><a href="index.php" class="tab hidden">Home</a></li>
 		                <li class="hidden"><a href="ranking.php" class="tab hidden">Rankings</a></li>
-		                <li class="hidden"><a href="clanRank.php" class="tab">Clan rankings</a></li>
+		                <li class="hidden"><a href="clan-rankings.php" class="tab">Clan rankings</a></li>
 		                <li class="hidden"><a href="AboutUs.php" class="tab hidden">About</a></li>
 		                <li class="hidden"><a href="contactus.php" class="tab hidden">Contact us</a></li>';
 					}

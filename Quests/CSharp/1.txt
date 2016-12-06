@@ -1,0 +1,10 @@
+Fill in the blanks to check is 'a' is equal to 5.
+=code=
+int a=5;\n
+if({option})\n
+{\n
+	Console.WriteLine({option});\n
+}\n
+=answers=
+a==5|a!=5
+a
