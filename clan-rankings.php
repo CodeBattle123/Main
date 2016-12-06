@@ -40,22 +40,20 @@
                 }
 
                 mysqli_query($connect, "UPDATE teams SET xp ='$sum' WHERE name = '$clanname'");
-
             }
             ?>
 
             <?php
-
             $sql = "SELECT * FROM clan_ranking";
             $query = mysqli_query($connect, $sql);
             $rank = 1;
             while($row = $query->fetch_assoc()) {
 
                 echo '<tr>
-            <td><img src="images/footer_github.png" style="height: 30px; margin-left: 5px;"/></td>
-            <td>#<b>' . $rank . '</b></td>
-            <td>' . $row['name'] . '</td>
-            <td>' . $row['xp'] . '</td>
+		            <td><img src="images/footer_github.png" style="height: 30px; margin-left: 5px;"/></td>
+		            <td>#<b>' . $rank . '</b></td>
+		            <td>' . $row['name'] . '</td>
+		            <td>' . $row['xp'] . '</td>
                </tr>
                ';
                 $rank++;

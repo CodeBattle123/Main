@@ -66,6 +66,8 @@
                   <input type="Submit" name="submit" value="Submit">
 			  </form>
             </div>
+		</div>	
+	</main>
 
 <?php include_once ('footer.html') ?>
 </body>
