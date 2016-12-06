@@ -46,15 +46,41 @@ td, th {
     padding: 8px;
 }
 
-tr:nth-child(even) {
-    background-color: #dddddd;
-}
-
-
-.text {
-    font-family: Arial;
-}
-
 th {
     font-family: Quest;
+}
+
+.win {
+    background-color: #77AB59;
+}
+
+.loss {
+    background-color: #DA4E4E;
+}
+
+.win:hover {
+    -moz-box-shadow:    inset 0 0 10px #000000;
+    -webkit-box-shadow: inset 0 0 10px #000000;
+    box-shadow:         inset 0 0 10px #000000;
+}
+
+.loss:hover {
+    -moz-box-shadow:    inset 0 0 10px #000000;
+    -webkit-box-shadow: inset 0 0 10px #000000;
+    box-shadow:         inset 0 0 10px #000000;
+}
+
+td {
+    font-family: Quest;
+    border: 2px solid black;
+    text-align: center;
+}
+
+
+th {
+    text-align: center;
+}
+
+tr {
+
 }

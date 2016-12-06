@@ -111,6 +111,15 @@ header {
 
 	line-height: 40px;
 }
+
+#list .hidden {
+	display: none;
+}
+
+.tab.hidden {
+	display: none;
+}
+
 .logo {
 	width: 60px;
 	height: 60px;
@@ -220,6 +229,14 @@ header {
 
 	.tab:hover {
 		background-color: rgba(0, 171, 238, 0.75);
+	}
+
+	#list .hidden {
+		display: inline-block;
+	}
+
+	.tab.hidden {
+		display: block;
 	}
 
 	.nav {
