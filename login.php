@@ -21,7 +21,7 @@
 			$_SESSION['userid'] = $db_id;
 			$_SESSION['username'] = $db_username;
 			$_SESSION['password'] = $db_pass;
-            header("location: profile.php");
+            header("location: profile.php?user=$username");
 		}
 	}
 ?>

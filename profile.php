@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
@@ -13,6 +14,12 @@
 <body>
 
 <?php include_once('header.php'); ?>
+<?php
+if (!isset($_GET['user'])) {
+	header("location: profile.php?user=$log_username");
+	exit();
+}
+?>
 
 <?php
 	if (isset($_GET['user'])) {
@@ -29,22 +36,58 @@
 		<img src="images/footer_github.png" alt="Profile picture" class="profile">
 	</div>
 
-	<?php
-		$sql = "SELECT * FROM users WHERE nickname = '$current_user'";
+	<table class="profileinfo" cellpadding="40" cellspacing="20" style="margin: 40px auto;">
+		<tr>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Score</th>
+			<th>Ranking</th>
+		</tr>
+		<?php
+		$userid = $_SESSION ['userid'];
+
+		$sql = "SELECT * FROM users WHERE id='$userid'";
 		$query = mysqli_query($connect, $sql);
 		$row = $query->fetch_assoc();
-		echo 'the user have ' . $row['xp'] . 'xp';
+		echo '<h3 class="xp">' . $row['xp'] . ' XP</h3>';
+
+		//gets the rank of the current user
+		$rank = mysqli_query($connect, " SELECT nickname,
+		 (SELECT COUNT(*)+1
+ 		FROM user_ranking
+		 WHERE xp > t.xp) as rank
+ 		FROM user_ranking t
+		WHERE id = '$userid'")->fetch_assoc()['rank'];
+
+		echo '<tr>
+            <td>
+                <h4>' . $row['first_name'] . '</h4>
+            </td>
+                <td>
+                <h4>' . $row['last_name'] . '</h4>
+                </td>
+            <td>
+               <h4>' . $row['xp'] . '</h4>
+            </td>
+                        <td>
+               <h4>' . '#' . $rank . '</h4>
+            </td>
+               </tr>';
 		?>
 
-	<div class="text">
-		<p>This is information about me</p>
-	</div>
+		<?php
+		if ($row['description'] != "") {
+			echo '<div class="profileDesc">
+					<p>' . $row['description'] . '</p>
+				</div>';
+		}
+		?>
 
 	<div class="match-history">
-		<h2 class="desc">Match History</h2>
+		<h2 class="matchHistory">Match History</h2>
 	</div>
 
-	<div class="table-history" style="max-width: 100%">
+	<div class="table-history">
 		<table class="match-history-table">
 			<tr>
 				<th>Username</th>
@@ -83,7 +126,7 @@ while($row = $query->fetch_assoc()) {
 		        <td><img src="images/footer_github.png" height="20"><a href="profile.php?user='.$current_user.'">' . $current_user . '</a></td>
                 <td>' . $result . '</td>
 				<td><img src="images/footer_github.png" height="20"><a href="profile.php?user='.$opponent.'">' . $opponent . '</a></td>
-                <td>' . '+' . $row['wonned_xp'] . '</td>
+                <td>' . '+' . $row['won_xp'] . '</td>
                 <td>' . $row['date'] . '</td>
                </tr>
                ';
@@ -92,7 +135,7 @@ while($row = $query->fetch_assoc()) {
 		        <td><img src="images/footer_github.png" height="20"><a href="profile.php?user='.$current_user.'">' . $current_user . '</a></td>
                 <td>' . $result . '</td>
                 <td><img src="images/footer_github.png" height="20"><a href="profile.php?user='.$opponent.'">' . $opponent . '</a></td>
-                <td>' . '-' . $row['wonned_xp'] . '</td>
+                <td>' . '-' . $row['won_xp'] . '</td>
                 <td>' . $row['date'] . '</td>
                </tr>
                ';
@@ -104,7 +147,6 @@ while($row = $query->fetch_assoc()) {
 				var matches = document.getElementsByClassName("loss");
 				for	(row of matches) {
 					row.style.backgroundColor = "#DA4E4E";
-
 				}
 			</script>
 		</table>
