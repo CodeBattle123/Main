@@ -1,5 +1,3 @@
-
-
 hr {
     border: 1px solid black;
     background: black;
@@ -13,14 +11,14 @@ hr {
     display: flex;
     flex-direction: row;
 
-		animation-name: Show;
-		animation-duration: 1.5s;
-		animation-timing-function: linear;
-		animation-delay: none;
-		animation-iteration-count: 1;
-		animation-direction: normal;
+	animation-name: Show;
+	animation-duration: 1.5s;
+	animation-timing-function: linear;
+	animation-delay: none;
+	animation-iteration-count: 1;
+	animation-direction: normal;
 
-		background-color: #fff;
+	background-color: #fff;
 }
 
 .container {
@@ -39,7 +37,7 @@ hr {
     text-align: center;
     letter-spacing: 3px;
 
-    font-family: Sidebar;
+    font-family: Quest;
     font-weight: bolder;
 }
 
@@ -64,7 +62,7 @@ hr {
     text-align: left;
     letter-spacing: 4px;
 
-	font-family: Text;
+	font-family: Quest;
 	font-size: 20px;
     line-height: 25px;
 }
@@ -72,16 +70,18 @@ hr {
 .langName span {
 	display: block;
 
+	font-family: Quest;
     font-size: 35px;
 }
 
 .input {
+	text-align: center;
     letter-spacing: 3px;
 
     border: none;
     border-bottom: 2px solid rgb(78, 78, 78);
 
-    font-family: Text;
+    font-family: Quest;
 	font-size: 20px;
     font-weight: bold;
 }

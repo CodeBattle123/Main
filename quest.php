@@ -12,97 +12,21 @@
 </head>
 <body>
 <?php include 'header.php' ?>
-<?php
-	//Open file
-	function OhMyGod(){
-		echo "Jesus Help Us.";
-	}
 
-	// Variable to store the way we will take the language progress from the database.
-	$langModeled = "";
-
-	switch ($_GET['lang']) {
-		case 'csharp':
-			$langModeled = "CSharp";
-			break;
-		case 'cpp':
-			$langModeled = "CPP";
-			break;
-		case 'java':
-			$langModeled = "Java";
-			break;
-		case 'javascript':
-			$langModeled = "JS";
-			break;
-		case 'php':
-			$langModeled = "PHP";
-			break;
-		case 'ruby':
-			$langModeled = "Ruby";
-			break;
-		case 'python':
-			$langModeled = "Python";
-			break;
-		case 'swift':
-			$langModeled = "Swift";
-			break;
-	}
-
-	//Get language progress
-	$sql = "SELECT * FROM language_progress WHERE user_id=$log_id";
-	$result = mysqli_query($connect, $sql)->fetch_assoc();
-
-	$objective = "";
-	if ($quest = fopen('Quests\\' . $_GET['lang']. "\\" . $result[$langModeled] . '_obj.txt', "r")) {
-		$objective = fgets($quest);
-		fclose($quest);
-	} else OhMyGod();
-
-	$code = array();
-	if ($quest = fopen('Quests\\' . $_GET['lang']. "\\" . $result[$langModeled] .'_code.txt', "r")) {
-		while (!feof($quest)) {
-			$line = fgets($quest);
-			array_push($code, $line);
-		}
-		fclose($quest);
-	} else OhMyGod();
-
-	$answers = array();
-	$answersLength = array();
-	if ($quest = fopen('Quests\\' . $_GET['lang']. "\\" . $result[$langModeled] . '_ans.txt', "r")) {
-		while (!feof($quest)) {
-			$line = fgets($quest);
-			array_push($answers, trim($line));
-		}
-		fclose($quest);
-	} else OhMyGod();
-
-	for ($i=0; $i < count($answers); $i++) {
-		$length = strlen(trim($answers[$i]));
-		array_push($answersLength, $length);
-	}
-
-	$answerLengthIterator = 0;
-	for ($i=0; $i < count($code); $i++) {
-		if (substr_count($code[$i], '{option}') != 0) {
-			$code[$i] = str_replace('{option}', '<input type="text" id="quest-input" class="input" maxlength="' . $answersLength[$answerLengthIterator] . '" />', $code[$i]);
-			$answerLengthIterator = $answerLengthIterator + 1;
-		}
-	}
-?>
+<?php include 'scripts\questPage.php'; ?>
 
 <div class="wrapper">
     <div class="questContainer">
-        <h1 class="langName">Test Your <span><?= $_GET['lang']?></span> Skills</h1>
-        <h3 class="level">Level <?=$result[$langModeled]?>/10</h3>
+        <h1 class="langName">Test Your <span><?=$langTitle?></span> Skills</h1>
+        <h3 class="level">Level <?=$result[$langSQL]?>/10</h3>
 		<hr>
         <h4 class="objective"><?= $objective?></h4>
        <div class="codeContainer">
 			<div class="container">
             <pre class="quest">
-	<?php foreach ($code as $line): ?>
-	<?php echo $line; ?>
-	<?php endforeach; ?>
+<?php foreach ($code as $line): ?>
+<?php echo $line; ?>
+<?php endforeach; ?>
             </pre>
 			</div>
 
@@ -123,7 +47,7 @@
 	var finished = true;
 
     for(item of inputs) {
-        item.style.width = (item.maxLength * 15) + 'px';
+        item.style.width = (item.maxLength * 19) + 'px';
     }
 
 	let result = true;
@@ -138,19 +62,26 @@
 	<?php endforeach; ?>
 
 	<script>
-	let fields = document.getElementsByClassName('quest-input');
+	let fields = document.getElementsByClassName('quest');
 
     function CalcResult() {
-		let fieldIterator = 0;
-        <?php foreach ($answers as $answer): ?>
-		if (!(fields[fieldIterator].innerHTML) == "<?= $answer?>") {
+		let fieldIterator = 1;
+
+		<?php foreach ($answers as $answer): ?>
+		if (fields[fieldIterator].value != "<?= $answer?>") {
 			result = false;
+			console.log("This should have said wrong." + fields[fieldIterator].value);
 		}
 		fieldIterator++;
         <?php endforeach; ?>
 
         if (result == true) {
+			console.log("This should have said correct");
             finished = true;
+			<?php 
+			$sql = 'UPDATE language_progress SET $langSQL=($result[' . $langSQL . '] + 1) WHERE user_id=$log_id'; 
+			mysqli_query($connect, $sql);
+			?>
             return correct;
         }
         else {
