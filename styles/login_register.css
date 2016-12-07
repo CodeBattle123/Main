@@ -58,8 +58,7 @@ form{
     border-radius: 10px;
 
     align-self: center;
-    align-content: center;
-}
+    align-content: center;}
 
 input[type="submit"]:hover {
     color: white;

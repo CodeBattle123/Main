@@ -1,0 +1,14 @@
+To make a quest you have to name it according to the last quests number.
+Each quest is made of 3 files ending with {name}(_obj/_code/_ans).txt
+		EXAMPLE:
+		 - 1_obj.txt/1_code.txt/1_ans.txt
+		The new quest your adding should be
+		 - 2_obj.txt/2_code.txt/2_ans.txt
+
+Objective ({name}_obj.txt) - Should be a maximum of 1 line.
+
+Code ({name}_code.txt) - Where you want there to be a input field type in "{option}"
+
+Answers ({name}_ans.txt) - The answers should align with the order in which the input fields are presented.
+Meaning the first input field corresponds to the first answer from this file.
+Every next answer should be on a new line.
