@@ -1,8 +1,43 @@
+<?php
+	if (!isset($_GET['lang'])) {
+		header("location: index.php");
+		exit();
+	}
+
+	$lang = "";
+
+	switch ($_GET['lang']) {
+		case 'csharp':
+			$lang = "C#";
+			break;
+		case 'cpp':
+			$lang = "C++";
+			break;
+		case 'java':
+			$lang = "Java";
+			break;
+		case 'javascript':
+			$lang = "JavaScript";
+			break;
+		case 'php':
+			$lang = "PHP";
+			break;
+		case 'ruby':
+			$lang = "Ruby";
+			break;
+		case 'python':
+			$lang = "Python";
+			break;
+		case 'swift':
+			$lang = "Swift";
+			break;
+	}
+ ?>
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>INSERT LANGUAGE NAME HERE</title>
+		<title><?= $lang ?></title>
 
 		<link rel="stylesheet" href="styles/headerAndFooter.css">
 		<link rel="stylesheet" href="styles/main.css">
@@ -13,13 +48,13 @@
 		<?php include_once 'header.php'; ?>
 
 		<div class="wrapper">
-			<h1 class="langName">C# Course</h1>
+			<h1 class="langName"><?= $lang ?></h1>
 
 			<div class="devision">
 				<h2 class="level">Begginer</h2>
 				<div class="circleContainer">
 					<a href="#" class="circle"></a>
-					<a href="example-quest.php" class="circle"></a>
+					<a href="example-quest.php?lang=<?= $_GET['lang']?>" class="circle"></a>
 				</div>
 			</div>
 			<div class="devision">

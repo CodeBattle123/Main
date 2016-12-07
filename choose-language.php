@@ -27,7 +27,7 @@ $row = mysqli_fetch_row($results);
 	<h5>Pick a language to master</h5>
 
 	<div class="languages">
-	    <a href="langCourse.php" class="lang-options" id="lang-csharp">
+	    <a href="langCourse.php?lang=csharp" class="lang-options" id="lang-csharp">
 	        <div class="lang-options-p">C#</div>
 
 			<div class="meter_container">
@@ -37,7 +37,7 @@ $row = mysqli_fetch_row($results);
 			</div>
 	    </a>
 
-		<a href="langCourse.php" class="lang-options" id="lang-c++">
+		<a href="langCourse.php?lang=cpp" class="lang-options" id="lang-c++">
 			<div class="lang-options-p">C++</div>
 
 			<div class="meter_container">
@@ -47,7 +47,7 @@ $row = mysqli_fetch_row($results);
 			</div>
 		</a>
 
-	    <a href="langCourse.php" class="lang-options" id="lang-java">
+	    <a href="langCourse.php?lang=java" class="lang-options" id="lang-java">
 	        <div class="lang-options-p">Java</div>
 
 			<div class="meter_container">
@@ -57,7 +57,7 @@ $row = mysqli_fetch_row($results);
 			</div>
 	    </a>
 
-	    <a href="langCourse.php" class="lang-options" id="lang-javascript">
+	    <a href="langCourse.php?lang=javascript" class="lang-options" id="lang-javascript">
 	        <div class="lang-options-p">JavaScript</div>
 
 			<div class="meter_container">
@@ -67,7 +67,7 @@ $row = mysqli_fetch_row($results);
 			</div>
 	    </a>
 
-		<a href="langCourse.php" class="lang-options" id="lang-php">
+		<a href="langCourse.php?lang=php" class="lang-options" id="lang-php">
 			<div class="lang-options-p">PHP</div>
 
 			<div class="meter_container">
@@ -77,8 +77,7 @@ $row = mysqli_fetch_row($results);
 			</div>
 		</a>
 
-	<!--Toni - if clicked demo script will run-->
-	    <a href="langCourse.php" class="lang-options" id="lang-ruby">
+	    <a href="langCourse.php?lang=ruby" class="lang-options" id="lang-ruby">
 	        <div class="lang-options-p">Ruby</div>
 
 			<div class="meter_container">
@@ -88,7 +87,7 @@ $row = mysqli_fetch_row($results);
 			</div>
 	    </a>
 
-	    <a href="langCourse.php" class="lang-options" id="lang-python">
+	    <a href="langCourse.php?lang=python" class="lang-options" id="lang-python">
 	        <div class="lang-options-p">Python</div>
 
 			<div class="meter_container">
@@ -98,7 +97,7 @@ $row = mysqli_fetch_row($results);
 			</div>
 	    </a>
 
-	    <a href="langCourse.php" class="lang-options" id="lang-swift">
+	    <a href="langCourse.php?lang=swift" class="lang-options" id="lang-swift">
 	        <div class="lang-options-p">Swift</div>
 
 			<div class="meter_container">

@@ -1,4 +1,4 @@
-	<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <link rel="stylesheet" href="styles/headerAndFooter.css">
@@ -12,21 +12,63 @@
 </head>
 <body>
 <?php include 'header.php' ?>
+<?php
+	//Open file
+	function OhMyGod(){
+		echo "SOMETHING WENT TERRIBLY WRONG! OMG! ;-;";
+	}
+
+	$objective = "";
+	if ($quest = fopen('Quests\\' . $_GET['lang']. "\\" . '1_obj.txt', "r")) {
+		$objective = fgets($quest);
+		fclose($quest);
+	} else OhMyGod();
+
+	$code = array();
+	if ($quest = fopen('Quests\\' . $_GET['lang']. "\\" . '1_code.txt', "r")) {
+		while (!feof($quest)) {
+			$line = fgets($quest);
+			array_push($code, $line);
+		}
+		fclose($quest);
+	} else OhMyGod();
+
+	$answers = array();
+	$answersLength = array();
+	if ($quest = fopen('Quests\\' . $_GET['lang']. "\\" . '1_ans.txt', "r")) {
+		while (!feof($quest)) {
+			$line = fgets($quest);
+			array_push($answers, trim($line));
+		}
+		fclose($quest);
+	} else OhMyGod();
+
+	for ($i=0; $i < count($answers); $i++) {
+		$length = strlen(trim($answers[$i]));
+		array_push($answersLength, $length);
+	}
+
+	$answerLengthIterator = 0;
+	for ($i=0; $i < count($code); $i++) {
+		if (substr_count($code[$i], '{option}') != 0) {
+			$code[$i] = str_replace('{option}', '<input type="text" id="quest-input" class="input" maxlength="' . $answersLength[$answerLengthIterator] . '" />', $code[$i]);
+			$answerLengthIterator = $answerLengthIterator + 1;
+		}
+	}
+?>
 
 <div class="wrapper">
     <div class="questContainer">
         <h1 class="langName">Test Your <span>Ruby</span> Skills</h1>
         <h3 class="level">Level 1/10</h3>
-        <hr>
-        <h4 class="objective">Fill Blanks to Print Numbers 1 to 10</h4>
+		<hr>
+        <h4 class="objective"><?= $objective?></h4>
        <div class="codeContainer">
 			<div class="container">
             <pre class="quest">
-<span>i=1</span>
-<input type="text" id="ex-quest-input-1" class="input" maxlength="5"><span> i&lt;11 </span></input>
-	<input type="text" id="ex-quest-input-2" class="input" maxlength="5"><span>"i: ", i ,"\n"</span></input>
-	<span>i</span><input type="text" id="ex-quest-input-3" class="input" maxlength="2"><span>1</span></input>
-<span>end</span>
+<?php foreach ($code as $line): ?>
+<?php echo $line; ?>
+<?php endforeach; ?>
             </pre>
 			</div>
 
@@ -40,6 +82,8 @@
 </div>
 
 <script type="text/javascript">
+	var line = "";
+
     let inputs = document.getElementsByClassName('input');
 
 	var finished = true;
@@ -48,41 +92,21 @@
         item.style.width = (item.maxLength * 15) + 'px';
     }
 
-    function countdown() {
-        var seconds = 60;
-        function tick() {
-            var counter = document.getElementById("counter");
-            seconds--;
+	let result = true;
+	let answers = [];
+	</script>
 
-            counter.innerHTML = "0:" + (seconds < 10 ? "0" : "") + String(seconds)
-                +"<br><input type='button' class='checkButton' id='submitQuest' value='check'><br><span id='result'>Result: </span>";
+	<?php foreach ($answers as $answer): ?>
+	<script type="text/javascript">
+		line = "<?php echo $answer ?>";
+		answers.push(line);
+	</script>
+	<?php endforeach; ?>
 
-            if (seconds > 0) {
-                let t = setTimeout(tick, 1000);
-                $('#submitQuest').click(function () {
-                    clearTimeout(t);
-                });
-                $(document).keypress(function (k) {
-                    if (k.which == 13) {
-                        clearTimeout(t);
-                    }
-                });
-            } else {
-                alert("Game over");
-            }
-        }
-        tick();
-    }
-    var correct = "<span style='display:block; color:green;'> <img style='width: 50%' src='images/nakov-correct.png' alt='Correct'></span>";
-    var wrong = "<span style='display:block; color:red;'> <img style='width: 50%' src='images/nakov-wrong.png' alt='Wrong'></span>";
+	<script>
+	let fields = document.getElementsByClassName('quest-input');
 
     function CalcResult() {
-
-        let i1 = $("#ex-quest-input-1").val();
-        let i2 = $("#ex-quest-input-2").val();
-        let i3 = $("#ex-quest-input-3").val();
-        let result = true;
-
         if (i1.toLowerCase() != "while") {
             result = false;
         }
@@ -102,6 +126,35 @@
             return wrong;
         }
     }
+
+	function countdown() {
+		var seconds = 60;
+		function tick() {
+			var counter = document.getElementById("counter");
+			seconds--;
+
+			counter.innerHTML = "0:" + (seconds < 10 ? "0" : "") + String(seconds)
+			+"<br><input type='button' class='checkButton' id='submitQuest' value='check'><br><span id='result'>Result: </span>";
+
+			if (seconds > 0) {
+				let t = setTimeout(tick, 1000);
+				$('#submitQuest').click(function () {
+					clearTimeout(t);
+				});
+				$(document).keypress(function (k) {
+					if (k.which == 13) {
+						clearTimeout(t);
+					}
+				});
+			} else {
+				alert("Game over");
+			}
+		}
+		tick();
+	}
+	var correct = "<span style='display:block; color:green;'> <img style='width: 50%' src='images/nakov-correct.png' alt='Correct'></span>";
+	var wrong = "<span style='display:block; color:red;'> <img style='width: 50%' src='images/nakov-wrong.png' alt='Wrong'></span>";
+
 
 //Start show and start timer
 	setTimeout(function () {
