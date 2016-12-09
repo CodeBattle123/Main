@@ -22,6 +22,13 @@
 	<main class="wrapper">
          <div class="clanInfo">
 			<div class="clanAvatarHolder"></div>
+			<div class="inbox">
+				<ul><span>Requests: ()</span>
+					<li class="request">
+						
+					</li>
+				</ul>
+			</div>
             <h3 class="clanName"><?= $log_clan ?></h3>
 			<?php
 			$sql = "SELECT * FROM teams WHERE name='$log_clan'";
@@ -37,7 +44,6 @@
 						$userid = $row['user-id'];
 						$sql = "SELECT * FROM `users` WHERE id='$userid'";
 						$user = mysqli_query($connect, $sql)->fetch_assoc()['nickname'];
-
 						echo '<li class="member">' . $user . '<a href="profile.php?user=' . $user . '">View Profile</a></li>';
 					}
 			    ?>
@@ -49,7 +55,7 @@
             </script>
 
         <div id="clanChat">
-
+			
         </div>
 </main>
 

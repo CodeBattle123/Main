@@ -76,6 +76,7 @@
 	height: calc(100% - 30px);
 	padding: 15px 5px 5px 5px;
 }
+
 .meter {
 	position: relative;
 
@@ -85,7 +86,13 @@
 	height: 4.5vh;
 	margin: 0;
 
+	transition: background-color 0.5s;
+
 	background-color: #777777;
+}
+
+.lang-options:hover .meter_container .meter {
+	background-color: rgb(99, 99, 99);
 }
 
 .meterFill {
@@ -98,4 +105,8 @@
 	height: 4.5vh;
 
 	background-color: #0E0;
+}
+
+.lang-options:hover .meter_container .meter .meterFill {
+	border-right: 2px solid #000;
 }
