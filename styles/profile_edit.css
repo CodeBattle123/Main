@@ -1,0 +1,105 @@
+input[type="text"], input[type="password"], input[type="email"] {
+    display: block;
+    width: 200px;
+    border: 0;
+    border-bottom: 1px solid black;
+    outline: none;
+    background-color: inherit;
+    font-family: MainText;
+    font-size: 15px;
+}
+
+input[type="submit"] {
+    display: block;
+    float: left;
+
+    width: 200px;
+    margin: 0 auto;
+    margin-top: 25px;
+    margin-bottom: 40px;
+    padding: 10px 0px;
+
+    cursor: pointer;
+
+    border: solid 2px black;
+    border-radius: 5px;
+    background-color: white;
+
+    font-family: Sidebar;
+    font-size: 15px;
+}
+form{
+    margin: 40px;
+}
+
+.form{
+
+
+}
+
+input[type="submit"]:hover {
+    color: white;
+    border-color: #0073A5;
+
+    background-color: #0073A5;
+}
+
+.messageHolder {
+    display: block;
+
+    margin: 0 auto;
+}
+
+.message {
+    display: block;
+
+    margin: 10px;
+
+    text-decoration: underline;
+
+    font-family: Quest;
+    font-size: 13px;
+}
+
+@keyframes SlideIn {
+    0% {top: -25px;opacity: 0; }
+    100% {top: 0px;opacity: 1; }
+}
+
+#fileToUpload {
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+}
+#fileToUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    background-color: black;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 10px;
+    font-family: Quest;
+}
+
+
+.profileDesc{
+    width: 90%;
+    margin: 40px auto;
+    padding: 20px;
+
+    text-align: center;
+
+    border: solid black;
+    border-width: 2px;
+
+    font-family: Quest;
+}

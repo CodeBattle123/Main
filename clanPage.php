@@ -12,9 +12,10 @@
 <?php include_once ('header.php'); ?>
 
 <main>
-    <div class="clanAvatarHolder"></div>
+    <div class="clanAvatarHolder">  <img class="clanavatar"   src="uploads/<?=$log_clan . ".png"?>" alt="asd"> </div>
 
          <div class="clanInfo">
+
             <h3 class="clanName"><?= $log_clan ?></h3>
 			<?php
 			$sql = "SELECT * FROM teams WHERE name='$log_clan'";

@@ -6,6 +6,15 @@
     <link rel="stylesheet" href="styles/sidebar.css">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/example-quest-style.css">
+    <script>
+        function play(audio){
+            var win = document.getElementById("win");
+            var loss = document.getElementById("loss");
+            audio.play();
+        }
+    </script>
+
+
     <meta charset="UTF-8">
     <title>Quests</title>
 
@@ -14,6 +23,9 @@
 <?php include 'header.php' ?>
 
 <div class="wrapper">
+    <audio id="win" src="audio/nakov-correct.wav" ></audio>
+    <audio id="loss" src="audio/nakov-wrong.mp3" ></audio>
+
     <div class="questContainer">
         <h1 class="langName">Test Your <span>Ruby</span> Skills</h1>
         <h3 class="level">Level 1/10</h3>
@@ -95,10 +107,12 @@
 
         if (result == true) {
             finished = true;
+            play(win);
             return correct;
         }
         else {
             finished = true;
+            play(loss);
             return wrong;
         }
     }

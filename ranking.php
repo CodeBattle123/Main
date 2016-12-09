@@ -8,11 +8,10 @@
       <link rel="stylesheet" href="styles/headerAndFooter.css" >
       <link rel="stylesheet" href="styles/sidebar.css" >
 	  <link rel="stylesheet" href="styles/ranking.css" >
-
-
    </head>
    <body>
       <?php include_once('header.php'); ?>
+
       <div class="wrapper">
 		 <table>
             <tr>
