@@ -24,6 +24,105 @@ main {
 	background-size: 100% 100%;
 }
 
+.inbox {
+	position: absolute;
+	top: 50px;
+	right: 10px;
+
+	display: block;
+	overflow-x: hidden;
+	overflow-y: auto;
+
+	width: 230px;
+	height: 200px;
+}
+
+.inbox ul {
+	list-style: none;
+}
+
+.first {
+	display: block;
+
+	width: calc(100% - 2px);
+
+	border: 1px solid black;
+
+	font-family: Quest;
+	line-height: 25px;
+}
+
+.veil {
+	display: none;
+
+	height: 0px;
+
+	transition: height 5s;
+}
+
+ul:active .veil,
+ul:focus .veil,
+ul:hover .veil,
+.veil:hover {
+	display: block;
+}
+
+.request {
+	padding-top: 10px;
+
+	border: 1px solid black;
+}
+
+.requestContents {
+	display: block;
+
+	width: 230px;
+	margin: 0 auto;
+
+	font-family: Quest;
+}
+
+.target {
+	display: block;
+
+	text-transform: uppercase;
+}
+
+.answers {
+	display: flex;
+
+	width: 230px;
+
+	justify-content: space-between;
+}
+
+.answerButton {
+	display: block;
+
+	width: 150px;
+	height: 30px;
+	margin: 15px 10px;
+
+	border-radius: 15px;
+	border-image:url('../images/Border.png') 55 round;
+	border-image-width:25px;
+	border-image-outset: 2px;
+
+	font-family: Quest;
+}
+
+.accept, .deny {
+	transition: background-color 0.5s;
+}
+
+.accept:hover {
+	background-color: rgb(24, 191, 36);
+}
+
+.deny:hover {
+	background-color: rgb(232, 28, 28);
+}
+
 .clanInfo {
 	position: relative;
 
@@ -180,15 +279,27 @@ main {
 	}
 }
 
+@media screen and (max-width:1000px) {
+	.inbox {
+		position: relative;
+		top: 0;
+		right: 0;
+
+		width: calc(100% - 10px);
+	}
+	
+	.veil {
+		display: block;
+	}
+	
+	.answers {
+		width: 100%;
+	}
+	
+}
+
 input[type=text] {
 	width: 85%;
 	height: 30px;
 	padding: 10px;
-}
-
-input[type=submit] {
-	width: 100px;
-	height: 55px;
-
-	font-family: Quest;
-}
+}	

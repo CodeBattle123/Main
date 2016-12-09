@@ -73,8 +73,10 @@
 	        }
 
 	        if ($validate) {
-	            $sql = "INSERT INTO users (nickname, email, password, first_name, last_name) VALUES ('$username','$email','$password')";
+	            $sql = "INSERT INTO users (nickname, email, password, first_name, last_name) VALUES ('$username','$email','$password', '$first_name', '$last_name')";
 	            $query = mysqli_query($connect, $sql);
+				$sql = "INSERT INTO language_progress(CSharp, CPP, Java, JS, PHP, Ruby, Python, Swift) VALUES('1','1','1','1','1','1','1','1')";
+				mysqli_query($connect, $sql);
 	            if ($query) {
 	                echo '<li class="message" style="color: green;">You have successfully created your account!</li>';
 	            }

@@ -76,11 +76,11 @@ if (!isset($_GET['user'])) {
 		?>
 
 		<?php
-		if ($row['description'] != "") {
-			echo '<div class="profileDesc">
-					<p>' . $row['description'] . '</p>
-				</div>';
-		}
+			if ($row['description'] != "") {
+				echo '<div class="profileDesc">
+						<p>' . $row['description'] . '</p>
+					</div>';
+			}
 		?>
 
 	<div class="match-history">

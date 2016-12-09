@@ -14,6 +14,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.0.1/react-dom.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+	<script src="scripts/post.js"></script>
+		
+	</script>
 
 </head>
 <body>
@@ -23,10 +26,16 @@
          <div class="clanInfo">
 			<div class="clanAvatarHolder"></div>
 			<div class="inbox">
-				<ul><span>Requests: ()</span>
+				<ul><span class="first">Requests: ()</span>
+					<div class="veil">
 					<li class="request">
-						
+						<p class="requestContents"><span class="target">{user}</span> wants to join your clan.</p>
+						<form class="answers" action="scripts/addToClan.php" method="post">
+							<input class="answerButton accept" type="submit" name="Add" value="Accept">
+							<input class="answerButton deny" type="submit" name="Deny" value="Deny">
+						</form>
 					</li>
+					</div>
 				</ul>
 			</div>
             <h3 class="clanName"><?= $log_clan ?></h3>
