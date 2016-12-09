@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles/headerAndFooter.css">
     <link rel="stylesheet" href="styles/sidebar.css" media="screen" title="no title">
     <link rel="stylesheet" href="styles/clanPage.css" media="screen" title="no title">
-    <link rel="stylesheet" href="styles/main.css">
+	<link rel="stylesheet" href="styles/main.css">
     <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
     <script type="text/babel" src="chat/chat.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.0.1/react.min.js"></script>
@@ -18,8 +18,10 @@
 </head>
 <body>
 <?php include_once('header.php'); ?>
-<main class="wrapper">
+
+	<main class="wrapper">
          <div class="clanInfo">
+			<div class="clanAvatarHolder"></div>
             <h3 class="clanName"><?= $log_clan ?></h3>
 			<?php
 			$sql = "SELECT * FROM teams WHERE name='$log_clan'";
@@ -46,37 +48,9 @@
                 chat.scrollTop = chat.scrollHeight;
             </script>
 
-            <div class="clanChat">
-               <ul id="chat">
-				  	<?php
-						$sql = "SELECT * FROM `team-chat` ORDER BY `date` desc";
-						$query = mysqli_query($connect, $sql);
-						while ($row = $query->fetch_assoc()) {
-
-							$userid = $row['user_id'];
-							$sql = "SELECT * FROM users WHERE id='$userid'";
-					 		$user = mysqli_query($connect, $sql)->fetch_assoc()['nickname'];
-							echo '<li class="chatLog"><span class="user">' . $user .'</span><span class="message">' . $row['message'] . '</span></li>';
-						}
-				  	?>
-               </ul>
-			   <!-- For getting the chat to be scolled to the bottom automatically -->
-			   <script type="text/javascript">
-			   var chat = document.getElementById("chat");
-			   chat.scrollTop = chat.scrollHeight;
-			   </script>
-
-               <form class="messageInput">
-                  <input class="input" type="text" name="text" placeholder="Enter your message here.">
-                  <input type="Submit" name="submit" value="Submit">
-			  </form>
-            </div>
-        </div>
-
         <div id="clanChat">
 
         </div>
-
 </main>
 
 <?php include_once('footer.html') ?>
