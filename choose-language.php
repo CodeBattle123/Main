@@ -21,13 +21,12 @@ $results = mysqli_query($connect, $query);
 $row = mysqli_fetch_row($results);
 ?>
 
-
 <div class="wrapper">
 	<h3>Your languages</h3>
 	<h5>Pick a language to master</h5>
 
 	<div class="languages">
-	    <a href="langCourse.php?lang=csharp" class="lang-options" id="lang-csharp">
+		<a href="langCourse.php?lang=csharp" class="lang-options" id="lang-csharp">
 	        <div class="lang-options-p">C#</div>
 
 			<div class="meter_container">

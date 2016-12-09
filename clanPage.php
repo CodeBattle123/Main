@@ -21,6 +21,7 @@
 
 	<main class="wrapper">
          <div class="clanInfo">
+			<div class="clanAvatarHolder"></div>
             <h3 class="clanName"><?= $log_clan ?></h3>
 			<?php
 			$sql = "SELECT * FROM teams WHERE name='$log_clan'";
