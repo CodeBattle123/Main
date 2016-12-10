@@ -25,12 +25,33 @@
 ?>
 
 <main>
-    <div class="clanAvatarHolder">  <img class="clanavatar"   src="uploads/<?=$log_clan . ".png"?>" alt="asd"> </div>
+    <div class="clanAvatarHolder">  <img class="clanAvatar"   src="uploads/<?=$log_clan . ".png"?>" alt="asd"> </div>
 
          <div class="clanInfo">
 			<div class="inbox">
 				<ul><span class="first">Requests: ()</span>
 					<div class="veil">
+					<li class="request">
+						<p class="requestContents"><span class="target">{user}</span> wants to join your clan.</p>
+						<form class="answers" action="scripts/addToClan.php" method="post">
+							<input class="answerButton accept" type="submit" name="Add" value="Accept">
+							<input class="answerButton deny" type="submit" name="Deny" value="Deny">
+						</form>
+					</li>
+					<li class="request">
+						<p class="requestContents"><span class="target">{user}</span> wants to join your clan.</p>
+						<form class="answers" action="scripts/addToClan.php" method="post">
+							<input class="answerButton accept" type="submit" name="Add" value="Accept">
+							<input class="answerButton deny" type="submit" name="Deny" value="Deny">
+						</form>
+					</li>
+					<li class="request">
+						<p class="requestContents"><span class="target">{user}</span> wants to join your clan.</p>
+						<form class="answers" action="scripts/addToClan.php" method="post">
+							<input class="answerButton accept" type="submit" name="Add" value="Accept">
+							<input class="answerButton deny" type="submit" name="Deny" value="Deny">
+						</form>
+					</li>
 					<li class="request">
 						<p class="requestContents"><span class="target">{user}</span> wants to join your clan.</p>
 						<form class="answers" action="scripts/addToClan.php" method="post">

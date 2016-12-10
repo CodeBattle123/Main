@@ -18,7 +18,7 @@
 	if ($result['clan'] != "") {
 		header('location: clanPage.php?clan=' . $result['clan']);
 	}
-
+?>
 
 <div class="wrapper">
 

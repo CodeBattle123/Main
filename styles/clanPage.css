@@ -9,33 +9,45 @@ main {
 }
 
 .clanAvatarHolder {
-	width: 25vw;
-	height: 25vw;
+	display: flex;
+	flex-direction: column;
+
+	width: 100%;
+	min-height: 25vw;
+	margin: 15px auto;
+
+	justify-content: space-around;
+}
+
+.clanAvatar {
+	display: block;
+
+	width: 23vw;
+	height: 23vw;
 	margin: 0 auto;
 
-	transition: background-size 0.5s;
+	transition: width 0.5s,
+				height 0.5s;
 
-	background-image: url("../images/icon.png");
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: 90% 90%;
+	border-radius: 50%;
 }
-.clanAvatarHolder:hover {
-	background-size: 100% 100%;
+
+.clanAvatar:hover {
+	width: 25vw;
+	height: 25vw;
 }
 
 .inbox {
 	position: absolute;
-	top: 50px;
+	top: -25vw;
 	right: 10px;
 
-	display: block;
+	display: inline-block;
 	overflow-x: hidden;
 	overflow-y: auto;
 
-	width: 230px;
-	height: 200px;
-}
+	width: 300px;
+	height: 350px;;}
 
 .inbox ul {
 	list-style: none;
@@ -91,9 +103,9 @@ ul:hover .veil,
 .answers {
 	display: flex;
 
-	width: 230px;
+	width: 100%;
 
-	justify-content: space-between;
+	justify-content: space-around;
 }
 
 .answerButton {
@@ -172,6 +184,7 @@ ul:hover .veil,
 	list-style: none;
 
 	text-align: left;
+
 	border-right: 1px solid black;
 	border-bottom: 1px solid black;
 	border-left: 1px solid black;
@@ -289,6 +302,7 @@ ul:hover .veil,
 		right: 0;
 
 		width: calc(100% - 10px);
+		height: 140px;
 	}
 	
 	.veil {
@@ -298,6 +312,7 @@ ul:hover .veil,
 	.answers {
 		width: 100%;
 	}
+	
 	
 }
 

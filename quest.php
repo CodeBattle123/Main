@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="styles/example-quest-style.css">
 	<script src="scripts/post.js"></script>
 	<script src="scripts/timer.js"></script>
+	<script src="scripts/reveal.js"></script>
     <meta charset="UTF-8">
     <title>Quests</title>
 
@@ -38,7 +39,7 @@
 
             <div id="counter">
                 <br><input type="button" class="checkButton" id="submitQuest" value="check"><br>
-                <span id="result">Result: </span>
+                <span id="result"  onload="reveal()">Result: </span>
             </div>
 
         </div>
