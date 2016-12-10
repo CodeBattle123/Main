@@ -32,14 +32,15 @@
 
             while($row = $query->fetch_assoc()){
                 $clanname = $row['name'];
-                $query1 = mysqli_query($connect, "SELECT SUM(xp) AS totalxp FROM users WHERE clan = '$clanname'");
+                $query1 = mysqli_query($connect, "SELECT SUM(xp) AS totalxp FROM users WHERE clan = '$clanname' LIMIT 1");
                 $row1 = mysqli_fetch_assoc($query1);
                 $sum = $row1['totalxp'];
                 if (!isset($sum)) {
                     $sum = 0;
                 }
 
-                mysqli_query($connect, "UPDATE teams SET xp ='$sum' WHERE name = '$clanname'");
+                mysqli_query($connect, "UPDATE teams SET xp ='$sum' WHERE name = '$clanname' LIMIT 1");
+
             }
             ?>
 
@@ -48,7 +49,6 @@
             $query = mysqli_query($connect, $sql);
             $rank = 1;
             while($row = $query->fetch_assoc()) {
-
                 echo '<tr>
 		            <td><img src="images/footer_github.png" style="height: 30px; margin-left: 5px;"/></td>
 		            <td>#<b>' . $rank . '</b></td>

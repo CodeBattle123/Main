@@ -24,9 +24,10 @@
 	CheckIfLogged();
 ?>
 
-	<main class="wrapper">
+<main>
+    <div class="clanAvatarHolder">  <img class="clanavatar"   src="uploads/<?=$log_clan . ".png"?>" alt="asd"> </div>
+
          <div class="clanInfo">
-			<div class="clanAvatarHolder"></div>
 			<div class="inbox">
 				<ul><span class="first">Requests: ()</span>
 					<div class="veil">
@@ -40,6 +41,7 @@
 					</div>
 				</ul>
 			</div>
+
             <h3 class="clanName"><?= $log_clan ?></h3>
 			
 			<?php

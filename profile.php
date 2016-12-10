@@ -37,39 +37,46 @@ if (isset($_GET['user'])) {
     $current_user = mysqli_real_escape_string($connect, $_GET['user']);
 }
 ?>
-
-
+<?php
+file_exists("profile-pics/" . $current_user . ".png") ? $profilepic = $current_user . ".png" : $profilepic = "default.png"
+?>
 <div class="wrapper">
     <div class="username">
         <h2 align="center"><?= $current_user ?></h2>
     </div>
 
-    <div class="profile-pic" align="center">
-        <img src="images/footer_github.png" alt="Profile picture" class="profile">
-    </div>
+	<div class="profile-pic" align="center">
+		<img src="profile-pics/<?=$profilepic?>" alt="Profile picture" class="profile">
 
-    <table class="profileinfo" cellpadding="40" cellspacing="20" style="margin: 40px auto;">
-        <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Score</th>
-            <th>Ranking</th>
-        </tr>
-        <?php
-        $userid = $_SESSION ['userid'];
+	</div>
 
-        $sql = "SELECT * FROM users WHERE id='$userid'";
-        $query = mysqli_query($connect, $sql);
-        $row = $query->fetch_assoc();
-        echo '<h3 class="xp">' . $row['xp'] . ' XP</h3>';
+	<?php
+	if ($_SESSION ['username'] == $current_user)
+		echo '<a href="profile_edit.php">Edit your profile</a>';
+	?>
 
-        //gets the rank of the current user
-        $rank = mysqli_query($connect, " SELECT nickname,
+	<table class="profileinfo" cellpadding="40" cellspacing="20" style="margin: 40px auto;">
+		<tr>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Score</th>
+			<th>Ranking</th>
+		</tr>
+		<?php
+		$userid = $_SESSION ['userid'];
+
+		$sql = "SELECT * FROM users WHERE nickname='$current_user'";
+		$query = mysqli_query($connect, $sql);
+		$row = $query->fetch_assoc();
+		echo '<h3 class="xp">' . $row['xp'] . ' XP</h3>';
+
+		//gets the rank of the current user
+		$rank = mysqli_query($connect, "SELECT nickname,
 		 (SELECT COUNT(*)+1
  		FROM user_ranking
 		 WHERE xp > t.xp) as rank
  		FROM user_ranking t
-		WHERE id = '$userid'")->fetch_assoc()['rank'];
+		WHERE nickname = '$current_user'")->fetch_assoc()['rank'];
 
         echo '<tr>
             <td>
@@ -85,15 +92,15 @@ if (isset($_GET['user'])) {
                <h4>' . '#' . $rank . '</h4>
             </td>
                </tr>';
-        ?>
+		?>
 
-        <?php
-        if ($row['description'] != "") {
-            echo '<div class="profileDesc">
+		<?php
+			if ($row['description'] != "") {
+				echo '<div class="profileDesc">
 					<p>' . $row['description'] . '</p>
 				</div>';
-        }
-        ?>
+			}
+ 		?>
 
         <div class="match-history">
             <h2 class="matchHistory">Match History</h2>
