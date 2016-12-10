@@ -22,43 +22,34 @@
 <body>
 <?php include_once('header.php'); 
 	CheckIfLogged();
+	
+	$sql = "SELECT DISTINCT * FROM team_inbox WHERE team_name = '$log_clan'";
+    $requests = mysqli_query($connect,$sql);
 ?>
 
-<main>
+<main class="wrapper">
     <div class="clanAvatarHolder">  <img class="clanAvatar"   src="uploads/<?=$log_clan . ".png"?>" alt="asd"> </div>
 
          <div class="clanInfo">
 			<div class="inbox">
 				<ul><span class="first">Requests: ()</span>
 					<div class="veil">
-					<li class="request">
-						<p class="requestContents"><span class="target">{user}</span> wants to join your clan.</p>
-						<form class="answers" action="scripts/addToClan.php" method="post">
-							<input class="answerButton accept" type="submit" name="Add" value="Accept">
-							<input class="answerButton deny" type="submit" name="Deny" value="Deny">
-						</form>
-					</li>
-					<li class="request">
-						<p class="requestContents"><span class="target">{user}</span> wants to join your clan.</p>
-						<form class="answers" action="scripts/addToClan.php" method="post">
-							<input class="answerButton accept" type="submit" name="Add" value="Accept">
-							<input class="answerButton deny" type="submit" name="Deny" value="Deny">
-						</form>
-					</li>
-					<li class="request">
-						<p class="requestContents"><span class="target">{user}</span> wants to join your clan.</p>
-						<form class="answers" action="scripts/addToClan.php" method="post">
-							<input class="answerButton accept" type="submit" name="Add" value="Accept">
-							<input class="answerButton deny" type="submit" name="Deny" value="Deny">
-						</form>
-					</li>
-					<li class="request">
-						<p class="requestContents"><span class="target">{user}</span> wants to join your clan.</p>
-						<form class="answers" action="scripts/addToClan.php" method="post">
-							<input class="answerButton accept" type="submit" name="Add" value="Accept">
-							<input class="answerButton deny" type="submit" name="Deny" value="Deny">
-						</form>
-					</li>
+						<?php
+					   while($row = $requests->fetch_assoc()) {
+						   $user_id = $row['user_id'];
+						   $user_name = mysqli_query($connect, "SELECT * from users WHERE id = '$user_id'")->fetch_assoc()['nickname'];
+
+					   echo '<li class="request">
+					   <p class="requestContents"><span class="target">' . $user_name  . '</span> wants to join your clan.</p>
+					  <form class="answers" action="scripts/addToClan.php" method="post">
+						  <input type="hidden" name="userid" value="'. $user_id .'">
+						  <input class="answerButton accept" type="submit" name="Add" value="Accept">
+						  <input class="answerButton deny" type="submit" name="Deny" value="Deny">
+					  </form>
+					  </li>';
+
+					   }
+					   ?>
 					</div>
 				</ul>
 			</div>
