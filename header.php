@@ -1,5 +1,11 @@
 <?php
 	include_once("db/login_status.php");
+	
+	function CheckIfLogged(){
+		if (!isset($_SESSION['userid'])) {
+			header('location: index.php');
+		}
+	}
 
 	function get_browser_name($user_agent)
 	{

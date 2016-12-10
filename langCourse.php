@@ -1,6 +1,6 @@
 <?php
 	if (!isset($_GET['lang'])) {
-		header("location: index.php");
+		header("location: choose-language.php");
 		exit();
 	}
 
@@ -32,7 +32,7 @@
 			$lang = "Swift";
 			break;
 		default:
-			header("location: index.php");
+			header("location: choose-language.php");
 			break;
 	}
  ?>

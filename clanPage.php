@@ -20,7 +20,9 @@
 
 </head>
 <body>
-<?php include_once('header.php'); ?>
+<?php include_once('header.php'); 
+	CheckIfLogged();
+?>
 
 	<main class="wrapper">
          <div class="clanInfo">
@@ -39,11 +41,15 @@
 				</ul>
 			</div>
             <h3 class="clanName"><?= $log_clan ?></h3>
+			
 			<?php
 			$sql = "SELECT * FROM teams WHERE name='$log_clan'";
 			$query = mysqli_query($connect, $sql)->fetch_assoc();
 			?>
-            <h3 class="clanDesc"><?php echo $query['description']; ?></h3>
+			
+			<?php if (trim($query['description']) != "") : ?>
+				<h3 class="clanDesc"><?php echo $query['description']; ?></h3>
+			<?php endif; ?>
 
             <ul class="members">
 			   <?php

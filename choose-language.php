@@ -13,6 +13,7 @@
 <body>
 <?php
 include_once('header.php');
+CheckIfLogged();
 
 $idd = $_SESSION['userid'];
 $query = "SELECT * FROM language_progress WHERE user_id='$idd' LIMIT 1";

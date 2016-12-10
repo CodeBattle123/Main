@@ -11,7 +11,14 @@
 
 <body>
 
-<?php include_once('header.php'); ?>
+<?php include_once('header.php');
+	CheckIfLogged();
+	$sql = "SELECT clan FROM users WHERE id='$log_id'";
+	$result = mysqli_query($connect, $sql)->fetch_assoc();
+	if ($result['clan'] != "") {
+		header('location: clanPage.php?clan=' . $result['clan']);
+	}
+?>
 
 <div class="wrapper">
 
@@ -79,7 +86,8 @@
         </div>
     </div>
 
-    <?php
+<?php
+
     if (isset($_POST['submit_clan'])) {
         $validate = true;
 
@@ -104,7 +112,7 @@
             }
         }
 
-        //<!--picture upload-->
+//<!--picture upload-->
 
         $target_dir = "uploads/";
         $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
@@ -150,34 +158,7 @@
         }
 
     }
-
-
-
-        /*$search = $_POST['search'];
-        $sql = "SELECT name FROM teams WHERE name = '$search'";
-
-        $query = mysqli_query($connect, $sql);
-        $row = mysqli_fetch_row($query);
-
-        echo "<li>" . $row['name'] . "</li>\n";*/
-
-    /* $clan_search = mysqli_real_escape_string($connect, $_POST['search']);
-     $user_name = $_SESSION ['username'];
-     $query = 'SELECT clan FROM users WHERE clan = "$clan_name"';
-     $result = $connect->query($query);
-
-     if (!$result->num_rows == 0) {
-         echo 'Clan not found';
-     } else {
-         $row = $query->fetch_assoc();
-         echo '<h1>' . $row['clan'] . '</h1>';
-     }*/
-
-    if (isset($_POST['request_join'])){
-
-    }
-
-    ?>
+?>
 
 
 

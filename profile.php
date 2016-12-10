@@ -12,9 +12,9 @@
 
 <body>
 
-<?php include_once('header.php'); ?>
-<?php
-
+<?php include_once('header.php'); 
+	CheckIfLogged();
+	
 if(!isset($_GET['user'])) {
     header("location: profile.php?user=$log_username");
     exit();

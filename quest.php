@@ -15,9 +15,11 @@
 
 </head>
 <body>
-<?php include 'header.php' ?>
-
-<?php include 'scripts\questPage.php'; ?>
+<?php 
+	include 'header.php';
+	CheckIfLogged();
+	include 'scripts\questPage.php'; 
+?>
 
 <div class="wrapper">
     <div class="questContainer">

@@ -10,7 +10,9 @@
     <link rel="icon" type="image/png" href="images/icon.png"/>
 </head>
 <body>
-<?php include 'header.php' ?>
+<?php include 'header.php';
+	CheckIfLogged();
+?>
 
 <div class="wrapper">
     <div class="content">
