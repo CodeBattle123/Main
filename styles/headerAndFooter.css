@@ -29,7 +29,7 @@
 	padding:0;
 
 	transition:
-	opacity 0.5s,
+	all 0.5s,
 	font-size 0.3s;
 }
 body {
@@ -133,7 +133,8 @@ header {
 
 	transition: background-color 0.5s,
 			 	top 0.5s,
-				box-shadow 0.5s;
+				box-shadow 0.5s,
+				color 0.5s;
 	text-align: center;
 	text-decoration: none;
 
@@ -147,8 +148,9 @@ header {
 .tab:hover {
 	top: -10px;
 
-	background-color: rgb(180,180,180);
-	box-shadow: 0px 10px 0px rgb(148, 148, 148);
+	color: #003f20;
+	background-color: #34ff9c;
+	box-shadow: 0px 10px 0px #00db6e;
 }
 
 #list .hidden {
@@ -267,7 +269,7 @@ header {
 	}
 
 	.tab:hover {
-		background-color: rgba(0, 171, 238, 1);
+		background-color: #34ff9c;
 	}
 
 	#list .hidden {

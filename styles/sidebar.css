@@ -20,22 +20,24 @@
 }
 
 .sidebar_container li {
-   padding-left: 20px;
-
 	transition: background-color 0.5s;
 
+	color: white;
    border-bottom: 1px solid #3cb0fd;
 }
 
-.sidebar_container li:hover{
-   background-color: #3cb0fd;
+.sidebar_container li:hover, .link:hover{
+	color: #003f20;
+   background-color: #34ff9c;
 }
 
 .link {
    display: block;
 
-   width: 100%;
+   width: calc(100%-20px);
+	padding-left: 20px;
 
+   transition: color 0.5s;
    text-decoration: none;
    text-transform: uppercase;
 

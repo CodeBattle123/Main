@@ -1,105 +1,156 @@
-input[type="text"], input[type="password"], input[type="email"] {
-    display: block;
-    width: 200px;
-    border: 0;
-    border-bottom: 1px solid black;
-    outline: none;
-    background-color: inherit;
-    font-family: MainText;
-    font-size: 15px;
+hr {
+		margin: 10px 0 30px 0;
+		height: 3px;
+		background: #707070;
+		border-bottom: 1px solid black;
 }
 
-input[type="submit"] {
-    display: block;
-    float: left;
-
-    width: 200px;
-    margin: 0 auto;
-    margin-top: 25px;
-    margin-bottom: 40px;
-    padding: 10px 0px;
-
-    cursor: pointer;
-
-    border: solid 2px black;
-    border-radius: 5px;
-    background-color: white;
-
-    font-family: Sidebar;
-    font-size: 15px;
-}
-form{
-    margin: 40px;
+.wrapper h2 {
+		display: block;
+		margin: 10px auto;
+		text-align: center;
+		font-size: 40px;
+		font-family: Quest;
+		text-transform: capitalize;
 }
 
-.form{
-
-
+.profile-pic {
+		margin: 10px;
 }
 
-input[type="submit"]:hover {
-    color: white;
-    border-color: #0073A5;
-
-    background-color: #0073A5;
+.profileDesc {
+		display: block;
+		margin: 0px auto;
+		font-family: Quest;
+		font-size: 20px;
+		margin-bottom: 50px;
 }
 
-.messageHolder {
-    display: block;
-
-    margin: 0 auto;
+.Submit {
+		display: block;
+		margin: 15px auto;
+		width: 200px;
+		padding: 10px 10px;
+		line-height: 50px;
+		font-family: Quest;
+		text-transform: uppercase;
+		border: none;
+		color: white;
+		background: #707070;
+		border-radius: 5px;
+		position: relative;
+		top: -10px;
+		transition: box-shadow 0.5s, color 0.5s, background 0.5s;
 }
 
-.message {
-    display: block;
-
-    margin: 10px;
-
-    text-decoration: underline;
-
-    font-family: Quest;
-    font-size: 13px;
+.Submit:hover {
+		color: #003f20;
+		background: #34ff9c;
 }
 
-@keyframes SlideIn {
-    0% {top: -25px;opacity: 0; }
-    100% {top: 0px;opacity: 1; }
+.exception {
+		display: inline-block;
+}
+
+.imageForm {
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-around;
+}
+
+.imageForm .Submit {
+		margin: 20px 0;
+}
+
+.imgHeader {
+		display: block;
+		margin: 15px auto;
+		font-family: Quest;
+		width: 100%;
+		text-align: center;
 }
 
 #fileToUpload {
-    position: relative;
-    overflow: hidden;
-    margin: 10px;
-}
-#fileToUpload input.upload {
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 0;
-    padding: 0;
-    font-size: 20px;
-    cursor: pointer;
-    opacity: 0;
-    filter: alpha(opacity=0);
-    background-color: black;
+		font-family: Quest;
 }
 
-h2 {
-    text-align: center;
-    margin-top: 10px;
-    font-family: Quest;
+#fileToUpload::-webkit-file-upload-button {
+		position: relative;
+		top: -10px;
+		display: block;
+		width: 100%;
+		height: 70px;
+		margin-top: 20px;
+		font-family: Quest;
+		background: #707070;
+		border-radius: 7px;
+		outline: 0;
+		border: 0;
+		font-size: 16px;
+		color: white;
+		transition: background 0.5s, color 0.5s;
 }
 
+#fileToUpload::-webkit-file-upload-button:hover {
+		color: #003f20;
+		background: #34ff9c;
+}
 
-.profileDesc{
-    width: 90%;
-    margin: 40px auto;
-    padding: 20px;
+.register {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		flex-wrap: wrap;
+}
 
-    text-align: center;
+.names {
+		width: calc(50% - 2px);
+		outline: 0;
+		border: 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		border-right: 2px solid black;
+}
 
-    border: solid black;
-    border-width: 2px;
+.names .name {
+		display: block;
+		margin: 12px auto;
+		width: 60%;
+		height: 25px;
+		font-size: 20px;
+		text-align: center;
+		border: 2px solid black;
+		text-decoration: underline;
+}
 
-    font-family: Quest;
+.names .name:first-child {
+		border-radius: 10px 10px 0 0;
+}
+
+.passwords {
+		width: 50%;
+		outline: 0;
+		border: 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		margin-bottom: 25px;
+}
+
+.passwords .password {
+		display: block;
+		margin: 12px auto;
+		width: 60%;
+		height: 25px;
+		font-size: 20px;
+		text-align: center;
+		border: 2px solid black;
+		text-decoration: underline;
+}
+
+.passwords .password:first-child {
+		border-radius: 10px 10px 0 0;
 }

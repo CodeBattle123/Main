@@ -1,8 +1,5 @@
 .profile-pic{
-	min-height: 300px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-
+	max-height: 300px;
 }
 
 .profile {
@@ -41,7 +38,7 @@
 
 .profileDesc{
     width: 90%;
-    margin: 40px auto;
+    margin: 20px auto;
     padding: 20px;
 
 	text-align: center;
@@ -65,7 +62,9 @@
 }
 
 .username h2 {
-	font-size: 30px;
+	text-transform: capitalize;
+
+	font-size: 30px;;
 }
 
 .username h2:hover {

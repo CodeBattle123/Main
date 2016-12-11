@@ -12,6 +12,13 @@
 
 <body>
 <?php include_once('header.php'); ?>
+<?php
+if (isset($_POST['description'])) {
+	$description = $_POST['description'];
+	$sql = "UPDATE users SET description='$description' WHERE nickname ='$username'";
+	$query = mysqli_query($connect, $sql);
+}
+?>
 
 <?php
 $user = $_SESSION ['username'];
@@ -22,37 +29,39 @@ file_exists("profile-pics/" . $user . ".png") ? $profilepic = $user . ".png" : $
     <div class="profile-pic" align="center">
         <img src="profile-pics/<?=$profilepic?>" alt="Profile picture" class="profile">
     </div>
-
+	
+	<form action="profile_edit.php" method="post" enctype="multipart/form-data" class="imageForm">
+		<h3 class="imgHeader">Select an image to upload</h3>
+		<input type="submit" value="Upload Image" name="submit" class="Submit">
+		<input type="file" name="fileToUpload" id="fileToUpload">
+	</form>
+	
+	<hr>
+	
     <?php
     $sql = "SELECT * FROM users WHERE nickname='$user'";
     $description = mysqli_query($connect, $sql)->fetch_assoc()['description'];
     ?>
     <form action="profile_edit.php" method="post">
+		<h2>description</h2>
         <textarea class="profileDesc" name="description"><?=$description?></textarea>
-        <input type="submit" value="Update description" name="submit">
+        <input type="submit" value="Update description" name="submit" class="Submit">
     </form>
-
-    <?php
-    if (isset($_POST['description'])) {
-        $description = $_POST['description'];
-        $sql = "UPDATE users SET description='$description' WHERE nickname ='$username'";
-        $query = mysqli_query($connect, $sql);
-    }
-
-    ?>
-
-    <form action="profile_edit.php" method="post" enctype="multipart/form-data">
-    <h3>Select an image to upload</h3>
-    <input type="file" name="fileToUpload" id="fileToUpload">
-    <input type="submit" value="Upload Image" name="submit">
-    </form>
+	
+	<hr>
 
     <form class="register" action="profile_edit.php" method="post">
-        <input type="text" name="firstname" placeholder="First Name">
-        <input type="text" name="lastname" placeholder="Last Name">
-        <input type="password" name="password" placeholder="Password">
-        <input type="password" name="password2" placeholder="Re-type">
-        <input type="submit" name="submitinfo" value="Save changes">
+		<fieldset class="names">
+			<h2>Names</h2>
+	        <input type="text" name="firstname" placeholder="First Name" class="name">
+	        <input type="text" name="lastname" placeholder="Last Name" class="name">
+		</fieldset>
+		<fieldset class="passwords">
+			<h2>password</h2>
+	        <input type="password" name="password" placeholder="Password" class="password">
+	        <input type="password" name="password2" placeholder="Re-type" class="password">
+		</fieldset>
+        <input type="submit" name="submitinfo" value="Save changes" class="Submit">
     </form>
 </div>
 <?php
