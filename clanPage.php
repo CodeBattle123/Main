@@ -14,17 +14,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.0.1/react-dom.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-    <script src="scripts/post.js"></script>
 
 
     </head>
     <body>
     <?php include_once('header.php');
     CheckIfLogged();
-
-
-
-
     $sql = "SELECT DISTINCT * FROM team_inbox WHERE team_name = '$log_clan'";
     $requests = mysqli_query($connect,$sql);
 

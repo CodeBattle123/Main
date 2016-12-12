@@ -8,6 +8,8 @@
     <link rel="stylesheet" type="text/css" href="styles/battlesequence.css">
     <link rel="stylesheet" type="text/css" href="styles/sidebar.css">
     <link rel="icon" type="image/png" href="images/icon.png"/>
+	<script src="scripts/jquery-3.1.1.min.js"></script>
+	<script src="scripts/post.js"></script>
 </head>
 <body>
 <?php include 'header.php';
@@ -84,20 +86,20 @@
             </div>
 
             <div class="line"></div>
-            <div class="a a1 correct">
+            <div data="yes" class="a a1 correct" onClick="check(); getAnswer(this)">
                No.
             </div>
 
-            <div class="a a2">
+            <div data="no" class="a a2" onClick="check(); getAnswer(this)">
                Yes.
             </div>
 
             <div class="line" style="margin-top: 50px;"></div>
-            <div class="a a3">
+            <div data="no" class="a a3" onClick="check(); getAnswer(this)">
                Probably.
             </div>
 
-            <div class="a a4">
+            <div data="no" class="a a4" onClick="check(); getAnswer(this)">
                Is this the best question you can think of?
             </div>
 
@@ -105,9 +107,32 @@
    }?>
 
    <script>
-      
+      //The containers of the DOM elements
+	  let answer = document.getElementsByClassName('correct');
+	  let options = document.getElementsByClassName('a');
+	  //variables to use for seeing if the player gave the correct answer
+	  let correct = false;
+	  
+	  function getAnswer(elem) {
+		  if (elem.getAttribute("data") == "yes") {
+			  correct = true;
+		  }
+		  else {
+			  correct = false;
+		  }
+	  }
+	  
+	  function check(){
+		  for (op of options) {
+		  	op.style.background = "red";
+		  }
+		  answer[0].style.background = "green";
+	  }
+	  
    </script>
 </div>
-<?php include 'footer.html'?>
+
+<?php include 'footer.html' ?>
+
 </body>
 </html>
