@@ -28,7 +28,6 @@
             <?php
             $sql = "SELECT * FROM teams";
             $query = mysqli_query($connect, $sql);
-            $user = $_SESSION['username'];
 
             while($row = $query->fetch_assoc()){
                 $clanname = $row['name'];

@@ -25,6 +25,9 @@ $user = $_SESSION ['username'];
 file_exists("profile-pics/" . $user . ".png") ? $profilepic = $user . ".png" : $profilepic = "default.png"
 ?>
 <div class="wrapper">
+	<?php if (isset($_POST['changes'])): ?>
+		<h2>Changes were made successfully</h2>
+	<?php endif; ?>
     <h2><?=$username?></h2>
     <div class="profile-pic" align="center">
         <img src="profile-pics/<?=$profilepic?>" alt="Profile picture" class="profile">
@@ -142,6 +145,7 @@ if (isset($_POST['submitinfo'])) {
         $query = mysqli_query($connect, $sql);
         if ($query) {
             echo '<li class="message" style="color: green;">You have successfully updated your account!</li>';
+			$_POST['changes'] = true;
         }
     }
 }
