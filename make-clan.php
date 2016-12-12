@@ -23,12 +23,12 @@
 <div class="wrapper">
 
     <div class="clan_profile">
-        <h2 align="center">Clan Profile</h2>
+        <h2 class="Header">Clan Profile</h2>
     </div>
 
     <div class="section">
         <div class="make-clan">
-            <h2>Make clan</h2>
+            <h2 class="Header">Make clan</h2>
 
             <form action="make-clan.php" method="post" enctype="multipart/form-data">
 				<fieldset class="">
@@ -38,7 +38,7 @@
  
                 <fieldset>
                     <p  class="fieldTitle">Clan description:</p>
-                    <textarea name="description" rows="4" cols="50"></textarea>
+                    <textarea name="description" ></textarea>
                 </fieldset>
  
                 <fieldset>
@@ -52,42 +52,48 @@
 
         <div class="find-clan">
 
-            <h2 class="find-section">Find clan</h2>
+            <h2 class="Header">Find clan</h2>
 			
 			<form class="find" method="post" action="make-clan.php">
                 <div class="search_bar">
                     <input type="text" name="search" placeholder="Search..."/>
                 </div>
-                <?php
- 
-                if (isset($_POST['find_clan'])) {
- 
-                    $search = $_POST['search'];
-                    $sql = "SELECT name, id FROM teams WHERE name = '$search'";
-                    $result = $connect->query($sql);
- 
-                    if ($result->num_rows > 0) {
-                        while ($row = $result->fetch_assoc()) {
-                            echo '<li>clan: ' . $row['name'] . '<a href="scripts/clanRequest.php?team_id=' . $row['name'] . '">Click  me</a></li>';
-                        }
-                    } else {
-                        echo "0 results";
-                    }
-                }
-                if (isset($_POST['find_clan']) && $_POST['search'] == ""){
-                    echo "<p>Please enter a search</p>";
-                }
- 
-                if (isset($_GET['success'])){
-                    echo "<li>Successfully sent request</li>";
- 
-                }
- 
-                ?>
- 
-                <div class="submit-btn">
-                    <input type="submit" name="find_clan" value="Find Clan"/>
-                    <input type="submit" name="request_join" value="Request to Join"/>
+                
+				<ul class="foundMatches">
+					<?php
+					if (!isset($_POST['find_clan'])) {
+						$sql = "SELECT name FROM teams";
+						$results = mysqli_query($connect, $sql);
+						while ($row = $results->fetch_assoc()) {
+							echo '<li class="match">clan: ' . $row['name'] . '<a href="scripts/clanRequest.php?team_id=' . $row['name'] . '">Request</a></li>';
+						}
+					}
+					
+					if (isset($_POST['find_clan'])) {
+						
+						$search = $_POST['search'];
+						$sql = "SELECT name FROM teams WHERE name = '$search'";
+						$result = $connect->query($sql);
+						
+						if ($result->num_rows > 0) {
+							while ($row = $result->fetch_assoc()) {
+								echo '<li class="match">clan: ' . $row['name'] . '<a href="scripts/clanRequest.php?team_id=' . $row['name'] . '">Request</a></li>';
+							}
+						} else {
+							echo "0 results";
+						}
+					}
+					if (isset($_POST['find_clan']) && $_POST['search'] == ""){
+						echo "<p>Please enter a search</p>";
+					}
+					if (isset($_GET['success'])){
+						echo '<li class="success">Successfully sent request</li>';
+					}
+					?>
+				</ul>
+				
+				
+                <input class="submit-btn" type="submit" name="find_clan"value="Find Clan"/>
                 </div>
             </form>
         </div>

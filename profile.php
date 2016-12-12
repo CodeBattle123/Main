@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/headerAndFooter.css">
-    <link rel="stylesheet" href="styles/profile.css">
+    <link rel="stylesheet" href="styles/profile.css"> 	
     <link rel="stylesheet" href="styles/sidebar.css">
     <link rel="stylesheet" href="styles/main.css">
 
@@ -52,7 +53,7 @@ file_exists("profile-pics/" . $current_user . ".png") ? $profilepic = $current_u
 
 	<?php
 	if ($_SESSION ['username'] == $current_user)
-		echo '<a href="profile_edit.php">Edit your profile</a>';
+		echo '<a href="profile_edit.php" class="editPageButton">Edit profile</a>';
 	?>
 
 	<table class="profileinfo" cellpadding="40" cellspacing="20" style="margin: 40px auto;">
