@@ -40,8 +40,8 @@
 				$validate = false;
 			}
 
-	        if (strlen($username) < 3 || strlen($username) > 16) {
-	    	    echo '<li class="message">Username must be between 3 & 16 characters.</li>';
+	        if (strlen($username) < 3 || strlen($username) > 12) {
+	    	    echo '<li class="message">Username must be between 3 & 12 characters.</li>';
 	            $validate = false;
 	        }
 	    	if (strlen($username) == 0 || is_numeric($username[0])) {
@@ -79,6 +79,7 @@
 				mysqli_query($connect, $sql);
 	            if ($query) {
 	                echo '<li class="message" style="color: green;">You have successfully created your account!</li>';
+						 header('Location: login.php?u=' . $username);
 	            }
 	        }
 	    }
