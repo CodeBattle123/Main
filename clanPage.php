@@ -21,35 +21,22 @@
     <body>
     <?php include_once('header.php');
     CheckIfLogged();
-
-
-
-
     $sql = "SELECT DISTINCT * FROM team_inbox WHERE team_name = '$log_clan'";
     $requests = mysqli_query($connect,$sql);
-
-
     ?>
 
     <?php
-
-
     $leader = mysqli_query($connect, "SELECT * FROM teams WHERE name = '$log_clan'")->fetch_assoc()['leader'];
-
     $isLeader = ($username==$leader);
-
-
     ?>
 
     <main class="wrapper">
-        <div class="clanAvatarHolder">  <img class="clanAvatar"   src="uploads/<?=$log_clan . ".png"?>" alt="asd"> </div>
+        <div class="clanAvatarHolder">  <img class="clanAvatar"   src="clan-pics/<?=$log_clan . ".png"?>" alt="asd"> </div>
 
         <div class="clanInfo">
 
             <?php
-
             if ($isLeader) {
-
                 echo '  <div class="inbox">
         <ul><span class="first">Requests: ()</span>
     <div class="veil">';
@@ -92,32 +79,7 @@
             $query = mysqli_query($connect, $sql);
             while ($row = $query->fetch_assoc()) {
                 $member_name = $row['nickname'];
-
-
-                if ($isLeader){
-                    $remove="";
-
-                    if ($member_name!=$leader){
-                        $remove = '<form class="answers" action="scripts/removeFromClan.php" method="post">
-						  <input type="hidden" name="username" value="' . $member_name . '">
-						  <input class="remove" type="submit" name="remove" value="remove">
-						  <input class="makeleader" type="submit" name="makeleader" value="Make leader">
-
-					  </form>';
-
-                    }
-
-
-                    echo '<li class="member">' . $member_name . $remove . '<a href="profile.php?user=' . $member_name . '">View Profile</a></li>';
-
-
-                }
-
-                else{
                     echo '<li class="member">' . $member_name . '<a href="profile.php?user=' . $member_name . '">View Profile</a></li>';
-
-
-                }
             }
             ?>
         </ul>
