@@ -1,35 +1,89 @@
-.home-banner
-	width: 100%
-	height: 30vh
+$backgroundColor: #03142c
+
+$buttonNeutral: rgb(148, 148, 148)
+$buttonHover: #34ff9c
+$buttonShadow: #00db6e
+
+body
+	background: $backgroundColor
+
+header
+	position: absolute
+	top: 0px
+	margin: 0
+	padding-right: 0
+	padding-left: 0
+	.headAndLogo
+		margin-left: 20px
+
+.wrapper
 	display: block
-	background-image: url('../images/banner.jpg')
-	background-position: 0% 30%
+	width: 100%
+	background: url("../images/banner.jpg")
 	background-size: cover
+	background-position: top
+	background-attachment: fixed
+	background-position: 50% 0%
 	
 .content
+	position: relative
 	display: flex
-	flex-direction: row
+	flex-direction: column
+	justify-content: center
+	width: 100%
+	
+.topButton
+	animation: entrance 1s ease-in 0s 1 normal
+	display: flex
 	justify-content: space-around
-	
-.contentSect
-	margin-top: 20px
-	width: 400px
-	
-	a, a:visited
-		display: block
+	position: relative
+	margin-top: 400px
+	width: 100%
+	a
+		position: relative
 		font-family: Quest
-		text-align: center
-		font-size: 30px
-		color: black
-		width: 100%
-		
-	.caurocel
+		font-size: 2.3vw
 		display: block
-		width: 100%
-		height: 300px
-		margin-top: 30px
-		background-image: url('../images/Logo.svg')
-		background-size: contain
+		width: 50%
+		line-height: 70px
+		text-align: center
+		padding: 10px 20px
+		border-radius: 10px
+		background: $buttonNeutral
+		color: #fff
+		
+		@media screen and (max-width: 600px)
+			font-size: 4vw
+			line-height: 30px
+			
+		&:hover
+			margin-top: -10px
+			margin-bottom: 10px
+			background: $buttonHover
+			color: #003f20
+			box-shadow: 0px 10px 0px $buttonShadow
+		&:active
+			margin-bottom: 0px
+			margin-top: 0px
+			box-shadow: 0px 0px 0px $buttonShadow
+	
+	
+.AboutSect
+	width: 100%
+	height: 500px
+	color: white
+	text-align: center
+	display: flex
+	flex-direction: column
+	justify-content: flex-start
+	margin: 100px auto 0 auto
+	padding-top: 200px
+	background: linear-gradient(to bottom, rgba(3, 20, 45, 0.0), rgba(3, 20, 45, 0.5), #03142c, #03142c, #03142c, #03142c, #03142c, #03142c, #03142c, #03142c)
+	
+	.innerContent
+		display: block
+		margin: 0 auto
+		width: 80%
 	
 	h1
 		display: block
@@ -37,4 +91,17 @@
 		min-height: 50px
 		font-family: Quest
 		text-decoration: underline
-		
+		margin-top: 20px
+	p
+		display: block
+		margin: 20px auto
+		width: 70%
+		font-family: Sidebar
+
+@keyframes entrance
+	0%
+		opacity: 0
+		top: -20px
+	100%
+		opacity: 1
+		top: 0

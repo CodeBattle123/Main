@@ -42,20 +42,26 @@ if (isset($_GET['user'])) {
 file_exists("profile-pics/" . $current_user . ".png") ? $profilepic = $current_user . ".png" : $profilepic = "default.png"
 ?>
 <div class="wrapper">
-    <div class="username">
-        <h2 align="center"><?= $current_user ?></h2>
-    </div>
+	<div class="userContainer">
+	    <div class="username">
+	        <h2 align="center"><?= $current_user ?></h2>
+	    </div>
 
-	<div class="profile-pic" align="center">
-		<img src="profile-pics/<?=$profilepic?>" alt="Profile picture" class="profile">
+		<div class="profile-pic" align="center">
+			<img src="profile-pics/<?=$profilepic?>" alt="Profile picture" class="profile">
+
+		</div>
+
+		<?php
+		if ($_SESSION ['username'] == $current_user)
+			echo '<a href="profile_edit.php" class="editPageButton">Edit profile</a>';
+			$sql = "SELECT * FROM users WHERE nickname='$current_user'";
+			$query = mysqli_query($connect, $sql);
+			$row = $query->fetch_assoc();
+			echo '<h3 class="xp">' . $row['xp'] . ' XP</h3>';
+		?>
 
 	</div>
-
-	<?php
-	if ($_SESSION ['username'] == $current_user)
-		echo '<a href="profile_edit.php" class="editPageButton">Edit profile</a>';
-	?>
-
 	<table class="profileinfo" cellpadding="40" cellspacing="20" style="margin: 40px auto;">
 		<tr>
 			<th>First Name</th>
@@ -66,10 +72,7 @@ file_exists("profile-pics/" . $current_user . ".png") ? $profilepic = $current_u
 		<?php
 		$userid = $_SESSION ['userid'];
 
-		$sql = "SELECT * FROM users WHERE nickname='$current_user'";
-		$query = mysqli_query($connect, $sql);
-		$row = $query->fetch_assoc();
-		echo '<h3 class="xp">' . $row['xp'] . ' XP</h3>';
+		
 
 		//gets the rank of the current user
 		$rank = mysqli_query($connect, "SELECT nickname,

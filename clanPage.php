@@ -84,9 +84,9 @@
         </ul>
         <!-- For getting the chat to be scolled to the bottom automatically -->
         <script type="text/javascript">
-    var chat = document.getElementById("chat");
-    chat.scrollTop = chat.scrollHeight;
-    </script>
+    		var chat = document.getElementById("chat");
+    		chat.scrollTop = chat.scrollHeight;
+    	</script>
 
     <div id="clanChat">
 
