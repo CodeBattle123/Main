@@ -2,39 +2,38 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="styles/headerAndFooter.css">
-    <link rel="stylesheet" href="styles/index.css">
-    <link rel="stylesheet" href="styles/sidebar.css">
     <link rel="stylesheet" href="styles/main.css">
+	<link rel="stylesheet" href="styles/sidebar.css">
+	<link rel="stylesheet" href="styles/index.css">
 
     <meta charset="UTF-8">
     <title>home</title>
 </head>
-<body>
-<?php include_once('header.php'); ?>
+
+<body id="bod">
+<?php include_once('header.php'); 
+if ($logged) {
+	header("location: profile.php");
+}?>
 
 <div class="wrapper">
-    <div class="home-banner"></div>
+	
         <div class="content">
-	        <div class="contentSect">
-	            <a href="#">Join the battle</a>
-	            <div class="caurocel"></div>
+			<div class="topButton">
+				<a href="register.php">Join the battle now!</a>
+			</div>
+			
+	        <div class="AboutSect">
+				<div class="innerContent">
+		            <h1>About the project</h1>
+					<hr>
+		            <p>
+		                Show off your programming knowledge and compete against other players to get to first place in the leader board. Gather with friends in your very own clan and make it the best one out there.
+		            </p>
+				</div>
 	        </div>
-
-	        <div class="contentSect">
-
-	            <h1>About the project</h1>
-				<hr>
-	            <p>
-	                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi consectetur corporis dicta magni nihil omnis possimus quibusdam quisquam sed. Atque consectetur exercitationem nemo nulla officiis quae, quis quisquam similique sin. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aspernatur aut consequatur, deleniti eligendi enim et expedita illo in itaque laboriosam molestias necessitatibus nihil provident rem sequi velit vitae voluptas.
-	                Lorem ipsum dolor sit amet, omittam repudiare at sed. Te eum sumo soleat feugait, eum te audire scribentur, scripta numquam oportere ea nec. Sit quas omnium invenire no, lorem doming graecis nec id, animal salutatus deterruisset cum id. Est cu utinam docendi inimicus. Sed no veniam diceret intellegam.
-	                Eu quas epericulaleifend laboramus mea, ei option quaeque dissentias pro. Porro integre ne ius, habeo verear vel ex, qui eligendi torquatos no. Sint inciderint sit cu, ea has meis legendos. Eu usu etiam voluptaria, et usu idque libris. Ei mei movet mucius.
-	            </p>
-	        </div>
-
 	    </div>
+		
 </div>
-
-
-<?php include_once('footer.html'); ?>
 </body>
 </html>

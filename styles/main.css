@@ -1,43 +1,57 @@
 .btn {
+    padding: 10px 20px 10px 20px;
+
+    text-decoration: none;
+
+    color: #ffffff;
     -webkit-border-radius: 6px;
     -moz-border-radius: 6px;
     border-radius: 3px;
-    font-family: MainText;
-    color: #ffffff;
-    font-size: 20px;
     background:  #0073A5;
-    padding: 10px 20px 10px 20px;
-    text-decoration: none;
+
+    font-family: MainText;
+    font-size: 20px;
 }
 
 .btn:hover
 {
+    text-decoration: none;
+
     background: #3cb0fd;
     background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
     background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
     background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
     background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
     background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
-    text-decoration: none;
 }
 
 .title
 {
     padding-top: 20px;
-    font-family: MainText;
+
     text-align: center;
+
+    font-family: MainText;
 }
 
 .wrapper {
-	min-height: 700px;
-	background-color: white;
+	position: relative;
+	z-index: 1;
+
     display: flex;
+	float: right;
     flex-direction: column;
+
+	width: 96%;
+	min-height: 700px;
+
+	background-color: white;
 }
 
 hr {
-    border: 0;
     height: 1px;
+
+    border: 0;
     background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
     background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
 }

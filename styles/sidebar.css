@@ -1,16 +1,21 @@
 .sidebar{
-   display: block;
-   float: left;
+   position: fixed;
+   top: 100px;
+   left: -215px;
+
+   display:block;
 
    width: 20%;
    min-height: 600px;
-   padding-bottom: 20px;
 
    text-align: left;
 
    background-color:#0073A5;
 
-   font-family: Sidebar;
+   font-family: Sidebar;;}
+
+.sidebar:hover{
+	left: 0;
 }
 
 .sidebar_container {
