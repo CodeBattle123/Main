@@ -40,6 +40,7 @@ if (isset($_GET['user'])) {
 ?>
 <?php
 file_exists("profile-pics/" . $current_user . ".png") ? $profilepic = $current_user . ".png" : $profilepic = "default.png"
+
 ?>
 <div class="wrapper">
     <div class="username">
@@ -126,6 +127,7 @@ file_exists("profile-pics/" . $current_user . ".png") ? $profilepic = $current_u
                     $sql = "SELECT * FROM battle_log WHERE user1_id = '$userid' || user2_id = '$userid' ORDER BY date DESC";
                     $query = mysqli_query($connect, $sql);
                     while ($row = $query->fetch_assoc()) {
+
                         if ($row['user1_id'] == $userid) {
                             $opponentid = $row['user2_id'];
                         } else {
@@ -133,33 +135,25 @@ file_exists("profile-pics/" . $current_user . ".png") ? $profilepic = $current_u
                         }
 
                         if ($row['winner'] == $userid) {
-                            $result = 'Victory';
+                            $result = 'win';
+                            $sign = '+';
                         } else {
-                            $result = 'Defeat';
+                            $result = 'loss';
+                            $sign = '-';
                         }
 
                         $opponent = mysqli_query($connect, "SELECT * FROM users WHERE id = '$opponentid'")->fetch_assoc()['nickname'];
+                        file_exists("profile-pics/" . $opponent . ".png") ? $opponentpic = $opponent . ".png" : $opponentpic = "default.png";
 
-                        if ($result == 'Victory') {
-                            echo '<tr class="win" >
-		        <td><img src="images/footer_github.png" height="20"><a href="profile.php?user=' . $current_user . '">' . $current_user . '</a></td>
+                            echo '<tr class="' . $result . '" >
+		        <td><img class="profilesmall" src="profile-pics/' . $current_user . ".png" . '"><a href="profile.php?user=' . $current_user . '">' . $current_user . '</a></td>
                 <td>' . $result . '</td>
-				<td><img src="images/footer_github.png" height="20"><a href="profile.php?user=' . $opponent . '">' . $opponent . '</a></td>
-                <td>' . '+' . $row['won_xp'] . '</td>
-                <td>' . $row['date'] . '</td>
-               </tr>
-               ';
-                        } else {
-                            echo '<tr class="loss" >
-		        <td><img src="images/footer_github.png" height="20"><a href="profile.php?user=' . $current_user . '">' . $current_user . '</a></td>
-                <td>' . $result . '</td>
-                <td><img src="images/footer_github.png" height="20"><a href="profile.php?user=' . $opponent . '">' . $opponent . '</a></td>
-                <td>' . '-' . $row['won_xp'] . '</td>
+		        <td><img class="profilesmall" src="profile-pics/' . $opponentpic . '"><a href="profile.php?user=' . $opponentpic . '">' . $opponent . '</a></td>
+                <td>' . $sign . $row['won_xp'] . '</td>
                 <td>' . $row['date'] . '</td>
                </tr>
                ';
                         }
-                    }
 
                     ?>
                     <script>

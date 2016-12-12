@@ -49,7 +49,7 @@
             $rank = 1;
             while($row = $query->fetch_assoc()) {
                 echo '<tr>
-		            <td><img src="images/footer_github.png" style="height: 30px; margin-left: 5px;"/></td>
+		            <td><img class="clanpic" src="clan-pics/'. $row['name'] . ".png" .'"/></td>
 		            <td>#<b>' . $rank . '</b></td>
 		            <td>' . $row['name'] . '</td>
 		            <td>' . $row['xp'] . '</td>

@@ -11,7 +11,8 @@
 				transform 0.4s,
 				margin-bottom 0.4s;
 
-	border-radius:50%;}
+	border-radius:50%;
+}
 
 .profile::selection {
 	background: none;
@@ -22,6 +23,13 @@
 
 	box-shadow: 0px 0px 40px #000;
 }
+
+.profilesmall {
+	width: 3vw;
+	height: 3vw;
+	border-radius:50%;
+}
+
 
 .editPageButton {
 	position: absolute;
@@ -50,7 +58,8 @@
 }
 
 .editPageButton:hover {
-	color: #003f20;
+	color: #003f20;
+
 	background-color: #34ff9c;
 }
 
@@ -94,7 +103,8 @@
 .username h2 {
 	text-transform: capitalize;
 
-	font-size: 30px;;
+	font-size: 30px;
+;
 }
 
 .username h2:hover {
@@ -189,4 +199,3 @@ td a:link, td a.hover, td a:visited {
 th {
     text-align: center;
 }
-

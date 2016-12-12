@@ -29,11 +29,14 @@
     //$tempxp = 70;
 
     while($row = $query->fetch_assoc()){
+        $current_user = $row['nickname'];
+        file_exists("profile-pics/" . $current_user . ".png") ? $profilepic = $current_user . ".png" : $profilepic = "default.png";
+
         echo '<tr>
-            <td><img src="images/footer_github.png" style="height: 30px; margin-left: 5px;"/></td>
+            <td><img src="profile-pics/' . $profilepic . '" class="profile"/></td>
             <td>#<b>' . $rank . '</b></td>
             <td>
-                <h4 class="name">' . $row['nickname'] . '</h4>
+                <h4 class="name">' . $current_user . '</h4>
             </td>
                 <td>
                 <h4 class="exp">' . $row['xp'] . '</h4>
