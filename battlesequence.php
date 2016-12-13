@@ -22,6 +22,7 @@
       <?php
          if (isset($_GET['opponent'])) {
             $opponent = $_GET['opponent'];
+
             $sql = "SELECT * FROM users WHERE nickname = '$opponent'";
             $query = mysqli_query($connect, $sql);
 
@@ -34,10 +35,12 @@
             }
          } elseif (isset($_GET['attack'])) {
             if (strtolower($_GET['attack']) != strtolower($_SESSION['username'])) {
-               $uuuser = $_SESSION['username'];
-               $op = $_GET['attack'];
-               $sql = "INSERT INTO q (user_1, user_2) VALUES ('$uuuser','$op')";
-               $query = mysqli_query($connect, $sql);
+               if (!isset($_GET['answer'])) {
+                  $uuuser = $_SESSION['username'];
+                  $op = $_GET['attack'];
+                  $sql = "INSERT INTO q (user_1, user_2) VALUES ('$uuuser','$op')";
+                  $query = mysqli_query($connect, $sql);
+               }
 
                displayTheArena();
             } else {
@@ -46,6 +49,18 @@
             }
 
          } else {
+            $zeuser = $_SESSION['username'];
+            $sql = "SELECT * FROM q WHERE user_2='$zeuser'";
+            $query = mysqli_query($connect, $sql);
+            $zecount = mysqli_num_rows($query);
+            if ($zecount > 0) {
+               echo "o:::::::[]========><br>";
+               echo "Those players challenge you to play versus them!<br>";
+               while($row = $query->fetch_assoc()){
+                  echo '<a href="battlesequence.php?answer=y&attack='. $row['user_1'] . '">'.  $row['user_1'] . '</a><br>';
+               }
+            }
+
             echo '<div class="">Chose an opponent:</div>';
             $sql = "SELECT * FROM users";
             $query = mysqli_query($connect, $sql);
@@ -142,22 +157,36 @@
 	  //variables to use for seeing if the player gave the correct answer
 	  let correct = false;
 
-	  function getAnswer(elem) {
-		  if (elem.getAttribute("data") == "yes") {
-			  correct = true;
-		  }
-		  else {
-			  correct = false;
-		  }
-	  }
-
-	  function check(){
+     function check(){
 		  for (op of options) {
 		  	op.style.background = "red";
 		  }
 		  answer[0].style.background = "green";
 	  }
 
+   function getAnswer(elem) {
+      if (elem.getAttribute("data") == "yes") {
+         alert("shte si hodq");
+         <?php
+            if (!isset($_GET['answer'])) {
+               $sql = "UPDATE q SET temp_points = 1222222 WHERE (user_1 = '$uuuser' AND user_2 = '$op') LIMIT 1";
+               $query = mysqli_query($connect, $sql);
+            }
+         ?>
+         console.log("won");
+      }
+
+      if (elem.getAttribute("data") != "yes") {
+         alert("sht8t4387g387y8734 hodq");
+         <?php
+           if (!isset($_GET['answer'])) {
+               $sql = "UPDATE q SET temp_points = 123 WHERE (user_1 = '$uuuser' AND user_2 = '$op') LIMIT 1";
+               $query = mysqli_query($connect, $sql);
+            }
+         ?>
+         console.log("lost");
+      }
+   }
    </script>
 </div>
 
