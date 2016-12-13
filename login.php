@@ -41,6 +41,11 @@
         <?php include_once('header.php'); ?>
 		
         <div class="wrapper">
+           <?php if (isset($_GET['u'])) {
+                $temp123 = $_GET['u'];
+                echo '<span style="text-align: center; color: darkgreen;">Welcome to our site! You can log in right away.</span>';
+             }
+           ?>
             <?php
                 if (isset($_POST['submit']) && (($_POST['username'] == "") || ($_POST['pass'] == ""))) {
                     echo "<li class=\"message\">You must set values to username and password.</li>";
@@ -52,11 +57,35 @@
             ?>
             <div class="form">
             <form class="login" action="login.php" method="post">
-                <input type="text" name="username" placeholder="Username">
-                <input type="password" name="pass" placeholder="Password">
+                <input type="text" name="username" placeholder="Username"
+
+                <?php if (isset($_GET['u'])) {
+                     $temp123 = $_GET['u'];
+                     echo ' value="' . $temp123 . '"';
+                  }
+                ?>
+
+                >
+                <input autofocus type="password" name="pass" placeholder="Password"
+
+                <?php if (isset($_GET['u'])) {
+                     echo ' id="focusThis"';
+                  }
+                ?>
+
+                >
                 <input type="submit" name="submit" value="Login">
             </form>
             </div>
         </div>
+
+        <script type="text/javascript">
+         function FocusOnInput()
+         {
+            document.getElementById("focusThis").focus();
+         }
+         </script>
+
+        <?php  include_once('footer.html'); ?>
     </body>
 </html>
