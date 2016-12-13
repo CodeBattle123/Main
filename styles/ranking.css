@@ -1,3 +1,20 @@
+.profile {
+	width: 3vw;
+	height: 3vw;
+	margin-bottom: 10px;
+	transition: box-shadow 0.4s,
+	transform 0.4s,
+	margin-bottom 0.4s;
+	margin-left: 5px;
+	border-radius:50%;
+}
+
+.clanpic {
+	width: 3vw;
+	height: 3vw;
+	border-radius:50%;
+}
+
 table{
 	position: relative;
 
