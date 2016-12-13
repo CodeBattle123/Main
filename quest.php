@@ -18,8 +18,7 @@
 <?php 
 	include 'header.php';
 	CheckIfLogged();
-	include 'scripts\questPage.php';
-	$lang = $_GET['lang'];
+	include 'scripts/questPage.php';
 ?>
 
 <div class="wrapper">

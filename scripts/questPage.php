@@ -68,13 +68,13 @@ $sql = "SELECT * FROM language_progress WHERE user_id=$log_id";
 $result = mysqli_query($connect, $sql)->fetch_assoc();
 
 $objective = "";
-if ($quest = fopen('Quests\\' . $_GET['lang']. "\\" . $result[$langSQL] . '_obj.txt', "r")) {
+if ($quest = fopen('Quests/' . $_GET['lang']. "/" . $result[$langSQL] . '_obj.txt', "r")) {
 	$objective = fgets($quest);
 	fclose($quest);
 } else OhMyGod();
 
 $code = array();
-if ($quest = fopen('Quests\\' . $_GET['lang']. "\\" . $result[$langSQL] .'_code.txt', "r")) {
+if ($quest = fopen('Quests/' . $_GET['lang']. "/" . $result[$langSQL] .'_code.txt', "r")) {
 	while (!feof($quest)) {
 		$line = fgets($quest);
 		array_push($code, $line);
@@ -84,7 +84,7 @@ if ($quest = fopen('Quests\\' . $_GET['lang']. "\\" . $result[$langSQL] .'_code.
 
 $answers = array();
 $answersLength = array();
-if ($quest = fopen('Quests\\' . $_GET['lang']. "\\" . $result[$langSQL] . '_ans.txt', "r")) {
+if ($quest = fopen('Quests/' . $_GET['lang']. "/" . $result[$langSQL] . '_ans.txt', "r")) {
 	while (!feof($quest)) {
 		$line = fgets($quest);
 		array_push($answers, trim($line));

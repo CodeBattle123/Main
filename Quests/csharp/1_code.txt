@@ -1,4 +1,4 @@
-<span>int a=5;</span>
-<span>if(</span>{option}<span>){</span>
-	<span>Console.WriteLine(</span>{option}<span>);</span>
-<span>}</span>
+int a=5;
+if({option}){
+	Console.WriteLine({option});
+	}
