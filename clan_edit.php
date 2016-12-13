@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles/headerAndFooter.css">
     <link rel="stylesheet" href="styles/sidebar.css" media="screen" title="no title">
     <link rel="stylesheet" href="styles/clanPage.css" media="screen" title="no title">
-    <link rel="stylesheet" href="styles/clan_edit.css">
+    <link rel="stylesheet" href="styles/profile_edit.css">
     <link rel="stylesheet" href="styles/main.css">
 
 </head>
