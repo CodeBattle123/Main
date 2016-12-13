@@ -8,10 +8,13 @@
     <link rel="stylesheet" type="text/css" href="styles/battlesequence.css">
     <link rel="stylesheet" type="text/css" href="styles/sidebar.css">
     <link rel="icon" type="image/png" href="images/icon.png"/>
+	<script src="scripts/jquery-3.1.1.min.js"></script>
+	<script src="scripts/post.js"></script>
 </head>
 <body>
 <?php include 'header.php';
 	CheckIfLogged();
+   include_once("db/connect.php");
 ?>
 
 <div class="wrapper">
@@ -26,18 +29,46 @@
                echo "Selected opponent: ";
                echo ucfirst($row['first_name']) . ' \'' . $row['nickname'] . '\' ' . ucfirst($row['last_name']);
                echo ' from team ' . $row['clan'];
+
                echo '<br><a href="battlesequence.php?attack='. $row['nickname'] . '">Attack this player!</a><br>';
             }
          } elseif (isset($_GET['attack'])) {
-            displayTheArena();
+            if (strtolower($_GET['attack']) != strtolower($_SESSION['username'])) {
+               $uuuser = $_SESSION['username'];
+               $op = $_GET['attack'];
+               $sql = "INSERT INTO q (user_1, user_2) VALUES ('$uuuser','$op')";
+               $query = mysqli_query($connect, $sql);
+
+               displayTheArena();
+            } else {
+               echo 'Sorry, we are against masochism...';
+               echo "<br>...but you may punch yourself in the face :)";
+            }
+
          } else {
             echo '<div class="">Chose an opponent:</div>';
-            $sql = "SELECT * FROM users LIMIT 10";
+            $sql = "SELECT * FROM users";
             $query = mysqli_query($connect, $sql);
 
+            echo '<table><tr>';
+            $counter = 0;
+
             while($row = $query->fetch_assoc()){
-               echo '<a href="battlesequence.php?opponent='. $row['nickname'] . '">'.$row['nickname'].'</a><br>';
+               if (strtolower($row['nickname']) == strtolower($_SESSION['username'])) {
+                  // THIS CHECK IF THE USER
+                  // THAT YOU ATTACK
+                  // IS THE CURRENTLY
+                  // LOGGED USER
+                  continue;
+               }
+               $counter++;
+               echo '<td><a href="battlesequence.php?opponent='. $row['nickname'] . '">'.$row['nickname'].'</a></td>';
+               if ($counter == 4) {
+                  $counter = 0;
+                  echo '</tr><tr>';
+               }
             }
+            echo '</tr></table>';
          }
       ?>
    </div>
@@ -84,20 +115,20 @@
             </div>
 
             <div class="line"></div>
-            <div class="a a1 correct">
+            <div data="yes" class="a a1 correct" onClick="check(); getAnswer(this)">
                No.
             </div>
 
-            <div class="a a2">
+            <div data="no" class="a a2" onClick="check(); getAnswer(this)">
                Yes.
             </div>
 
             <div class="line" style="margin-top: 50px;"></div>
-            <div class="a a3">
+            <div data="no" class="a a3" onClick="check(); getAnswer(this)">
                Probably.
             </div>
 
-            <div class="a a4">
+            <div data="no" class="a a4" onClick="check(); getAnswer(this)">
                Is this the best question you can think of?
             </div>
 
@@ -105,9 +136,32 @@
    }?>
 
    <script>
-      
+      //The containers of the DOM elements
+	  let answer = document.getElementsByClassName('correct');
+	  let options = document.getElementsByClassName('a');
+	  //variables to use for seeing if the player gave the correct answer
+	  let correct = false;
+
+	  function getAnswer(elem) {
+		  if (elem.getAttribute("data") == "yes") {
+			  correct = true;
+		  }
+		  else {
+			  correct = false;
+		  }
+	  }
+
+	  function check(){
+		  for (op of options) {
+		  	op.style.background = "red";
+		  }
+		  answer[0].style.background = "green";
+	  }
+
    </script>
 </div>
-<?php include 'footer.html'?>
+
+<?php include 'footer.html' ?>
+
 </body>
 </html>
