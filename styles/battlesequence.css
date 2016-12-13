@@ -139,3 +139,7 @@ p {
    margin-right: 10%;
    margin-left: 10%;
 }
+td {
+   padding: 5px;
+   border: 1px solid black;
+}

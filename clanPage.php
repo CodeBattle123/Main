@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clan Page</title>
     <link rel="stylesheet" href="styles/headerAndFooter.css">
     <link rel="stylesheet" href="styles/sidebar.css" media="screen" title="no title">
@@ -31,7 +31,12 @@ $isLeader = ($username==$leader);
 
 <main class="wrapper">
 
-    <a href="clan_edit.php" class="editPageButton">Edit profile</a>
+    <?php
+    if ($isLeader) {
+        echo '    <a href="clan_edit.php" class="editPageButton">Edit profile</a>';
+    }
+    ?>
+
 
     <div class="clanAvatarHolder">  <img class="clanAvatar"   src="clan-pics/<?=$log_clan . ".png"?>" alt="asd"> </div>
 

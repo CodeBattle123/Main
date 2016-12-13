@@ -1,8 +1,7 @@
-<?php $lang = $_GET['lang']; ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/headerAndFooter.css">
     <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js'></script>
     <link rel="stylesheet" href="styles/sidebar.css">
@@ -19,7 +18,8 @@
 <?php 
 	include 'header.php';
 	CheckIfLogged();
-	include 'scripts\questPage.php'; 
+	include 'scripts\questPage.php';
+	$lang = $_GET['lang'];
 ?>
 
 <div class="wrapper">
