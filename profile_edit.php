@@ -58,14 +58,17 @@ file_exists("profile-pics/" . $user . ".png") ? $profilepic = $user . ".png" : $
 			<h2>Names</h2>
 	        <input type="text" name="firstname" placeholder="First Name" class="name">
 	        <input type="text" name="lastname" placeholder="Last Name" class="name">
+			<input type="submit" name="submitnames" value="Save changes" class="Submit">
 		</fieldset>
+	</form>
+	<form class="register" action="profile_edit.php" method="post">
 		<fieldset class="passwords">
 			<h2>password</h2>
 	        <input type="password" name="password" placeholder="Password" class="password">
 	        <input type="password" name="password2" placeholder="Re-type" class="password">
+			<input type="submit" name="submitpassword" value="Save changes" class="Submit">
 		</fieldset>
-        <input type="submit" name="submitinfo" value="Save changes" class="Submit">
-    </form>
+	</form>
 </div>
 <?php
 if (isset($_FILES["fileToUpload"]["name"])) {
@@ -114,7 +117,8 @@ if (isset($_FILES["fileToUpload"]["name"])) {
     }
 }
 
-if (isset($_POST['submitinfo'])) {
+//update names
+if (isset($_POST['submitnames'])) {
     $validate = true;
     $first_name = $_POST['firstname'];
     if (strlen($first_name) == 0) {
@@ -128,26 +132,40 @@ if (isset($_POST['submitinfo'])) {
         $validate = false;
     }
 
-    $password = $_POST['password'];
-    if (strlen($password) < 6 || strlen($password) > 100) {
-        echo '<li class="message">Password must be between 6 & 100 characters.</li>';
-        $validate = false;
-    }
-
-    $password2 = $_POST['password2'];
-    if (strlen($password2) == 0 || $password != $password2) {
-        echo '<li class="message">Passwords must be the same.</li>';
-        $validate = false;
-    }
-
     if ($validate) {
-        $sql = "UPDATE users SET first_name='$first_name', last_name='$last_name', password='$password'  WHERE nickname ='$username'";
+        $sql = "UPDATE users SET first_name='$first_name', last_name='$last_name'  WHERE nickname ='$username'";
         $query = mysqli_query($connect, $sql);
         if ($query) {
             echo '<li class="message" style="color: green;">You have successfully updated your account!</li>';
 			$_POST['changes'] = true;
         }
     }
+}
+
+//update password
+if (isset($_POST['submitpassword'])) {
+	$validate = true;
+
+	$password = $_POST['password'];
+	if (strlen($password) < 6 || strlen($password) > 100) {
+		echo '<li class="message">Password must be between 6 & 100 characters.</li>';
+		$validate = false;
+	}
+
+	$password2 = $_POST['password2'];
+	if (strlen($password2) == 0 || $password != $password2) {
+		echo '<li class="message">Passwords must be the same.</li>';
+		$validate = false;
+	}
+
+	if ($validate) {
+		$sql = "UPDATE users SET password='$password'  WHERE nickname ='$username'";
+		$query = mysqli_query($connect, $sql);
+		if ($query) {
+			echo '<li class="message" style="color: green;">You have successfully updated your account!</li>';
+			$_POST['changes'] = true;
+		}
+	}
 }
 ?>
 <?php include_once('footer.html'); ?>
