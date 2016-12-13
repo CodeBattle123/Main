@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-16">
     <title>About us</title>
     <link rel="stylesheet" type="text/css" href="styles/headerAndFooter.css">

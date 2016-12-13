@@ -18,7 +18,16 @@ hr {
     margin: 10px;
 }
 
-.profileDesc {
+
+.clanName {
+
+    width: 150px;
+    margin: 15px auto;
+
+    font-size: 40px;
+}
+
+.clanDesc {
     display: block;
     margin: 0px auto;
     font-family: Quest;
@@ -30,8 +39,7 @@ hr {
     display: block;
     margin: 15px auto;
     width: 200px;
-    padding: 10px 10px;
-    line-height: 50px;
+    line-height: 25px;
     font-family: Quest;
     text-transform: uppercase;
     border: none;

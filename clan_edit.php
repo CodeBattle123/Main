@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles/headerAndFooter.css">
     <link rel="stylesheet" href="styles/sidebar.css" media="screen" title="no title">
     <link rel="stylesheet" href="styles/clanPage.css" media="screen" title="no title">
-    <link rel="stylesheet" href="styles/clan_edit.css">
+    <link rel="stylesheet" href="styles/profile_edit.css">
     <link rel="stylesheet" href="styles/main.css">
 
 </head>
@@ -25,12 +25,17 @@ $isLeader = ($username==$leader);
 ?>
 
 <main class="wrapper">
-    <div class="clanAvatarHolder">  <img class="clanAvatar"   src="uploads/<?=$log_clan . ".png"?>" alt="asd"> </div>
+
+    <form action="scripts/clan_edit.php" method="post">
+        <input type="submit" value="DELETE CLAN" name="deleteclan" class="Submit">
+    </form>
+
+    <div class="clanAvatarHolder">  <img class="clanAvatar"   src="clan-pics/<?=$log_clan . ".png"?>" alt="asd"> </div>
 
     <div class="clanInfo">
 
-        <?php
 
+        <?php
         if ($isLeader) {
 
             echo '  <div class="inbox">
@@ -40,7 +45,6 @@ $isLeader = ($username==$leader);
             while ($row = $requests->fetch_assoc()) {
                 $user_id = $row['user_id'];
                 $user_name = mysqli_query($connect, "SELECT * from users WHERE id = '$user_id'")->fetch_assoc()['nickname'];
-
                 echo '<li class="request">
 					   <p class="requestContents"><span class="target">' . $user_name . '</span> wants to join your clan.</p>
 					  <form class="answers" action="scripts/addToClan.php" method="post">
@@ -56,7 +60,7 @@ $isLeader = ($username==$leader);
     </ul>
     </div>
 
-    <h3 class="clanName"><?= $log_clan ?></h3>
+    <h3 class="clanName"><?=$log_clan?></h3>
 
     <?php
     //gets current team description
@@ -66,7 +70,7 @@ $isLeader = ($username==$leader);
 
     <form action="scripts/clan_edit.php" method="post">
         <h2>description</h2>
-        <textarea class="clannDesc" name="description"><?=$description?></textarea>
+        <textarea class="clanDesc" name="description"><?=$description?></textarea>
         <input type="submit" value="Update description" name="submit" class="Submit">
     </form>
 
@@ -81,7 +85,7 @@ $isLeader = ($username==$leader);
             if ($isLeader){
                 $remove="";
                 if ($member_name!=$leader){
-                    $remove = '<form class="answers" action="scripts/removeFromClan.php" method="post">
+                    $remove = '<form action="scripts/removeFromClan.php" method="post">
 						  <input type="hidden" name="username" value="' . $member_name . '">
 						  <input class="Submit" type="submit" name="remove" value="remove">
 						  <input class="Submit" type="submit" name="makeleader" value="Make leader">

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ranking</title>
     <link rel="stylesheet" href="styles/main.css" >
     <link rel="stylesheet" href="styles/headerAndFooter.css" >
@@ -26,24 +26,6 @@
         <tr>
 
             <?php
-            $sql = "SELECT * FROM teams";
-            $query = mysqli_query($connect, $sql);
-
-            while($row = $query->fetch_assoc()){
-                $clanname = $row['name'];
-                $query1 = mysqli_query($connect, "SELECT SUM(xp) AS totalxp FROM users WHERE clan = '$clanname' LIMIT 1");
-                $row1 = mysqli_fetch_assoc($query1);
-                $sum = $row1['totalxp'];
-                if (!isset($sum)) {
-                    $sum = 0;
-                }
-
-                mysqli_query($connect, "UPDATE teams SET xp ='$sum' WHERE name = '$clanname' LIMIT 1");
-
-            }
-            ?>
-
-            <?php
             $sql = "SELECT * FROM clan_ranking";
             $query = mysqli_query($connect, $sql);
             $rank = 1;
@@ -52,7 +34,7 @@
 		            <td><img class="clanpic" src="clan-pics/'. $row['name'] . ".png" .'"/></td>
 		            <td>#<b>' . $rank . '</b></td>
 		            <td>' . $row['name'] . '</td>
-		            <td>' . $row['xp'] . '</td>
+		            <td>' . $row['total'] . '</td>
                </tr>
                ';
                 $rank++;

@@ -1,14 +1,7 @@
-<?php
-	include_once 'db/login_status.php';
-	if ($logged) {
-		header("location: index.php");
-		exit();
-	}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/headerAndFooter.css">
     <link rel="stylesheet" href="styles/sidebar.css">
 	<link rel="stylesheet" href="styles/main.css">
@@ -17,12 +10,15 @@
     <title>Register</title>
 </head>
 <body>
-<?php include_once('header.php'); ?>
+<?php include_once('header.php');
+if ($logged) {
+	header("Location: profile.php");
+}?>
 <div class="wrapper">
 	<ul class="messageHolder">
 	<?php
 	    if (isset($_POST['submit'])) {
-	        $validate = true;
+	      $validate = true;
 	    	$username = preg_replace('#[^a-z0-9]#i', '', $_POST['username']);
 	    	$sql = "SELECT id FROM users WHERE nickname='$username' LIMIT 1";
 	        $query = mysqli_query($connect, $sql);
