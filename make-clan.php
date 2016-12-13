@@ -250,7 +250,7 @@ if (isset($_POST['submit_clan'])) {
     if ($validate == true) {
         $clan_name = mysqli_real_escape_string($connect, $_POST['clanname']);
         $clan_description = mysqli_real_escape_string($connect, $_POST['description']);
-        $sql = "INSERT INTO teams (name, description, leader) VALUES ('$clan_name', '$clan_description', $username)";
+        $sql = "INSERT INTO teams (name, description, leader) VALUES ('$clan_name', '$clan_description', '$username')";
         mysqli_query($connect, "UPDATE users SET clan='$clan_name' WHERE id='$log_id'");
         if (mysqli_query($connect, $sql)) {
             echo "Clan created successfully.";

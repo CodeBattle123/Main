@@ -19,7 +19,7 @@
 <?php 
 	include 'header.php';
 	CheckIfLogged();
-	include 'scripts\questPage.php'; 
+	include 'scripts/questPage.php';
 ?>
 
 <div class="wrapper">

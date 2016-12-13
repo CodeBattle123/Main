@@ -1,0 +1,5 @@
+int centuries = 22;
+int years = centuries*{option};
+int days = (int){option}*365.2422
+int hours = {option}*days;
+int minutes = 60{option}hours;

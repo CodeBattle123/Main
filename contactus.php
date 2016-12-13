@@ -33,7 +33,7 @@
             <textarea name="text" placeholder="Message" /></textarea>
         </fieldset>
 
-        <input class="submit" type="submit" value="Send" />
+        <input class="submit" name="submit" type="submit" value="Send" />
 
         <?php
 
