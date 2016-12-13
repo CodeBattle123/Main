@@ -18,7 +18,7 @@ if ($logged) {
 	<ul class="messageHolder">
 	<?php
 	    if (isset($_POST['submit'])) {
-	        $validate = true;
+	      $validate = true;
 	    	$username = preg_replace('#[^a-z0-9]#i', '', $_POST['username']);
 	    	$sql = "SELECT id FROM users WHERE nickname='$username' LIMIT 1";
 	        $query = mysqli_query($connect, $sql);
