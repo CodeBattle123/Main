@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/headerAndFooter.css">
     <link rel="stylesheet" href="styles/sidebar.css">
     <link rel="stylesheet" href="styles/main.css">
@@ -51,7 +52,8 @@
 		        if ($validate == true) {
 		            $clan_name = mysqli_real_escape_string($connect, $_POST['clanname']);
 		            $clan_description = mysqli_real_escape_string($connect, $_POST['description']);
-		            $sql = "INSERT INTO teams (teamname, description) VALUES ('$clan_name', '$clan_description')";
+		            $sql = "INSERT INTO teams (name, description,leader) VALUES ('$clan_name', '$clan_description', '$username')";
+					mysqli_query($connect, "UPDATE users SET clan = '$clan_name' WHERE id = '$log_id'");
 		            if (mysqli_query($connect, $sql)) {
 		                echo "Records added successfully.";
 		            }
