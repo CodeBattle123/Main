@@ -14,7 +14,7 @@
 <body>
 <?php include 'header.php' ?>
 
-<div class="aboutWrapper">
+<div class="wrapper">
        <ul class="paginator" id="paginator-btn">
            <a href="javascript:void(0)" id="project-button"><li class="btn">About the project</li></a>
            <a href="javascript:void(0)" id="aboutus-button"><li class="btn">About us</li></a>

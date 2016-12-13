@@ -8,6 +8,8 @@ main {
 	background-color: white;
 }
 
+
+
 .clanAvatarHolder {
 	display: flex;
 	flex-direction: column;
@@ -47,7 +49,8 @@ main {
 	overflow-y: auto;
 
 	width: 300px;
-	height: 350px;;}
+	height: 350px;
+;}
 
 .inbox ul {
 	list-style: none;
@@ -175,10 +178,13 @@ ul:hover .veil,
 }
 
 .members {
+	display: block;
 	overflow-y: auto;
 
+	width: 80%;
 	height: auto;
 	max-height: 300px;
+	margin: 0 auto;
 	margin-bottom:  30px;
 
 	list-style: none;
@@ -223,12 +229,13 @@ ul:hover .veil,
 
 #chat {
 	display: flex;
-	 overflow-y: auto;
+	overflow-y: auto;
 	flex-direction: column-reverse;
 
-	 height: 400px;
+	height: 400px;
+	margin: 0 auto;
 
-	 list-style: none;
+	list-style: none;
 
 	font-family: Sidebar;
 }
@@ -317,7 +324,18 @@ ul:hover .veil,
 }
 
 input[type=text] {
+	display: inline-block;
+
 	width: 85%;
 	height: 30px;
+	margin: 0 0 0 3vw;
 	padding: 10px;
-}	
+}
+
+input[type=button] {
+	display: inline-block;
+
+	margin: 0;
+
+	line-height: 30px;
+}

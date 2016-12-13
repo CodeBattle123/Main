@@ -33,13 +33,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Login</title>
         <link rel="stylesheet" href="styles/headerAndFooter.css"/>
-        <link rel="stylesheet" href="styles/login_register.css">
 		<link rel="stylesheet" href="styles/main.css">
         <link rel="stylesheet" href="styles/sidebar.css" media="screen" title="no title">
-		<script type="text/javascript" src="scripts/moveToHeader.js"></script>
+		<link rel="stylesheet" href="styles/login_register.css">
     </head>
-    <body id="bod" onresize="move()">
+    <body>
         <?php include_once('header.php'); ?>
+		
         <div class="wrapper">
            <?php if (isset($_GET['u'])) {
                 $temp123 = $_GET['u'];

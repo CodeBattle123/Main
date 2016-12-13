@@ -4,41 +4,39 @@
     <meta charset="utf-16">
     <title>About us</title>
     <link rel="stylesheet" type="text/css" href="styles/headerAndFooter.css">
-    <link rel="stylesheet" type="text/css" href="styles/aboutusstyle.css">
-    <link rel="stylesheet" type="text/css" href="styles/contactusstyle.css">
     <link rel="stylesheet" type="text/css" href="styles/sidebar.css">
+	<link rel="stylesheet" type="text/css" href="styles/main.css">
+	<link rel="stylesheet" type="text/css" href="styles/contactusstyle.css">
     <link rel="icon" type="image/png" href="images/icon.png"/>
 </head>
 <body>
-<?php include 'header.php'?>
+<?php include 'header.php' ?>
 
 <div class="wrapper">
-    <form class="form">
-        <p class="name">
-            <label class="inputLabel" for="name">Name</label><br>
-            <input type="text" name="name" id="name" placeholder="Your full name" />
-        </p>
+    <form class="messageForm">
+        <fieldset class="messagePart">
+            <label for="name">Name</label><br>
+            <input type="text" name="name" id="name" placeholder="Full name" />
+        </fieldset>
 
-        <p class="email">
-            <label class="inputLabel" for="email">Email</label><br>
-            <input type="text" name="email" id="email" placeholder="Your email" />
-        </p>
+        <fieldset class="messagePart">
+            <label for="email">Email</label><br>
+            <input type="text" name="email" id="email" placeholder="Email" />
+        </fieldset>
 
-        <p class="web">
-            <label class="inputLabel" for="web">Subject</label><br>
+        <fieldset class="messagePart">
+            <label class="subject" for="web">Subject</label><br>
             <input type="text" name="subject" id="subject" placeholder="Subject" />
-        </p>
+        </fieldset>
 
-        <p class="text">
-            <textarea name="text" placeholder="Your message" /></textarea>
-        </p>
+        <fieldset class="messagePart">
+            <textarea name="text" placeholder="Message" /></textarea>
+        </fieldset>
 
-        <p class="submit">
-            <input type="submit" value="Send" />
-        </p>
+        <input class="submit" type="submit" value="Send" />
     </form>
 
-    <iframe  frameborder="0" class="map" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJtxmnpMyFqkAR11jn2Lz8U98&key=AIzaSyAveHIKy7pEHie0CkXQRzdsRQXE4tvenSg" allowfullscreen>
+    <iframe frameborder="0" class="map" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJtxmnpMyFqkAR11jn2Lz8U98&key=AIzaSyAveHIKy7pEHie0CkXQRzdsRQXE4tvenSg" allowfullscreen>
       </iframe>
 </div>
 <?php include 'footer.html'?>

@@ -13,14 +13,4 @@
                 <li><a href="contactus.php" class="link">Contact us</a></li>
             </ul>
         </div>';
-    } else {
-        echo '<div class="sidebar">
-            <ul class="sidebar_container" id="sidebarList">
-                <li><a href="index.php" class="link">Home</a></li>
-                <li><a href="ranking.php" class="link">Rankings</a></li>
-                <li><a href="clan-rankings.php" class="link">Clan rankings</a></li>
-                <li><a href="AboutUs.php" class="link">About</a></li>
-                <li><a href="contactus.php" class="link">Contact us</a></li>
-            </ul>
-        </div>';
     }

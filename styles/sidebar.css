@@ -1,16 +1,24 @@
 .sidebar{
-   display: block;
-   float: left;
+   position: fixed;
+	z-index: 5;
+   top: 100px;
+   left: -250px;
 
-   width: 20%;
+   display:block;
+
+   width: 300px;
    min-height: 600px;
-   padding-bottom: 20px;
 
    text-align: left;
 
    background-color:#0073A5;
 
-   font-family: Sidebar;
+   font-family: Sidebar;}
+
+.sidebar:hover, .sidebar:hover .sidebar_container{
+	left: 0;
+
+	visibility: visible;
 }
 
 .sidebar_container {

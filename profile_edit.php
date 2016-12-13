@@ -52,23 +52,27 @@ file_exists("profile-pics/" . $user . ".png") ? $profilepic = $user . ".png" : $
     </form>
 	
 	<hr>
-
-    <form class="register" action="profile_edit.php" method="post">
-		<fieldset class="names">
-			<h2>Names</h2>
-	        <input type="text" name="firstname" placeholder="First Name" class="name">
-	        <input type="text" name="lastname" placeholder="Last Name" class="name">
-			<input type="submit" name="submitnames" value="Save changes" class="Submit">
-		</fieldset>
-	</form>
-	<form class="register" action="profile_edit.php" method="post">
-		<fieldset class="passwords">
-			<h2>password</h2>
-	        <input type="password" name="password" placeholder="Password" class="password">
-	        <input type="password" name="password2" placeholder="Re-type" class="password">
-			<input type="submit" name="submitpassword" value="Save changes" class="Submit">
-		</fieldset>
-	</form>
+	
+	<div class="editInfoCont">
+	    <form class="register" action="profile_edit.php" method="post">
+			<fieldset class="names">
+				<h2>Names</h2>
+		        <input type="text" name="firstname" placeholder="First Name" class="name">
+		        <input type="text" name="lastname" placeholder="Last Name" class="name">
+				<input type="submit" name="submitnames" value="Save changes" class="Submit">
+			</fieldset>
+		</form>
+		
+		<form class="register" action="profile_edit.php" method="post">
+			<fieldset class="passwords">
+				<h2>password</h2>
+		        <input type="password" name="password" placeholder="Password" class="password">
+		        <input type="password" name="password2" placeholder="Re-type" class="password">
+				<input type="submit" name="submitpassword" value="Save changes" class="Submit">
+			</fieldset>
+		</form>
+	</div>
+	
 </div>
 <?php
 if (isset($_FILES["fileToUpload"]["name"])) {

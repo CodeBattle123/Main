@@ -1,4 +1,3 @@
-
 $mainColor: #34ff9c
 $shadowColor: #00db6e
 $textColor: #003f20
@@ -87,12 +86,22 @@ hr
 	&:hover
 		color: $textColor
 		background: $mainColor
-
-.register
+		
+.editInfoCont
+	width: 100%
 	display: flex
 	flex-direction: row
 	justify-content: space-around
-	flex-wrap: wrap
+	margin-bottom: 40px
+
+.register
+	width: 50%
+	fieldset
+		@include centeredBlock(0px)
+	
+.register:first-child
+	border-right: 2px solid black
+	
 
 .names
 	width: calc(50% - 2px)
@@ -101,7 +110,6 @@ hr
 	display: flex
 	flex-direction: column
 	justify-content: center
-	border-right: 2px solid black
 	.name
 		@include centeredBlock(12px)
 		width: 60%
