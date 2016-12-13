@@ -33,6 +33,10 @@ tr:hover {
 	background-color: rgb(173, 173, 173);
 }
 
+tr:first-child:hover {
+	background: #fff;
+}
+
 .name {
 	text-decoration: none;
 

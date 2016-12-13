@@ -1,7 +1,3 @@
-*:not(wrapper){
-	z-index: 2;
-}
-
 .userContainer{
 	background-image: url("../images/backgrounds/profile.png");
 	background-size: cover;

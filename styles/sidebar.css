@@ -1,21 +1,24 @@
 .sidebar{
    position: fixed;
+	z-index: 5;
    top: 100px;
-   left: -215px;
+   left: -250px;
 
    display:block;
 
-   width: 20%;
+   width: 300px;
    min-height: 600px;
 
    text-align: left;
 
    background-color:#0073A5;
 
-   font-family: Sidebar;;}
+   font-family: Sidebar;}
 
-.sidebar:hover{
+.sidebar:hover, .sidebar:hover .sidebar_container{
 	left: 0;
+
+	visibility: visible;
 }
 
 .sidebar_container {

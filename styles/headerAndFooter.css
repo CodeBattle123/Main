@@ -33,6 +33,8 @@
 	font-size 0.3s;
 }
 body {
+	z-index: -10;
+
 	width: 100%;
 	padding-top: 100px;
 
@@ -168,6 +170,7 @@ header {
 
 .mainFooter {
 	position: relative;
+	z-index: 6;
 
 	clear: both;
 

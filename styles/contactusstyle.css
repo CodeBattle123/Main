@@ -1,39 +1,85 @@
-/* ===========================
-   ====== Contact Form =======
-   =========================== */
-
 .wrapper {
-    padding: 20px;
+	flex-direction: row;
+
+	flex-wrap: wrap;
 }
-.form {
+
+.messageForm {
     display: block;
-    margin: 20px;
+
+	margin-top: 30px;
+
 }
 
-.inputLabel {
+.messagePart {
+	width: 80%;
+	margin-bottom: 30px;
+	margin-left: 30px;
+
+	border: 0;
+
 	font-family: Quest;
+	font-size: 22px;
 }
 
-input,
-textarea {
+input, textarea {
+    width: 200px;
     padding: 10px;
+
     border: 1px solid gray;
-    width: 200px;
-    color: #999999;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;
-    -moz-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;
-    -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;
+	outline: 0;
+
+	font-family: Quest;
+	font-size: 18px;
 }
+
 textarea {
+    width: 30vw;
     height: 150px;
-    width: 30vw;
-    line-height: 18px;
+
     resize: none;
+
+    line-height: 18px;
 }
 
 input[type=submit] {
+	position: relative;
+	top: 30px;
+
+	display: block;
+
+	margin: 0 auto;
+
+	color: #fff;
+	border: 0;	
+	border-radius: 10px;
+	background: rgb(148, 148, 148);
+
+	font-family: SideBar;
 	font-size: 20px;
-	font-family: Content;
+	line-height: 40px;
+}
+
+input[type=submit]:hover {
+	top:20px;
+
+	color: #003f20;
+	background: #34ff9c;
+	box-shadow: 0px 10px 0px #00db6e;
+}
+input[type=submit]:active {
+	top:30px;
+
+	box-shadow: 0px 0px 0px #00db6e;
+}
+
+.map {
+    display: block;
+
+    width: 45%;	
+    height: 30vw;	margin: 75px 70px 0 auto;	
+
+    border: 1px solid gray;
 }
 
 @media screen and (max-width: 800px) {
@@ -47,51 +93,15 @@ input[type=submit] {
     .wrapper {
         display: flex;
         flex-direction: column;
+
         height: auto;
         padding: 0;
     }
     .map {
-        margin: 0 auto;
-        height: 350px;
-        width: 95%;
         display: block;
-    }
-}
-input:hover,
-textarea:hover,
-input:focus,
-textarea:focus {
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px;
-    -moz-box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px;
-    -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px;
-}
-.form label {
-    color: gray;
-}
-/* ===========================
-   ====== Submit Button ======
-   =========================== */
 
-.submit input {
-    width: 100px;
-    height: 40px;
-    background-color: #0073A5;
-    color: #FFF;
-    border-radius: 3px;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-}
-.map {
-    height: 30vw;
-    width: 95%;
-    display: block;
-    border: 1px solid gray;
-    margin: 0 auto 15px auto;
-}
-.wrapper {
-    display: flex;
-    background-color: white;
-}
-p {
-    padding-bottom: 30px;
+        width: 95%;
+        height: 350px;
+        margin: 0 auto;
+    }
 }

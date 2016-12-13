@@ -1,3 +1,22 @@
+.wrapper {
+	position: relative;
+
+    display: flex;
+	float: right;
+    flex-direction: column;
+
+	width: 96%;
+	min-height: 700px;
+
+	background-color: white;
+}
+
+@media screen and (max-width: 800px) {
+	.wrapper {
+		width: 100%;
+	}
+}
+
 .btn {
     padding: 10px 20px 10px 20px;
 
@@ -18,10 +37,6 @@
     text-decoration: none;
 
     background: #3cb0fd;
-    background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
-    background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
-    background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
-    background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
     background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
 }
 
@@ -32,20 +47,6 @@
     text-align: center;
 
     font-family: MainText;
-}
-
-.wrapper {
-	position: relative;
-	z-index: 1;
-
-    display: flex;
-	float: right;
-    flex-direction: column;
-
-	width: 96%;
-	min-height: 700px;
-
-	background-color: white;
 }
 
 hr {
