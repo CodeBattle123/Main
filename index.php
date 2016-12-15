@@ -6,24 +6,25 @@
     <link rel="stylesheet" href="styles/main.css">
 	<link rel="stylesheet" href="styles/sidebar.css">
 	<link rel="stylesheet" href="styles/index.css">
+	<link rel="icon" type="image/png" href="images/icon.png"/>
 
     <meta charset="UTF-8">
-    <title>home</title>
+    <title>Home</title>
 </head>
 
 <body id="bod">
-<?php include_once('header.php'); 
+<?php include_once('header.php');
 if ($logged) {
 	header("location: profile.php");
 }?>
 
 <div class="wrapper">
-	
+
         <div class="content">
 			<div class="topButton">
 				<a href="register.php">Join the battle now!</a>
 			</div>
-			
+
 	        <div class="AboutSect">
 				<div class="innerContent">
 		            <h1>About the project</h1>
@@ -34,7 +35,7 @@ if ($logged) {
 				</div>
 	        </div>
 	    </div>
-		
+
 </div>
 </body>
 </html>
