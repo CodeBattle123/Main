@@ -13,7 +13,8 @@
 
    background-color:#0073A5;
 
-   font-family: Sidebar;}
+   font-family: Sidebar;
+}
 
 .sidebar:hover, .sidebar:hover .sidebar_container{
 	left: 0;
@@ -42,7 +43,7 @@
 .link {
    display: block;
 
-   width: calc(100%-20px);
+   width: calc(100% - 20px);
 	padding-left: 20px;
 
    transition: color 0.5s;

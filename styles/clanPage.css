@@ -30,7 +30,7 @@
 .inbox {
 	position: absolute;
 	top: -25vw;
-	right: 10px;
+	left: 10px;
 
 	display: inline-block;
 	overflow-x: hidden;
@@ -89,6 +89,39 @@ ul:hover .veil,
 	display: block;
 
 	text-transform: uppercase;
+}
+
+.editPageButton {
+	position: absolute;
+
+	right: 0;
+	top: 0;
+	display: block;
+
+	width: 130px;
+	height: 40px;
+	margin-top: 15px;
+	margin-right: 15px;
+
+	text-align: center;
+	text-decoration: none;
+
+	color: #FFF;
+	border-radius: 7px;
+	background: rgb(148, 148, 148);
+
+	font-family: Quest;
+	line-height: 40px;
+}
+
+.editPageButton:visited {
+	color: #FFF;
+}
+
+.editPageButton:hover {
+	color: #003f20;
+
+	background-color: #34ff9c;
 }
 
 .answers {
