@@ -3,9 +3,9 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/headerAndFooter.css">
-    <link rel="stylesheet" href="styles/profile.css"> 	
     <link rel="stylesheet" href="styles/sidebar.css">
     <link rel="stylesheet" href="styles/main.css">
+	<link rel="stylesheet" href="styles/profile.css"> 	
 
     <meta charset="UTF-8">
     <title>Profile</title>
@@ -48,9 +48,8 @@ file_exists("profile-pics/" . $current_user . ".png") ? $profilepic = $current_u
 	        <h2 align="center"><?= $current_user ?></h2>
 	    </div>
 
-		<div class="profile-pic" align="center">
+		<div class="profile-pic">
 			<img src="profile-pics/<?=$profilepic?>" alt="Profile picture" class="profile">
-
 		</div>
 
 		<?php

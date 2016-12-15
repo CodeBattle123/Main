@@ -33,12 +33,13 @@ $isLeader = ($username==$leader);
 
     <?php
     if ($isLeader) {
-        echo '    <a href="clan_edit.php" class="editPageButton">Edit profile</a>';
+        echo '<a href="clan_edit.php" class="editPageButton">Edit profile</a>';
     }
     ?>
-
-
-    <div class="clanAvatarHolder">  <img class="clanAvatar"   src="clan-pics/<?=$log_clan . ".png"?>" alt="asd"> </div>
+	<h3 class="clanName"><?= $log_clan ?></h3>
+    <div class="clanAvatarHolder">
+		<img class="clanAvatar" src="clan-pics/<?=$log_clan . ".png"?>" alt="asd">
+	</div>
 
     <div class="clanInfo">
 
@@ -68,7 +69,6 @@ $isLeader = ($username==$leader);
     </ul>
     </div>
 
-    <h3 class="clanName"><?= $log_clan ?></h3>
 
     <?php
     $sql = "SELECT * FROM teams WHERE name='$log_clan'";

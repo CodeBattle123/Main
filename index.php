@@ -18,7 +18,6 @@ if ($logged) {
 }?>
 
 <div class="wrapper">
-	
         <div class="content">
 			<div class="topButton">
 				<a href="register.php">Join the battle now!</a>
@@ -33,8 +32,20 @@ if ($logged) {
 		            </p>
 				</div>
 	        </div>
+			
+			<div class="availablePages">
+				<div class="row">
+					<a href="AboutUs.php">About Us</a>
+				</div>
+				<div class="row">
+					<a href="ranking.php">Player Rankings</a>
+					<a href="clan-rankings.php">Clan Rankings</a>
+				</div>
+				<div class="row">
+					<a href="contactus.php">Contact Us</a>
+				</div>
+			</div>
 	    </div>
-		
 </div>
 </body>
 </html>

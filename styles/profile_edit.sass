@@ -7,7 +7,7 @@ $textColor: #003f20
 	margin: $width auto
 
 hr
-	margin: 10px 0 30px 0
+	margin: 0px 0 30px 0
 	height: 3px
 	background: rgb(112, 112, 112)
 	border-bottom: 1px solid black
@@ -19,14 +19,31 @@ hr
 	font-family: Quest
 	text-transform: capitalize
 
+.profileContainer
+	display: block
+	width: 100%
+	background: url("../images/backgrounds/profile.png")
+	background-size: cover
+	background-attachment: fixed
+	background-position: 50% 50%
+
 .profile-pic
-	margin: 10px
+	display: flex
+	overflow: hidden
+	flex-direction: row
+	width: 300px
+	height: 300px
+	margin: 0 auto
+	border-radius: 50%
+	justify-content: center
 	
 .profileDesc
 	@include centeredBlock(0px)
 	font-family: Quest
 	font-size: 20px
 	margin-bottom: 50px
+	width: 90%
+	resize: none
 	
 .Submit
 	@include centeredBlock(15px)
@@ -92,50 +109,24 @@ hr
 	display: flex
 	flex-direction: row
 	justify-content: space-around
+	flex-wrap: wrap
 	margin-bottom: 40px
-
-.register
-	width: 50%
-	fieldset
-		@include centeredBlock(0px)
 	
-.register:first-child
-	border-right: 2px solid black
-	
-
-.names
-	width: calc(50% - 2px)
-	outline: 0
-	border: 0
-	display: flex
-	flex-direction: column
-	justify-content: center
-	.name
-		@include centeredBlock(12px)
-		width: 60%
-		height: 25px
-		font-size: 20px
-		text-align: center
-		border: 2px solid black
-		text-decoration: underline
-	.name:first-child
-		border-radius: 10px 10px 0 0
+	form
+		min-width: 400px
+		width: calc(50% - 2px)
 		
-.passwords
-	width: 50%
-	outline: 0
-	border: 0
-	display: flex
-	flex-direction: column
-	justify-content: center
-	margin-bottom: 25px
-	.password
-		@include centeredBlock(12px)
-		width: 60%
-		height: 25px
-		font-size: 20px
-		text-align: center
-		border: 2px solid black
-		text-decoration: underline
-	.password:first-child
-		border-radius: 10px 10px 0 0
+		fieldset
+			@include centeredBlock(0px)
+			border: 0
+			
+			.field
+				@include centeredBlock(0px)
+				width: 85%
+				font-family: Quest
+				text-align: center
+				height: 25px
+				border: 2px solid black
+				margin-bottom: 15px
+				outline: 0
+				font-size: 18px

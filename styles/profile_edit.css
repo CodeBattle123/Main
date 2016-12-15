@@ -1,5 +1,5 @@
 hr {
-		margin: 10px 0 30px 0;
+		margin: 0px 0 30px 0;
 		height: 3px;
 		background: #707070;
 		border-bottom: 1px solid black;
@@ -14,8 +14,24 @@ hr {
 		text-transform: capitalize;
 }
 
+.profileContainer {
+		display: block;
+		width: 100%;
+		background: url("../images/backgrounds/profile.png");
+		background-size: cover;
+		background-attachment: fixed;
+		background-position: 50% 50%;
+}
+
 .profile-pic {
-		margin: 10px;
+		display: flex;
+		overflow: hidden;
+		flex-direction: row;
+		width: 300px;
+		height: 300px;
+		margin: 0 auto;
+		border-radius: 50%;
+		justify-content: center;
 }
 
 .profileDesc {
@@ -24,6 +40,8 @@ hr {
 		font-family: Quest;
 		font-size: 20px;
 		margin-bottom: 50px;
+		width: 90%;
+		resize: none;
 }
 
 .Submit {
@@ -103,67 +121,30 @@ hr {
 		display: flex;
 		flex-direction: row;
 		justify-content: space-around;
+		flex-wrap: wrap;
 		margin-bottom: 40px;
 }
 
-.register {
-		width: 50%;
+.editInfoCont form {
+		min-width: 400px;
+		width: calc(50% - 2px);
 }
 
-.register fieldset {
+.editInfoCont form fieldset {
 		display: block;
 		margin: 0px auto;
-}
-
-.register:first-child {
-		border-right: 2px solid black;
-}
-
-.names {
-		width: calc(50% - 2px);
-		outline: 0;
 		border: 0;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
 }
 
-.names .name {
+.editInfoCont form fieldset .field {
 		display: block;
-		margin: 12px auto;
-		width: 60%;
-		height: 25px;
-		font-size: 20px;
+		margin: 0px auto;
+		width: 85%;
+		font-family: Quest;
 		text-align: center;
+		height: 25px;
 		border: 2px solid black;
-		text-decoration: underline;
-}
-
-.names .name:first-child {
-		border-radius: 10px 10px 0 0;
-}
-
-.passwords {
-		width: 50%;
+		margin-bottom: 15px;
 		outline: 0;
-		border: 0;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		margin-bottom: 25px;
-}
-
-.passwords .password {
-		display: block;
-		margin: 12px auto;
-		width: 60%;
-		height: 25px;
-		font-size: 20px;
-		text-align: center;
-		border: 2px solid black;
-		text-decoration: underline;
-}
-
-.passwords .password:first-child {
-		border-radius: 10px 10px 0 0;
+		font-size: 18px;
 }
