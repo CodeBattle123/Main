@@ -199,10 +199,13 @@ td:hover {
 
 td a:link, td a.hover, td a:visited {
 	text-decoration: none;
-
 	color: black;
 }
 
 th {
     text-align: center;
+}
+a:link, a.hover, a:visited {
+	text-decoration: none;
+	color: white;
 }

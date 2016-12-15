@@ -91,6 +91,15 @@ ul:hover .veil,
 	text-transform: uppercase;
 }
 
+.requestusername:link, .requestusername.hover, .requestusername:visited {
+	text-decoration: none;
+	color: black;
+}
+
+.requestusername:hover {
+	color: #0073A5;
+}
+
 .editPageButton {
 	position: absolute;
 
@@ -171,11 +180,8 @@ ul:hover .veil,
 }
 
 .clanName {
-	display: block;
-
-	width: 150px;
+	display: inline-block;
 	margin: 15px auto;
-
 	font-family: Text;
 	font-size: 40px;
 	line-height: 50px;

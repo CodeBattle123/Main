@@ -9,6 +9,7 @@ $userid = $_POST['userid'];
 
 if (isset($_POST['Add'])){
     $sql = "UPDATE users SET clan = '$log_clan' WHERE id = $userid";
+    mysqli_query($connect, "DELETE FROM team_inbox WHERE user_id = '$userid'");
     mysqli_query($connect, $sql);
     header("location: ../clanPage.php");
 }
