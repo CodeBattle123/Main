@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-16">
     <title>Battle Arena</title>
     <link rel="stylesheet" type="text/css" href="styles/headerAndFooter.css">
@@ -14,7 +13,7 @@
 </head>
 <body>
 <?php include 'header.php';
-	CheckIfLogged();
+   CheckIfLogged();
    include_once("db/connect.php");
 ?>
 
@@ -36,14 +35,26 @@
             }
          } elseif (isset($_GET['attack'])) {
             if (strtolower($_GET['attack']) != strtolower($_SESSION['username'])) {
-               if (!isset($_GET['answer'])) {
-                  $uuuser = $_SESSION['username'];
-                  $op = $_GET['attack'];
-                  $sql = "INSERT INTO q (user_1, user_2) VALUES ('$uuuser','$op')";
-                  $query = mysqli_query($connect, $sql);
+               $uuuser = $_SESSION['username'];
+               $op = $_GET['attack'];
+
+               if (isset($_GET['answer']) && ($_GET['answer']=='y')) {
+                  $sql = "SELECT * FROM q WHERE (user_1='$uuuser' AND user_2='$op')";
+               } else {
+                  $sql = "SELECT * FROM q WHERE ((user_1='$uuuser' AND user_2='$op') OR (user_2='$uuuser' AND user_1='$op'))";
                }
 
-               displayTheArena();
+               $query = mysqli_query($connect, $sql);
+               $zecount2 = mysqli_num_rows($query);
+               if ($zecount2 == 0) {
+                  if (!isset($_GET['answer'])) {
+                     $sql = "INSERT INTO q (user_1, user_2) VALUES ('$uuuser','$op')";
+                     $query = mysqli_query($connect, $sql);
+                  }
+                  displayTheArena();
+               } else {
+                  echo 'You already have set up challenge versus this player.';
+               }
             } else {
                echo 'Sorry, we are against masochism...';
                echo "<br>...but you may punch yourself in the face :)";
@@ -167,25 +178,31 @@
 
    function getAnswer(elem) {
       if (elem.getAttribute("data") == "yes") {
-         alert("shte si hodq");
          <?php
             if (!isset($_GET['answer'])) {
-               $sql = "UPDATE q SET temp_points = 1222222 WHERE (user_1 = '$uuuser' AND user_2 = '$op') LIMIT 1";
+               $sql = "UPDATE q SET temp_points = 1 WHERE (user_1 = '$uuuser' AND user_2 = '$op')";
                $query = mysqli_query($connect, $sql);
-            }
-         ?>
-         console.log("won");
-      }
+            } else {
+               $sql = "DELETE FROM q WHERE (user_2 = '$uuuser' AND user_1 = '$op')";
+               $query = mysqli_query($connect, $sql);
 
-      if (elem.getAttribute("data") != "yes") {
-         alert("sht8t4387g387y8734 hodq");
+               $uuuser_id = mysqli_query($connect, "SELECT id FROM users WHERE nickname = '$uuuser'")->fetch_assoc()['id'];
+
+               $op_id = mysqli_query($connect, "SELECT id FROM users WHERE nickname = '$op'")->fetch_assoc()['id'];
+
+               $sql = "INSERT INTO battle_log (user1_id, user2_id, winner, won_xp, date)
+                                       VALUES ('$uuuser_id', '$op_id', '0', '238479', now());";
+               $query = mysqli_query($connect, $sql);
+
+            }
+         ?>
+      } else {
          <?php
-           if (!isset($_GET['answer'])) {
-               $sql = "UPDATE q SET temp_points = 123 WHERE (user_1 = '$uuuser' AND user_2 = '$op') LIMIT 1";
+            if (!isset($_GET['answer'])) {
+               $sql = "UPDATE q SET temp_points = 0 WHERE (user_1 = '$uuuser' AND user_2 = '$op' AND temp_points <> 1)";
                $query = mysqli_query($connect, $sql);
             }
          ?>
-         console.log("lost");
       }
    }
    </script>

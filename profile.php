@@ -106,6 +106,7 @@ file_exists("profile-pics/" . $current_user . ".png") ? $profilepic = $current_u
 			}
  		?>
 
+
         <div class="match-history">
             <h2 class="matchHistory">Match History</h2>
         </div>
@@ -150,7 +151,7 @@ file_exists("profile-pics/" . $current_user . ".png") ? $profilepic = $current_u
                             echo '<tr class="' . $result . '" >
 		        <td><img class="profilesmall" src="profile-pics/' . $current_user . ".png" . '"><a href="profile.php?user=' . $current_user . '">' . $current_user . '</a></td>
                 <td>' . $result . '</td>
-		        <td><img class="profilesmall" src="profile-pics/' . $opponentpic . '"><a href="profile.php?user=' . $opponentpic . '">' . $opponent . '</a></td>
+		        <td><img class="profilesmall" src="profile-pics/' . $opponentpic . '"><a href="profile.php?user=' . $opponent . '">' . $opponent . '</a></td>
                 <td>' . $sign . $row['won_xp'] . '</td>
                 <td>' . $row['date'] . '</td>
                </tr>

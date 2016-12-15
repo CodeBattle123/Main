@@ -18,6 +18,8 @@
 
 </head>
 <body>
+
+
 <?php include_once('header.php');
 CheckIfLogged();
 $sql = "SELECT DISTINCT * FROM team_inbox WHERE team_name = '$log_clan'";
@@ -33,7 +35,12 @@ $isLeader = ($username==$leader);
 
     <?php
     if ($isLeader) {
-        echo '<a href="clan_edit.php" class="editPageButton">Edit profile</a>';
+        echo '    <a href="clan_edit.php" class="editPageButton">Edit clan</a>';
+    } else {
+        echo '
+    <form action="scripts/leaveclan.php" method="post">
+    <input Onclick="return confirm(\'Are you sure you want to leave this clan?\')" type="submit" value="Leave clan" name="leaveclan" class="editPageButton"> 
+    </form>';
     }
     ?>
 	<h3 class="clanName"><?= $log_clan ?></h3>

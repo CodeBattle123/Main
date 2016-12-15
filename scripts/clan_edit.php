@@ -18,6 +18,7 @@ if ($isLeader) {
         mysqli_query($connect, "UPDATE users SET clan='' WHERE clan='$log_clan'");
         $sql = "DELETE FROM teams WHERE name ='$log_clan'";
         $query = mysqli_query($connect, $sql);
+        unlink('../clan-pics/' . $log_clan . ".png");
         header("location: ../make-clan.php");
     }
 }
