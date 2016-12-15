@@ -1,10 +1,12 @@
 .aboutWrapper {
    display: block;
-   background-color: white;
-   height: 700px;
    overflow-y: scroll;
+
+   height: 700px;
    margin: 0 0 0 15px;
    padding: 30px;
+
+   background-color: white;
 }
 
 .aboutWrapper::-webkit-scrollbar {
@@ -19,48 +21,64 @@
     background-color: #555;
 }
 
-.wrapper {
-    background-color: white;
-    height: 700px;
-    display: flex;
+section {
+	display: none;
+
+	width: 85%;
+	height: 500px;
+	margin: 0 auto;
+	}
+
+section div {
+	padding: 30px;
 }
 
 p {
-    font-family:"Futura";
     padding-bottom: 30px;
-    line-height: 20px;
+
+    font-family:"Futura";
     font-size: 18px;
     font-weight: bold;
+    line-height: 20px;
 }
 
 .btn {
     display: inline-block;
-    border-radius: 3px;
-    font-family: Sidebar;
-    color: #ffffff;
-    font-size: 20px;
-    background: #0073A5;
+
     padding: 10px 20px 10px 20px;
-    text-decoration: none;
+
+	transition: all 0.5s;
     vertical-align: bottom;
+    text-decoration: none;
+
+    color: #fff;
+    border-radius: 3px;
+    background: rgb(148,148,148);
+
+    font-family: Sidebar;
+    font-size: 20px;
 }
 
 .btn:hover {
-    background: #3cb0fd;
-    background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
     text-decoration: none;
+
+	color: #003f20;
+    background: #34ff9c;
 }
 
 #paginator-btn li {
-    margin: 5px;
-    list-style: none;
-    text-align: center;
-    background-color: #0073A5;
-    margin-right: 15px;
     width: 170px;
-    height: 30px;
+    height: 30px;
+    margin: 5px;
+    margin-right: 15px;
+
+    list-style: none;
+
+    text-align: center;
     text-decoration: none;
+
     border-radius: 2px;
+
     font-family: Sidebar;
 }
 
@@ -77,12 +95,15 @@ p {
 .paginator {
     display: flex;
     flex-direction: row;
+
+    margin-bottom: 15px;
+
     flex-wrap: wrap;
     justify-content: center;
-    margin-bottom: 15px;
 }
 
 h1 {
-    font-family: Quest;
     text-align: center;
-}
+
+    font-family: Quest;
+}	

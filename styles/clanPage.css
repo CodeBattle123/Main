@@ -1,30 +1,27 @@
 .clanAvatarHolder {
-	display: flex;
-	flex-direction: column;
+	display: flex;	overflow: hidden;
+	flex-direction: row;
 
-	width: 100%;
-	min-height: 25vw;
-	margin: 15px auto;
+	width: 25vw;
+	height: 25vw;
+	margin: 15px auto;	border-radius: 50%;
 
-	justify-content: space-around;
-}
+	justify-content: center;}
 
 .clanAvatar {
 	display: block;
 
-	width: 23vw;
-	height: 23vw;
+	height: 100%;
 	margin: 0 auto;
 
 	transition: width 0.5s,
 				height 0.5s;
 
-	border-radius: 50%;
 }
 
-.clanAvatar:hover {
-	width: 25vw;
-	height: 25vw;
+.clanAvatarHolder:hover {
+	width: 26vw;
+	height: 26vw;
 }
 
 .inbox {
@@ -184,16 +181,23 @@ ul:hover .veil,
 	margin: 15px auto;
 	font-family: Text;
 	font-size: 40px;
-	line-height: 50px;
+}
+
+.clanName:hover {
+	font-size: 50px;
 }
 
 .clanDesc {
+	display: block;
 	overflow-y: auto;
 
+	width: 80%;
 	max-height: 200px;
+	margin: 0 auto;
 	margin-bottom: 30px;
 	padding: 20px 30px;
 
+	text-align: center;
 	word-wrap: break-word;
 
 	border-top: 3px solid black;
