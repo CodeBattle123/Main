@@ -27,6 +27,11 @@
 				margin-bottom 0.4s;
 }
 
+h2, h3 {
+	color: black;
+}
+
+
 .profile::selection {
 	background: none;
 }
@@ -83,9 +88,9 @@
 
 	text-align: center;
 	text-transform: uppercase;
-
 	font-family: Quest;
 	font-size: 28px;
+
 }
 
 .profileDesc{

@@ -146,6 +146,7 @@ file_exists("profile-pics/" . $current_user . ".png") ? $profilepic = $current_u
 
                         $opponent = mysqli_query($connect, "SELECT * FROM users WHERE id = '$opponentid'")->fetch_assoc()['nickname'];
                         file_exists("profile-pics/" . $opponent . ".png") ? $opponentpic = $opponent . ".png" : $opponentpic = "default.png";
+                        file_exists("profile-pics/" . $current_user . ".png") ? $current_user_pic = $current_user . ".png" : $current_user_pic = "default.png";
 
                             echo '<tr class="' . $result . '" >
 		        <td><img class="profilesmall" src="profile-pics/' . $current_user . ".png" . '"><a class="matchName" href="profile.php?user=' . $current_user . '">' . $current_user . '</a></td>

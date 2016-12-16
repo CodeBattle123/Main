@@ -7,19 +7,17 @@
 }
 
 .clanAvatarHolder {
-	display: flex;	overflow: hidden;
+	display: flex;
+	overflow: hidden;
 	flex-direction: row;
 
 	width: 25vw;
 	height: 25vw;
-	margin: 15px auto;	border-radius: 50%;
+	margin: 15px auto;
+	border-radius: 50%;
 
-	justify-content: center;}
+	justify-content: center;
 
-.clanAvatarHolder:hover {
-	width: 26vw;
-	height: 26vw;
-	margin-top: 0px;
 }
 
 .clanAvatar {
@@ -31,6 +29,12 @@
 	transition: width 0.5s,
 				height 0.5s;
 
+}
+
+.clanAvatarHolder:hover {
+	width: 26vw;
+
+	height: 26vw;
 }
 
 .inbox {

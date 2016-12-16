@@ -45,7 +45,8 @@ $isLeader = ($username==$leader);
     </form>';
     }
     ?>
-	<h3 class="clanName"><?= $log_clan ?></h3>
+    <h3 class="clanName"><?= $log_clan ?></h3>
+
     <div class="clanAvatarHolder">
 		<img class="clanAvatar" src="clan-pics/<?=$log_clan . ".png"?>" alt="asd">
 	</div>
@@ -77,7 +78,8 @@ $isLeader = ($username==$leader);
 </div>
 
     <div class="clanInfo">
-		
+
+
     <?php
     $sql = "SELECT * FROM teams WHERE name='$log_clan'";
     $query = mysqli_query($connect, $sql)->fetch_assoc();

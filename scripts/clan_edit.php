@@ -1,5 +1,7 @@
 <?php
-
+if (!$isLeader) {
+    header("location: ../clanPage.php");
+}
 include  '../db/connect.php';
 include '../db/login_status.php';
 
@@ -21,6 +23,8 @@ if ($isLeader) {
         unlink('../clan-pics/' . $log_clan . ".png");
         header("location: ../make-clan.php");
     }
+} else {
+    header("location: ../clanPage.php");
 }
 
 
