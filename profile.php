@@ -135,7 +135,6 @@ file_exists("profile-pics/" . $current_user . ".png") ? $profilepic = $current_u
                         } else {
                             $opponentid = $row['user1_id'];
                         }
-
 								if ($row['winner'] == 0) {
 									$result = 'draw';
                         } else if ($row['winner'] == $userid) {
