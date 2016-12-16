@@ -44,13 +44,13 @@ $isLeader = ($username==$leader);
     </form>';
     }
     ?>
-	<h3 class="clanName"><?= $log_clan ?></h3>
+    <h3 class="clanName"><?= $log_clan ?></h3>
+
     <div class="clanAvatarHolder">
 		<img class="clanAvatar" src="clan-pics/<?=$log_clan . ".png"?>" alt="asd">
 	</div>
 
     <div class="clanInfo">
-
         <?php
         if ($isLeader) {
             echo '  <div class="inbox">
@@ -61,7 +61,7 @@ $isLeader = ($username==$leader);
                 $user_id = $row['user_id'];
                 $user_name = mysqli_query($connect, "SELECT * from users WHERE id = '$user_id'")->fetch_assoc()['nickname'];
                 echo '<li class="request">
-					   <p class="requestContents"><span class="target"><a class="requestusername" target="_blank" href="profile.php?user=' . $username . '">' . $username . '</a></span> wants to join your clan.</p>
+					   <p class="requestContents"><span class="target"><a class="requestusername" target="_blank" href="profile.php?user=' . $user_name . '">' . $user_name . '</a></span> wants to join your clan.</p>
 					  <form class="answers" action="scripts/addToClan.php" method="post">
 						  <input type="hidden" name="userid" value="' . $user_id . '">
 						  <input class="answerButton accept" type="submit" name="Add" value="Accept">

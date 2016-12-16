@@ -146,11 +146,12 @@ file_exists("profile-pics/" . $current_user . ".png") ? $profilepic = $current_u
 
                         $opponent = mysqli_query($connect, "SELECT * FROM users WHERE id = '$opponentid'")->fetch_assoc()['nickname'];
                         file_exists("profile-pics/" . $opponent . ".png") ? $opponentpic = $opponent . ".png" : $opponentpic = "default.png";
+                        file_exists("profile-pics/" . $current_user . ".png") ? $current_user_pic = $current_user . ".png" : $current_user_pic = "default.png";
 
                             echo '<tr class="' . $result . '" >
-		        <td><img class="profilesmall" src="profile-pics/' . $current_user . ".png" . '"><a href="profile.php?user=' . $current_user . '">' . $current_user . '</a></td>
+		        <td><img class="profilesmall" src="profile-pics/' . $current_user_pic . '"><a href="profile.php?user=' . $current_user . '">' . $current_user . '</a></td>
                 <td>' . $result . '</td>
-		        <td><img class="profilesmall" src="profile-pics/' . $opponentpic . '"><a href="profile.php?user=' . $opponentpic . '">' . $opponent . '</a></td>
+		        <td><img class="profilesmall" src="profile-pics/' . $opponentpic . '"><a href="profile.php?user=' . $opponent . '">' . $opponent . '</a></td>
                 <td>+ ' . $row['won_xp'] . '</td>
                 <td>' . $row['date'] . '</td>
                </tr>

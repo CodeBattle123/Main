@@ -29,6 +29,8 @@
         <h2 class="Header">Clan Profile</h2>
     </div>
 
+    <div class="errors"></div>
+
     <div class="section">
         <div class="make-clan">
             <h2 class="Header">Make clan</h2>

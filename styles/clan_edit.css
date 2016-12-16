@@ -14,64 +14,6 @@ hr {
     text-transform: capitalize;
 }
 
-.profile-pic {
-    margin: 10px;
-}
-
-
-.clanName {
-
-    width: 150px;
-    margin: 15px auto;
-
-    font-size: 40px;
-}
-
-.clanDesc {
-    display: block;
-    margin: 0px auto;
-    font-family: Quest;
-    font-size: 20px;
-    margin-bottom: 50px;
-}
-
-.Submit {
-    display: block;
-    margin: 15px auto;
-    width: 200px;
-    line-height: 25px;
-    font-family: Quest;
-    text-transform: uppercase;
-    border: none;
-    color: white;
-    background: #949494;
-    border-radius: 5px;
-    position: relative;
-    top: -10px;
-    transition: box-shadow 0.5s, color 0.5s, background 0.5s;
-}
-
-.Submit:hover {
-    color: #003f20;
-    background: #34ff9c;
-}
-
-.exception {
-    display: inline-block;
-}
-
-.imageForm {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-.imageForm .Submit {
-    margin: 20px 0;
-}
-
 .imgHeader {
     display: block;
     margin: 15px auto;
@@ -106,59 +48,93 @@ hr {
     background: #34ff9c;
 }
 
-.register {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: wrap;
+
+.clanName {
+    margin: 15px auto;
+
+    font-size: 40px;
 }
 
-.names {
-    width: calc(50% - 2px);
+.clanDesc {
+    display: block;
+    margin: 0px auto;
+    font-family: Quest;
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+
+.functionsholder {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
+
+.Submit {
+    display: block;
+    margin: 15px auto;
+    width: 200px;
+    line-height: 25px;
+    font-family: Quest;
+    text-transform: uppercase;
+    border: none;
+    color: white;
+    background: #949494;
+    border-radius: 5px;
+    position: relative;
+    top: -10px;
+    transition: box-shadow 0.5s, color 0.5s, background 0.5s;
+}
+
+.Submit:hover {
+    color: #003f20;
+    background: #34ff9c;
+}
+
+
+#fileToUpload {
+    font-family: Quest;
+}
+
+#fileToUpload::-webkit-file-upload-button {
+    position: relative;
+    top: -10px;
+    display: block;
+    width: 100%;
+    height: 70px;
+    margin-top: 20px;
+    font-family: Quest;
+    background: #949494;
+    border-radius: 7px;
     outline: 0;
     border: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    border-right: 2px solid black;
+    font-size: 16px;
+    color: white;
+    transition: background 0.5s, color 0.5s;
 }
 
-.names .name {
+#fileToUpload::-webkit-file-upload-button:hover {
+    color: #003f20;
+    background: #34ff9c;
+}
+
+.Submitpic {
     display: block;
-    margin: 12px auto;
-    width: 60%;
-    height: 25px;
-    font-size: 20px;
-    text-align: center;
-    border: 2px solid black;
-    text-decoration: underline;
+    margin: 15px auto;
+    width: 200px;
+    padding: 10px 10px;
+    line-height: 50px;
+    font-family: Quest;
+    text-transform: uppercase;
+    border: none;
+    color: white;
+    background: #949494;
+    border-radius: 5px;
+    position: relative;
+    top: -10px;
+    transition: box-shadow 0.5s, color 0.5s, background 0.5s;
 }
 
-.names .name:first-child {
-    border-radius: 10px 10px 0 0;
-}
-
-.passwords {
-    width: 50%;
-    outline: 0;
-    border: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-bottom: 25px;
-}
-
-.passwords .password {
-    display: block;
-    margin: 12px auto;
-    width: 60%;
-    height: 25px;
-    font-size: 20px;
-    text-align: center;
-    border: 2px solid black;
-    text-decoration: underline;
-}
-
-.passwords .password:first-child {
-    border-radius: 10px 10px 0 0;
+.Submitpic:hover {
+    color: #003f20;
+    background: #34ff9c;
 }

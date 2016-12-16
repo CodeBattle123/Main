@@ -1,12 +1,16 @@
 .clanAvatarHolder {
-	display: flex;	overflow: hidden;
+	display: flex;
+	overflow: hidden;
 	flex-direction: row;
 
 	width: 25vw;
 	height: 25vw;
-	margin: 15px auto;	border-radius: 50%;
+	margin: 15px auto;
+	border-radius: 50%;
 
-	justify-content: center;}
+	justify-content: center;
+
+}
 
 .clanAvatar {
 	display: block;
@@ -20,7 +24,8 @@
 }
 
 .clanAvatarHolder:hover {
-	width: 26vw;
+	width: 26vw;
+
 	height: 26vw;
 }
 
