@@ -3,9 +3,9 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/headerAndFooter.css">
-    <link rel="stylesheet" href="styles/profile.css"> 	
     <link rel="stylesheet" href="styles/sidebar.css">
     <link rel="stylesheet" href="styles/main.css">
+	<link rel="stylesheet" href="styles/profile.css"> 	
 
     <meta charset="UTF-8">
     <title>Profile</title>
@@ -13,9 +13,9 @@
 
 <body>
 
-<?php include_once('header.php'); 
+<?php include_once('header.php');
 	CheckIfLogged();
-	
+
 if(!isset($_GET['user'])) {
     header("location: profile.php?user=$log_username");
     exit();
@@ -48,9 +48,8 @@ file_exists("profile-pics/" . $current_user . ".png") ? $profilepic = $current_u
 	        <h2 align="center"><?= $current_user ?></h2>
 	    </div>
 
-		<div class="profile-pic" align="center">
+		<div class="profile-pic">
 			<img src="profile-pics/<?=$profilepic?>" alt="Profile picture" class="profile">
-
 		</div>
 
 		<?php
@@ -73,7 +72,7 @@ file_exists("profile-pics/" . $current_user . ".png") ? $profilepic = $current_u
 		<?php
 		$userid = $_SESSION ['userid'];
 
-		
+
 
 		//gets the rank of the current user
 		$rank = mysqli_query($connect, "SELECT nickname,
@@ -137,22 +136,23 @@ file_exists("profile-pics/" . $current_user . ".png") ? $profilepic = $current_u
                             $opponentid = $row['user1_id'];
                         }
 
-                        if ($row['winner'] == $userid) {
+								if ($row['winner'] == 0) {
+									$result = 'draw';
+                        } else if ($row['winner'] == $userid) {
                             $result = 'win';
-                            $sign = '+';
                         } else {
                             $result = 'loss';
-                            $sign = '-';
                         }
 
                         $opponent = mysqli_query($connect, "SELECT * FROM users WHERE id = '$opponentid'")->fetch_assoc()['nickname'];
                         file_exists("profile-pics/" . $opponent . ".png") ? $opponentpic = $opponent . ".png" : $opponentpic = "default.png";
+                        file_exists("profile-pics/" . $current_user . ".png") ? $current_user_pic = $current_user . ".png" : $current_user_pic = "default.png";
 
                             echo '<tr class="' . $result . '" >
-		        <td><img class="profilesmall" src="profile-pics/' . $current_user . ".png" . '"><a href="profile.php?user=' . $current_user . '">' . $current_user . '</a></td>
+		        <td><img class="profilesmall" src="profile-pics/' . $current_user . ".png" . '"><a class="matchName" href="profile.php?user=' . $current_user . '">' . $current_user . '</a></td>
                 <td>' . $result . '</td>
-		        <td><img class="profilesmall" src="profile-pics/' . $opponentpic . '"><a href="profile.php?user=' . $opponentpic . '">' . $opponent . '</a></td>
-                <td>' . $sign . $row['won_xp'] . '</td>
+		        <td><img class="profilesmall" src="profile-pics/' . $opponentpic . '"><a class="matchName" href="profile.php?user=' . $opponent . '">' . $opponent . '</a></td>
+                <td>+ ' . $row['won_xp'] . '</td>
                 <td>' . $row['date'] . '</td>
                </tr>
                ';
@@ -163,6 +163,11 @@ file_exists("profile-pics/" . $current_user . ".png") ? $profilepic = $current_u
                         var matches = document.getElementsByClassName("loss");
                         for (row of matches) {
                             row.style.backgroundColor = "#DA4E4E";
+                        }
+
+								var matches = document.getElementsByClassName("draw");
+                        for (row of matches) {
+                            row.style.backgroundColor = "yellow";
                         }
                     </script>
             </table>

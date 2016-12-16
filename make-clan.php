@@ -6,8 +6,9 @@
     <link rel="stylesheet" href="styles/sidebar.css">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/make-clan.css">
+    <link rel="icon" type="image/png" href="images/icon.png"/>
     <meta charset="UTF-8">
-    <title>home</title>
+    <title>Create clan</title>
 </head>
 
 <body>
@@ -28,6 +29,8 @@
         <h2 class="Header">Clan Profile</h2>
     </div>
 
+    <div class="errors"></div>
+
     <div class="section">
         <div class="make-clan">
             <h2 class="Header">Make clan</h2>
@@ -38,12 +41,12 @@
                     <p class="fieldTitle">Clan name:</p>
                     <input type="text" name="clanname" placeholder="Name"/>
                 </fieldset>
- 
+
                 <fieldset>
                     <p  class="fieldTitle">Clan description:</p>
                     <textarea name="description" ></textarea>
                 </fieldset>
- 
+
                 <fieldset>
                     <p class="fieldTitle">Clan Insignia:</p>
                     <input type="file" name="fileToUpload" id="fileToUpload"/><br>
@@ -56,12 +59,12 @@
         <div class="find-clan">
 
             <h2 class="Header">Find clan</h2>
-			
+
 			<form class="find" method="post" action="make-clan.php">
                 <div class="search_bar">
                     <input type="text" name="search" placeholder="Search..."/>
                 </div>
-                
+
 				<ul class="foundMatches">
 					<?php
 					if (!isset($_POST['find_clan'])) {
@@ -73,11 +76,11 @@
 					}
 
 					if (isset($_POST['find_clan'])) {
-						
+
 						$search = $_POST['search'];
 						$sql = "SELECT name FROM teams WHERE name = '$search'";
 						$result = $connect->query($sql);
-						
+
 						if ($result->num_rows > 0) {
 							while ($row = $result->fetch_assoc()) {
 								echo '<li class="match">clan: ' . $row['name'] . '<a href="scripts/clanRequest.php?team_id=' . $row['name'] . '">Request</a></li>';
@@ -94,8 +97,8 @@
 					}
 					?>
 				</ul>
-				
-				
+
+
                 <input class="submit-btn" type="submit" name="find_clan"value="Find Clan"/>
                 </div>
             </form>
@@ -106,8 +109,8 @@
 
 
 </div>
- 
+
 <?php include_once('footer.html'); ?>
- 
+
 </body>
 </html>

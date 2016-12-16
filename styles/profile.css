@@ -1,29 +1,42 @@
 .userContainer{
 	background-image: url("../images/backgrounds/profile.png");
+	background-position: bottom;
 	background-size: cover;
 }
 
 .profile-pic{
-	max-height: 300px;
+	display: flex;
+	overflow: hidden;
+	flex-direction: row;
+
+	width: 300px;
+	height: 300px;
+	margin: 0 auto;
+
+	border-radius: 50%;
+
+	justify-content: center;
 }
 
 .profile {
-    width: 20vw;
-    height: 20vw;
-	margin-bottom: 10px;
+    height: 100%;
+	margin: 0 auto;
 
 	transition: box-shadow 0.4s,
 				transform 0.4s,
 				margin-bottom 0.4s;
-
-	border-radius:50%;
 }
+
+h2, h3 {
+	color: black;
+}
+
 
 .profile::selection {
 	background: none;
 }
 
-.profile:hover {
+.profile-pic:hover {
 	transform: rotate(-10deg);
 
 	box-shadow: 0px 0px 40px #000;
@@ -32,15 +45,16 @@
 .profilesmall {
 	width: 3vw;
 	height: 3vw;
+
 	border-radius:50%;
 }
 
 
 .editPageButton {
 	position: absolute;
-
+	top: 15px;
 	right: 0;
-	top: 0;
+
 	display: block;
 
 	width: 130px;
@@ -59,14 +73,12 @@
 	line-height: 40px;
 }
 
-.editPageButton:visited {
-	color: #FFF;
-}
-
 .editPageButton:hover {
-	color: #003f20;
+	top: 5px;
 
+	color: #003f20;
 	background-color: #34ff9c;
+	box-shadow: 0px 10px 0px #00db6e;
 }
 
 .xp {
@@ -76,9 +88,9 @@
 
 	text-align: center;
 	text-transform: uppercase;
-
 	font-family: Quest;
 	font-size: 28px;
+
 }
 
 .profileDesc{
@@ -204,4 +216,9 @@ td a:link, td a.hover, td a:visited {
 
 th {
     text-align: center;
+}
+a:link, a.hover, a:visited {
+	text-decoration: none;
+
+	color: white;
 }

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles/headerAndFooter.css">
     <link rel="stylesheet" href="styles/sidebar.css" media="screen" title="no title">
     <link rel="stylesheet" href="styles/clanPage.css" media="screen" title="no title">
-    <link rel="stylesheet" href="styles/profile_edit.css">
+    <link rel="stylesheet" href="styles/clan_edit.css">
     <link rel="stylesheet" href="styles/main.css">
 
 </head>
@@ -27,35 +27,21 @@ $isLeader = ($username==$leader);
 <main class="wrapper">
 
     <form action="scripts/clan_edit.php" method="post">
-        <input type="submit" value="DELETE CLAN" name="deleteclan" class="Submit">
+        <input Onclick="return confirm('Are you sure you want to delete this clan?')" type="submit" value="Delete clan" name="deleteclan" class="Submit">
     </form>
+
 
     <div class="clanAvatarHolder">  <img class="clanAvatar"   src="clan-pics/<?=$log_clan . ".png"?>" alt="asd"> </div>
 
+
+
+
     <div class="clanInfo">
-
-
-        <?php
-        if ($isLeader) {
-
-            echo '  <div class="inbox">
-        <ul><span class="first">Requests: ()</span>
-    <div class="veil">';
-
-            while ($row = $requests->fetch_assoc()) {
-                $user_id = $row['user_id'];
-                $user_name = mysqli_query($connect, "SELECT * from users WHERE id = '$user_id'")->fetch_assoc()['nickname'];
-                echo '<li class="request">
-					   <p class="requestContents"><span class="target">' . $user_name . '</span> wants to join your clan.</p>
-					  <form class="answers" action="scripts/addToClan.php" method="post">
-						  <input type="hidden" name="userid" value="' . $user_id . '">
-						  <input class="answerButton accept" type="submit" name="Add" value="Accept">
-						  <input class="answerButton deny" type="submit" name="Deny" value="Deny">
-					  </form>
-					  </li>';
-            }
-        }
-        ?>
+        <form action="scripts/clan_pic_upload.php" method="post" enctype="multipart/form-data" class="imageForm">
+            <h3 class="imgHeader">Select an image to upload</h3>
+            <input type="submit" value="Upload Image" name="submit" class="Submitpic">
+            <input type="file" name="fileToUpload" id="fileToUpload">
+        </form>
     </div>
     </ul>
     </div>
@@ -85,10 +71,10 @@ $isLeader = ($username==$leader);
             if ($isLeader){
                 $remove="";
                 if ($member_name!=$leader){
-                    $remove = '<form action="scripts/removeFromClan.php" method="post">
+                    $remove = '<form class="functionsholder" action="scripts/removeFromClan.php" method="post">
 						  <input type="hidden" name="username" value="' . $member_name . '">
-						  <input class="Submit" type="submit" name="remove" value="remove">
-						  <input class="Submit" type="submit" name="makeleader" value="Make leader">
+						  <input Onclick="return confirm(\'Are you sure you want to remove this user from the clan?\')" class="Submit" type="submit" name="remove" value="remove">
+						  <input Onclick="return confirm(\'Are you sure you want to make this user the clan leader?\')" class="Submit" type="submit" name="makeleader" value="Make leader">
 					  </form>';
                 }
                 echo '<li class="member">' . $member_name . $remove . '<a href="profile.php?user=' . $member_name . '">View Profile</a></li>';

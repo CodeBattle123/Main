@@ -5,9 +5,9 @@
     <meta charset="utf-16">
     <title>About us</title>
     <link rel="stylesheet" type="text/css" href="styles/headerAndFooter.css">
-    <link rel="stylesheet" type="text/css" href="styles/aboutusstyle.css">
     <link rel="stylesheet" type="text/css" href="styles/sidebar.css">
     <link rel="stylesheet" type="text/css" href="styles/main.css">
+	<link rel="stylesheet" type="text/css" href="styles/aboutusstyle.css">
     <link rel="icon" type="image/png" href="images/icon.png"/>
     <script type="text/javascript" src="scripts/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="scripts/switch.js"></script>
@@ -17,12 +17,12 @@
 
 <div class="wrapper">
        <ul class="paginator" id="paginator-btn">
-           <a href="javascript:void(0)" id="project-button"><li class="btn">About the project</li></a>
-           <a href="javascript:void(0)" id="aboutus-button"><li class="btn">About us</li></a>
-           <a href="javascript:void(0)" id="howto-button"><li class="btn">How it works</li></a>
+           <li class="btn" id="project-button"><a>About the project</a></li>
+           <li class="btn" id="aboutus-button"><a>About us</a></li>
+           <li class="btn" id="howto-button"><a>How it works</a></li>
        </ul>
 
-      <section id="project" style="display: none;">
+      <section id="project">
           <h1>About the project</h1><hr>
           <div class="about_text">
               <p>
@@ -33,7 +33,7 @@
           </div>
       </section>
 
-   <section id="aboutus" style="display: none;">
+   <section id="aboutus">
        <h1>About us</h1><hr>
        <div class="about_text">
           <p>
@@ -46,7 +46,7 @@
            </div>
    </section>
 
-      <section id="howto" style="display: none;">
+      <section id="howto">
           <h1>How it works</h1><hr>
           <div class="about_text">
               <p>
