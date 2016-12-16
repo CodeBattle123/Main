@@ -1,6 +1,8 @@
 .wrapper {
 	flex-direction: row;
 
+	padding-top: 30px;
+
 	flex-wrap: wrap;
 }
 

@@ -17,9 +17,9 @@
 
 <div class="wrapper">
        <ul class="paginator" id="paginator-btn">
-           <a href="javascript:void(0)" id="project-button"><li class="btn">About the project</li></a>
-           <a href="javascript:void(0)" id="aboutus-button"><li class="btn">About us</li></a>
-           <a href="javascript:void(0)" id="howto-button"><li class="btn">How it works</li></a>
+           <li class="btn" id="project-button"><a>About the project</a></li>
+           <li class="btn" id="aboutus-button"><a>About us</a></li>
+           <li class="btn" id="howto-button"><a>How it works</a></li>
        </ul>
 
       <section id="project">
