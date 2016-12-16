@@ -33,6 +33,7 @@ $isLeader = ($username==$leader);
 ?>
 
 <main class="wrapper">
+	<div class="imageContainer">
 
     <?php
     if ($isLeader) {
@@ -48,35 +49,35 @@ $isLeader = ($username==$leader);
     <div class="clanAvatarHolder">
 		<img class="clanAvatar" src="clan-pics/<?=$log_clan . ".png"?>" alt="asd">
 	</div>
+	</div>
+	<?php
+	if ($isLeader) {
+		echo '
+		<div class="inbox">
+		<ul><span class="first">Requests: (' . $numrows . ')</span>
+		<div class="veil">';
+		
+		while ($row = $requests->fetch_assoc()) {
+			$user_id = $row['user_id'];
+			$user_name = mysqli_query($connect, "SELECT * from users WHERE id = '$user_id'")->fetch_assoc()['nickname'];
+			echo '<li class="request">
+			<p class="requestContents"><span class="target"><a class="requestusername" target="_blank" href="profile.php?user=' . $user_name . '">' . $user_name . '</a></span> wants to join your clan.</p>
+			<form class="answers" action="scripts/addToClan.php" method="post">
+			<input type="hidden" name="userid" value="' . $user_id . '">
+			<input class="answerButton accept" type="submit" name="Add" value="Accept">
+			<input class="answerButton deny" type="submit" name="Deny" value="Deny">
+			</form>
+			</li>';
+			
+		}
+	}
+	?>
+</div>
+</ul>
+</div>
 
     <div class="clanInfo">
-
-        <?php
-        if ($isLeader) {
-            echo '  <div class="inbox">
-        <ul><span class="first">Requests: (' . $numrows . ')</span>
-    <div class="veil">';
-
-            while ($row = $requests->fetch_assoc()) {
-                $user_id = $row['user_id'];
-                $user_name = mysqli_query($connect, "SELECT * from users WHERE id = '$user_id'")->fetch_assoc()['nickname'];
-                echo '<li class="request">
-					   <p class="requestContents"><span class="target"><a class="requestusername" target="_blank" href="profile.php?user=' . $username . '">' . $username . '</a></span> wants to join your clan.</p>
-					  <form class="answers" action="scripts/addToClan.php" method="post">
-						  <input type="hidden" name="userid" value="' . $user_id . '">
-						  <input class="answerButton accept" type="submit" name="Add" value="Accept">
-						  <input class="answerButton deny" type="submit" name="Deny" value="Deny">
-					  </form>
-					  </li>';
-
-            }
-        }
-        ?>
-    </div>
-    </ul>
-    </div>
-
-
+		
     <?php
     $sql = "SELECT * FROM teams WHERE name='$log_clan'";
     $query = mysqli_query($connect, $sql)->fetch_assoc();
@@ -97,15 +98,16 @@ $isLeader = ($username==$leader);
         }
         ?>
     </ul>
+	
     <!-- For getting the chat to be scolled to the bottom automatically -->
     <script type="text/javascript">
         var chat = document.getElementById("chat");
         chat.scrollTop = chat.scrollHeight;
     </script>
 
-    <div id="clanChat">
-
-    </div>
+    <div id="clanChat"></div>
+	
+	</div>
 </main>
 
 <?php include_once('footer.html') ?>

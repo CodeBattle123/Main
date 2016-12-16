@@ -1,3 +1,11 @@
+.imageContainer {
+	text-align: center;
+
+	background: url("../images/backgrounds/clan.jpg");
+	background-position: center;
+	background-size: 100% 150%;
+}
+
 .clanAvatarHolder {
 	display: flex;	overflow: hidden;
 	flex-direction: row;
@@ -7,6 +15,12 @@
 	margin: 15px auto;	border-radius: 50%;
 
 	justify-content: center;}
+
+.clanAvatarHolder:hover {
+	width: 26vw;
+	height: 26vw;
+	margin-top: 0px;
+}
 
 .clanAvatar {
 	display: block;
@@ -19,23 +33,24 @@
 
 }
 
-.clanAvatarHolder:hover {
-	width: 26vw;
-	height: 26vw;
-}
-
 .inbox {
 	position: absolute;
-	top: -25vw;
+	top: 10px;
 	left: 10px;
 
-	display: inline-block;
+	display: block;
 	overflow-x: hidden;
 	overflow-y: auto;
 
 	width: 300px;
-	height: 350px;
+
+	text-align: center;
+
 ;}
+
+.inbox:hover {
+	height: 350px;
+}
 
 .inbox ul {
 	list-style: none;
@@ -44,12 +59,19 @@
 .first {
 	display: block;
 
-	width: calc(100% - 2px);
+	width: 100%;
 
-	border: 1px solid black;
+	color: black;
+	border-radius: 5px 5px 0 0 ;
+	background: #fff;
 
 	font-family: Quest;
 	line-height: 25px;
+}
+
+.first:hover, .inbox:hover .first{
+	color: #003f20;
+	background-color: #34ff9c;
 }
 
 .veil {
@@ -70,13 +92,14 @@ ul:hover .veil,
 .request {
 	padding-top: 10px;
 
-	border: 1px solid black;
+	color: black;
+	background: white;
 }
 
 .requestContents {
 	display: block;
 
-	width: 230px;
+	width: 100%;
 	margin: 0 auto;
 
 	font-family: Quest;
@@ -90,6 +113,7 @@ ul:hover .veil,
 
 .requestusername:link, .requestusername.hover, .requestusername:visited {
 	text-decoration: none;
+
 	color: black;
 }
 
@@ -99,9 +123,9 @@ ul:hover .veil,
 
 .editPageButton {
 	position: absolute;
-
-	right: 0;
 	top: 0;
+	right: 0;
+
 	display: block;
 
 	width: 130px;
@@ -126,7 +150,6 @@ ul:hover .veil,
 
 .editPageButton:hover {
 	color: #003f20;
-
 	background-color: #34ff9c;
 }
 
@@ -172,13 +195,16 @@ ul:hover .veil,
 	float: right;
 
 	width: 100%;
+	margin-top: 20px;
 
 	text-align: center;
 }
 
 .clanName {
 	display: inline-block;
+
 	margin: 15px auto;
+
 	font-family: Text;
 	font-size: 40px;
 }
@@ -341,6 +367,10 @@ ul:hover .veil,
 
 		width: calc(100% - 10px);
 		height: 140px;
+	}
+	
+	.inbox:hover {
+		height: 175px;
 	}
 	
 	.veil {
