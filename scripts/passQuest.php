@@ -9,4 +9,4 @@
 	
 	mysqli_query($connect, $sql);
 	
-	header('location: ../quest.php?lang=' . $langBack);
+	header('location: ../quest.php?lang=' . $langBack . '&level=' . $_POST['level']);

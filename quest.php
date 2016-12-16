@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="styles/example-quest-style.css">
 	<script src="scripts/post.js"></script>
 	<script src="scripts/timer.js"></script>
-	<script src="scripts/reveal.js"></script>
     <meta charset="UTF-8">
     <title>Quests</title>
 
@@ -18,21 +17,28 @@
 <?php 
 	include 'header.php';
 	CheckIfLogged();
-	include 'scripts/questPage.php';
+    $level = $_GET['level'];
+    include_once ('scripts/questPage.php');
 ?>
 
 <div class="wrapper">
-    <div class="questContainer">
+    <?php
+        if ($passed == true){
+            echo '<li>Already passed</li>';
+        }
+        else{
+            echo ' <div class="questContainer">
         <h1 class="langName">Test Your <span><?=$langTitle?></span> Skills</h1>
         <h3 class="level">Level <?=$result[$langSQL]?>/10</h3>
 		<hr>
         <h4 class="objective"><?= $objective?></h4>
        <div class="codeContainer">
 			<div class="container">
-            <pre class="quest">
-<?php foreach ($code as $line): ?>
-<?php echo $line; ?>
-<?php endforeach; ?>
+            <pre class="quest">';
+                foreach ($code as $line) {
+                    echo $line;
+                }
+        echo '
             </pre>
 			</div>
 
@@ -47,16 +53,19 @@
 
 <script type="text/javascript">
 	var line = "";
-    let inputs = document.getElementsByClassName('input');
+    let inputs = document.getElementsByClassName("input");
 	var finished = true;
 
     for(item of inputs) {
-        item.style.width = (item.maxLength * 19) + 'px';
+        item.style.width = (item.maxLength * 19) + "px";
     }
 
 	let result = true;
 	let answers = [];
-	</script>
+	</script>';
+
+        }
+    ?>
 
 	<?php foreach ($answers as $answer): ?>
 		<script type="text/javascript">
@@ -66,7 +75,7 @@
 	<?php endforeach; ?>
 
 	<script>
-	let fields = document.getElementsByClassName('quest');
+	let fields = document.getElementsByClassName("quest");
 
     function CalcResult() {
 		let fieldIterator = 1;
@@ -102,10 +111,10 @@
         if (k.which == 13) {
 			setTimeout(function () {
 				if (CalcResult() == correct) {
-					post("scripts/passQuest.php", {language: '<?=$langSQL?>', user_id: '<?=$log_id?>', lang: '<?=$_GET['lang']?>'});
+					post("scripts/passQuest.php", {language: '<?=$langSQL?>', user_id: '<?=$log_id?>', lang: '<?=$_GET['lang']?>', level: '<?=$level?>'});
 				}
 			}, 3000);
-			
+
             document.getElementById('submitQuest').style.boxShadow = "none";
 			document.getElementById('submitQuest').style.top = "10px";
 
@@ -129,7 +138,7 @@
 				post("scripts/passQuest.php", {language: '<?=$langSQL?>', user_id: '<?=$log_id?>', lang: '<?=$_GET['lang']?>'});
 			}
 		}, 3000);
-		
+
 		document.getElementById('submitQuest').style.boxShadow = "none";
 		document.getElementById('submitQuest').style.top = "10px";
 

@@ -1,6 +1,11 @@
 <?php
+
+include_once 'db/login_status.php';
 // Variable to store the way we will take the language progress from the database.
+
 $langSQL = "";
+$level=$_GET['level'];
+$passed = false;
 
 switch ($_GET['lang']) {
 	case 'csharp':
@@ -27,6 +32,14 @@ switch ($_GET['lang']) {
 	case 'swift':
 		$langSQL = "Swift";
 		break;
+}
+
+$sql = "SELECT * from language_progress WHERE user_id = $log_id";
+$query= mysqli_query($connect,$sql);
+$result= $query->fetch_assoc();
+
+if ($result[$langSQL] > intval($level) * 5){
+    $passed = true;
 }
 
 $langTitle = "";
