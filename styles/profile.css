@@ -47,7 +47,7 @@
 
 .editPageButton {
 	position: absolute;
-	top: 0;
+	top: 15px;
 	right: 0;
 
 	display: block;
@@ -68,13 +68,12 @@
 	line-height: 40px;
 }
 
-.editPageButton:visited {
-	color: #FFF;
-}
-
 .editPageButton:hover {
+	top: 5px;
+
 	color: #003f20;
 	background-color: #34ff9c;
+	box-shadow: 0px 10px 0px #00db6e;
 }
 
 .xp {
@@ -215,5 +214,6 @@ th {
 }
 a:link, a.hover, a:visited {
 	text-decoration: none;
+
 	color: white;
 }

@@ -1,15 +1,27 @@
 .wrapper {
 	flex-direction: row;
 
-	padding-top: 30px;
-
 	flex-wrap: wrap;
 }
 
-.messageForm {
+.form {
+	margin-top: 30px;
+}
+
+.message {
+	position: relative;
+
     display: block;
 
-	margin-top: 30px;
+	margin: 0 auto;
+
+	text-align: center;
+
+	font-family: Quest;
+}
+
+.message:first-child {
+	margin-top: 20px;
 }
 
 .messagePart {
@@ -78,7 +90,7 @@ input[type=submit]:active {
     display: block;
 
     width: 45%;	
-    height: 30vw;	margin: 75px 70px 0 auto;	
+    height: 30vw;	margin: 10px 30px 0 auto;	
 
     border: 1px solid gray;
 }
@@ -89,6 +101,7 @@ input[type=submit]:active {
         width: 95%;
     }
     .form {
+		height: 600px;
         padding: 0;
     }
     .wrapper {
@@ -103,6 +116,10 @@ input[type=submit]:active {
 
         width: 95%;
         height: 350px;
-        margin: 0 auto;
+        margin: 7px auto;
     }
+	
+	input[type=submit] {
+		bottom: 0;
+	}
 }
