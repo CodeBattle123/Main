@@ -300,6 +300,16 @@ ul:hover .veil,
 	font-family: Sidebar;
 }
 
+#messages {
+	display: flex;
+	overflow-y: hidden;
+	word-wrap: break-word;
+	text-overflow: ellipsis;
+	flex-direction: column-reverse;
+	list-style: none;
+	font-family: Sidebar;
+}
+
 #chat::-webkit-scrollbar {
 	width: 12px;
 }
@@ -343,12 +353,11 @@ ul:hover .veil,
 
 .message {
 	display: block;
-
 	width: 80%;
 	height: 100%;
+    max-width: 1100px;
 	padding-top: 10px;
 	padding-left: 5px;
-
 	font-size: 15px;
 }
 
@@ -383,8 +392,7 @@ ul:hover .veil,
 	.answers {
 		width: 100%;
 	}
-	
-	
+
 }
 
 input[type=text] {
@@ -402,4 +410,10 @@ input[type=button] {
 	margin: 0;
 
 	line-height: 30px;
+}
+
+#btn {
+	width: 100px;
+	height: 55px;
+	font-family: Quest;
 }

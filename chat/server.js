@@ -1,20 +1,21 @@
 'use strict';
-let express = require('express');
+let socket = require( 'socket.io' );
+let express = require( 'express' );
+let http = require( 'http' );
 let app = express();
-let http = require('http').Server(app);
-let io = require('socket.io')(http);
+let server = http.createServer( app );
 
-io.on('connection', function (socket) {
-    console.log('we are connected');
-    socket.on('new-message', function (msg){
-        console.log(msg);
-        io.emit('receive-message', msg);
+let io = socket.listen( server );
+
+io.sockets.on( 'connection', function( client ) {
+    console.log( "We have connection" );
+
+    client.on( 'message', function( data ) {
+        console.log( 'Message received ' + data);
+
+        //client.broadcast.emit( 'message', { name: data.name, message: data.message } );
+        io.sockets.emit( 'message');
     });
-    socket.on('test', function(){
-        console.log('mounted')
-    })
 });
 
-http.listen('3000', function(){
-    console.log('we have a connection');
-});
+server.listen( 8080 );

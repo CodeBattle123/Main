@@ -107,10 +107,73 @@ $isLeader = ($username==$leader);
         chat.scrollTop = chat.scrollHeight;
     </script>
 
-    <div id="clanChat"></div>
+    <div id="clanChat">
+        <ul id="chat">
+            <?php
+            $sql = "SELECT * FROM `team-chat` ORDER BY `date` desc";
+            $query = mysqli_query($connect, $sql);
+            while ($row = $query->fetch_assoc()) {
+
+                $userid = $row['user_id'];
+                $sql = "SELECT * FROM users WHERE id='$userid'";
+                $user = mysqli_query($connect, $sql)->fetch_assoc()['nickname'];
+                echo '<li class="chatLog"><span class="user">' . $user .'</span><span class="message">' . $row['message'] . '</span></li>';
+            }
+            ?>
+        </ul>
+        <ul id="messages"></ul>
+        <form id="messageForm" method="post">
+            <input id="messageInput" type="text" class="messageInput" placeHolder="Enter your message here" />
+            <input type="submit" id="btn" name="submit" value="Send" />
+        </form>
+        
+    </div>
 	
 	</div>
 </main>
+
+    <script>
+        'use strict';
+        let socket = io.connect('http://localhost:8080');
+
+        $("#messageForm").submit(function () {
+            let msg = $("#messageInput").val();
+
+            socket.emit('message', {message: msg});
+
+            let date = new Date();
+
+            let msgData = {
+                'clanName' : $('#clan').text(),
+                'userName' : '<?php $id = $_SESSION['userid'];$sql = "SELECT * FROM users WHERE id = $id";$user = mysqli_query($connect, $sql) ->fetch_assoc()['nickname'];echo $user ?>',
+                'message'  : $("#messageInput").val(),
+                'date'     : date
+            };
+
+            $.ajax({
+                type : 'POST',
+                url  : 'saveMessage.php',
+                data : msgData,
+                dataType : 'json',
+                encode : true
+            }).success(function (data){
+                console.log(data);
+            });
+
+            event.preventDefault();
+
+        });
+
+        socket.on('message', function (data) {
+            let prevContent = $("#messages").html();
+            let newContent= '<li class="chatLog"><?php $id = $_SESSION['userid'];$sql = "SELECT * FROM users WHERE id = $id";$user = mysqli_query($connect, $sql) ->fetch_assoc()['nickname'];echo '<span id="user" class="user">' .$user. '</span>'?><span class="message">' + $("#messageInput").val() + '</span></li>';
+            let content = newContent + prevContent;
+
+            $("#messages").html(content);
+            document.getElementById('messageInput').value = '';
+        });
+    </script>
+
 
 <?php include_once('footer.html') ?>
 </body>
