@@ -27,11 +27,14 @@
             $query = mysqli_query($connect, $sql);
 
             while($row = $query->fetch_assoc()){
-               echo "Selected opponent: ";
-               echo ucfirst($row['first_name']) . ' \'' . $row['nickname'] . '\' ' . ucfirst($row['last_name']);
-               echo ' from team ' . $row['clan'];
+               echo '<div class="title">Selected opponent:</div>';
+               echo '<div class="opponentInfo">
+						<h1 class="userName">' . $row['nickname'] . '</h1>
+						<h2 class="names">' . $row['first_name'] . ' ' . $row['last_name'] . '</h2>
+						<h2 class="names">' . $row['clan'] . '</h2>
+			   		</div>';
 
-               echo '<br><a href="battlesequence.php?attack='. $row['nickname'] . '">Attack this player!</a><br>';
+               echo '<a href="battlesequence.php?attack='. $row['nickname'] . '">Attack this player!</a><br/>';
             }
          } elseif (isset($_GET['attack'])) {
             if (strtolower($_GET['attack']) != strtolower($_SESSION['username'])) {
@@ -72,30 +75,40 @@
                   echo '<a href="battlesequence.php?answer=y&attack='. $row['user_1'] . '">'.  $row['user_1'] . '</a><br>';
                }
             }
-
-            echo '<div class="">Chose an opponent:</div>';
-            $sql = "SELECT * FROM users";
+            echo '<div class="title">Choose an opponent:</div>
+			<ul class="displayOpt">
+				<li class="opt"><a href="battlesequence.php?byname">By Name</a></li>
+				<li class="opt"><a href="battlesequence.php?rand">Random</a></li>
+				<li class="opt"><a href="battlesequence.php?xp">By XP</a></li>
+			</ul>';
+			
+			if (isset($_GET['byname'])) {
+				$sql = "SELECT * FROM users ORDER BY nickname";
+			}
+			else if(isset($_GET['rand'])) {
+				$sql = "SELECT * FRoM users ORDER BY RAND()";
+			}
+			else if(isset($_GET['xp'])) {
+				$sql = "SELECT * FROM users ORDER BY xp DESC";
+			}
+			else {
+				$sql = "SELECT * FRoM users ORDER BY RAND()";
+			}
             $query = mysqli_query($connect, $sql);
 
-            echo '<table><tr>';
-            $counter = 0;
+            echo '<ul class="opponents">';
 
             while($row = $query->fetch_assoc()){
                if (strtolower($row['nickname']) == strtolower($_SESSION['username'])) {
-                  // THIS CHECK IF THE USER
+                  // THIS CHECKS IF THE USER
                   // THAT YOU ATTACK
                   // IS THE CURRENTLY
                   // LOGGED USER
                   continue;
                }
-               $counter++;
-               echo '<td><a href="battlesequence.php?opponent='. $row['nickname'] . '">'.$row['nickname'].'</a></td>';
-               if ($counter == 4) {
-                  $counter = 0;
-                  echo '</tr><tr>';
-               }
+               echo '<li><a class="user" href="battlesequence.php?opponent='. $row['nickname'] . '">' . $row['nickname'] . '<span>' . $row['xp'] . '</span></a></li>';
             }
-            echo '</tr></table>';
+            echo '</ul>';
          }
       ?>
    </div>

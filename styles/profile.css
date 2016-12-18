@@ -21,10 +21,6 @@
 .profile {
     height: 100%;
 	margin: 0 auto;
-
-	transition: box-shadow 0.4s,
-				transform 0.4s,
-				margin-bottom 0.4s;
 }
 
 h2, h3 {
@@ -88,6 +84,7 @@ h2, h3 {
 
 	text-align: center;
 	text-transform: uppercase;
+
 	font-family: Quest;
 	font-size: 28px;
 
