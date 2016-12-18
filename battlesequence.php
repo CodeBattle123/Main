@@ -25,16 +25,24 @@
 
             $sql = "SELECT * FROM users WHERE nickname = '$opponent'";
             $query = mysqli_query($connect, $sql);
-
+			
+			$opAvatar;
+			
             while($row = $query->fetch_assoc()){
                echo '<div class="title">Selected opponent:</div>';
-               echo '<div class="opponentInfo">
-						<h1 class="userName">' . $row['nickname'] . '</h1>
+			   	
+				
+				file_exists("profile-pics/" . $opponent . ".png") ? $opAvatar = $opponent . ".png" : $opAvatar = "default.png";
+				
+			   	echo '<img class="opAvatar" src="profile-pics/' . $opAvatar . '"/>';
+               	
+				echo '<div class="opponentInfo">
+						<h1 class="userName">' . $row['nickname'] . " - " . $row['xp'] . 'xp</h1>
 						<h2 class="names">' . $row['first_name'] . ' ' . $row['last_name'] . '</h2>
 						<h2 class="names">' . $row['clan'] . '</h2>
 			   		</div>';
 
-               echo '<a href="battlesequence.php?attack='. $row['nickname'] . '">Attack this player!</a><br/>';
+               echo '<a class="attackButton" href="battlesequence.php?attack='. $row['nickname'] . '">Attack this player!</a><br/>';
             }
          } elseif (isset($_GET['attack'])) {
             if (strtolower($_GET['attack']) != strtolower($_SESSION['username'])) {
@@ -69,10 +77,9 @@
             $query = mysqli_query($connect, $sql);
             $zecount = mysqli_num_rows($query);
             if ($zecount > 0) {
-               echo "o:::::::[]========><br>";
-               echo "Those players challenge you to play versus them!<br>";
+               echo '<h2 class="userName">You have been challanged!</h2>';
                while($row = $query->fetch_assoc()){
-                  echo '<a href="battlesequence.php?answer=y&attack='. $row['user_1'] . '">'.  $row['user_1'] . '</a><br>';
+                  echo '<a class="attacker" href="battlesequence.php?answer=y&attack='. $row['user_1'] . '">'.  $row['user_1'] . '</a>';
                }
             }
             echo '<div class="title">Choose an opponent:</div>

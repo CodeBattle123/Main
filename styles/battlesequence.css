@@ -61,11 +61,57 @@
 	display: flex;
 	flex-direction: column;
 
+	font-family: Quest;
+
 	justify-content: flex-start;
+}
+
+.opAvatar {
+	position: relative;
+
+	display: block;
+
+	width: 20vw;
+	height: 20vw;
+	margin: 0 auto;
+
+	border-radius: 50%;
+}
+
+.attackButton {
+	position: relative;
+	top:10px;
+
+	display: block;
+
+	width: 250px;
+	height: 40px;
+	margin: 20px auto;
+
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+
+	color: #fff;
+	border-radius: 7px;
+	background: rgb(148, 148, 148);
+
+	font-family: Quest;
+	line-height: 40px;
+}
+
+.attackButton:hover {
+	top: 0px;
+
+	color: #003f20;
+	background-color: #34ff9c;
+	box-shadow: 0px 10px 0px #00db6e;
 }
 
 .userName, .names {
 	display: block;
+
+	margin-top: 15px;
 
 	text-align: center;
 }
@@ -204,14 +250,16 @@
 
 .opponents {
 	display: flex;
-	overflow-y: scroll;
+	overflow-y: auto;
 	flex-direction: column;
 
 	width: 50%;
+	min-width: 300px;
 	max-height: 600px;
 	margin: 0 auto;
+	margin-bottom: 35px;
 
-	list-style: none;
+	list-style: none;;
 }
 
 .user, .user:visited {
@@ -220,7 +268,6 @@
 	display: block;
 
 	width: 95%;
-	min-width: 300px;
 	height: 30px;
 	margin:0 auto 15px auto;
 	padding-left: 10px;
@@ -249,4 +296,24 @@
 .user:hover {
 	color: #003f20;
 	background-color: #34ff9c;
+}
+
+.attacker, .attacker:visited {
+	position: relative;
+
+	display: block;
+
+	width: 200px;
+	margin: 0 auto;
+	margin-bottom: 5px;
+
+	text-align: center;
+	text-decoration: none;
+	text-transform: capitalize;
+
+	color: black;
+	border-bottom: 2px solid black;
+
+	font-family: Quest;
+	font-size: 20px;
 }
