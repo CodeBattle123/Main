@@ -15,9 +15,8 @@
 include_once('header.php');
 CheckIfLogged();
 
-$idd = $_SESSION['userid'];
-$query = "SELECT * FROM language_progress WHERE user_id='$idd' LIMIT 1";
-
+// getting the current users progress on the languages.
+$query = "SELECT * FROM language_progress WHERE user_id='$log_id' LIMIT 1";
 $results = mysqli_query($connect, $query);
 $row = mysqli_fetch_row($results);
 ?>
@@ -25,7 +24,9 @@ $row = mysqli_fetch_row($results);
 <div class="wrapper">
 	<h3>Your languages</h3>
 	<h5>Pick a language to master</h5>
-
+	
+	<!-- Meters for displaying how much progress
+	 the player has made in the language. -->
 	<div class="languages">
 		<a href="langCourse.php?lang=csharp" class="lang-options" id="lang-csharp">
 	        <div class="lang-options-p">C#</div>
@@ -109,7 +110,8 @@ $row = mysqli_fetch_row($results);
 
 		<script type="text/javascript">
 			var elements = document.getElementsByClassName('meterFill');
-
+			
+			// Setting the width of the meter fill to match the progress on that language.
 			elements[0].style.width = String(parseInt("<?php echo $row[1]; ?>") * 10) + "%";
 			elements[1].style.width = String(parseInt("<?php echo $row[2]; ?>") * 10) + "%";
 			elements[2].style.width = String(parseInt("<?php echo $row[3]; ?>") * 10) + "%";
@@ -118,8 +120,6 @@ $row = mysqli_fetch_row($results);
 			elements[5].style.width = String(parseInt("<?php echo $row[6]; ?>") * 10) + "%";
 			elements[6].style.width = String(parseInt("<?php echo $row[7]; ?>") * 10) + "%";
 			elements[7].style.width = String(parseInt("<?php echo $row[8]; ?>") * 10) + "%";
-
-
 		</script>
 
 	</div>
