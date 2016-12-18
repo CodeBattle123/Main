@@ -1,0 +1,1 @@
+Fill in the blanks so that you enter a number and print it out by the power of 2.
