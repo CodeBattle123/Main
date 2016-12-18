@@ -22,7 +22,6 @@
 	left: 0;
 
 	visibility: visible;
-
 }
 
 .sidebar_container {
@@ -50,7 +49,6 @@
 	width: calc(100%-20px);
 	padding-left: 20px;
 
-	transition: color 0.5s;
 	text-decoration: none;
 	text-transform: uppercase;
 

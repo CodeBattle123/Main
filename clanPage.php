@@ -89,14 +89,14 @@ $isLeader = ($username==$leader);
         <h3 class="clanDesc"><?php echo $query['description']; ?></h3>
     <?php endif; ?>
 
-    <ul class="members">
+    <ul class="clanMembers">
         <?php
 
         $sql = "SELECT * FROM users WHERE clan='$log_clan'";
         $query = mysqli_query($connect, $sql);
         while ($row = $query->fetch_assoc()) {
             $member_name = $row['nickname'];
-            echo '<li class="member">' . $member_name . '<a href="profile.php?user=' . $member_name . '">View Profile</a></li>';
+            echo '<li class="clanMember"><span>' . $member_name . '</span><a href="profile.php?user=' . $member_name . '">View Profile</a></li>';
         }
         ?>
     </ul>

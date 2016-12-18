@@ -1,25 +1,41 @@
 hr {
+    height: 3px;
     margin: 10px 0 30px 0;
-    height: 3px;
-    background: #707070;
+
     border-bottom: 1px solid black;
+    background: #707070;
 }
 
 .wrapper h2 {
     display: block;
+
     margin: 10px auto;
+
     text-align: center;
-    font-size: 40px;
-    font-family: Quest;
     text-transform: capitalize;
+
+    font-family: Quest;
+    font-size: 40px;
+}
+
+.imageHolder {
+	display: block;
+
+	width: 100%;
+
+	background-image: url("../images/backgrounds/clan.jpg");
+	background-size: 100%;
 }
 
 .imgHeader {
     display: block;
-    margin: 15px auto;
-    font-family: Quest;
+
     width: 100%;
+    margin: 15px auto;
+
     text-align: center;
+
+    font-family: Quest;
 }
 
 #fileToUpload {
@@ -29,18 +45,23 @@ hr {
 #fileToUpload::-webkit-file-upload-button {
     position: relative;
     top: -10px;
+
     display: block;
+
     width: 100%;
     height: 70px;
     margin-top: 20px;
-    font-family: Quest;
-    background: #949494;
+
+    transition: background 0.5s, color 0.5s;
+
+    color: white;
+    border: 0;
     border-radius: 7px;
     outline: 0;
-    border: 0;
+    background: #949494;
+
+    font-family: Quest;
     font-size: 16px;
-    color: white;
-    transition: background 0.5s, color 0.5s;
 }
 
 #fileToUpload::-webkit-file-upload-button:hover {
@@ -57,39 +78,138 @@ hr {
 
 .clanDesc {
     display: block;
+
     margin: 0px auto;
+    margin-bottom: 25px;
+
+	resize: none;
+
     font-family: Quest;
     font-size: 20px;
-    margin-bottom: 50px;
 }
 
 .functionsholder {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: flex-end;
+	display: flex;
+	flex-direction: row;
+
+	width: 80%;
+
+	justify-content: flex-end;
+}
+
+.members {
+	position: relative;
+
+	display: flex;
+	overflow-x: hidden;
+	overflow-y: auto;
+	flex-direction: column;
+
+	width: 70%;
+	min-height: 100px;
+	max-height: 350px;
+	margin: 10px auto;
+
+	border-top: 2px solid black;
+	border-left: 2px solid black;
+	border-radius: 10px 0 0 0;
+}
+
+.member {
+	display: flex;
+	flex-direction: row;
+
+	height: 70px;
+
+	border-bottom: 1px solid black;
+}
+
+.member a, .member a:visited {
+	display: block;
+
+	width: calc(20% - 1px);
+	min-width: 125px;
+	height: 100%;
+
+	text-align: center;
+	text-decoration: none;
+	text-transform: capitalize;
+
+	color: black;
+	border-right: 1px solid black;
+
+	font-family: Quest;
+	font-size: 18px;
+	line-height: 70px;
+}
+
+.members::-webkit-scrollbar {
+	width: 12px;
+}
+
+.members::-webkit-scrollbar-track {
+	background-color: #EEE;
+}
+
+.members::-webkit-scrollbar-thumb {
+	background-color: #999;
+}
+
+.members::-webkit-scrollbar-thumb:hover {
+	background-color: #AAA;
+}
+
+.memberOpt {
+	position: relative;
+	top: 5px;
+
+	height: 45%;
+	margin: auto 10px;
+	padding: 0 10px;
+
+	color: #fff;
+	border: 0;
+	border-radius: 7px;
+	background: rgb(148, 148, 148);
+
+	font-family: Quest;
+}
+
+.memberOpt:hover {
+	top: 0px;
+
+	color: #003f20;
+    background: #34ff9c;
+	box-shadow: 0px 5px 0px #00db6e
 }
 
 .Submit {
-    display: block;
-    margin: 15px auto;
-    width: 200px;
-    line-height: 25px;
-    font-family: Quest;
-    text-transform: uppercase;
-    border: none;
-    color: white;
-    background: #949494;
-    border-radius: 5px;
     position: relative;
-    top: -10px;
-    transition: box-shadow 0.5s, color 0.5s, background 0.5s;
+    top: 10px;
+
+    display: block;
+
+    width: 200px;
+    margin: 15px auto;
+
+    text-transform: uppercase;
+
+    color: white;
+    border: none;
+    border-radius: 5px;
+    background: #949494;
+
+    font-family: Quest;
+    line-height: 50px;
 }
 
 .Submit:hover {
+	top: 0px;
+
     color: #003f20;
     background: #34ff9c;
+	box-shadow: 0px 10px 0px #00db6e
 }
-
 
 #fileToUpload {
     font-family: Quest;
@@ -98,18 +218,23 @@ hr {
 #fileToUpload::-webkit-file-upload-button {
     position: relative;
     top: -10px;
+
     display: block;
+
     width: 100%;
     height: 70px;
     margin-top: 20px;
-    font-family: Quest;
-    background: #949494;
+
+    transition: background 0.5s, color 0.5s;
+
+    color: white;
+    border: 0;
     border-radius: 7px;
     outline: 0;
-    border: 0;
+    background: #949494;
+
+    font-family: Quest;
     font-size: 16px;
-    color: white;
-    transition: background 0.5s, color 0.5s;
 }
 
 #fileToUpload::-webkit-file-upload-button:hover {
@@ -118,23 +243,31 @@ hr {
 }
 
 .Submitpic {
-    display: block;
-    margin: 15px auto;
-    width: 200px;
-    padding: 10px 10px;
-    line-height: 50px;
-    font-family: Quest;
-    text-transform: uppercase;
-    border: none;
-    color: white;
-    background: #949494;
-    border-radius: 5px;
     position: relative;
-    top: -10px;
-    transition: box-shadow 0.5s, color 0.5s, background 0.5s;
+    top: 10px;
+
+    display: block;
+
+    width: 200px;
+    margin: 15px auto;
+    padding: 10px 10px;
+
+    text-transform: uppercase;
+
+    color: white;
+    border: none;
+    border-radius: 5px;
+    background: #949494;
+
+    font-family: Quest;
+    line-height: 50px;
 }
 
 .Submitpic:hover {
+	top: 0px;
+
     color: #003f20;
     background: #34ff9c;
+	box-shadow: 0px 10px 0px #00db6e
 }
+ 
