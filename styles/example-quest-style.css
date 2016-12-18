@@ -9,16 +9,15 @@ hr {
 
 .codeContainer {
     display: flex;
-    flex-direction: row;
-
+    flex-direction: column;
+	justify-content: center;
 	animation: show 2s linear 0s 1 normal;
 
 	background-color: #fff;
 }
 .container {
 	display: block;
-
-	width: 50%;
+	width: 100%;
 	margin: 0 auto;
 	padding-left: 40px;
 }
@@ -28,7 +27,8 @@ hr {
     margin: 15px auto;
     padding: 0;
 
-    text-align: center;
+    text-align: center;
+
     letter-spacing: 3px;
 
     font-family: Quest;
@@ -76,7 +76,8 @@ hr {
     border-bottom: 2px solid rgb(78, 78, 78);
 
     font-family: Quest;
-	font-size: 20px;
+	font-size: 20px;
+
     font-weight: bold;
 }
 
@@ -87,16 +88,17 @@ hr {
 #counter {
     position: relative;
 
-	display: inline-block;
+	display: block;
 
-    width: 50%;
+    width: 100%;
     height: 156px;
-    margin: 0;
+    margin: 0 auto;
 	padding-top: -20px;
-
+	margin-top: 30px;
 	transition: all 0.5s;
 
-    font-size: 30px;
+    font-size: 30px;
+
     font-weight: bolder;
 	line-height: 25px;
 }
@@ -111,7 +113,8 @@ hr {
 	margin: 18px auto;
 
     border: 3px solid rgb(199, 199, 199);
-	border-radius: 5px;
+	border-radius: 5px;
+
 	outline:none;
 	background-color: rgb(110, 110, 110);
 	box-shadow: 0px 10px 0px rgb(110, 110, 110);
@@ -158,7 +161,8 @@ hr {
 	.langName {
 		text-decoration: none;
 
-		font-size: 25px;
+		font-size: 25px;
+
 		line-height: 30px;
 	}
 
