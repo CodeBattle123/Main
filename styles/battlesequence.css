@@ -111,9 +111,29 @@
 .userName, .names {
 	display: block;
 
+	margin: 0 auto;
 	margin-top: 15px;
 
 	text-align: center;
+
+	font-family: Quest;
+}
+
+.alreadyChallenged {
+	display: block;
+
+	width: 95%;
+	min-height: 50px;
+	margin: 0 auto;
+	margin-top: 15px;
+
+	text-align: center;
+
+	border-right: 1px solid black;
+	border-left: 1px solid black;
+
+	font-family: Quest;
+	
 }
 
 .player {
@@ -142,9 +162,16 @@
 	font-family: Quest;
 }
 
+.battleTitle {
+	margin: auto;
+
+	font-family: Quest;
+}
+
 .username {
     padding-top: 140px;
 
+	text-align: center;
     word-wrap: break-word;
 
     font-size: 20px;
@@ -191,61 +218,49 @@
 
 /*The god code starts from here!!!!!!!!*/
 .battle {
-   width: 95%;
-   margin: auto;
-   padding-bottom: 70px;
+	display: flex;
 
-   border: 2px solid black;
+	width: 95%;
+	margin: auto;
+
+	border: 2px solid black;
+
+	justify-content: space-around;
+	flex-wrap: wrap;
 }
 
-.line {
-   z-index: 1;
+.question {
+	display: block;
 
-   min-height: 50px;
+	width: 100%;
+	margin: 20px auto;
 
-   border-bottom: 1px solid black;
+	text-align: center;
+
+	border-bottom: 2px solid black;
+
+	font-family: Quest;
 }
 
-.q {
-   z-index: 2;
+.answer {
+	display: block;
 
-   width: 70%;
-   margin: auto;
-   margin-top: -30px;
-   padding: 20px;
+	width: calc(40% - 2px);
+	min-height: 40px;
+	margin: 15px 0;
 
-   text-align: center;
+	cursor: ;
+	text-align: center;
 
-   border: 1px solid black;
-   border-radius: 15px;
-   background-color: white;
+	border: 1px solid black;
+
+	font-family: Quest;
+	line-height: 40px;
 }
 
-.a {
-   z-index: 2;
-
-   float: left;
-
-   width: 30%;
-   margin-top: -30px;
-   padding: 20px;
-
-   cursor: pointer;
-   text-align: center;
-
-   border: 1px solid black;
-   border-radius: 15px;
-   background-color: white;
-}
-
-.a:hover{
+.answer:hover{
    color: white;
    background-color: black;
-}
-
-.a1, .a3 {
-   margin-right: 10%;
-   margin-left: 10%;
 }
 
 .opponents {
@@ -316,4 +331,4 @@
 
 	font-family: Quest;
 	font-size: 20px;
-}
+}	
