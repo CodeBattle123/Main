@@ -56,8 +56,11 @@
 			<div class="devision">
 				<h2 class="level">Begginer</h2>
 				<div class="circleContainer">
-					<a href="#" class="circle"></a>
-					<a href="quest.php?lang=<?= $_GET['lang']?>" class="circle"></a>
+					<a href="quest.php?lang=<?= $_GET['lang']?>&level=1" class="circle"></a>
+					<a href="quest.php?lang=<?= $_GET['lang']?>&level=2" class="circle"></a>
+					<a href="quest.php?lang=<?= $_GET['lang']?>&level=3" class="circle"></a>
+					<a href="quest.php?lang=<?= $_GET['lang']?>&level=4" class="circle"></a>
+					<a href="quest.php?lang=<?= $_GET['lang']?>&level=5" class="circle"></a>
 				</div>
 			</div>
 			<div class="devision">
