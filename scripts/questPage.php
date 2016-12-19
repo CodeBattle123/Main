@@ -37,8 +37,12 @@ switch ($_GET['lang']) {
 $sql = "SELECT * from language_progress WHERE user_id = $log_id";
 $query= mysqli_query($connect,$sql);
 $result= $query->fetch_assoc();
+$progress = $result[$langSQL];
+$progressToScreen = ($progress % 5);
+if ($progressToScreen == 0)
+    $progressToScreen = 5;
 
-if ($result[$langSQL] > intval($level) * 5){
+if ($progress > intval($level) * 5){
     $passed = true;
 }
 

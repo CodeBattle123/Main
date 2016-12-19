@@ -27,9 +27,10 @@
             echo '<li>Already passed</li>';
         }
         else{
-            echo ' <div class="questContainer">
+            echo '
+        <div class="questContainer">
         <h1 class="langName">Test Your <span><?=$langTitle?></span> Skills</h1>
-        <h3 class="level">Level <?=$result[$langSQL]?>/10</h3>
+        <h3 class="level">Level ' . $progressToScreen . '/5</h3>
 		<hr>
         <h4 class="objective"><?= $objective?></h4>
        <div class="codeContainer">
@@ -155,7 +156,8 @@
 		}, 100);
     });
 
-</script>
+        </script>
+    </div>
 
 <?php include_once('footer.html'); ?>
 </body>
