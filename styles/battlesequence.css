@@ -248,8 +248,9 @@
 	width: calc(40% - 2px);
 	min-height: 40px;
 	margin: 15px 0;
+	padding: 15px;
 
-	cursor: ;
+	cursor: pointer;
 	text-align: center;
 
 	border: 1px solid black;

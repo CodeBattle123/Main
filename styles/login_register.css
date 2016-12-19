@@ -1,11 +1,4 @@
-body{
-	overflow: hidden;
-}
-
 .wrapper {
-	display: flex;
-	flex-direction: column;
-
 	width: 100%;
 
 	background: url("../images/backgrounds/register.jpg");
@@ -14,7 +7,6 @@ body{
 	background-position: 50% 30%;
 	background-size: cover;
 
-	justify-content: flex-start;
 }
 
 input[type="text"], input[type="password"], input[type="email"] {
@@ -54,18 +46,18 @@ input[type="submit"] {
 
 .form{
 	position: relative;
+	top: 200px;
 
     display: block;
 
 	width: 27%;
+	min-width: 300px;
 	margin: 0 auto;
 	padding: 20px 0;
 
     border-radius: 10px;
 	background: #FFF;
-
-    align-self: center;
-    align-content: center;}
+}
 
 input[type="submit"]:hover {
     color: white;
@@ -77,7 +69,6 @@ input[type="submit"]:hover {
 	display: block;
 
 	margin: 0 auto;
-	margin-bottom: -100px;
 }
 
 .message {
@@ -90,4 +81,3 @@ input[type="submit"]:hover {
 	font-family: Quest;
 	font-size: 13px;
 }
- 	
