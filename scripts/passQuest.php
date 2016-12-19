@@ -13,6 +13,5 @@
     $langprogress = mysqli_query($connect, "SELECT * FROM language_progress WHERE user_id='$user_id'")->fetch_assoc()[$lang];
     $points = ($langprogress - 1) * 50;
     mysqli_query($connect, "UPDATE users SET xp = $xp + $points WHERE id='$user_id'");
-
-
-	header('location: ../quest.php?lang=' . $langBack);
+	
+	header('location: ../quest.php?lang=' . $langBack . '&level=' . $_POST['level']);
