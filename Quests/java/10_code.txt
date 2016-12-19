@@ -1,0 +1,12 @@
+int hour = Integer.parseInt(console.nextLine());
+int min = Integer.parseInt(console.nextLine());
+int sum = (({option} * 60) + {option} +15);
+int resultHour = {option} / 60;
+
+if (resultHour >= 24)
+    {
+        resultHour -= 24;
+     }
+int resultmin = {option} % 60;
+
+System.out.printf(resultHour, resultmin);

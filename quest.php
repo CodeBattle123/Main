@@ -14,11 +14,13 @@
     <title>Quests</title>
 
 </head>
+
 <body>
 <?php 
 	include 'header.php';
 	CheckIfLogged();
 	include 'scripts/questPage.php';
+$username = "test";
 ?>
 
 <div class="wrapper">

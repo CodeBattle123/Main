@@ -3,7 +3,7 @@
 include  '../db/connect.php';
 include '../db/login_status.php';
 
-$clan_name = "Softuni Team";
+$clan_name = "$log_clan";
 
 if (isset($_FILES["fileToUpload"]["name"])) {
 //picture upload

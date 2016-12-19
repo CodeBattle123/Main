@@ -1,0 +1,5 @@
+double grade = 3.00;
+if ({option} >= {option})
+    {
+        System.out.println("Excellent!");
+    }

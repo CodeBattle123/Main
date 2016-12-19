@@ -1,0 +1,3 @@
+double celsius = 70;
+double fahrenheit = {option} * 9/5 + 32;
+System.out.printf("Fahrenheit = %.2f", {option});

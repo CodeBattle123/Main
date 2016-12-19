@@ -9,5 +9,4 @@ include '../db/login_status.php';
         header("location: ../make-clan.php");
     }
 
-
 ?>
