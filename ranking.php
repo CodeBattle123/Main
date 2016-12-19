@@ -4,10 +4,11 @@
 	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta charset="UTF-8">
       <title>Ranking</title>
-      <link rel="stylesheet" href="styles/main.css" >
-      <link rel="stylesheet" href="styles/headerAndFooter.css" >
-      <link rel="stylesheet" href="styles/sidebar.css" >
-	  <link rel="stylesheet" href="styles/ranking.css" >
+      <link rel="stylesheet" href="styles/main.css">
+      <link rel="stylesheet" href="styles/headerAndFooter.css">
+      <link rel="stylesheet" href="styles/sidebar.css">
+	  <link rel="stylesheet" href="styles/ranking.css">
+     <link rel="icon" type="image/png" href="images/icon.png"/>
    </head>
    <body>
       <?php include_once('header.php'); ?>

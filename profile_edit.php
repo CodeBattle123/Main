@@ -63,7 +63,7 @@ file_exists("profile-pics/" . $user . ".png") ? $profilepic = $user . ".png" : $
 				<h2>Names</h2>
 		        <input type="text" name="firstname" placeholder="First Name" class="field">
 		        <input type="text" name="lastname" placeholder="Last Name" class="field">
-				<input type="submit" name="submitnames" value="Save changes" class="Submit">
+				<input type="submit" name="submitnames" value="Save changes" class="Submit height">
 			</fieldset>
 		</form>
 		
@@ -72,7 +72,7 @@ file_exists("profile-pics/" . $user . ".png") ? $profilepic = $user . ".png" : $
 				<h2>password</h2>
 		        <input type="password" name="password" placeholder="Password" class="field">
 		        <input type="password" name="password2" placeholder="Re-type" class="field">
-				<input type="submit" name="submitpassword" value="Save changes" class="Submit">
+				<input type="submit" name="submitpassword" value="Save changes" class="Submit height">
 			</fieldset>
 		</form>
 	</div>
