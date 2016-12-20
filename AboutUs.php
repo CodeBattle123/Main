@@ -18,9 +18,9 @@
 <div class="wrapper">
        <ul class="paginator" id="paginator-btn">
 		   <!--  Buttons for Scrolling through the information. -->
-           <li class="btn" id="project-button"><a>About the project</a></li>
-           <li class="btn" id="aboutus-button"><a>About us</a></li>
-           <li class="btn" id="howto-button"><a>How it works</a></li>
+           <li class="btn p15" id="project-button"><a>About the project</a></li>
+           <li class="btn p30" id="aboutus-button"><a>About us</a></li>
+           <li class="btn p15" id="howto-button"><a>How it works</a></li>
        </ul>
 
       <section id="project">

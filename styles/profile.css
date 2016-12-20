@@ -119,7 +119,6 @@ h2, h3 {
 	text-transform: capitalize;
 
 	font-size: 30px;
-;
 }
 
 .username h2:hover {
@@ -161,13 +160,14 @@ table {
 }
 
 td, th {
-    padding: 8px;
+    padding: 4px;
 
     text-align: left;
 }
 
 th {
     font-family: Quest;
+	     padding: 4px;
 }
 
 .win, .loss {
