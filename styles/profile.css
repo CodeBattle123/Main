@@ -1,221 +1,169 @@
-.userContainer{
-	background-image: url("../images/backgrounds/profile.png");
-	background-position: bottom;
-	background-size: cover;
+.userContainer {
+    background-image: url("../images/backgrounds/profile.png");
+    background-position: bottom;
+    background-size: cover;
 }
-
-.profile-pic{
-	display: flex;
-	overflow: hidden;
-	flex-direction: row;
-
-	width: 300px;
-	height: 300px;
-	margin: 0 auto;
-
-	border-radius: 50%;
-
-	justify-content: center;
+.profile-pic {
+    display: flex;
+    overflow: hidden;
+    flex-direction: row;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    border-radius: 50%;
+    justify-content: center;
 }
-
 .profile {
     height: 100%;
-	margin: 0 auto;
+    margin: 0 auto;
 }
-
-h2, h3 {
-	color: white;
+h2,
+h3 {
+    color: white;
 }
-
-
 .profile::selection {
-	background: none;
+    background: none;
 }
-
 .profile-pic:hover {
-	transform: rotate(-10deg);
-
-	box-shadow: 0px 0px 40px #000;
+    transform: rotate(-10deg);
+    box-shadow: 0px 0px 40px #000;
 }
-
 .profilesmall {
 	width: 40px;
 	height: 40px;
 
 	border-radius:50%;
 }
-
-
 .editPageButton {
-	position: absolute;
-	top: 15px;
-	right: 0;
-
-	display: block;
-
-	width: 130px;
-	height: 40px;
-	margin-top: 15px;
-	margin-right: 15px;
-
-	text-align: center;
-	text-decoration: none;
-
-	color: #FFF;
-	border-radius: 7px;
-	background: rgb(148, 148, 148);
-
-	font-family: Quest;
-	line-height: 40px;
+    position: absolute;
+    top: 15px;
+    right: 0;
+    display: block;
+    width: 130px;
+    height: 40px;
+    margin-top: 15px;
+    margin-right: 15px;
+    text-align: center;
+    text-decoration: none;
+    color: #FFF;
+    border-radius: 7px;
+    background: rgb(148, 148, 148);
+    font-family: Quest;
+    line-height: 40px;
 }
-
 .editPageButton:hover {
-	top: 5px;
-
-	color: #003f20;
-	background-color: #34ff9c;
-	box-shadow: 0px 10px 0px #00db6e;
+    top: 5px;
+    color: #003f20;
+    background-color: #34ff9c;
+    box-shadow: 0px 10px 0px #00db6e;
 }
-
 .xp {
-	display: block;
-
-	margin: 15px auto;
-
-	text-align: center;
-	text-transform: uppercase;
-
-	font-family: Quest;
-	font-size: 28px;
-
+    display: block;
+    margin: 15px auto;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: Quest;
+    font-size: 28px;
 }
-
-.profileDesc{
+.profileDesc {
     width: 90%;
     margin: 20px auto;
     padding: 20px;
-
-	text-align: center;
-
+    text-align: center;
     border: solid black;
     border-width: 2px;
-
-	font-family: Quest;
-}
-
-.match-history, .username{
-    display: block;
-
-    width: 100%;
-    margin: 20px auto;
-
-	transition: font-size 0.5s;
-    text-align: center;
-
     font-family: Quest;
 }
-
+.match-history,
+.username {
+    display: block;
+    width: 100%;
+    margin: 20px auto;
+    transition: font-size 0.5s;
+    text-align: center;
+    font-family: Quest;
+}
 .username h2 {
-	text-transform: capitalize;
-
-	font-size: 30px;
-;
+    text-transform: capitalize;
+    font-size: 30px;
 }
-
 .username h2:hover {
-	font-size: 40px;
+    font-size: 40px;
 }
-
-.table-history{
+.table-history {
     overflow-y: auto;
-
-	width: 100%;
+    width: 100%;
     max-height: 400px;
 }
-
 .table-history::-webkit-scrollbar {
-	width: 20px;
+    width: 20px;
 }
 .table-history::-webkit-scrollbar-thumb {
-	background-color: #cccccc;
+    background-color: #cccccc;
 }
 .table-history::-webkit-scrollbar-track {
-	background-color: #555;
+    background-color: #555;
 }
-
-.match-history-table, .profileinfo{
+.match-history-table,
+.profileinfo {
     border: groove;
     border-right: transparent;
     border-bottom: transparent;
     border-left: transparent;
 }
-
 table {
     width: 100%;
-
     border-collapse: collapse;
     border-right: transparent;
     border-left: transparent;
-
     font-family: arial, sans-serif;
 }
-
-td, th {
-    padding: 8px;
-
+td,
+th {
+    padding: 4px;
     text-align: left;
 }
-
 th {
     font-family: Quest;
+    padding: 4px;
 }
-
-.win, .loss {
-	transition: background-color 0.5s;
-
+.win,
+.loss {
+    transition: background-color 0.5s;
 }
-
 .win {
     background-color: #63E618;
 }
-
 .loss {
     background-color: #C61D1D;
 }
-
-
 .win:hover {
-	background-color: #9EFB69;
+    background-color: #9EFB69;
 }
-
 .loss:hover {
-	background-color: #EE3131;
+    background-color: #EE3131;
 }
-
 td {
-	transition: background-color 0.5s;
+    transition: background-color 0.5s;
     text-align: center;
-
     border-bottom: 2px solid black;
-
     font-family: Quest;
 }
-
 td:hover {
-	background-color: rgba(0, 0, 0, 0.25);
+    background-color: rgba(0, 0, 0, 0.25);
 }
-
-td a:link, td a.hover, td a:visited {
-	text-decoration: none;
-
-	color: black;
+td a:link,
+td a.hover,
+td a:visited {
+    text-decoration: none;
+    color: black;
 }
-
 th {
     text-align: center;
 }
-a:link, a.hover, a:visited {
-	text-decoration: none;
-
-	color: white;
+a:link,
+a.hover,
+a:visited {
+    text-decoration: none;
+    color: white;
 }

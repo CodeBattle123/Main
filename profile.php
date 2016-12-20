@@ -112,9 +112,9 @@
 		        <div class="table-history">
 		            <table class="match-history-table">
 		                <tr>
-		                    <th>Username</th>
+		                    <th colspan="2">Username</th>
 		                    <th>Result</th>
-		                    <th>Against</th>
+		                    <th colspan="2">Opponent</th>
 		                    <th>Gained/Lost XP</th>
 		                    <th>Date</th>
 		                </tr>
@@ -148,22 +148,24 @@
 		                        file_exists("profile-pics/" . $current_user . ".png") ? $current_user_pic = $current_user . ".png" : $current_user_pic = "default.png";
 
 		                            echo '<tr class="' . $result . '" >
-				        <td><img class="profilesmall" src="profile-pics/' . $current_user_pic . '"><a class="matchName" href="profile.php?user=' . $current_user . '">' . $current_user . '</a></td>
+				        <td><img style="float: right;" class="profilesmall" src="profile-pics/' . $current_user_pic . '"></td><td style="text-align: left;"><a class="matchName" href="profile.php?user=' . $current_user . '">' . $current_user . '</a></td>
 		                <td>' . $result . '</td>
-				        <td><img class="profilesmall" src="profile-pics/' . $opponentpic . '"><a class="matchName" href="profile.php?user=' . $opponent . '">' . $opponent . '</a></td>
+				        <td><img class="profilesmall" style="float: right;" src="profile-pics/' . $opponentpic . '"></td><td style="text-align: left;"><a class="matchName" href="profile.php?user=' . $opponent . '">' . $opponent . '</a></td>
 		                <td> ';
 
-							 if ($result == "loss") {
-							 	echo "-";
-							} else {
-								echo "+";
-							}
+	if ($result == "loss") {
+		echo "-";
+	} else {
+		echo "+";
+	}
+
+							$timestamp = strtotime($row['date']);
 
 							 echo  $row['won_xp'] . '</td>
-		                <td>' . $row['date'] . '</td>
+		                <td>' . date("H:i d/m/Y", $timestamp) . '</td>
 		               </tr>
 		               ';
-		                        }
+		            }
 
 		                    ?>
 		                    <script>
