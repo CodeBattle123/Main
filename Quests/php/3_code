@@ -1,0 +1,5 @@
+<?php
+for ($x = 0; $x {option} 10; $x++) {
+    echo "The number is: $x {option}";
+}
+?>

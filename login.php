@@ -17,7 +17,7 @@
 		$db_username = $row[1];
         $db_pass = $row[2];
 
-		if ($pass == $db_pass) {
+		if (password_verify(password_hash($pass, PASSWORD_BCRYPT), $db_pass)) {
 			$_SESSION['userid'] = $db_id;
 			$_SESSION['username'] = $db_username;
 			$_SESSION['password'] = $db_pass;
