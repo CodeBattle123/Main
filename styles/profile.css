@@ -24,11 +24,6 @@
 	margin: 0 auto;
 }
 
-h2, h3 {
-	color: white;
-}
-
-
 .profile::selection {
 	background: none;
 }
@@ -121,6 +116,10 @@ h2, h3 {
 
 	font-size: 30px;
 ;
+}
+
+h2, h3 {
+	color: white;
 }
 
 .username h2:hover {

@@ -97,10 +97,12 @@ $isLeader = ($username==$leader);
         $query = mysqli_query($connect, $sql);
         while ($row = $query->fetch_assoc()) {
             $member_name = $row['nickname'];
+            $member_first_name = $row['first_name'];
+            $member_last_name = $row['last_name'];
             //gets member profile pic
             file_exists("profile-pics/" . $member_name . ".png") ? $memberpic = $member_name . ".png" : $memberpic = "default.png";
 
-            echo '<li class="clanMember"> <img class="memberpic" src="profile-pics/' . $memberpic . '"> <span>' . $member_name . '</span><a href="profile.php?user=' . $member_name . '">View Profile</a></li>';
+            echo '<li class="clanMember"> <img class="memberpic" src="profile-pics/' . $memberpic . '"> <span>' . $member_first_name . " '" . $member_name . "'" . $member_last_name . '</span></li>';
         }
         ?>
     </ul>

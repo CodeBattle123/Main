@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 12, 2016 at 01:33 PM
--- Server version: 10.1.16-MariaDB
--- PHP Version: 7.0.9
+-- Generation Time: 20 дек 2016 в 20:15
+-- Версия на сървъра: 10.1.19-MariaDB
+-- PHP Version: 7.0.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -23,7 +23,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `battle_log`
+-- Структура на таблица `battle_log`
 --
 
 CREATE TABLE `battle_log` (
@@ -35,12 +35,29 @@ CREATE TABLE `battle_log` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `battle_log`
+-- Схема на данните от таблица `battle_log`
 --
 
 INSERT INTO `battle_log` (`user1_id`, `user2_id`, `winner`, `won_xp`, `date`) VALUES
 (1, 2, '1', 360, '2001-09-11 12:30:00'),
-(1, 2, '1', 8360, '1997-11-11 12:30:00');
+(1, 2, '1', 8360, '1997-11-11 12:30:00'),
+(3, 4, '3', 120, '2016-11-01 00:00:00'),
+(2, 1, '2', 40, '2016-11-30 00:00:00'),
+(2, 5, '5', 0, '2016-11-14 00:00:00'),
+(1, 2, '2', 100, '2016-08-31 00:00:00'),
+(1, 2, '1', 0, '2016-11-30 00:00:00'),
+(1, 2, '2', 100, '2016-11-06 00:00:00'),
+(2, 1, '2', 50, '2016-11-02 00:00:00'),
+(2, 5, '5', 70, '2016-11-29 00:00:00'),
+(2, 7, '7', 43, '2016-11-28 00:00:00'),
+(2, 6, '0', 238479, '2016-12-16 15:20:20'),
+(5, 2, '0', 238479, '2016-12-16 15:22:13'),
+(2, 7, '0', 238479, '2016-12-16 15:36:07'),
+(6, 2, '0', 238479, '2016-12-16 19:05:29'),
+(6, 7, '0', 238479, '2016-12-16 19:05:35'),
+(6, 8, '0', 238479, '2016-12-18 14:12:24'),
+(6, 8, '8', 22, '2016-12-19 17:32:42'),
+(11, 12, '12', 38, '2016-12-20 14:27:56');
 
 -- --------------------------------------------------------
 
@@ -48,17 +65,14 @@ INSERT INTO `battle_log` (`user1_id`, `user2_id`, `winner`, `won_xp`, `date`) VA
 -- Stand-in structure for view `clan_ranking`
 --
 CREATE TABLE `clan_ranking` (
-`id` int(11)
-,`name` varchar(50)
-,`description` varchar(500)
-,`xp` int(11)
-,`leader` varchar(50)
+`name` varchar(20)
+,`total` decimal(65,0)
 );
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `languages`
+-- Структура на таблица `languages`
 --
 
 CREATE TABLE `languages` (
@@ -67,23 +81,37 @@ CREATE TABLE `languages` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `languages`
+-- Схема на данните от таблица `languages`
 --
 
 INSERT INTO `languages` (`id`, `name`) VALUES
-(1, 'CSharp'),
-(2, 'CPP'),
-(3, 'Java'),
-(4, 'JS'),
-(5, 'PHP'),
-(6, 'Ruby'),
-(7, 'Python'),
-(8, 'Swift');
+(1, 'C#'),
+(2, 'PHP');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `language_progress`
+-- Структура на таблица `languages-to-user`
+--
+
+CREATE TABLE `languages-to-user` (
+  `user-id` int(11) NOT NULL,
+  `language-id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Схема на данните от таблица `languages-to-user`
+--
+
+INSERT INTO `languages-to-user` (`user-id`, `language-id`) VALUES
+(1, 1),
+(1, 2),
+(2, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Структура на таблица `language_progress`
 --
 
 CREATE TABLE `language_progress` (
@@ -99,105 +127,121 @@ CREATE TABLE `language_progress` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `language_progress`
+-- Схема на данните от таблица `language_progress`
 --
 
 INSERT INTO `language_progress` (`user_id`, `CSharp`, `CPP`, `Java`, `JS`, `PHP`, `Ruby`, `Python`, `Swift`) VALUES
-(1, 2, 1, 8, 1, 5, 1, 3, 1),
-(2, 1, 1, 1, 1, 1, 1, 1, 1),
-(3, 1, 1, 1, 1, 1, 1, 1, 1),
-(4, 1, 1, 1, 1, 1, 1, 1, 1),
-(5, 1, 1, 1, 1, 1, 1, 1, 1),
-(6, 1, 1, 1, 1, 1, 1, 1, 1),
-(7, 1, 1, 1, 1, 1, 1, 1, 1),
-(8, 1, 1, 1, 1, 1, 1, 1, 1);
+(13, 1, 1, 3, 1, 1, 1, 1, 1),
+(14, 1, 1, 1, 1, 1, 1, 1, 1),
+(15, 1, 1, 1, 1, 1, 1, 1, 1),
+(16, 1, 1, 1, 1, 1, 1, 1, 1),
+(17, 1, 1, 1, 1, 1, 1, 1, 1),
+(18, 1, 1, 1, 1, 1, 1, 1, 1),
+(19, 1, 1, 1, 1, 1, 1, 1, 1),
+(20, 1, 1, 1, 1, 1, 1, 1, 1),
+(29, 1, 1, 1, 1, 1, 1, 1, 1),
+(30, 1, 1, 1, 1, 1, 1, 1, 1),
+(31, 1, 1, 1, 1, 1, 1, 1, 1),
+(32, 1, 1, 1, 1, 1, 1, 1, 1),
+(33, 1, 1, 1, 1, 1, 1, 1, 1),
+(34, 1, 1, 1, 1, 1, 1, 1, 1),
+(35, 1, 1, 1, 1, 1, 1, 1, 1),
+(36, 1, 1, 1, 1, 1, 1, 1, 1),
+(37, 1, 1, 1, 1, 1, 1, 1, 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `team-chat`
+-- Структура на таблица `q`
 --
 
-CREATE TABLE `team-chat` (
-  `team_id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `message` varchar(1000) CHARACTER SET utf16 NOT NULL,
-  `date` datetime NOT NULL
+CREATE TABLE `q` (
+  `id` int(11) NOT NULL,
+  `user_1` varchar(20) NOT NULL,
+  `user_2` varchar(20) NOT NULL,
+  `temp_points` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `team-chat`
+-- Схема на данните от таблица `q`
 --
 
-INSERT INTO `team-chat` (`team_id`, `user_id`, `message`, `date`) VALUES
-(1, 2, '(. Y .)', '2016-11-16 00:00:00'),
-(1, 1, 'This should be now on the bottom', '2016-12-06 00:00:00'),
-(1, 1, 'It actually works. . .', '2016-12-07 00:00:00'),
-(1, 1, 'It actually works. . .1', '2016-12-08 00:00:00'),
-(1, 1, 'It actually works. . .2', '2016-12-09 00:00:00'),
-(1, 1, 'It actually works. . .3', '2016-12-10 00:00:00'),
-(1, 1, 'It actually works. . .4', '2016-12-11 00:00:00'),
-(1, 1, 'It actually works. . .', '2016-12-07 00:00:00'),
-(1, 1, 'It actually works. . .5', '2016-12-12 00:00:00'),
-(1, 1, 'It actually works. . .6', '2016-12-13 00:00:00');
+INSERT INTO `q` (`id`, `user_1`, `user_2`, `temp_points`) VALUES
+(2, 'wtf', 'random_user', 123),
+(7, 'wtf', 'Auto_Created_user_8', 123),
+(8, 'wtf', 'SilentSlap', 123),
+(10, 'nakov', 'random_user', 1),
+(11, 'forsen', 'test', 1),
+(12, 'forsen', 'test2', 1),
+(14, 'forsen', 'random', 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `team-to-user`
+-- Структура на таблица `team-requests`
 --
 
-CREATE TABLE `team-to-user` (
-  `user-id` int(11) NOT NULL,
-  `team-id` int(11) NOT NULL
+CREATE TABLE `team-requests` (
+  `team-id` int(11) NOT NULL,
+  `user-id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `team-to-user`
+-- Схема на данните от таблица `team-requests`
 --
 
-INSERT INTO `team-to-user` (`user-id`, `team-id`) VALUES
+INSERT INTO `team-requests` (`team-id`, `user-id`) VALUES
 (1, 2),
-(2, 1);
+(2, 2),
+(5, 2),
+(69, 3),
+(85, 2);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `teams`
+-- Структура на таблица `teams`
 --
 
 CREATE TABLE `teams` (
   `id` int(11) NOT NULL,
-  `name` varchar(50) NOT NULL,
-  `description` varchar(500) NOT NULL,
+  `name` varchar(20) NOT NULL,
   `xp` int(11) NOT NULL,
-  `leader` varchar(50) NOT NULL
+  `description` text NOT NULL,
+  `leader` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `teams`
+-- Схема на данните от таблица `teams`
 --
 
-INSERT INTO `teams` (`id`, `name`, `description`, `xp`, `leader`) VALUES
-(1, 'SKTelecom T1', 'This is a story about a blue man that lived on a blue planet in his blue little house and everything was blue. I''m blue dabadi dabadai.', 0, ''),
-(2, 'softuni_team_', '', 0, ''),
-(3, 'Ninjas', '*Silence*lasbdladlkasjdncljasdclkjansdlicbasidhblkasdjbiasdbvlasjdbvliahsdbvlasbdvliahbdvlab\nsbdladlkasjdncljasdclkjansdlicbasidhblkasdjbiasdbvlasjdbvliahsdbvlasbdv\n\nsbdladlkasjdncljasdclkjansdlicbasidhblkasdjbiasdbvlasjdbvliahsdbvlasbdv\n\nsbdladlkasjdncljasdclkjansdlicbasidhblkasdjbiasdbvlasjdbvliahsdbvlasbdvdlvabsdviabsdibasdibiasdbiasbdibihbihbhb165a1sd6c5a41d3v51as9d8v51asd5v49asd51vas9d84v51asdv984a123sv98456a1s2dv98as465d1va98sd4561v2asd9v841', 1554, 'wub');
+INSERT INTO `teams` (`id`, `name`, `xp`, `description`, `leader`) VALUES
+(8, 'Softuni', 0, 'Software University', 'nakov'),
+(9, 'Samurai world', 0, 'description', 'demonking'),
+(10, 'SKTelecom T1', 0, 'The best team in the world.', 'faker');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `team_inbox`
+-- Структура на таблица `team_inbox`
 --
 
 CREATE TABLE `team_inbox` (
-  `team_name` varchar(50) DEFAULT NULL,
-  `user_id` int(11) DEFAULT NULL
+  `team_name` varchar(20) NOT NULL,
+  `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Схема на данните от таблица `team_inbox`
+--
+
+INSERT INTO `team_inbox` (`team_name`, `user_id`) VALUES
+('softuni_team_', 3);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Структура на таблица `users`
 --
 
 CREATE TABLE `users` (
@@ -207,40 +251,32 @@ CREATE TABLE `users` (
   `last_name` varchar(20) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(200) NOT NULL,
-  `description` varchar(500) NOT NULL,
   `xp` int(150) NOT NULL DEFAULT '0',
-  `clan` varchar(20) NOT NULL
+  `clan` varchar(20) NOT NULL,
+  `description` varchar(3000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `users`
+-- Схема на данните от таблица `users`
 --
 
-INSERT INTO `users` (`id`, `nickname`, `first_name`, `last_name`, `email`, `password`, `description`, `xp`, `clan`) VALUES
-(1, 'wub', 'Wubbly', 'wub', 'boobs@gmail.com', '111111', 'stuff\r\n', 555, 'Ninjas'),
-(2, 'Sam', '', '', 'jujuba@gmail.com', '111111', '', 555, ''),
-(3, 'blood', 'Nameless', 'Joe', 'bloodlisterergmailcom', '151515', 'plebs', 0, 'Ninjas'),
-(4, 'limagicli', '', '', 'asdfasdasdagmailco', '123456', '', 0, 'softuni_team_'),
-(9, 'Auto_Created_user_6', '', '', 'email_6', 'pass_6', '', 0, ''),
-(10, 'Auto_Created_user_7', '', '', 'email_7', 'pass_7', '', 0, ''),
-(11, 'Auto_Created_user_8', '', '', 'email_8', 'pass_8', '', 332, ''),
-(12, 'Auto_Created_user_9', '', '', 'email_9', 'pass_9', '', 0, ''),
-(13, 'Auto_Created_user_0', '', '', 'email_0', 'pass_0', '', 0, ''),
-(14, 'Auto_Created_user_1', '', '', 'email_1', 'pass_1', '', 44, ''),
-(15, 'Auto_Created_user_2', '', '', 'email_2', 'pass_2', '', 0, ''),
-(16, 'Auto_Created_user_3', '', '', 'email_3', 'pass_3', '', 0, ''),
-(17, 'Auto_Created_user_4', '', '', 'email_4', 'pass_4', '', 111, ''),
-(18, 'Auto_Created_user_5', '', '', 'email_5', 'pass_5', '', 0, ''),
-(19, 'Auto_Created_user_6', '', '', 'email_6', 'pass_6', '', 0, ''),
-(20, 'Auto_Created_user_7', '', '', 'email_7', 'pass_7', '', 0, ''),
-(21, 'Auto_Created_user_8', '', '', 'email_8', 'pass_8', '', 361, ''),
-(22, 'Auto_Created_user_9', '', '', 'email_9', 'pass_9', '', 0, ''),
-(50, 'Auto_Created_user_0', '', '', 'email_0', 'pass_0', '', 0, ''),
-(51, 'Auto_Created_user_1', '', '', 'email_1', 'pass_1', '', 0, ''),
-(52, 'Auto_Created_user_2', '', '', 'email_2', 'pass_2', '', 0, ''),
-(53, 'Auto_Created_user_3', '', '', 'email_3', 'pass_3', '', 999, ''),
-(54, 'Auto_Created_user_4', '', '', 'email_4', 'pass_4', '', 0, ''),
-(55, 'Ninja', 'Asen', 'Mihaylov', 'aaaaaaaa', '111111', '', 0, '');
+INSERT INTO `users` (`id`, `nickname`, `first_name`, `last_name`, `email`, `password`, `xp`, `clan`, `description`) VALUES
+(13, 'nakov', 'Svetlin', 'Nakov', 'nakov@gmail.com', '$2y$10$lhCfwbUd3bVyPw0jlMIAMeNIb4caRT8lbBWcet1rMNW5IeIdiceBW', 9151, 'Softuni', ''),
+(14, 'royalbg', 'Ivan', 'Yonkov', 'royalbg@gmail.com', '$2y$10$46pBLEcRVhvyvIDgHxubgOJJJH2L6OFsLIEEPtk5aHm7jGrZUz5fu', 5000, 'Softuni', ''),
+(15, 'angelg', 'Angel', 'Georgiev', 'angelgeorgiev@gmail.com', '$2y$10$w.YIgDun3h7.e70G3wCy3eRZ203EagqkbdcTQWONjW.E/EWZzROha', 3000, 'Softuni', ''),
+(16, 'xXpreslitoXx69', 'Preslav', 'Nakov', 'preslav@gmail.com', '$2y$10$qKKiuEv6q/zyPp3qwVOI7OwZHkFOEoxzWny/fuLKMiZi8TpUNoimK', 6969, 'Softuni', ''),
+(17, 'thelegend27', 'The', 'Legend', 'thelegend27@gmail.com', '$2y$10$0gYuxYi6j4DfAl28QwNr.eCNtpevb7qss2Ds.KgCDYTGoh43.hOaS', 100000000, '', ''),
+(18, 'voroby0v', 'Genady', 'Vorobyov', 'vorobyov@gmail.com', '$2y$10$ougeejigKCKzT7TJGV/equr1tpjONKB6vWORIWzWDU1DhvrudDfom', 0, 'Softuni', ''),
+(19, 'sybkata99', 'Petyr', 'Sybev', 'sybev@gmail.com', '$2y$10$mfVC58rZo64q/DHDXN3sROHHP2iQevXTaa2ufPG/bsuNYrWlbhxa2', 0, '', ''),
+(20, 'demonking', 'Oda', 'Nobunaga', 'nobunaga@gmail.com', '$2y$10$21sy3DRLzBKFXBu8RUShXOkkzXb5aBYjxTywDOwGJJSyx57n5X5UC', 0, 'Samurai world', ''),
+(29, 'faker', 'Lee Sang', 'hyeok', 'faker@abv.bg', '$2y$10$gDTL2ZqrFfVHvhSpXbzCwuQmbturSeT6InjmTbkTkLhyzGTuyjc2u', 99999999, 'SKTelecom T1', ''),
+(30, 'wolf', 'Lee', 'Jae-wan', 'wolf@gmail.com', '$2y$10$gFqfWbMfb243BjIp1Ij0BePTVQ8KuKUje3TGzm6UHhO0H2IEViJqq', 0, 'SKTelecom T1', ''),
+(31, 'bang', 'Bae', 'Jun-sik', 'bang@gmail.com', '$2y$10$0mcXRNATkxf8wVFObdtQg.hd/6zErglM.//nF133nmLlIihgYR52C', 0, 'SKTelecom T1', ''),
+(32, 'huni', 'Seong', 'Hoon Heo', 'huni@gmail.com', '$2y$10$2cI12A9o464c.bvJfgs3OeQpAReJpUbySHnxs7JR3lSxPy0a51JTu', 0, 'SKTelecom T1', ''),
+(33, 'blank', 'Kang', 'Sun-gu', 'blank@gmail.com', '$2y$10$oD.XoimX9GBgOUnfkeIT8OpWrSIZZU/SBrOZ/zxvbhC7x2TcpMGK6', 0, 'SKTelecom T1', ''),
+(35, 'test5', 'test', 'test', 'test@gmail.com', '$2y$10$BIiftClURVXe35u4RTfmH.pA7A.I0jICPcMHVxuO9L.ZciTURDNu2', 0, '', ''),
+(36, 'test6', 'asdasdasda', 'sdasdasd', 'asd@gmail.com', '$2y$10$FJWVZAWS4N8rDydI/lnpfeJ/LEc7Hk6V.Us2QwejShAXaKCxj5D7y', 0, '', ''),
+(37, 'test10', 'test', 'test', 'test3@abv.bg', '$2y$10$kh5aZQBJc2KpIfDQFkaa7uf477uq7a0ugp3RQlTWUMz/cXxO4O.Ju', 0, '', '');
 
 -- --------------------------------------------------------
 
@@ -254,7 +290,6 @@ CREATE TABLE `user_ranking` (
 ,`last_name` varchar(20)
 ,`email` varchar(100)
 ,`password` varchar(200)
-,`description` varchar(500)
 ,`xp` int(150)
 ,`clan` varchar(20)
 );
@@ -266,7 +301,7 @@ CREATE TABLE `user_ranking` (
 --
 DROP TABLE IF EXISTS `clan_ranking`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `clan_ranking`  AS  select `teams`.`id` AS `id`,`teams`.`name` AS `name`,`teams`.`description` AS `description`,`teams`.`xp` AS `xp`,`teams`.`leader` AS `leader` from `teams` order by `teams`.`xp` desc ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `clan_ranking`  AS  select `teams`.`name` AS `name`,sum(`users`.`xp`) AS `total` from (`users` join `teams`) where (`users`.`clan` = `teams`.`name`) group by `teams`.`name` order by sum(`users`.`xp`) desc ;
 
 -- --------------------------------------------------------
 
@@ -275,7 +310,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `user_ranking`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `user_ranking`  AS  select `users`.`id` AS `id`,`users`.`nickname` AS `nickname`,`users`.`first_name` AS `first_name`,`users`.`last_name` AS `last_name`,`users`.`email` AS `email`,`users`.`password` AS `password`,`users`.`description` AS `description`,`users`.`xp` AS `xp`,`users`.`clan` AS `clan` from `users` order by `users`.`xp` desc ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `user_ranking`  AS  select `users`.`id` AS `id`,`users`.`nickname` AS `nickname`,`users`.`first_name` AS `first_name`,`users`.`last_name` AS `last_name`,`users`.`email` AS `email`,`users`.`password` AS `password`,`users`.`xp` AS `xp`,`users`.`clan` AS `clan` from `users` order by `users`.`xp` desc ;
 
 --
 -- Indexes for dumped tables
@@ -292,6 +327,12 @@ ALTER TABLE `languages`
 --
 ALTER TABLE `language_progress`
   ADD PRIMARY KEY (`user_id`);
+
+--
+-- Indexes for table `q`
+--
+ALTER TABLE `q`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `teams`
@@ -313,22 +354,27 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `languages`
 --
 ALTER TABLE `languages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `language_progress`
 --
 ALTER TABLE `language_progress`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+--
+-- AUTO_INCREMENT for table `q`
+--
+ALTER TABLE `q`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT for table `teams`
 --
 ALTER TABLE `teams`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

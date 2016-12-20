@@ -1,5 +1,6 @@
 hr {
-		height: 3px;
+		height: 3px;
+
 		margin: 0px 0 30px 0;
 
 		border-bottom: 1px solid black;
@@ -164,7 +165,8 @@ hr {
 }
 
 .editInfoCont form {
-		width: calc(50% - 2px);
+		width: calc(50% - 2px);
+
 		min-width: 400px;
 }
 
@@ -191,4 +193,11 @@ hr {
 
 		font-family: Quest;
 		font-size: 18px;
+}
+h2, h3 {
+	color: black;
+}
+
+.username, .imgHeader {
+	color: whitesmoke;
 }

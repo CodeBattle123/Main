@@ -12,7 +12,7 @@
 	display: flex;
 	overflow: hidden;
 	flex-direction: row;
-
+	padding: 0;
 	width: 300px;
 	height: 300px;
 	margin: 0 auto;
@@ -33,7 +33,7 @@
 	display: block;
 
 	height: 100%;
-	margin: 15px auto;
+	margin: 0 auto;
 
 	transition: width 0.5s,
 				height 0.5s;
@@ -220,7 +220,7 @@ ul:hover .veil,
 	display: inline-block;
 
 	margin: 15px auto;
-
+	color: white;
 	font-family: Text;
 	font-size: 40px;
 }
@@ -252,11 +252,11 @@ ul:hover .veil,
 
 .clanMembers {
 	position: relative;
-
 	display: flex;
 	overflow-x: hidden;
 	overflow-y: auto;
 	flex-direction: column;
+	border-right: 2px solid black;
 
 	width: 70%;
 	min-height: 100px;

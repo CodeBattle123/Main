@@ -62,13 +62,18 @@ if ($logged) {
 	            $validate = false;
 	        }
 
-	        $email = preg_replace('#[^a-z0-9]#i', '', $_POST['email']);
+	        $email = $_POST['email'];
 	        if (strlen($email) < 1) {
 	    	    echo '<li class="message">Email must be inputed.</li>';
 	            $validate = false;
 	        }
 
+	        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                echo '<li class="message">Please enter a valid email addres.</li>';
+                $validate = false;
+            }
 	        if ($validate) {
+                $password = password_hash($password, PASSWORD_DEFAULT);
 	            $sql = "INSERT INTO users (nickname, email, password, first_name, last_name) VALUES ('$username','$email','$password', '$first_name', '$last_name')";
 	            $query = mysqli_query($connect, $sql);
 				$sql = "INSERT INTO language_progress(CSharp, CPP, Java, JS, PHP, Ruby, Python, Swift) VALUES('1','1','1','1','1','1','1','1')";

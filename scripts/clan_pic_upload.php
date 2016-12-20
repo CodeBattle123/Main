@@ -5,7 +5,7 @@ include '../db/login_status.php';
 
 $clan_name = "$log_clan";
 
-if (isset($_FILES["fileToUpload"]["name"])) {
+if (isset($_FILES["fileToUpload"])) {
 //picture upload
 $target_dir = "../clan-pics/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
