@@ -9,9 +9,6 @@ function countdown() {
 
 		if (seconds > 0) {
 			let t = setTimeout(tick, 1000);
-			$('#submitQuest').click(function () {
-				clearTimeout(t);
-			});
 			$(document).keypress(function (k) {
 				if (k.which == 13) {
 					clearTimeout(t);

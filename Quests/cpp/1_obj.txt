@@ -1,1 +1,1 @@
-Display to the screen "Hello, World!".
+	Display to the screen "Hello, World!".

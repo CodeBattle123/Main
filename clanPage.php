@@ -35,21 +35,22 @@ $isLeader = ($username==$leader);
 <main class="wrapper">
 	<div class="imageContainer">
 
-    <?php
-    if ($isLeader) {
-        echo '    <a href="clan_edit.php" class="editPageButton">Edit clan</a>';
-    } else {
-        echo '
-    <form action="scripts/leaveclan.php" method="post">
-    <input Onclick="return confirm(\'Are you sure you want to leave this clan?\')" type="submit" value="Leave clan" name="leaveclan" class="editPageButton"> 
-    </form>';
-    }
-    ?>
-    <h3 class="clanName"><?= $log_clan ?></h3>
+	    <?php
+	    if ($isLeader) {
+	        echo '    <a href="clan_edit.php" class="editPageButton">Edit clan</a>';
+	    } else {
+	        echo '
+	    <form action="scripts/leaveclan.php" method="post">
+	    <input Onclick="return confirm(\'Are you sure you want to leave this clan?\')" type="submit" value="Leave clan" name="leaveclan" class="editPageButton"> 
+	    </form>';
+	    }
+	    ?>
+	    <h3 class="clanName"><?= $log_clan ?></h3>
 
-    <div class="clanAvatarHolder">
-		<img class="clanAvatar" src="clan-pics/<?=$log_clan . ".png"?>" alt="asd">
-	</div>
+	    <div class="clanAvatarHolder">
+			<img class="clanAvatar" src="clan-pics/<?=$log_clan . ".png"?>" alt="asd">
+		</div>
+		
 	</div>
 	<?php
 	if ($isLeader) {
