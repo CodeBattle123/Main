@@ -1,0 +1,6 @@
+public static {option} Area(double base,
+                            double height)
+    {
+		double area = {option} * height / 2;
+		Console.WriteLine({option});
+	}

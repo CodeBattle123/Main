@@ -1,0 +1,9 @@
+using namespace std;
+
+int main() {
+	int one, two;
+	cin >> {option};
+	{option} >> two;
+	{option} << one + {option} << endl;
+	return 0;
+}

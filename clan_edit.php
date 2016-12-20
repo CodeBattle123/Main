@@ -14,12 +14,12 @@
 <body>
 <?php include_once('header.php');
 CheckIfLogged();
-
-$sql = "SELECT DISTINCT * FROM team_inbox WHERE team_name = '$log_clan'";
-$requests = mysqli_query($connect,$sql);
 ?>
 
 <?php
+
+//Checking if the logged user is the leader of the clan.
+//If the logged user is the leader then the elements for the leader are shown
 $leader = mysqli_query($connect, "SELECT * FROM teams WHERE name = '$log_clan'")->fetch_assoc()['leader'];
 $isLeader = ($username==$leader);
 ?>
@@ -27,12 +27,15 @@ $isLeader = ($username==$leader);
 <main class="wrapper">
 	
 	<div class="imageHolder">
+		<!-- Button for deleting the clan -->
 	    <form action="scripts/clan_edit.php" method="post">
 	        <input Onclick="return confirm('Are you sure you want to delete this clan?')" type="submit" value="Delete clan" name="deleteclan" class="Submit">
 	    </form>
-
+		
+		<!-- Clan image -->
 	    <div class="clanAvatarHolder">  <img class="clanAvatar"   src="clan-pics/<?=$log_clan . ".png"?>" alt="asd"> </div>
 
+		<!-- Form for changing the clan IMAGE. -->
 	    <div class="clanInfo">
 	        <form action="scripts/clan_pic_upload.php" method="post" enctype="multipart/form-data" class="imageForm">
 	            <h3 class="imgHeader">Select an image to upload</h3>
@@ -50,7 +53,8 @@ $isLeader = ($username==$leader);
     $sql = "SELECT * FROM teams WHERE name='$log_clan'";
     $description = mysqli_query($connect, $sql)->fetch_assoc()['description'];
     ?>
-
+	
+	<!-- Form for changing the DESCRIPTION of the can -->
     <form action="scripts/clan_edit.php" method="post">
         <h2>description</h2>
         <textarea class="clanDesc" name="description"><?=$description?></textarea>
@@ -59,12 +63,13 @@ $isLeader = ($username==$leader);
 
     <ul class="members">
         <?php
-
+		//Get the members of the clan
         $sql = "SELECT * FROM users WHERE clan='$log_clan'";
         $query = mysqli_query($connect, $sql);
+		
+		//Display every member of the clan with buttons on the side for KICKING and MAKING LEADER of clan
         while ($row = $query->fetch_assoc()) {
             $member_name = $row['nickname'];
-
             if ($isLeader){
                 $remove="";
                 if ($member_name!=$leader){
@@ -74,8 +79,11 @@ $isLeader = ($username==$leader);
 						  <input Onclick="return confirm(\'Are you sure you want to make this user the clan leader?\')" class="memberOpt" type="submit" name="makeleader" value="Make leader">
 					  </form>';
                 }
+				//If the query gets to the leader display him without the buttons.
                 echo '<li class="member"><a href="profile.php?user=' . $member_name . '">' .  $member_name .  '</a>' .$remove . '</li>';
             }
+			
+			//Display the leaders 
             else{
                 echo '<li class="member"><a href="profile.php?user=' . $member_name . '">' . $member_name . '</a></li>';
             }

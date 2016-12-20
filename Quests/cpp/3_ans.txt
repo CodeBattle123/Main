@@ -1,0 +1,4 @@
+one
+cin
+cout
+two

@@ -61,13 +61,79 @@
 	display: flex;
 	flex-direction: column;
 
+	font-family: Quest;
+
 	justify-content: flex-start;
+}
+
+.opAvatar {
+	position: relative;
+
+	display: block;
+
+	width: 20vw;
+	height: 20vw;
+	margin: 0 auto;
+
+	border-radius: 50%;
+}
+
+.attackButton {
+	position: relative;
+	top:10px;
+
+	display: block;
+
+	width: 250px;
+	height: 40px;
+	margin: 20px auto;
+
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+
+	color: #fff;
+	border-radius: 7px;
+	background: rgb(148, 148, 148);
+
+	font-family: Quest;
+	line-height: 40px;
+}
+
+.attackButton:hover {
+	top: 0px;
+
+	color: #003f20;
+	background-color: #34ff9c;
+	box-shadow: 0px 10px 0px #00db6e;
 }
 
 .userName, .names {
 	display: block;
 
+	margin: 0 auto;
+	margin-top: 15px;
+
 	text-align: center;
+
+	font-family: Quest;
+}
+
+.alreadyChallenged {
+	display: block;
+
+	width: 95%;
+	min-height: 50px;
+	margin: 0 auto;
+	margin-top: 15px;
+
+	text-align: center;
+
+	border-right: 1px solid black;
+	border-left: 1px solid black;
+
+	font-family: Quest;
+	
 }
 
 .player {
@@ -96,9 +162,16 @@
 	font-family: Quest;
 }
 
+.battleTitle {
+	margin: auto;
+
+	font-family: Quest;
+}
+
 .username {
     padding-top: 140px;
 
+	text-align: center;
     word-wrap: break-word;
 
     font-size: 20px;
@@ -145,73 +218,64 @@
 
 /*The god code starts from here!!!!!!!!*/
 .battle {
-   width: 95%;
-   margin: auto;
-   padding-bottom: 70px;
+	display: flex;
 
-   border: 2px solid black;
+	width: 95%;
+	margin: auto;
+
+	border: 2px solid black;
+
+	justify-content: space-around;
+	flex-wrap: wrap;
 }
 
-.line {
-   z-index: 1;
+.question {
+	display: block;
 
-   min-height: 50px;
+	width: 100%;
+	margin: 20px auto;
 
-   border-bottom: 1px solid black;
+	text-align: center;
+
+	border-bottom: 2px solid black;
+
+	font-family: Quest;
 }
 
-.q {
-   z-index: 2;
+.answer {
+	display: block;
 
-   width: 70%;
-   margin: auto;
-   margin-top: -30px;
-   padding: 20px;
+	width: calc(40% - 2px);
+	min-height: 40px;
+	margin: 15px 0;
+	padding: 15px;
 
-   text-align: center;
+	cursor: pointer;
+	text-align: center;
 
-   border: 1px solid black;
-   border-radius: 15px;
-   background-color: white;
+	border: 1px solid black;
+
+	font-family: Quest;
+	line-height: 40px;
 }
 
-.a {
-   z-index: 2;
-
-   float: left;
-
-   width: 30%;
-   margin-top: -30px;
-   padding: 20px;
-
-   cursor: pointer;
-   text-align: center;
-
-   border: 1px solid black;
-   border-radius: 15px;
-   background-color: white;
-}
-
-.a:hover{
+.answer:hover{
    color: white;
    background-color: black;
 }
 
-.a1, .a3 {
-   margin-right: 10%;
-   margin-left: 10%;
-}
-
 .opponents {
 	display: flex;
-	overflow-y: scroll;
+	overflow-y: auto;
 	flex-direction: column;
 
 	width: 50%;
+	min-width: 300px;
 	max-height: 600px;
 	margin: 0 auto;
+	margin-bottom: 35px;
 
-	list-style: none;
+	list-style: none;;
 }
 
 .user, .user:visited {
@@ -220,7 +284,6 @@
 	display: block;
 
 	width: 95%;
-	min-width: 300px;
 	height: 30px;
 	margin:0 auto 15px auto;
 	padding-left: 10px;
@@ -250,3 +313,23 @@
 	color: #003f20;
 	background-color: #34ff9c;
 }
+
+.attacker, .attacker:visited {
+	position: relative;
+
+	display: block;
+
+	width: 200px;
+	margin: 0 auto;
+	margin-bottom: 5px;
+
+	text-align: center;
+	text-decoration: none;
+	text-transform: capitalize;
+
+	color: black;
+	border-bottom: 2px solid black;
+
+	font-family: Quest;
+	font-size: 20px;
+}	

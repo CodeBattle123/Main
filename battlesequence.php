@@ -18,7 +18,7 @@ include_once("db/connect.php");
 ?>
 
 <div class="wrapper">
-<div class="">
+<div>
    <?php
       $uuuser = $_SESSION['username'];
       if(isset($_GET['attack'])) {
@@ -30,16 +30,21 @@ include_once("db/connect.php");
 
          $sql = "SELECT * FROM users WHERE nickname = '$opponent'";
          $query = mysqli_query($connect, $sql);
+		 
+		 $opAvatar;
+		 
+		 file_exists("profile-pics/" . $opponent . ".png") ? $opAvatar = $opponent . ".png" : $opAvatar = "default.png";
 
          while($row = $query->fetch_assoc()){
             echo '<div class="title">Selected opponent:</div>';
+			echo '<img class="opAvatar" src="profile-pics/' . $opAvatar . '"/>';
             echo '<div class="opponentInfo">
-					<h1 class="userName">' . $row['nickname'] . '</h1>
+					<h1 class="userName">' . $row['nickname'] . " - " . $row['xp'] . ' xp</h1>
 					<h2 class="names">' . $row['first_name'] . ' ' . $row['last_name'] . '</h2>
 					<h2 class="names">' . $row['clan'] . '</h2>
 		   		</div>';
 
-            echo '<a href="battlesequence.php?attack='. $row['nickname'] . '">Attack this player!</a><br/>';
+            echo '<a class="attackButton" href="battlesequence.php?attack='. $row['nickname'] . '">Attack this player!</a><br/>';
          }
       } elseif (isset($_GET['attack'])) {
          if (isset($_POST['correct'])) {
@@ -147,9 +152,9 @@ include_once("db/connect.php");
                      $sql = "INSERT INTO q (user_1, user_2) VALUES ('$uuuser','$op')";
                      $query = mysqli_query($connect, $sql);
                   }
-                  displayTheArena();
+                  displayTheArena($username, $op);
                } else {
-                  echo 'You already have set up challenge versus this player.';
+                  echo '<h1 class="alreadyChallenged">You already have set up challenge versus this player.</h1>';
                }
             } else {
                echo 'Sorry, we are against masochism...';
@@ -162,10 +167,9 @@ include_once("db/connect.php");
          $query = mysqli_query($connect, $sql);
          $zecount = mysqli_num_rows($query);
          if ($zecount > 0) {
-            echo "o:::::::[]========><br>";
-            echo "Those players challenge you to play versus them!<br>";
+            echo '<h1 class="title">Those players challenge you to play versus them!</h1>';
             while($row = $query->fetch_assoc()){
-               echo '<a href="battlesequence.php?answer=y&attack='. $row['user_1'] . '">'.  $row['user_1'] . '</a><br>';
+               echo '<a class="attacker" href="battlesequence.php?answer=y&attack='. $row['user_1'] . '">'.  $row['user_1'] . '</a>';
             }
          }
          echo '<div class="title">Choose an opponent:</div>
@@ -207,12 +211,12 @@ include_once("db/connect.php");
 </div>
 
 <?php
-   function displayTheArena(){
+   function displayTheArena($user, $op){
       echo '
          <div class="content">
             <div class="player">
                <div class="profile-photo">
-                  <div class="username">username</div>
+                  <div class="username">' . $user . '</div>
                </div>
 
                <div class="score">
@@ -224,11 +228,11 @@ include_once("db/connect.php");
                </div>
             </div>
 
-            <p>VS</p>
+            <h1 class="battleTitle">VS</h1>
 
             <div class="player">
                <div class="profile-photo">
-               <div class="username">username</div>
+               <div class="username">' . $op . '</div>
                </div>
 
                <div class="score">
@@ -242,28 +246,24 @@ include_once("db/connect.php");
          </div>
 
          <div class="battle">
-            <div class="line"></div>
-
-            <div class="q">
-               Is this question?
+            <div class="question">
+               <p>Is this question?</p>
             </div>
 
-            <div class="line"></div>
-            <div data="yes" class="a a1 correct" onClick="check(); getAnswer(this)" id>
-               No.
+            <div data="yes" class="answer a1 correct" onClick="check(); getAnswer(this)">
+            	No.
             </div>
 
-            <div data="no" class="a a2 notcorrect" onClick="check(); getAnswer(this)">
-               Yes.
+            <div data="no" class="answer a2 notcorrect" onClick="check(); getAnswer(this)">
+                Yes.
+            </div>
+			
+            <div data="no" class="answer a3 notcorrect" onClick="check(); getAnswer(this)">
+                Probably.
             </div>
 
-            <div class="line" style="margin-top: 50px;"></div>
-            <div data="no" class="a a3 notcorrect" onClick="check(); getAnswer(this)">
-               Probably.
-            </div>
-
-            <div data="no" class="a a4 notcorrect" onClick="check(); getAnswer(this)">
-               Is this the best question you can think of?
+            <div data="no" class="answer a4 notcorrect" onClick="check(); getAnswer(this)">
+                Is this the best question you can think of? I think not!
             </div>
 
          </div>';
@@ -273,13 +273,13 @@ include_once("db/connect.php");
 <script>
    //The containers of the DOM elements
    let answer = document.getElementsByClassName('correct');
-   let options = document.getElementsByClassName('a');
+   let options = document.getElementsByClassName('answer');
    //variables to use for seeing if the player gave the correct answer
    let correct = false;
 
    function check(){
       for (op of options) {
-         op.style.b ackground = "red";
+         op.style.background = "red";
       }
       answer[0].style.background = "green";
    }
