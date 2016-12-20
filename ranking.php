@@ -53,7 +53,14 @@
 		</table>
 
       </div>
-
+	  
+	  <?php if (!$logged): ?>
+	  	<style>
+	  		.wrapper {
+	  			width: 100%;
+	  		}
+	  	</style>
+	  <?php endif; ?>
       <?php include_once('footer.html'); ?>
    </body>
 </html>
