@@ -9,18 +9,30 @@
     <link rel="stylesheet" href="styles/example-quest-style.css">
 	<script src="scripts/post.js"></script>
 	<script src="scripts/timer.js"></script>
+	<script src="scripts/reveal.js"></script>
+    <script>
+        function play(result){
+            var win = document.getElementById("win");
+            var loss = document.getElementById("loss");
+            result.play();
+        }
+    </script>
     <meta charset="UTF-8">
     <title>Quests</title>
 
 </head>
 
 <body>
+
 <?php 
 	include 'header.php';
 	CheckIfLogged();
     $level = $_GET['level'];
     include_once ('scripts/questPage.php');
 ?>
+
+<audio id="win" src="audio/nakov-correct.wav" ></audio>
+<audio id="loss" src="audio/nakov-wrong.mp3" ></audio>
 
 <div class="wrapper">
     <?php
@@ -33,7 +45,7 @@
         <h1 class="langName">Test Your <span><?=$langTitle?></span> Skills</h1>
         <h3 class="level">Level ' . $progressToScreen . '/5</h3>
 		<hr>
-        <h4 class="objective"><?= $objective?></h4>
+        <h4 class="objective">' . $objective . '</h4>
        <div class="codeContainer">
 			<div class="container">
             <pre class="quest">';
@@ -53,7 +65,7 @@
     </div>
 </div>
 
-<script type="text/javascript">
+	<script type="text/javascript">
 	var line = "";
     let inputs = document.getElementsByClassName("input");
 	var finished = true;
@@ -91,10 +103,12 @@
 
         if (result == true) {
             finished = true;
+            play(win);
 			return correct;
         }
         else {
             finished = true;
+            play(loss);
             return wrong;
         }
     }
@@ -132,29 +146,6 @@
 				document.getElementById('result').innerHTML = document.getElementById('result').innerHTML + CalcResult();
 			}, 100);
         }
-    });
-
-    $('#submitQuest').click( function () {
-		setTimeout(function () {
-			if (CalcResult() == correct) {
-				post("scripts/passQuest.php", {language: '<?=$langSQL?>', user_id: '<?=$log_id?>', lang: '<?=$_GET['lang']?>'});
-			}
-		}, 3000);
-
-		document.getElementById('submitQuest').style.boxShadow = "none";
-		document.getElementById('submitQuest').style.top = "10px";
-
-		setTimeout(function () {
-			if (finished == true) {
-				document.getElementById('submitQuest').style.boxShadow = "0px 10px 0px rgb(110, 110, 110)";
-				document.getElementById('submitQuest').style.top = "0px";
-				return;
-			}
-
-			document.getElementById('submitQuest').style.boxShadow = "0px 10px 0px rgb(110, 110, 110)";
-			document.getElementById('submitQuest').style.top = "0px";
-			document.getElementById('result').innerHTML = document.getElementById('result').innerHTML + CalcResult();
-		}, 100);
     });
 
         </script>

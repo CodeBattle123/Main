@@ -30,9 +30,9 @@ include_once("db/connect.php");
 
          $sql = "SELECT * FROM users WHERE nickname = '$opponent'";
          $query = mysqli_query($connect, $sql);
-		 
+
 		 $opAvatar;
-		 
+
 		 file_exists("profile-pics/" . $opponent . ".png") ? $opAvatar = $opponent . ".png" : $opAvatar = "default.png";
 
          while($row = $query->fetch_assoc()){
@@ -51,7 +51,7 @@ include_once("db/connect.php");
             if (!isset($_GET['answer'])) {
                $sql = "UPDATE q SET temp_points = 1 WHERE (user_1 = '$uuuser' AND user_2 = '$op')";
                $query = mysqli_query($connect, $sql);
-               echo 'You answered correctly. Please wait for you opponent to play the match.';
+               echo '<h2 class="title">You answered correctly.<br/>Please wait for you opponent to play the match.</h2>';
             } else {
                $points = mysqli_query($connect, "SELECT * FROM q WHERE (user_1 = '$op' AND user_2 = '$uuuser')")->fetch_assoc()['temp_points'];
 
@@ -79,6 +79,10 @@ include_once("db/connect.php");
                } else {
                   $new_xp = ($xp) + $current_xp_1;
                   $new_xp2 = $current_xp_2 - $xp;
+
+                  if ($new_xp2 < 0) {
+                     $new_xp2 = 0;
+                  }
                }
 
                $sql = "UPDATE users SET xp='$new_xp' WHERE id='$uuuser_id'";
@@ -96,7 +100,7 @@ include_once("db/connect.php");
             if (!isset($_GET['answer'])) {
                $sql = "UPDATE q SET temp_points = 0 WHERE (user_1 = '$uuuser' AND user_2 = '$op')";
                $query = mysqli_query($connect, $sql);
-               echo 'You didn\'t answered correctly. Please wait for you opponent to play the match. If he don\'t answer correct to the question too, there will be no winner.';
+               echo '<h2 class="title">Incorrect.<br />Please wait for you opponent to play the match.<br />If he also doesn\'t answer correctly to the question, there will be no winner.</h2>';
             } else {
                $points = mysqli_query($connect, "SELECT * FROM q WHERE (user_1 = '$op' AND user_2 = '$uuuser')")->fetch_assoc()['temp_points'];
                echo $points;
@@ -120,16 +124,20 @@ include_once("db/connect.php");
                $current_xp_2 = mysqli_query($connect, "SELECT xp FROM users WHERE id = '$op_id'")->fetch_assoc()['xp'];
 
                if ($winner == 0) {
-                  $new_xp = ($xp) + $current_xp_1;
+                  $new_xp = $xp + $current_xp_1;
                   $new_xp2 = $xp + $current_xp_2;
                } else {
                   $new_xp = $current_xp_1 - $xp;
+
+                  if ($new_xp < 0) {
+                     $new_xp = 0;
+                  }
+
                   $new_xp2 = $current_xp_2 + $xp;
                }
 
                $sql = "UPDATE users SET xp='$new_xp' WHERE id='$uuuser_id'";
                $query = mysqli_query($connect, $sql);
-
                $sql = "UPDATE users SET xp='$new_xp2' WHERE id='$op_id'";
                $query = mysqli_query($connect, $sql);
 
@@ -157,8 +165,7 @@ include_once("db/connect.php");
                   echo '<h1 class="alreadyChallenged">You already have set up challenge versus this player.</h1>';
                }
             } else {
-               echo 'Sorry, we are against masochism...';
-               echo "<br>...but you may punch yourself in the face :)";
+               echo '<h3 class="title">Sorry, we are against masochism<br>...but you may punch yourself in the face :)</h3>';
             }
          }
       } else {
@@ -257,7 +264,7 @@ include_once("db/connect.php");
             <div data="no" class="answer a2 notcorrect" onClick="check(); getAnswer(this)">
                 Yes.
             </div>
-			
+
             <div data="no" class="answer a3 notcorrect" onClick="check(); getAnswer(this)">
                 Probably.
             </div>

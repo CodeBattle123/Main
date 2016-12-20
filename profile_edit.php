@@ -30,54 +30,6 @@ file_exists("profile-pics/" . $user . ".png") ? $profilepic = $user . ".png" : $
 	<?php if (isset($_POST['changes'])): ?>
 		<h2>Changes were made successfully</h2>
 	<?php endif; ?>
-    <div class="profileContainer">
-		<h2><?=$username?></h2>
-	    <div class="profile-pic" align="center">
-	        <img src="profile-pics/<?=$profilepic?>" alt="Profile picture" class="profile">
-	    </div>
-		
-		<form action="profile_edit.php" method="post" enctype="multipart/form-data" class="imageForm">
-			<h3 class="imgHeader">Select an image to upload</h3>
-			<input type="submit" value="Upload Image" name="submit" class="Submit">
-			<input type="file" name="fileToUpload" id="fileToUpload">
-		</form>
-	</div>
-	
-	<hr>
-	
-    <?php
-    $sql = "SELECT * FROM users WHERE nickname='$user'";
-    $description = mysqli_query($connect, $sql)->fetch_assoc()['description'];
-    ?>
-    <form action="profile_edit.php" method="post">
-		<h2>description</h2>
-        <textarea class="profileDesc" name="description"><?=$description?></textarea>
-        <input type="submit" value="Update description" name="submit" class="Submit">
-    </form>
-	
-	<hr>
-	
-	<div class="editInfoCont">
-	    <form class="register" action="profile_edit.php" method="post">
-			<fieldset class="names">
-				<h2>Names</h2>
-		        <input type="text" name="firstname" placeholder="First Name" class="field">
-		        <input type="text" name="lastname" placeholder="Last Name" class="field">
-				<input type="submit" name="submitnames" value="Save changes" class="Submit height">
-			</fieldset>
-		</form>
-		
-		<form class="register" action="profile_edit.php" method="post">
-			<fieldset class="passwords">
-				<h2>password</h2>
-		        <input type="password" name="password" placeholder="Password" class="field">
-		        <input type="password" name="password2" placeholder="Re-type" class="field">
-				<input type="submit" name="submitpassword" value="Save changes" class="Submit height">
-			</fieldset>
-		</form>
-	</div>
-	
-</div>
 <?php
 //pic upload
 if (isset($_FILES["fileToUpload"]["name"])) {
@@ -173,6 +125,54 @@ if (isset($_POST['submitpassword'])) {
 	}
 }
 ?>
+	<div class="profileContainer">
+		<h2><?=$username?></h2>
+		<div class="profile-pic" align="center">
+			<img src="profile-pics/<?=$profilepic?>" alt="Profile picture" class="profile">
+		</div>
+
+		<form action="profile_edit.php" method="post" enctype="multipart/form-data" class="imageForm">
+			<h3 class="imgHeader">Select an image to upload</h3>
+			<input type="submit" value="Upload Image" name="submit" class="Submit">
+			<input type="file" name="fileToUpload" id="fileToUpload">
+		</form>
+	</div>
+
+	<hr>
+
+	<?php
+	$sql = "SELECT * FROM users WHERE nickname='$user'";
+	$description = mysqli_query($connect, $sql)->fetch_assoc()['description'];
+	?>
+	<form action="profile_edit.php" method="post">
+		<h2>description</h2>
+		<textarea class="profileDesc" name="description"><?=$description?></textarea>
+		<input type="submit" value="Update description" name="submit" class="Submit">
+	</form>
+
+	<hr>
+
+	<div class="editInfoCont">
+		<form class="register" action="profile_edit.php" method="post">
+			<fieldset class="names">
+				<h2>Names</h2>
+				<input type="text" name="firstname" placeholder="First Name" class="field">
+				<input type="text" name="lastname" placeholder="Last Name" class="field">
+				<input type="submit" name="submitnames" value="Save changes" class="Submit height">
+			</fieldset>
+		</form>
+
+		<form class="register" action="profile_edit.php" method="post">
+			<fieldset class="passwords">
+				<h2>password</h2>
+				<input type="password" name="password" placeholder="Password" class="field">
+				<input type="password" name="password2" placeholder="Re-type" class="field">
+				<input type="submit" name="submitpassword" value="Save changes" class="Submit height">
+			</fieldset>
+		</form>
+	</div>
+
+</div>
 <?php include_once('footer.html'); ?>
 </body>
 </html>

@@ -36,7 +36,7 @@ if ($logged) {
 				$validate = false;
 			}
 
-	        if (strlen($username) < 3 || strlen($username) > 12) {
+	        if (strlen($username) < 3 || strlen($username) > 14) {
 	    	    echo '<li class="message">Username must be between 3 & 12 characters.</li>';
 	            $validate = false;
 	        }

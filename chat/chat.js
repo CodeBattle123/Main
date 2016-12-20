@@ -25,7 +25,7 @@ let ChatApp = React.createClass({
     render: function () {
         let self = this;
         let messages = self.state.messages.map(function(msg){
-            return <li><span id="name">Sam</span>{msg}</li>
+            return <li><span id="name">asd </span>{msg}</li>
         });
         return (
             <div>

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/make-clan.css">
     <link rel="icon" type="image/png" href="images/icon.png"/>
-    <meta charset="UTF-8">
+    <meta charset="UTfF-8">
     <title>Create clan</title>
 </head>
 
