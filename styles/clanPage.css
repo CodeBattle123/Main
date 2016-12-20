@@ -1,4 +1,6 @@
 .imageContainer {
+	padding-bottom: 20px;
+
 	text-align: center;
 
 	background: url("../images/backgrounds/clan.jpg");
@@ -11,9 +13,9 @@
 	overflow: hidden;
 	flex-direction: row;
 
-	width: 25vw;
-	height: 25vw;
-	margin: 15px auto;
+	width: 300px;
+	height: 300px;
+	margin: 0 auto;
 
 	border-radius: 50%;
 
@@ -21,22 +23,23 @@
 
 }
 
+.clanAvatarHolder:hover {
+	transform: rotate(-10deg);
+
+	box-shadow: 0px 0px 40px #000;
+}
+
 .clanAvatar {
 	display: block;
 
 	height: 100%;
-	margin: 0 auto;
+	margin: 15px auto;
 
 	transition: width 0.5s,
 				height 0.5s;
 
 }
 
-.clanAvatarHolder:hover {
-	width: 26vw;
-	height: 26vw;
-	margin-top: 0px;
-}
 
 .inbox {
 	position: absolute;
@@ -399,9 +402,7 @@ ul:hover .veil,
 	
 	.answers {
 		width: 100%;
-	}
-	
-	
+	}	
 }
 
 input[type=text] {
@@ -419,4 +420,4 @@ input[type=button] {
 	margin: 0;
 
 	line-height: 30px;
-}	
+}
