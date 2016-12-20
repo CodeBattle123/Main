@@ -72,6 +72,15 @@ if ($logged) {
                 echo '<li class="message">Please enter a valid email addres.</li>';
                 $validate = false;
             }
+
+            //checks if the email is taken
+            $isEmailTaken = mysqli_num_rows(mysqli_query($connect, "SELECT email FROM users WHERE email='$email'"));
+
+            if (!$isEmailTaken < 1) {
+                echo '<li class="message">This email is already in use.</li>';
+                $validate = false;
+            }
+
 	        if ($validate) {
                 $password = password_hash($password, PASSWORD_DEFAULT);
 	            $sql = "INSERT INTO users (nickname, email, password, first_name, last_name) VALUES ('$username','$email','$password', '$first_name', '$last_name')";

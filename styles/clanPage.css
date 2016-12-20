@@ -257,7 +257,6 @@ ul:hover .veil,
 	overflow-y: auto;
 	flex-direction: column;
 	border-right: 2px solid black;
-
 	width: 70%;
 	min-height: 100px;
 	max-height: 350px;

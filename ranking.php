@@ -31,6 +31,10 @@
 			    while($row = $query->fetch_assoc()){
 			        $current_user = $row['nickname'];
 			        file_exists("profile-pics/" . $current_user . ".png") ? $profilepic = $current_user . ".png" : $profilepic = "default.png";
+                    $clan = $row['clan'];
+                    if ($clan == "") {
+                        $clan = "No clan";
+                    }
 
 			        echo '<tr>
 			            <td><img src="profile-pics/' . $profilepic . '" class="profile"/></td>
@@ -42,7 +46,7 @@
 			                <h4 class="exp">' . $row['xp'] . '</h4>
 			                </td>
 			            <td>
-			               <h4 class="clan">' . $row['clan'] . '</h4>
+			               <h4 class="clan">' . $clan . '</h4>
 			            </td>
 			               </tr>
 			               ';

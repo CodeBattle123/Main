@@ -35,6 +35,7 @@ else {
 	}
 }
 
+//get clan requests
 $sql = "SELECT DISTINCT * FROM team_inbox WHERE team_name = '$clan'";
 $requests = mysqli_query($connect,$sql);
 $numrows = mysqli_num_rows($requests);
@@ -43,6 +44,8 @@ $numrows = mysqli_num_rows($requests);
 <?php
 $leader = mysqli_query($connect, "SELECT * FROM teams WHERE name = '$clan'")->fetch_assoc()['leader'];
 $isLeader = ($username==$leader);
+$clan = mysqli_query($connect, "SELECT * FROM users WHERE nickname = '$username'")->fetch_assoc()['clan'];
+$isMember = ($clan == $log_clan);
 ?>
 
 <main class="wrapper">
@@ -50,7 +53,7 @@ $isLeader = ($username==$leader);
 
 	    <?php
 	    if ($isLeader) {
-	        echo '    <a href="clan_edit.php" class="editPageButton">Edit clan</a>';
+	        echo '<a href="clan_edit.php" class="editPageButton">Edit clan</a>';
 	    } else {
 	        echo '
 	    <form action="scripts/leaveclan.php" method="post">
@@ -115,7 +118,9 @@ $isLeader = ($username==$leader);
             //gets member profile pic
             file_exists("profile-pics/" . $member_name . ".png") ? $memberpic = $member_name . ".png" : $memberpic = "default.png";
 
-            echo '<li class="clanMember"> <img class="memberpic" src="profile-pics/' . $memberpic . '"> <span>' . $member_first_name . " '" . $member_name . "'" . $member_last_name . '</span></li>';
+            echo '<li class="clanMember"> <img class="memberpic" src="profile-pics/' . $memberpic . '">
+            <a class="name" target="_blank" href="profile.php?user=' . $member_name . '">' . $member_first_name . " '" . $member_name . "' " . $member_last_name . '</a>            
+            </li>';
         }
         ?>
     </ul>
