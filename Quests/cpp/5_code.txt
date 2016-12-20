@@ -1,0 +1,11 @@
+using namespace std;
+
+int main() {
+	int n;
+	cin >> {option};
+	
+	for (int i = {option}; i <= n; {option}++) {
+		cout << "{option}" << '\n';
+	}
+	return 0;
+}

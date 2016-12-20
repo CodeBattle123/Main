@@ -1,12 +1,12 @@
 .wrapper {
 	width: 100%;
+	height: 60vw;
 
 	background: url("../images/backgrounds/register.jpg");
 	background-attachment: fixed;
 	background-position: top;
 	background-position: 50% 30%;
 	background-size: cover;
-
 }
 
 input[type="text"], input[type="password"], input[type="email"] {

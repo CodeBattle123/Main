@@ -22,13 +22,26 @@
 
 <?php include_once('header.php');
 CheckIfLogged();
-$sql = "SELECT DISTINCT * FROM team_inbox WHERE team_name = '$log_clan'";
+$clan = "";
+if (!isset($_GET['clan'])) {
+	header("location: clanPage.php?clan=" . $log_clan);
+}
+else {
+	$clan = $_GET['clan'];
+	$sql = "SELECT * FROM teams WHERE name='$clan'";
+	$query = mysqli_query($connect, $sql);
+	if (mysqli_num_rows($query) == 0) {
+		header("location: clanPage.php?clan=" . $log_clan);
+	}
+}
+
+$sql = "SELECT DISTINCT * FROM team_inbox WHERE team_name = '$clan'";
 $requests = mysqli_query($connect,$sql);
 $numrows = mysqli_num_rows($requests);
 ?>
 
 <?php
-$leader = mysqli_query($connect, "SELECT * FROM teams WHERE name = '$log_clan'")->fetch_assoc()['leader'];
+$leader = mysqli_query($connect, "SELECT * FROM teams WHERE name = '$clan'")->fetch_assoc()['leader'];
 $isLeader = ($username==$leader);
 ?>
 
@@ -45,10 +58,10 @@ $isLeader = ($username==$leader);
 	    </form>';
 	    }
 	    ?>
-	    <h3 class="clanName"><?= $log_clan ?></h3>
+	    <h3 class="clanName"><?= $clan ?></h3>
 
 	    <div class="clanAvatarHolder">
-			<img class="clanAvatar" src="clan-pics/<?=$log_clan . ".png"?>" alt="asd">
+			<img class="clanAvatar" src="clan-pics/<?=$clan . ".png"?>" alt="asd">
 		</div>
 		
 	</div>
@@ -82,7 +95,7 @@ $isLeader = ($username==$leader);
 
 
     <?php
-    $sql = "SELECT * FROM teams WHERE name='$log_clan'";
+    $sql = "SELECT * FROM teams WHERE name='$clan'";
     $query = mysqli_query($connect, $sql)->fetch_assoc();
     ?>
 
@@ -93,7 +106,7 @@ $isLeader = ($username==$leader);
     <ul class="clanMembers">
         <?php
 
-        $sql = "SELECT * FROM users WHERE clan='$log_clan'";
+        $sql = "SELECT * FROM users WHERE clan='$clan'";
         $query = mysqli_query($connect, $sql);
         while ($row = $query->fetch_assoc()) {
             $member_name = $row['nickname'];

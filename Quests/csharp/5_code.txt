@@ -1,0 +1,7 @@
+int a = int.Parse(Console.ReadLine());
+int b = {option}.Parse(Console.ReadLine());
+
+if (a >= b)
+	Console.WriteLine({option});
+else
+	Console.WriteLine({option});

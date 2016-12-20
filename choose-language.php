@@ -112,14 +112,14 @@ $row = mysqli_fetch_row($results);
 			var elements = document.getElementsByClassName('meterFill');
 			
 			// Setting the width of the meter fill to match the progress on that language.
-			elements[0].style.width = String(parseInt("<?php echo $row[1]; ?>") * 10) + "%";
-			elements[1].style.width = String(parseInt("<?php echo $row[2]; ?>") * 10) + "%";
-			elements[2].style.width = String(parseInt("<?php echo $row[3]; ?>") * 10) + "%";
-			elements[3].style.width = String(parseInt("<?php echo $row[4]; ?>") * 10) + "%";
-			elements[4].style.width = String(parseInt("<?php echo $row[5]; ?>") * 10) + "%";
-			elements[5].style.width = String(parseInt("<?php echo $row[6]; ?>") * 10) + "%";
-			elements[6].style.width = String(parseInt("<?php echo $row[7]; ?>") * 10) + "%";
-			elements[7].style.width = String(parseInt("<?php echo $row[8]; ?>") * 10) + "%";
+			elements[0].style.width = String(parseInt("<?php echo $row[1] - 1; ?>") * 20) + "%";
+			elements[1].style.width = String(parseInt("<?php echo $row[2] - 1; ?>") * 20) + "%";
+			elements[2].style.width = String(parseInt("<?php echo $row[3] - 1; ?>") * 20) + "%";
+			elements[3].style.width = String(parseInt("<?php echo $row[4] - 1; ?>") * 20) + "%";
+			elements[4].style.width = String(parseInt("<?php echo $row[5] - 1; ?>") * 20) + "%";
+			elements[5].style.width = String(parseInt("<?php echo $row[6] - 1; ?>") * 20) + "%";
+			elements[6].style.width = String(parseInt("<?php echo $row[7] - 1; ?>") * 20) + "%";
+			elements[7].style.width = String(parseInt("<?php echo $row[8] - 1; ?>") * 20) + "%";
 		</script>
 
 	</div>

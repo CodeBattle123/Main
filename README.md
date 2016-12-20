@@ -1,2 +1,1 @@
-# Main
-The main project for which the organization was made for.
+map6 is mila

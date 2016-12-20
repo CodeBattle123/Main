@@ -1,0 +1,4 @@
+one = input('First number: ')
+two = {option}('Second number: ')
+
+print({option} + two)
