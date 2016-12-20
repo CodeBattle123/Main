@@ -30,9 +30,9 @@ include_once("db/connect.php");
 
          $sql = "SELECT * FROM users WHERE nickname = '$opponent'";
          $query = mysqli_query($connect, $sql);
-		 
+
 		 $opAvatar;
-		 
+
 		 file_exists("profile-pics/" . $opponent . ".png") ? $opAvatar = $opponent . ".png" : $opAvatar = "default.png";
 
          while($row = $query->fetch_assoc()){
@@ -79,6 +79,10 @@ include_once("db/connect.php");
                } else {
                   $new_xp = ($xp) + $current_xp_1;
                   $new_xp2 = $current_xp_2 - $xp;
+
+                  if ($new_xp2 < 0) {
+                     $new_xp2 = 0;
+                  }
                }
 
                $sql = "UPDATE users SET xp='$new_xp' WHERE id='$uuuser_id'";
@@ -124,6 +128,11 @@ include_once("db/connect.php");
                   $new_xp2 = $xp + $current_xp_2;
                } else {
                   $new_xp = $current_xp_1 - $xp;
+
+                  if ($new_xp < 0) {
+                     $new_xp = 0;
+                  }
+
                   $new_xp2 = $current_xp_2 + $xp;
                }
 
@@ -257,7 +266,7 @@ include_once("db/connect.php");
             <div data="no" class="answer a2 notcorrect" onClick="check(); getAnswer(this)">
                 Yes.
             </div>
-			
+
             <div data="no" class="answer a3 notcorrect" onClick="check(); getAnswer(this)">
                 Probably.
             </div>
