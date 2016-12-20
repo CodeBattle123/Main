@@ -10,18 +10,29 @@
 	<script src="scripts/post.js"></script>
 	<script src="scripts/timer.js"></script>
 	<script src="scripts/reveal.js"></script>
+    <script>
+        function play(result){
+            var win = document.getElementById("win");
+            var loss = document.getElementById("loss");
+            result.play();
+        }
+    </script>
     <meta charset="UTF-8">
     <title>Quests</title>
 
 </head>
 
 <body>
+
 <?php 
 	include 'header.php';
 	CheckIfLogged();
 	include 'scripts/questPage.php';
 $username = "test";
 ?>
+
+<audio id="win" src="audio/nakov-correct.wav" ></audio>
+<audio id="loss" src="audio/nakov-wrong.mp3" ></audio>
 
 <div class="wrapper">
     <div class="questContainer">
@@ -82,10 +93,12 @@ $username = "test";
 
         if (result == true) {
             finished = true;
+            play(win);
 			return correct;
         }
         else {
             finished = true;
+            play(loss);
             return wrong;
         }
     }

@@ -30,7 +30,7 @@ if ($logged) {
 				$validate = false;
 			}
 
-			$last_name = $_POST['lastname'];uh
+			$last_name = $_POST['lastname'];
 			if (strlen($last_name) == 0) {
 				echo "<li class=\"message\">You must enter your last name</li>";
 				$validate = false;
