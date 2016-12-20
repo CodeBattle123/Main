@@ -86,6 +86,15 @@
     <iframe frameborder="0" class="map" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJtxmnpMyFqkAR11jn2Lz8U98&key=AIzaSyAveHIKy7pEHie0CkXQRzdsRQXE4tvenSg" allowfullscreen>
       </iframe>
 </div>
+
+<?php if (!$logged): ?>
+	<style>
+		.wrapper {
+			width: 100%;
+		}
+	</style>
+<?php endif; ?>
+
 <?php include 'footer.html'?>
 </body>
 </html>

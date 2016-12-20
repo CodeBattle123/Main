@@ -148,7 +148,7 @@
 		                        file_exists("profile-pics/" . $current_user . ".png") ? $current_user_pic = $current_user . ".png" : $current_user_pic = "default.png";
 
 		                            echo '<tr class="' . $result . '" >
-				        <td><img class="profilesmall" src="profile-pics/' . $current_user . ".png" . '"><a class="matchName" href="profile.php?user=' . $current_user . '">' . $current_user . '</a></td>
+				        <td><img class="profilesmall" src="profile-pics/' . $current_user_pic . '"><a class="matchName" href="profile.php?user=' . $current_user . '">' . $current_user . '</a></td>
 		                <td>' . $result . '</td>
 				        <td><img class="profilesmall" src="profile-pics/' . $opponentpic . '"><a class="matchName" href="profile.php?user=' . $opponent . '">' . $opponent . '</a></td>
 		                <td> ';
