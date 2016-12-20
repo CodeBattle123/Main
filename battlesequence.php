@@ -94,7 +94,8 @@ include_once("db/connect.php");
                $sql = "INSERT INTO battle_log (user1_id, user2_id, winner, won_xp, date)
                                        VALUES ('$uuuser_id', '$op_id', '$winner', '$xp', now());";
                $query = mysqli_query($connect, $sql);
-
+			   
+			   echo '<h2 class="title">You have answered correctly.<br />Now check your match history.</h2>';
             }
          } else if(isset($_POST['not_correct'])) {
             if (!isset($_GET['answer'])) {
@@ -144,6 +145,8 @@ include_once("db/connect.php");
                $sql = "INSERT INTO battle_log (user1_id, user2_id, winner, won_xp, date)
                                        VALUES ('$uuuser_id', '$op_id', '$winner', '$xp', now());";
                $query = mysqli_query($connect, $sql);
+			   
+			   echo '<h2 class="title">Incorrect. . .<br />Pray for the best.</h2>';
             }
          } else {
             if (strtolower($_GET['attack']) != strtolower($_SESSION['username'])) {

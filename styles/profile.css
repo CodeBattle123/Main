@@ -39,8 +39,8 @@ h2, h3 {
 }
 
 .profilesmall {
-	width: 3vw;
-	height: 3vw;
+	width: 40px;
+	height: 40px;
 
 	border-radius:50%;
 }

@@ -1,0 +1,4 @@
+n = {option}("Cycle to: ")
+for num in range(1, {option}) :
+	if {option} % 3 == 0 :
+		{option}(num)

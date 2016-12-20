@@ -1,9 +1,9 @@
-#include <math.h>;
+#include &lt;math.h&gt;;
 using namespace std;
 
 int main() {
 	int num;
-	num = pow({option}}, 2);
+	num = pow({option}, 2);
 	{option} << {option} << endl;
 	return 0;
 }

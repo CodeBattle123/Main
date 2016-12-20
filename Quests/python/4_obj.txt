@@ -1,0 +1,1 @@
+Display all odd numbers from 0 to the entered number 'n'.

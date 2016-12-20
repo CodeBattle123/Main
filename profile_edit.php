@@ -78,24 +78,17 @@ if (isset($_FILES["fileToUpload"]["name"])) {
 if (isset($_POST['submitnames'])) {
     $validate = true;
     $first_name = $_POST['firstname'];
-    if (strlen($first_name) == 0) {
-        echo "<li class=\"message\">You must enter your first name.</li>";
-        $validate = false;
+    if (strlen(trim($first_name)) != 0) {
+		$new_fn = trim($first_name);
+        $sql = "UPDATE users SET first_name='$new_fn' WHERE nickname = '$username'";
+		mysqli_query($connect, $sql);
     }
 
     $last_name = $_POST['lastname'];
-    if (strlen($last_name) == 0) {
-        echo "<li class=\"message\">You must enter your last name</li>";
-        $validate = false;
-    }
-
-    if ($validate) {
-        $sql = "UPDATE users SET first_name='$first_name', last_name='$last_name'  WHERE nickname ='$username'";
-        $query = mysqli_query($connect, $sql);
-        if ($query) {
-            echo '<li class="message" style="color: green;">You have successfully updated your account!</li>';
-			$_POST['changes'] = true;
-        }
+    if (strlen(trim($last_name)) != 0) {
+		$new_ln = trim($last_name);
+		$sql = "UPDATE users SET last_name='$new_ln' WHERE nickname = '$username'";
+		mysqli_query($connect, $sql);
     }
 }
 
