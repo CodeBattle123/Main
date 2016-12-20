@@ -324,23 +324,23 @@ include_once("db/connect.php");
 
          <div class="battle">
             <div class="question">
-               <p>Is this question?</p>
+               <p>What is NVC?</p>
             </div>
 
             <div data="yes" class="answer a1 correct" onClick="check(); getAnswer(this)">
-            	No.
+            	Model View Controler
             </div>
 
             <div data="no" class="answer a2 notcorrect" onClick="check(); getAnswer(this)">
-                Yes.
+                Mad Viatnamese Chicken
             </div>
 
             <div data="no" class="answer a3 notcorrect" onClick="check(); getAnswer(this)">
-                Probably.
+                Made Very Cool
             </div>
 
             <div data="no" class="answer a4 notcorrect" onClick="check(); getAnswer(this)">
-                Is this the best question you can think of? I think not!
+               Nobunaga Volt City
             </div>
 
          </div>';
