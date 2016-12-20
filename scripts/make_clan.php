@@ -2,14 +2,12 @@
 include  '../db/connect.php';
 include '../db/login_status.php';
 
-
-
 	if (isset($_POST['submit_clan'])) {
         $clan_name = $_POST['clanname'];
         $validate = true;
 
         if (strlen($clan_name) == 0) {
-            echo '<li class=\"message\">You must enter your clan name.</li>';
+            $errormsg = "You must enter your clan name.";
             $validate = false;
 
             header("location: ../make-clan.php");
@@ -17,11 +15,10 @@ include '../db/login_status.php';
 
         $clan_description = $_POST['description'];
         if (strlen($clan_description) == 0) {
-            echo "<li class=\"message\">You must enter your clan description.</li>";
+            $errormsg = "You must enter your clan description.";
             $validate = false;
             header("location: ../make-clan.php");
         }
-
 
         //picture upload
         $target_dir = "../clan-pics/";
@@ -34,7 +31,7 @@ include '../db/login_status.php';
             if($check !== false) {
                 $uploadOk = 1;
             } else {
-                echo "File is not an image.";
+                $errormsg = "File is not an image.";
                 $uploadOk = 0;
                 $validate = false;
                 header("location: ../make-clan.php");
@@ -42,7 +39,7 @@ include '../db/login_status.php';
         }
         // Check file size
         if ($_FILES["fileToUpload"]["size"] > 50000000) {
-            echo "Sorry, your file is too large.";
+            $errormsg = "Sorry, your file is too large.";
             $validate = false;
             $uploadOk = 0;
             header("location: ../make-clan.php");
@@ -50,26 +47,25 @@ include '../db/login_status.php';
         // Allow certain file formats
         if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
             && $imageFileType != "gif" ) {
-            echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+            $errormsg = "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
             $validate = false;
             $uploadOk = 0;
             header("location: ../make-clan.php");
         }
         // Check if $uploadOk is set to 0 by an error
         if ($uploadOk == 0) {
-            echo "Sorry, your file was not uploaded.";
+            $errormsg = "Sorry, your file was not uploaded.";
             $validate = false;
             header("location: ../make-clan.php");
         // if everything is ok, try to upload file
         } else {
             if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $filename)) {
             } else {
-                echo "Sorry, there was an error uploading your file.";
+                $errormsg = "Sorry, there was an error uploading your file.";
                 $validate = false;
                 header("location: ../make-clan.php");
 
             }
-
 
         if ($validate == true) {
             $clan_name = mysqli_real_escape_string($connect, $_POST['clanname']);

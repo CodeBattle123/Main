@@ -33,7 +33,7 @@
                 echo '<tr>
 		            <td><img class="clanpic" src="clan-pics/'. $row['name'] . ".png" .'"/></td>
 		            <td>#<b>' . $rank . '</b></td>
-		            <td>' . $row['name'] . '</td>
+		            <td><a class="name" target="_blank" href="clanPage.php?clan=' . $row['name'] . '">' . $row['name'] . '</td>
 		            <td>' . $row['total'] . '</td>
                </tr>
                ';

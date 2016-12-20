@@ -96,18 +96,14 @@ $isLeader = ($username==$leader);
         $query = mysqli_query($connect, $sql);
         while ($row = $query->fetch_assoc()) {
             $member_name = $row['nickname'];
-            echo '<li class="clanMember"><span>' . $member_name . '</span><a href="profile.php?user=' . $member_name . '">View Profile</a></li>';
+            //gets member profile pic
+            file_exists("profile-pics/" . $member_name . ".png") ? $memberpic = $member_name . ".png" : $memberpic = "default.png";
+
+            echo '<li class="clanMember"> <img class="memberpic" src="profile-pics/' . $memberpic . '"> <span>' . $member_name . '</span><a href="profile.php?user=' . $member_name . '">View Profile</a></li>';
         }
         ?>
     </ul>
-	
-    <!-- For getting the chat to be scolled to the bottom automatically -->
-    <script type="text/javascript">
-        var chat = document.getElementById("chat");
-        chat.scrollTop = chat.scrollHeight;
-    </script>
 
-    <div id="clanChat"></div>
 	
 	</div>
 </main>

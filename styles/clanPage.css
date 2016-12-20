@@ -34,8 +34,18 @@
 
 .clanAvatarHolder:hover {
 	width: 26vw;
-	height: 26vw;
+	height: 26vw;
+
 	margin-top: 0px;
+}
+
+.memberpic {
+	width: 50px;
+	height: 50px;
+	border-radius:50%;
+	display: block;
+	margin: auto 0;
+	margin-right: 15px;
 }
 
 .inbox {
