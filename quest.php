@@ -9,18 +9,30 @@
     <link rel="stylesheet" href="styles/example-quest-style.css">
 	<script src="scripts/post.js"></script>
 	<script src="scripts/timer.js"></script>
+	<script src="scripts/reveal.js"></script>
+    <script>
+        function play(result){
+            var win = document.getElementById("win");
+            var loss = document.getElementById("loss");
+            result.play();
+        }
+    </script>
     <meta charset="UTF-8">
     <title>Quests</title>
 
 </head>
 
 <body>
+
 <?php 
 	include 'header.php';
 	CheckIfLogged();
     $level = $_GET['level'];
     include_once ('scripts/questPage.php');
 ?>
+
+<audio id="win" src="audio/nakov-correct.wav" ></audio>
+<audio id="loss" src="audio/nakov-wrong.mp3" ></audio>
 
 <div class="wrapper">
     <?php
@@ -91,10 +103,12 @@
 
         if (result == true) {
             finished = true;
+            play(win);
 			return correct;
         }
         else {
             finished = true;
+            play(loss);
             return wrong;
         }
     }
