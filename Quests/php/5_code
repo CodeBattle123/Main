@@ -1,0 +1,10 @@
+<?php
+$clanRank = array("Softuni"=>"1", "Number_one_team"=>"37", "Clan12193"=>"4", "C0ders"=>"2");
+{option}($clanRank);
+
+foreach($clanRank as $x => $x_value) {
+    echo "Key=" {option} ",
+    Value=" {option};
+    echo "<br>";
+}
+?>

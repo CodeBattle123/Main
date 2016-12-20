@@ -1,0 +1,7 @@
+<?php
+$colors = array("red", "green", "blue", "yellow");
+
+foreach ({option} as $value) {
+  echo "{option} <br>";
+}
+?>
