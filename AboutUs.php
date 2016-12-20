@@ -59,6 +59,13 @@
       </section>
 </div>
 
+<?php if (!$logged): ?>
+	<style>
+		.wrapper {
+			width: 100%;
+		}
+	</style>
+<?php endif; ?>
 <?php include 'footer.html' ?>
 </body>
 </html>
