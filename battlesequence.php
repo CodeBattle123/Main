@@ -340,7 +340,7 @@ include_once("db/connect.php");
             </div>
 
          </div>';
-      }/
+      }
 ?>
 
 <script>
