@@ -36,7 +36,7 @@
 			            <td><img src="profile-pics/' . $profilepic . '" class="profile"/></td>
 			            <td>#<b>' . $rank . '</b></td>
 			            <td>
-			                <h4 class="name">' . $current_user . '</h4>
+			            <a class="name" target="_blank" href="profile.php?user=' . $current_user . '"><h4 class="name">' . $current_user . '</h4>
 			            </td>
 			                <td>
 			                <h4 class="exp">' . $row['xp'] . '</h4>
@@ -53,7 +53,14 @@
 		</table>
 
       </div>
-
+	  
+	  <?php if (!$logged): ?>
+	  	<style>
+	  		.wrapper {
+	  			width: 100%;
+	  		}
+	  	</style>
+	  <?php endif; ?>
       <?php include_once('footer.html'); ?>
    </body>
 </html>

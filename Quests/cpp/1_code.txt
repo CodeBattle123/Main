@@ -1,4 +1,4 @@
 int main() {
-	cout << {option} << endl;
+	cout << "{option}" << endl;
 	return 0;
 }

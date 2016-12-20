@@ -22,34 +22,48 @@
 
 <?php include_once('header.php');
 CheckIfLogged();
-$sql = "SELECT DISTINCT * FROM team_inbox WHERE team_name = '$log_clan'";
+$clan = "";
+if (!isset($_GET['clan'])) {
+	header("location: clanPage.php?clan=" . $log_clan);
+}
+else {
+	$clan = $_GET['clan'];
+	$sql = "SELECT * FROM teams WHERE name='$clan'";
+	$query = mysqli_query($connect, $sql);
+	if (mysqli_num_rows($query) == 0) {
+		header("location: clanPage.php?clan=" . $log_clan);
+	}
+}
+
+$sql = "SELECT DISTINCT * FROM team_inbox WHERE team_name = '$clan'";
 $requests = mysqli_query($connect,$sql);
 $numrows = mysqli_num_rows($requests);
 ?>
 
 <?php
-$leader = mysqli_query($connect, "SELECT * FROM teams WHERE name = '$log_clan'")->fetch_assoc()['leader'];
+$leader = mysqli_query($connect, "SELECT * FROM teams WHERE name = '$clan'")->fetch_assoc()['leader'];
 $isLeader = ($username==$leader);
 ?>
 
 <main class="wrapper">
 	<div class="imageContainer">
 
-    <?php
-    if ($isLeader) {
-        echo '    <a href="clan_edit.php" class="editPageButton">Edit clan</a>';
-    } else {
-        echo '
-    <form action="scripts/leaveclan.php" method="post">
-    <input Onclick="return confirm(\'Are you sure you want to leave this clan?\')" type="submit" value="Leave clan" name="leaveclan" class="editPageButton"> 
-    </form>';
-    }
-    ?>
-    <h3 class="clanName"><?= $log_clan ?></h3>
+	    <?php
+	    if ($isLeader) {
+	        echo '    <a href="clan_edit.php" class="editPageButton">Edit clan</a>';
+	    } else {
+	        echo '
+	    <form action="scripts/leaveclan.php" method="post">
+	    <input Onclick="return confirm(\'Are you sure you want to leave this clan?\')" type="submit" value="Leave clan" name="leaveclan" class="editPageButton"> 
+	    </form>';
+	    }
+	    ?>
+	    <h3 class="clanName"><?= $clan ?></h3>
 
-    <div class="clanAvatarHolder">
-		<img class="clanAvatar" src="clan-pics/<?=$log_clan . ".png"?>" alt="asd">
-	</div>
+	    <div class="clanAvatarHolder">
+			<img class="clanAvatar" src="clan-pics/<?=$clan . ".png"?>" alt="asd">
+		</div>
+		
 	</div>
 	<?php
 	if ($isLeader) {
@@ -81,7 +95,7 @@ $isLeader = ($username==$leader);
 
 
     <?php
-    $sql = "SELECT * FROM teams WHERE name='$log_clan'";
+    $sql = "SELECT * FROM teams WHERE name='$clan'";
     $query = mysqli_query($connect, $sql)->fetch_assoc();
     ?>
 
@@ -92,22 +106,18 @@ $isLeader = ($username==$leader);
     <ul class="clanMembers">
         <?php
 
-        $sql = "SELECT * FROM users WHERE clan='$log_clan'";
+        $sql = "SELECT * FROM users WHERE clan='$clan'";
         $query = mysqli_query($connect, $sql);
         while ($row = $query->fetch_assoc()) {
             $member_name = $row['nickname'];
-            echo '<li class="clanMember"><span>' . $member_name . '</span><a href="profile.php?user=' . $member_name . '">View Profile</a></li>';
+            //gets member profile pic
+            file_exists("profile-pics/" . $member_name . ".png") ? $memberpic = $member_name . ".png" : $memberpic = "default.png";
+
+            echo '<li class="clanMember"> <img class="memberpic" src="profile-pics/' . $memberpic . '"> <span>' . $member_name . '</span><a href="profile.php?user=' . $member_name . '">View Profile</a></li>';
         }
         ?>
     </ul>
-	
-    <!-- For getting the chat to be scolled to the bottom automatically -->
-    <script type="text/javascript">
-        var chat = document.getElementById("chat");
-        chat.scrollTop = chat.scrollHeight;
-    </script>
 
-    <div id="clanChat"></div>
 	
 	</div>
 </main>

@@ -85,7 +85,5 @@
             document.getElementById("focusThis").focus();
          }
          </script>
-
-        <?php  include_once('footer.html'); ?>
     </body>
 </html>
