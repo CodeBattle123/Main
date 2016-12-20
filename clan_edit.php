@@ -14,9 +14,6 @@
 <body>
 <?php include_once('header.php');
 CheckIfLogged();
-?>
-
-<?php
 
 //Checking if the logged user is the leader of the clan.
 //If the logged user is the leader then the elements for the leader are shown

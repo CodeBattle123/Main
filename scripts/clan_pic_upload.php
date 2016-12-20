@@ -3,7 +3,7 @@
 include  '../db/connect.php';
 include '../db/login_status.php';
 
-$clan_name = "$log_clan";
+$clan_name = $log_clan;
 
 if (isset($_FILES["fileToUpload"])) {
 //picture upload
@@ -55,4 +55,5 @@ if ($uploadOk == 0) {
         header("location: ../clan_edit.php");
     }
 }
+}else {
 }

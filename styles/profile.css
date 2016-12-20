@@ -1,8 +1,7 @@
-
-.userContainer{
-	background-image: url("../images/backgrounds/profile.png");
-	background-position: bottom;
-	background-size: cover;
+.userContainer {
+    background-image: url("../images/backgrounds/profile.png");
+    background-position: bottom;
+    background-size: cover;
 }
 
 .profile-pic{
@@ -18,30 +17,28 @@
 
 	justify-content: center;
 }
-
 .profile {
     height: 100%;
-	margin: 0 auto;
+    margin: 0 auto;
 }
-
+h2,
+h3 {
+    color: white;
+}
 .profile::selection {
-	background: none;
+    background: none;
 }
-
 .profile-pic:hover {
 	transform: rotate(-10deg);
 
 	box-shadow: 0px 0px 40px #000;
 }
-
 .profilesmall {
-	width: 3vw;
-	height: 3vw;
+	width: 40px;
+	height: 40px;
 
 	border-radius:50%;
 }
-
-
 .editPageButton {
 	position: absolute;
 	top: 15px;
@@ -64,7 +61,6 @@
 	font-family: Quest;
 	line-height: 40px;
 }
-
 .editPageButton:hover {
 	top: 5px;
 
@@ -72,7 +68,6 @@
 	background-color: #34ff9c;
 	box-shadow: 0px 10px 0px #00db6e;
 }
-
 .xp {
 	display: block;
 
@@ -85,8 +80,7 @@
 	font-size: 28px;
 
 }
-
-.profileDesc{
+.profileDesc {
     width: 90%;
     margin: 20px auto;
     padding: 20px;
@@ -98,8 +92,8 @@
 
 	font-family: Quest;
 }
-
-.match-history, .username{
+.match-history,
+.username {
     display: block;
 
     width: 100%;
@@ -110,7 +104,6 @@
 
     font-family: Quest;
 }
-
 .username h2 {
 	text-transform: capitalize;
 
@@ -123,33 +116,30 @@ h2, h3 {
 }
 
 .username h2:hover {
-	font-size: 40px;
+    font-size: 40px;
 }
-
-.table-history{
+.table-history {
     overflow-y: auto;
 
 	width: 100%;
     max-height: 400px;
 }
-
 .table-history::-webkit-scrollbar {
-	width: 20px;
+    width: 20px;
 }
 .table-history::-webkit-scrollbar-thumb {
-	background-color: #cccccc;
+    background-color: #cccccc;
 }
 .table-history::-webkit-scrollbar-track {
-	background-color: #555;
+    background-color: #555;
 }
-
-.match-history-table, .profileinfo{
+.match-history-table,
+.profileinfo {
     border: groove;
     border-right: transparent;
     border-bottom: transparent;
     border-left: transparent;
 }
-
 table {
     width: 100%;
 
@@ -165,44 +155,36 @@ td, th {
 
     text-align: left;
 }
-
 th {
     font-family: Quest;
+    padding: 4px;
 }
-
-.win, .loss {
-	transition: background-color 0.5s;
-
+.win,
+.loss {
+    transition: background-color 0.5s;
 }
-
 .win {
     background-color: #63E618;
 }
-
 .loss {
     background-color: #C61D1D;
 }
-
-
 .win:hover {
-	background-color: #9EFB69;
+    background-color: #9EFB69;
 }
-
 .loss:hover {
-	background-color: #EE3131;
+    background-color: #EE3131;
 }
-
 td {
-	transition: background-color 0.5s;
+    transition: background-color 0.5s;
     text-align: center;
 
     border-bottom: 2px solid black;
 
     font-family: Quest;
 }
-
 td:hover {
-	background-color: rgba(0, 0, 0, 0.25);
+    background-color: rgba(0, 0, 0, 0.25);
 }
 
 td a:link, td a.hover, td a:visited {
@@ -210,7 +192,6 @@ td a:link, td a.hover, td a:visited {
 
 	color: black;
 }
-
 th {
     text-align: center;
 }

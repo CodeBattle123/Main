@@ -1,0 +1,4 @@
+firstName = gets
+lastName = {option}
+
+puts {option} + " " + lastName

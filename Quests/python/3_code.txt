@@ -1,0 +1,4 @@
+firstName = raw_input("First name: ")
+surName = raw_{option}("Surname: ")
+
+{option}({option} + " " + surName)

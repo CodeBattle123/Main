@@ -1,7 +1,0 @@
-Toni:
-HOW TO START THE CHAT:
-1. from setting enable nodejs
-2. open terminal in chat folder
-3. type  'node server.js'
-4. message 'we have connection' should appear
-5. when clan page is open the message is 'we are connected'
