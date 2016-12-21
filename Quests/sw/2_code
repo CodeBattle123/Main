@@ -1,0 +1,2 @@
+var someInts = {option}()
+print("someInts is of type [Int] with {option} items.")

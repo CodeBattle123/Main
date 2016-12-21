@@ -1,0 +1,5 @@
+var fruits = ["Apple", "Orange"]  
+
+fruits.{option}("Pear");  
+
+alert("Last element is:"+{option})
