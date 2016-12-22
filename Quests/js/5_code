@@ -1,0 +1,23 @@
+function isPrime(n)
+{
+
+  if (n === 1)
+  {
+    return false;
+  }
+  else if(n === 2)
+  {
+    return true;
+  }else
+  {
+    for(var x = 2; {option} x++)
+    {
+      if({option})
+      {
+        return {option};
+      }
+    }
+    return {option};
+  }
+}
+
