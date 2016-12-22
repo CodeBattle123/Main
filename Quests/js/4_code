@@ -1,0 +1,5 @@
+var fruits = ["Lemon","Apple","Orange","Peach"];
+
+var str = fruits.{option}(', ');
+
+alert(str);

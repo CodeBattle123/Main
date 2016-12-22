@@ -1,0 +1,4 @@
+var fruits = "Apple,Orange,Peach";
+
+var arr = fruits.{option}(',');
+

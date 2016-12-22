@@ -20,7 +20,7 @@
             if (isset($_POST['submit'])){
                 $validate = true;
 
-                $email_to="you@gmail.com";
+                $email_to="AsenJ.Mihaylov@gmail.com";
 
                 $name = $_POST['name'];
                 if (strlen($name) == 0) {
