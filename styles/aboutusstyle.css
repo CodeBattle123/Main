@@ -36,10 +36,16 @@ section div {
 p {
     padding-bottom: 30px;
 
+    text-align: center;
+
     font-family: Quest;
     font-size: 18px;
     font-weight: bold;
     line-height: 20px;
+}
+
+p a, p a:visited {
+    color: rgb(71, 71, 71);
 }
 
 .btn {

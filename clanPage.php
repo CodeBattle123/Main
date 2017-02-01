@@ -4,24 +4,17 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <title>Clan Page</title>
+	<link rel="icon" type="image/png" href="images/icon.png"/>
     <link rel="stylesheet" href="styles/headerAndFooter.css">
     <link rel="stylesheet" href="styles/sidebar.css" media="screen" title="no title">
     <link rel="stylesheet" href="styles/clanPage.css" media="screen" title="no title">
     <link rel="stylesheet" href="styles/main.css">
-    <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
-    <script type="text/babel" src="chat/chat.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.0.1/react.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.0.1/react-dom.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-
 
 </head>
 <body>
-
-
 <?php include_once('header.php');
 CheckIfLogged();
+
 $clan = "";
 if (!isset($_GET['clan'])) {
 	header("location: clanPage.php?clan=" . $log_clan);
@@ -52,10 +45,12 @@ $isLeader = ($username==$leader);
 	    if ($isLeader) {
 	        echo '    <a href="clan_edit.php" class="editPageButton">Edit clan</a>';
 	    } else {
-	        echo '
-	    <form action="scripts/leaveclan.php" method="post">
-	    <input Onclick="return confirm(\'Are you sure you want to leave this clan?\')" type="submit" value="Leave clan" name="leaveclan" class="editPageButton"> 
-	    </form>';
+			if (mysqli_query($connect, "SELECT * FROM users WHERE nickname = '$log_username'")->fetch_assoc()['clan'] == $clan) {
+				echo '
+				<form action="scripts/leaveclan.php" method="post">
+				<input Onclick="return confirm(\'Are you sure you want to leave this clan?\')" type="submit" value="Leave clan" name="leaveclan" class="editPageButton"> 
+				</form>';
+			}
 	    }
 	    ?>
 	    <h3 class="clanName"><?= $clan ?></h3>

@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/png" href="images/icon.png"/>
     <link rel="stylesheet" href="styles/headerAndFooter.css">
     <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js'></script>
     <link rel="stylesheet" href="styles/sidebar.css">

@@ -23,38 +23,38 @@
            <li class="btn p15" id="howto-button"><a>How it works</a></li>
        </ul>
 
-      <section id="project">
-          <h1>About the project</h1><hr>
-          <div class="about_text">
-              <p>
-                  Lorem ipsum dolor sit amet, omittam repudiare at sed. Te eum sumo soleat feugait, eum te audire scribentur, scripta numquam oportere ea nec. Sit quas omnium invenire no, lorem doming graecis nec id, animal salutatus deterruisset cum id. Est cu utinam docendi inimicus. Sed no veniam diceret intellegam.
-                  Eu quas eleifend laboramus mea, ei option quaeque dissentias pro. Porro integre ne ius, habeo verear vel ex, qui eligendi torquatos no. Sint inciderint sit cu, ea has meis legendos. Eu usu etiam voluptaria, et usu idque libris. Ei mei movet mucius.
-                  Ei postea labitur mel, dictas petentium disputationi ad sea. Sit cibo dicant deseruisse cu, id summo viderer aliquando vis. Vel no malorum euismod, voluptatibus concludaturque te vix. Modo vidit intellegam his an.
-              </p>
-          </div>
-      </section>
+		<section id="project">
+		  	<h1>About the project</h1><hr>
+		  	<div class="about_text">
+		      	<p>
+		          	The project is made by using the very basics of PHP, JS, HTML, CSS. You could say that it's build from scratch. The project took about a month to make. It has clan-making and a ranking system for the competitive type, both for individual players and for whole clans.<br>
+					Overall it's a fun little project we made for our course at <a href="http://www.softuni.bg">SoftUni</a>.
+		      	</p>
+		  	</div>
+		</section>
 
    <section id="aboutus">
-       <h1>About us</h1><hr>
-       <div class="about_text">
-          <p>
-               Lorem ipsum dolor sit amet, omittam repudiare at sed. Te eum sumo soleat feugait, eum te audire scribentur, scripta numquam oportere ea nec. Sit quas omnium invenire no, lorem doming graecis nec id, animal salutatus deterruisset cum id. Est cu utinam docendi inimicus. Sed no veniam diceret intellegam.
-              Lorem ipsum dolor sit amet, omittam repudiare at sed. Te eum sumo soleat feugait, eum te audire scribentur, scripta numquam oportere ea nec. Sit quas omnium invenire no, lorem doming graecis nec id, animal salutatus deterruisset cum id. Est cu utinam docendi inimicus. Sed no veniam diceret intellegam.
-              Eu quas eleifend laboramus mea, ei option quaeque dissentias pro. Porro integre ne ius, habeo verear vel ex, qui eligendi torquatos no. Sint inciderint sit cu, ea has meis legendos. Eu usu etiam voluptaria, et usu idque libris. Ei mei movet mucius.
-              Ei postea labitur mel, dictas petentium disputationi ad sea. Sit cibo dicant deseruisse cu, id summo viderer aliquando vis. Vel no malorum euismod, voluptatibus concludaturque te vix. Modo vidit intellegam his an.
-               Ea verear pericula instructior cum. In vel impedit salutatus abhorreant, alienum reprehendunt usu ei. Eu usu adhuc reque eirmod. No sed probo vocent veritus, deleniti splendide sadipscing ex nam. Cu iudico appellantur sit, mei et meis tincidunt consequuntur.
-               </p>
-           </div>
+       	<h1>About us</h1><hr>
+       	<div class="about_text">
+          	<p>
+               	
+           	</p>
+        </div>
    </section>
 
-      <section id="howto">
-          <h1>How it works</h1><hr>
-          <div class="about_text">
-              <p>
-                  We actually don't know :/
-              </p>
-          </div>
-      </section>
+		<section id="howto">
+			<h1>How it works</h1><hr>
+			<div class="about_text">
+				<p>
+					You make youself a user account and then you choose what to do.<br><br>
+					<span>
+						- Do the exsercises. <br>
+						- Compare your knowledge with others with quizes.(Comming soon) <br>
+						- Create a clan with your friends and compete in the rakings <br>
+					</span>
+				</p>
+			</div>
+		</section>
 </div>
 
 <?php if (!$logged): ?>
